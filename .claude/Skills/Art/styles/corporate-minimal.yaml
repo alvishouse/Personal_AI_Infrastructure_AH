@@ -1,0 +1,193 @@
+# Corporate Minimal Style
+# Clean, professional, minimal color palette
+
+name: corporate-minimal
+description: "Clean professional visualization for business presentations and slides"
+version: "1.0"
+extends: _base
+
+# Philosophy
+philosophy: |
+  Clarity through simplicity. Professional without being sterile.
+  Information hierarchy guides the eye. Color used sparingly for emphasis.
+  Suitable for executive presentations and business documentation.
+
+# Reference styles
+references:
+  - "McKinsey slide decks"
+  - "Apple keynote presentations"
+  - "The Economist data visualizations"
+  - "HBR infographics"
+
+# Color palette
+colors:
+  background:
+    primary: "#FFFFFF"         # White
+    secondary: "#F8F9FA"       # Light gray
+    options:
+      - "#FFFFFF"
+      - "#F8F9FA"
+      - "#F1F3F4"
+
+  linework:
+    primary: "#202124"         # Near black
+    secondary: "#5F6368"       # Medium gray
+    weight: "balanced"
+
+  accents:
+    primary:
+      name: "Corporate Blue"
+      color: "#1A73E8"
+      usage: "Key data points, CTAs, emphasis"
+      weight: "10-20%"
+    secondary:
+      name: "Success Green"
+      color: "#34A853"
+      usage: "Positive metrics, growth indicators"
+      weight: "5-10%"
+    tertiary:
+      name: "Alert Red"
+      color: "#EA4335"
+      usage: "Warnings, negative metrics"
+      weight: "sparingly"
+    supporting:
+      - name: "Warm Yellow"
+        color: "#FBBC04"
+        usage: "Caution, attention, neutral highlight"
+
+  text:
+    title: "#202124"
+    body: "#5F6368"
+    caption: "#80868B"
+
+# Linework characteristics
+linework:
+  style: "clean-precise"
+  characteristics:
+    - "Clean, consistent stroke weight"
+    - "Geometric precision"
+    - "Slight rounding on corners"
+    - "Professional polish"
+  avoid:
+    - "Hand-drawn or sketchy"
+    - "Overly decorative"
+    - "Variable stroke weight"
+    - "Organic shapes"
+
+# Composition rules
+composition:
+  elements: "3-5 organized elements"
+  layout: "grid-aligned"
+  aspect_ratios:
+    preferred: "16:9"
+    allowed: ["16:9", "4:3", "1:1"]
+  negative_space: "50-60%"
+  alignment: "grid-based, balanced"
+  grid:
+    columns: 12
+    gutters: "consistent"
+  requirements:
+    - "Clear information hierarchy"
+    - "Consistent spacing"
+    - "Aligned to grid"
+    - "Generous margins"
+
+# Typography
+typography:
+  tiers:
+    - name: "title"
+      style: "Sans-serif bold"
+      characteristics:
+        - "Clean, bold"
+        - "Title case"
+        - "Large, clear"
+      color: "#202124"
+    - name: "labels"
+      style: "Sans-serif regular"
+      characteristics:
+        - "Clear, readable"
+        - "Consistent sizing"
+      color: "#5F6368"
+    - name: "annotations"
+      style: "Sans-serif light"
+      characteristics:
+        - "Small, subtle"
+        - "Secondary information"
+      color: "#80868B"
+
+# Data visualization specific
+data_viz:
+  charts:
+    - "Bar charts with consistent spacing"
+    - "Line charts with data points"
+    - "Pie charts (limited to 5 segments)"
+    - "Area charts with subtle fills"
+  colors:
+    primary_data: "#1A73E8"
+    secondary_data: "#34A853"
+    tertiary_data: "#FBBC04"
+    negative_data: "#EA4335"
+    neutral_data: "#5F6368"
+  rules:
+    - "Always include axis labels"
+    - "Data labels on key points"
+    - "Legend when multiple series"
+    - "Source attribution"
+
+# Prompt injection
+prompt_injection:
+  positive:
+    - "Professional infographic style"
+    - "Clean corporate aesthetic"
+    - "Business presentation quality"
+    - "Minimal color palette"
+    - "Grid-aligned layout"
+    - "Clear information hierarchy"
+    - "Sans-serif typography"
+    - "Generous whitespace"
+    - "Data visualization focused"
+    - "Executive summary style"
+  negative:
+    - "hand-drawn"
+    - "sketchy"
+    - "artistic"
+    - "decorative"
+    - "playful"
+    - "colorful"
+    - "busy"
+    - "cluttered"
+    - "gradients"
+    - "shadows"
+    - "3D effects"
+
+# Validation rules
+validation:
+  must_have:
+    - "Clean white or light background"
+    - "Professional appearance"
+    - "Clear information hierarchy"
+    - "Consistent spacing and alignment"
+    - "Readable typography"
+    - "Strategic color use (not colorful)"
+  must_not_have:
+    - "Hand-drawn or sketchy elements"
+    - "Excessive decoration"
+    - "Too many colors (limit to 3-4)"
+    - "3D effects or shadows"
+    - "Gradients"
+    - "Cluttered layouts"
+
+# Use cases
+use_cases:
+  - "Executive presentations"
+  - "Business reports"
+  - "Data dashboards"
+  - "Company slides"
+  - "Investor decks"
+  - "Professional documentation"
+  - "Annual reports"
+
+# Signature
+signature:
+  enabled: false
+  reason: "Corporate content typically unsigned"

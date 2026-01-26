@@ -1,0 +1,213 @@
+# Anthropic Editorial Style
+# Saul Steinberg / New Yorker inspired editorial illustration
+
+name: anthropic-editorial
+description: "Editorial conceptual illustration with black ink linework and muted earth tones"
+version: "1.0"
+extends: _base
+
+# Philosophy
+philosophy: |
+  Abstract visual metaphors that capture the essence of ideas.
+  Hand-drawn imperfection conveys humanity and thought.
+  Physical recognizable objects and actions, not abstract geometric shapes.
+  The power is in simplicity and immediate readability.
+
+# Reference styles
+references:
+  - "Saul Steinberg"
+  - "New Yorker editorial illustrations"
+  - "Risograph printing"
+  - "Matisse cutouts"
+  - "Editorial conceptual illustration"
+
+# Color palette
+colors:
+  background:
+    primary: "#FFFFFF"         # White (for transparency removal)
+    secondary: "#F5E6D3"       # Light cream
+    options:
+      - "#FFFFFF"              # White
+      - "#F5E6D3"              # Light cream
+      - "#F4D7C8"              # Peach
+      - "#D4C5B9"              # Warm taupe
+      - "#C5D4C8"              # Sage
+      - "#E8D5C4"              # Terracotta light
+
+  linework:
+    primary: "#000000"         # Black
+    weight: "dominant"         # 70-80% of composition
+    characteristics:
+      - "Variable stroke weight"
+      - "Gestural brush strokes"
+      - "Imperfect wobbly lines"
+
+  accents:
+    primary:
+      name: "Deep Purple"
+      color: "#4A148C"
+      usage: "Brand accent - REQUIRED but subtle, key elements, critical insights"
+      weight: "10-15%"
+    secondary:
+      name: "Deep Teal"
+      color: "#00796B"
+      usage: "Secondary accent, supporting elements"
+      weight: "5-10%"
+
+  text:
+    body: "#2D2D2D"            # Charcoal
+    signature: "#2D2D2D"       # Charcoal
+
+# Linework characteristics
+linework:
+  style: "hand-drawn-ink"
+  characteristics:
+    - "Variable stroke weight (thicker where pressure would be)"
+    - "Imperfect, slightly wobbly lines (human quality)"
+    - "Gestural brush strokes, NOT smooth vectors"
+    - "Risograph / editorial aesthetic"
+    - "Multiple overlapping strokes like hand-drawn"
+  avoid:
+    - "Clean vector illustration"
+    - "Perfectly smooth curves"
+    - "Uniform stroke weight"
+    - "Polished corporate graphics"
+    - "Digital perfection"
+
+# Composition rules
+composition:
+  elements: "2-3 maximum"
+  layout: "full-bleed edge-to-edge"
+  aspect_ratios:
+    preferred: "1:1"
+    allowed: ["1:1", "16:9", "4:3"]
+  negative_space: "30-40%"
+  alignment: "asymmetric"
+  requirements:
+    - "Full-bleed: NO whitespace or margins"
+    - "Elements extend to or bleed off all edges"
+    - "100% frame fill"
+    - "Objects fill 40-60% of frame"
+
+# Concept guidelines
+concepts:
+  philosophy: |
+    Visual concepts MUST use PHYSICAL RECOGNIZABLE objects and actions.
+    The concept should be describable in ONE sentence with 2-3 PHYSICAL elements.
+
+  good_examples:
+    - "Scissors cutting through a tangled ball of yarn"
+    - "A robot hand and human hand pulling opposite ends of an em dash"
+    - "Puzzle pieces being assembled by gestural hands"
+    - "Hands reaching upward toward abstract mountains"
+
+  bad_examples:
+    - "A timeline: dense circles to sparse to dense again (abstract shapes)"
+    - "Flowing geometric transformation from chaos to order (conceptual diagram)"
+    - "Abstract shapes representing data flow (requires explanation)"
+
+  validation:
+    - "Uses recognizable physical objects"
+    - "Shows clear physical action (cutting, pulling, assembling)"
+    - "Passes 'Instant Picture Test' - can picture like a photograph"
+    - "Does NOT use abstract shapes (circles, flowing lines)"
+    - "Does NOT require explanation ('this represents...')"
+
+# Typography (when needed)
+typography:
+  tiers:
+    - name: "title"
+      style: "Advocate Block Display"
+      characteristics:
+        - "Extra bold, hand-lettered feel"
+        - "All-caps"
+        - "Large - 3x body text"
+      color: "#000000"
+    - name: "labels"
+      style: "Concourse Sans"
+      characteristics:
+        - "Geometric sans-serif, clean, modern"
+        - "Medium readable size"
+      color: "#2D2D2D"
+    - name: "annotations"
+      style: "Advocate Condensed Italic"
+      characteristics:
+        - "Condensed italic (personal voice)"
+        - "Small (60% of labels)"
+      color: "#4A148C"
+
+# Prompt injection
+prompt_injection:
+  positive:
+    - "Editorial conceptual illustration"
+    - "Saul Steinberg / New Yorker style"
+    - "Hand-drawn black ink linework"
+    - "Variable stroke weight"
+    - "Imperfect, slightly wobbly lines"
+    - "Gestural brush strokes, NOT smooth vectors"
+    - "Risograph aesthetic"
+    - "Flat colors only"
+    - "Muted earth tones"
+    - "Full-bleed edge-to-edge composition"
+    - "Abstract metaphorical"
+    - "Minimal elements (2-3 only)"
+  negative:
+    - "gradients"
+    - "shadows"
+    - "3D rendering"
+    - "glossy surfaces"
+    - "smooth perfect vector lines"
+    - "photorealistic"
+    - "saturated colors"
+    - "cool colors"
+    - "digital perfection"
+    - "corporate polish"
+    - "margins or whitespace borders"
+
+# Validation rules
+validation:
+  must_have:
+    - "Flat background (single solid color, zero gradients)"
+    - "Hand-drawn quality lines (imperfect, variable weight)"
+    - "Black linework (not colored lines, not smooth vectors)"
+    - "Abstract metaphor (conceptual, not literal)"
+    - "Full-bleed composition (NO whitespace or margins)"
+    - "Square 1:1 format (unless otherwise specified)"
+    - "Elements extend to edges (composition bleeds off sides)"
+    - "Muted earth tone or white/transparent background"
+    - "COLOR PRESENCE - Purple and/or Teal MUST be visible and noticeable"
+    - "Color visible at normal viewing distance (not microscopic)"
+  must_not_have:
+    - "Any gradients anywhere"
+    - "Shadows or glows"
+    - "3D rendering or depth"
+    - "Glossy/shiny surfaces"
+    - "Smooth perfect vector lines"
+    - "Saturated or cool colors"
+    - "Photorealistic elements"
+    - "Too little color (all black with microscopic accents)"
+    - "Margins or borders"
+
+# Background removal
+post_processing:
+  remove_bg:
+    enabled: true
+    reason: "Generate on white, then remove background for transparency"
+    api: "remove.bg"
+
+# Use cases
+use_cases:
+  - "Blog headers"
+  - "Editorial illustrations"
+  - "Article featured images"
+  - "Social media graphics"
+  - "Newsletter headers"
+  - "Presentation covers"
+  - "Book chapter illustrations"
+
+# Signature
+signature:
+  text: "Kai"
+  position: "bottom-right"
+  color: "#2D2D2D"
+  size: "tiny"

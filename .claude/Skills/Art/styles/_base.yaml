@@ -1,0 +1,68 @@
+# Base Style Definition
+# All styles inherit from this unless they override specific properties
+
+name: _base
+description: "Base style with common defaults"
+version: "1.0"
+
+# Default model preferences
+models:
+  preferred: "nano-banana-pro"
+  fallback: "flux"
+  options:
+    - "nano-banana-pro"
+    - "flux"
+    - "gpt-image-1"
+    - "nano-banana"
+
+# Default size/quality settings
+output:
+  default_size: "2K"
+  default_aspect_ratio: "1:1"
+  format: "png"
+
+# Common composition rules
+composition:
+  elements: "2-4 maximum"
+  negative_space: "40-50%"
+  alignment: "asymmetric balance"
+  depth: "flat, no 3D"
+
+# Typography defaults
+typography:
+  tiers:
+    - name: "title"
+      weight: "bold"
+      case: "varies"
+    - name: "labels"
+      weight: "regular"
+      case: "mixed"
+    - name: "annotations"
+      weight: "light"
+      case: "lowercase"
+
+# Universal negative prompts
+prompt_injection:
+  negative:
+    - "photorealistic"
+    - "3D rendered"
+    - "hyperrealistic"
+    - "stock photo"
+    - "clipart"
+    - "cartoon"
+    - "anime"
+
+# Universal validation
+validation:
+  must_not_have:
+    - "Watermarks or logos"
+    - "Text artifacts or gibberish"
+    - "Incomplete elements"
+    - "Distorted faces (if faces present)"
+
+# Signature defaults
+signature:
+  enabled: true
+  text: "Kai"
+  position: "bottom-right"
+  size: "tiny"

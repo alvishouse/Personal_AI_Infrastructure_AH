@@ -1,0 +1,174 @@
+# Tron-meets-Excalidraw Style
+# Dark backgrounds, neon accents, hand-drawn sketch aesthetic
+
+name: tron-excalidraw
+description: "Digital Warmth - Futuristic precision with hand-drawn imperfection"
+version: "1.0"
+extends: _base
+
+# Philosophy
+philosophy: |
+  Technology with humanity. Digital precision meets hand-drawn warmth.
+  Neon accents provide energy without overwhelming.
+  Sketchy lines convey approachability and thought-in-progress.
+
+# Reference styles
+references:
+  - "Excalidraw whiteboard diagrams"
+  - "Tron Legacy neon aesthetics"
+  - "Cyberpunk wireframes"
+  - "Sketch noting"
+
+# Color palette
+colors:
+  background:
+    primary: "#1A202C"         # Deep Slate
+    secondary: "#000000"       # Pure Black
+    grid_overlay: "#2D3748"    # Dark Grid (10-20% opacity)
+    options:
+      - "#1A202C"              # Deep Slate
+      - "#000000"              # Pure Black
+
+  linework:
+    primary: "#FFFFFF"         # Bright White
+    secondary: "#E2E8F0"       # Light Gray
+    weight: "dominant"         # 70-80% of composition
+
+  accents:
+    primary:
+      name: "Neon Orange"
+      color: "#FF6B35"
+      alias: "#FF8C61"         # Neon Coral (softer variant)
+      usage: "warmth, energy, primary focal points"
+      weight: "10-15%"
+    secondary:
+      name: "Cyan Glow"
+      color: "#00D9FF"
+      alias: "#0099FF"         # Electric Blue (variant)
+      usage: "digital elements, technical accents"
+      weight: "5-10%"
+    supporting:
+      - name: "Slate Gray"
+        color: "#4A5568"
+        usage: "neutral technical elements"
+
+  text:
+    body: "#FFFFFF"
+    labels: "#E2E8F0"
+
+# Glow effects
+effects:
+  glow:
+    enabled: true
+    blur_radius: "8-12px"
+    opacity: "40-60%"
+    colors:
+      - "#FF6B35"              # Orange glow for warm elements
+      - "#00D9FF"              # Cyan glow for technical elements
+    placement: "key focal points only, strategic"
+
+# Linework characteristics
+linework:
+  style: "hand-drawn-sketch"
+  characteristics:
+    - "Rough, imperfect strokes like whiteboard markers"
+    - "Variable line weight (thicker at connections, thinner at ends)"
+    - "Wobbly curves, no perfect circles or smooth Beziers"
+    - "Multiple overlapping strokes"
+    - "Gaps and breaks where lines don't connect perfectly"
+    - "Sketchy hatching for shading or emphasis"
+    - "Casual confidence, quick strokes, not labored"
+  avoid:
+    - "Clean vector illustration"
+    - "Perfectly smooth curves"
+    - "Uniform stroke weight"
+    - "Polished corporate graphics"
+
+# Composition rules
+composition:
+  elements: "2-4 maximum"
+  layout: "floating or grid-anchored"
+  aspect_ratios:
+    preferred: "16:9"
+    allowed: ["1:1", "16:9", "3:2", "4:3", "21:9"]
+  negative_space: "40-50%"
+  alignment: "asymmetric balance"
+  strategies:
+    - "Circuit board composition - elements connected by glowing pathways"
+    - "Whiteboard sketch - casual hand-drawn explanation"
+    - "Digital blueprint - technical diagram with neon highlights"
+    - "Floating elements - components suspended in dark space with glows"
+
+# Typography
+typography:
+  style: "hand-drawn casual script"
+  characteristics:
+    - "Looks written by hand, not typed"
+    - "Slightly irregular baseline"
+    - "Variable character spacing"
+    - "Uppercase for emphasis, lowercase for body"
+  colors:
+    - "#FF6B35"                # Orange for emphasis
+    - "#FFFFFF"                # White for body
+
+# Prompt injection
+prompt_injection:
+  positive:
+    - "Hand-drawn sketch style"
+    - "Excalidraw whiteboard aesthetic"
+    - "Rough wobbly lines"
+    - "Imperfect hand-drawn strokes"
+    - "Dark background slate or black"
+    - "Neon orange accents"
+    - "Subtle cyan glow"
+    - "Tron-inspired neon highlights"
+    - "Digital circuit aesthetic"
+    - "Sketchy casual diagram"
+    - "Whiteboard marker style"
+    - "Multiple overlapping strokes"
+    - "Generous negative space"
+    - "Minimal composition"
+  negative:
+    - "perfect vectors"
+    - "smooth curves"
+    - "polished corporate"
+    - "cluttered"
+    - "excessive neon"
+    - "photorealistic"
+    - "gradients everywhere"
+    - "bright backgrounds"
+    - "complex compositions"
+
+# Validation rules
+validation:
+  must_have:
+    - "Dark background (slate or black)"
+    - "Hand-drawn sketchy line quality"
+    - "White/light gray primary linework"
+    - "Neon accent colors visible (orange and/or cyan)"
+    - "Minimal composition (2-4 elements max)"
+    - "Generous negative space"
+  must_not_have:
+    - "Bright or light backgrounds"
+    - "Clean smooth vector lines"
+    - "Excessive neon (should be accents only)"
+    - "Perfect geometric shapes"
+    - "Cluttered compositions"
+    - "Gradients (except subtle glow effects)"
+
+# Use cases
+use_cases:
+  - "Technical diagrams"
+  - "Developer content"
+  - "System architecture visualizations"
+  - "Data flow diagrams"
+  - "Network diagrams"
+  - "Mind maps"
+  - "Process flowcharts"
+
+# Signature
+signature:
+  text: "Kai"
+  position: "bottom-right"
+  color: "#FFFFFF"
+  size: "tiny"
