@@ -1,0 +1,21 @@
+/* ============================================
+   H2 HEADING SPACING - Space after headings
+   ============================================ */
+
+/* Add space AFTER all H2 section headings */
+.elementor-widget-post-content h2,
+.elementor-widget-theme-post-content h2,
+.elementor-widget-text-editor h2,
+.wp-block-heading {
+    margin-bottom: 1.5em !important;
+}
+
+/* Adjust for mobile if needed */
+@media (max-width: 768px) {
+    .elementor-widget-post-content h2,
+    .elementor-widget-theme-post-content h2,
+    .elementor-widget-text-editor h2,
+    .wp-block-heading {
+        margin-bottom: 1.2em !important;
+    }
+}

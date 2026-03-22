@@ -1,0 +1,359 @@
+# Newsletter Configuration
+# Mid-Market AI Newsletter System
+
+# Editorial Standards
+editorial:
+  target_audience:
+    company_size: "$50M-$150M revenue"
+    titles: ["VP", "C-suite", "Directors"]
+    industry_focus: "Mid-market enterprises"
+
+  quality_thresholds:
+    scan_time_seconds: 51
+    word_count_min: 1500
+    word_count_max: 2000
+    forward_test_minimum: 4  # Out of 5
+    validation_score_minimum: 0.7  # Out of 1.0
+
+  pillar_distribution:
+    strategy: 0.30  # 30%
+    operations: 0.30  # 30%
+    culture: 0.20  # 20%
+    roi: 0.20  # 20%
+
+# Newsletter Structure (Triage Model)
+structure:
+  sections:
+    - name: "TL;DR"
+      required: true
+      word_count_min: 50
+      word_count_max: 75
+      selection_criteria: "Highest shareability atom (score = 5)"
+
+    - name: "Myth vs Reality"
+      required: true
+      word_count_min: 200
+      word_count_max: 250
+      selection_criteria: "Highest novelty atom (score ≥ 4)"
+
+    - name: "Quick Win of the Week"
+      required: true
+      word_count_min: 150
+      word_count_max: 200
+      selection_criteria: "Highest actionability atom (score = 5)"
+
+    - name: "Metric That Matters"
+      required: true
+      word_count_min: 200
+      word_count_max: 250
+      selection_criteria: "Best quantified evidence"
+
+    - name: "Rotating Deep Section"
+      required: true
+      word_count_min: 400
+      word_count_max: 500
+      rotation_options:
+        - "Case Study Spotlight"
+        - "Trend Radar"
+        - "Culture & Leadership Insight"
+      rotation_schedule: "50% Case Studies, 25% Trend, 25% Culture"
+
+    - name: "Tool Spotlight"
+      required: false
+      word_count_min: 150
+      word_count_max: 200
+      frequency: "Every 2-3 issues"
+
+    - name: "Forward CTA"
+      required: true
+      word_count_min: 75
+      word_count_max: 100
+      selection_criteria: "Derived from TL;DR atom"
+
+# Insight Atom Quality Standards
+insight_atoms:
+  minimum_scores:
+    shareability: 3  # "Would exec forward to their team?"
+    novelty: 3  # "Is this surprising/counter-intuitive?"
+    actionability: 3  # "Can they implement in 90 days?"
+
+  required_fields:
+    - "id"
+    - "source"
+    - "headline"
+    - "insight"
+    - "evidence"
+    - "so_what"
+    - "action_step"
+    - "quality_scores"
+    - "classification"
+
+  headline_rules:
+    word_count_min: 8
+    word_count_max: 12
+    must_include: "Specificity (numbers, company names)"
+    avoid: "Generic language, vague quantifiers"
+
+  action_step_rules:
+    max_words: 50
+    max_days_to_implement: 90
+    no_vendor_dependencies: true
+    must_be_concrete: true
+
+# Validation Checklist (13 Points)
+validation:
+  checklist:
+    1_mid_market_relevance:
+      weight: 1.0
+      criteria: "Examples/data cite $50M-$150M companies"
+
+    2_belief_shift:
+      weight: 1.0
+      criteria: "Challenges widely-held assumption"
+
+    3_quantified_evidence:
+      weight: 1.0
+      criteria: "All claims have numbers + sources"
+
+    4_actionability:
+      weight: 1.0
+      criteria: "Quick Win implementable in ≤90 days"
+
+    5_jargon_check:
+      weight: 1.0
+      criteria: "All technical terms defined"
+
+    6_word_count:
+      weight: 1.0
+      criteria: "Total 1,500-2,000 words, sections within ranges"
+
+    7_confidence_tone:
+      weight: 1.0
+      criteria: "No hedging (might, could, possibly)"
+
+    8_forward_test:
+      weight: 1.0
+      criteria: "Would VP forward this? (score 4-5)"
+
+    9_cocktail_party_test:
+      weight: 1.0
+      criteria: "Can explain TL;DR in 30 seconds"
+
+    10_pillar_balance:
+      weight: 1.0
+      criteria: "Monthly cumulative within ±10% of targets"
+
+    11_no_duplicates:
+      weight: 1.0
+      criteria: "Distinct from last 4 issues"
+
+    12_source_attribution:
+      weight: 1.0
+      criteria: "All data points attributed"
+
+    13_recency_check:
+      weight: 1.0
+      criteria: "All data <12 months old"
+
+  pass_threshold: 0.7  # Overall score must be ≥0.7
+
+# Voice & Tone
+voice:
+  confidence: 95  # Out of 100
+  directness: 85
+  wit: 40
+  urgency: 70
+
+  writing_rules:
+    do:
+      - "Use active voice"
+      - "Lead with insights, not setup"
+      - "Be specific (18 months, not lengthy)"
+      - "Use 'you' to create direct relationship"
+      - "Bold 1-2 key phrases per section"
+      - "Start every section with a single framing sentence"
+      - "End every section with a single takeaway sentence"
+      - "Alternate sentence length for rhythm (long → short → long)"
+      - "Use tangible language: viscerally measurable outcomes, not abstract concepts"
+
+    dont:
+      - "Hedge (might, could, possibly)"
+      - "Use jargon without defining"
+      - "Write paragraphs >4 sentences"
+      - "Use exclamation points"
+      - "Oversell (revolutionary, game-changing)"
+      - "Use passive voice"
+
+  sentence_structure:
+    average_length: 17  # Words
+    max_paragraph_sentences: 4
+
+# Subject Line + Preheader Rules (Opening Wound Framework)
+#
+# Subject + preheader work TOGETHER as a 2-line inbox hook — exactly like
+# the opening 2 lines of a LinkedIn post. They are inseparable.
+#
+# In Gmail inbox the reader sees:
+#   [Sender]  [Subject bold]  [— Preheader grey]
+#
+# The INBOX HOOK FRAMEWORK (mirrors LinkedIn Opening Wound approach):
+#   Line 1 (Subject): Short, punchy, pain-first or contrarian. Sounds like
+#                     something a person would actually say. Under 50 chars.
+#   Line 2 (Preheader): Deepens the wound OR creates a curiosity gap.
+#                       NOT explanatory. NOT "Why... and how to...".
+#                       Adds tension, names the consequence, or raises stakes.
+#
+# The test: Read subject + preheader aloud as one sentence.
+#   PASS: "Requesting headcount is the wrong answer. — The gap isn't people.
+#          It's intelligence per person. Here's the 3-move fix."
+#   FAIL: "55% more output. Zero new hires. — Why your competitor stopped
+#          asking for headcount and how to close the gap." (explanatory)
+
+subject_lines:
+  max_characters: 50
+  approach: "Opening Wound — pain-first or contrarian, NOT stats-first"
+
+  avoid:
+    - "Opening with a metric (save the stat for the preheader)"
+    - "Explanatory openers (Why..., How to..., The guide to...)"
+    - "Questions without immediate tension"
+    - "Spam triggers (free, guaranteed, urgent)"
+    - "Generic phrasing"
+
+  hook_types:
+    contrarian: "Challenges a belief the reader holds as true"
+    story: "Names a character + outcome in under 8 words"
+    direct_wound: "States the reader's problem plainly, no setup"
+    threat: "Names a consequence the reader hasn't faced yet"
+
+  options_required: 5  # Generate 5, pick the sharpest
+
+  examples:
+    good_subject:
+      - "Requesting headcount is the wrong answer."     # Direct wound
+      - "He stopped asking for headcount."              # Story
+      - "Your CFO is accidentally right."               # Contrarian
+      - "Your competitor isn't hiring. They're winning."# Threat
+      - "Your best people are drowning. Hiring won't fix it."  # Wound
+    bad_subject:
+      - "55% more output. Zero new hires. 90 days."    # Stat-first
+      - "Why AI teams outperform on headcount"          # Explanatory
+      - "AI Implementation Newsletter #12"              # Generic
+      - "You Won't Believe This AI Secret!!!"           # Clickbait
+
+# Preheader Rules
+preheader:
+  max_characters: 100
+  role: "Line 2 of the inbox hook — deepens wound or raises stakes"
+
+  avoid:
+    - "Starting with 'Why' or 'How to' (explanatory, not a hook)"
+    - "Restating the subject line"
+    - "Being a teaser for the content ('Find out inside')"
+    - "Generic benefit statements ('Learn how to improve your team')"
+
+  must_do:
+    - "Add new information the subject didn't give"
+    - "Either: name a consequence, add data, or raise the stakes"
+    - "Sound like a real sentence — not marketing copy"
+
+  examples:
+    good:
+      - "The gap isn't people. It's intelligence per person. Here's the 3-move fix."
+      - "That's what saved his job. The exact playbook inside."
+      - "McKinsey found a 30-point output gap. Here's which side you're on."
+      - "Not for the reason you think. What the data says about your headcount problem."
+    bad:
+      - "Why your competitor stopped asking for headcount — and how to close the gap in 90 days"
+      - "Find out how AI can transform your operations this quarter"
+      - "Read more inside about the dumb pipe phenomenon"
+
+# Newsletter Introduction Structure
+intro_structure:
+  blocks:
+    1_hook: "1 sentence: question / declarative / surprising stat / moment-in-time"
+    2_stakes: "3-5 sentences: problem + why it exists + negative consequences"
+    3_solution: "1-2 sentences: what this issue covers / helps solve"
+    4_transition: "1 sentence: 'Let's walk through each one' / 'Here's what the data shows'"
+  rules:
+    - "No 'Hey there!' — exec audience demands direct entry"
+    - "Hook must be specific (contains number, company, or counterintuitive claim)"
+    - "Stakes must be tangible (viscerally measurable, not abstract)"
+
+# Brand Styling (HTML)
+brand:
+  colors:
+    primary: "#0066cc"
+    accent: "#f0f7ff"
+    text: "#333333"
+    background: "#ffffff"
+    divider: "#e0e0e0"
+
+  fonts:
+    primary: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    fallback: "sans-serif"
+
+  email_width: "600px"  # Max width for email container
+  mobile_breakpoint: "600px"
+
+# Distribution Settings
+distribution:
+  frequency: "weekly"
+  day_of_week: "Tuesday"  # Best open rates for B2B
+  time: "07:00 AM"  # Recipient's local time
+
+  platforms:
+    email:
+      - "Mailchimp"
+      - "Substack"
+      - "ConvertKit"
+    web:
+      - "WordPress"
+      - "Ghost"
+      - "Notion"
+
+# UTM Parameters
+tracking:
+  utm_source: "newsletter"
+  utm_medium: "email"
+  utm_campaign: "issue-{number}"  # Replace {number} with issue number
+  utm_content: "{section}"  # Replace {section} with section name
+
+# Frameworks to Reference
+frameworks:
+  - name: "AI as Intern Model"
+    source: "Ethan Mollick, Wharton"
+    description: "Treat AI like managing a new intern: clear instructions, oversight, gradual responsibility expansion"
+
+  - name: "Golden Triangle"
+    description: "High Pain Point + Low Complexity + Clear ROI (30 days)"
+
+  - name: "RTFD Framework"
+    description: "Role + Task + Format + Details (prompt structure)"
+
+  - name: "90-Day Quick-Start Scorecard"
+    description: "Day 30: 25% adoption, 5 hrs saved. Day 90: 60% adoption, 17 hrs saved"
+
+  - name: "Right-Sized Governance"
+    elements:
+      - "AI Inventory"
+      - "Acceptable Use Policy"
+      - "Executive Ownership"
+      - "Risk Categorization (High/Medium/Low)"
+
+  - name: "Cocktail Party Formula"
+    description: "Surprising Stat + Why It Matters + What To Do About It"
+
+# Metadata Template
+metadata_template:
+  issue_number: null
+  issue_date: null
+  subject_line: null
+  preheader: null
+  word_count: null
+  pillar_distribution: null
+  atoms_used: []
+  linkedin_references: []
+  sources_cited: []
+  validation_score: null
+  publication_ready: false

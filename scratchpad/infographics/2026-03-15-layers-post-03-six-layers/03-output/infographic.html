@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 6 Layers AI Actually Requires</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: white;
+      padding: 0;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── CANVAS ─────────────────────────────────────────── */
+    .ig {
+      width: 540px;
+      height: 675px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TITLE BLOCK (~56px) ─────────────────────────────── */
+    .cs-title-block {
+      background: #0F172A;
+      padding: 9px 14px 8px 14px;
+      flex-shrink: 0;
+    }
+
+    .cs-title {
+      font-size: 17px;
+      font-weight: 900;
+      color: #F8FAFC;
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+    }
+
+    .cs-title span { color: #FBBF24; }
+
+    .cs-subtitle {
+      font-size: 9.5px;
+      font-weight: 500;
+      color: #94A3B8;
+      margin-top: 3px;
+      line-height: 1.3;
+    }
+
+    /* ── SECTION ─────────────────────────────────────────── */
+    .cs-section { flex: 1; display: flex; flex-direction: column; }
+    .cs-body { flex: 1; display: flex; flex-direction: column; }
+    .cs-layer { flex: 1; }
+
+    /* ── SECTION HEADER BAR (~22px) ──────────────────────── */
+    .cs-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 10px;
+      height: 22px;
+      color: white;
+    }
+
+    /* Lucide replaces <i> with <svg> — target svg directly */
+    .cs-header svg {
+      width: 12px;
+      height: 12px;
+      stroke: white;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .cs-header-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .cs-header-tag {
+      margin-left: auto;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .cs-critical-badge {
+      background: rgba(255,255,255,0.25);
+      border-radius: 3px;
+      padding: 1px 5px;
+      font-size: 7.5px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      color: white;
+      margin-left: 4px;
+    }
+
+    /* ── LAYER ROW (~65px each) ──────────────────────────── */
+    .cs-layer {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 6px 10px;
+      border-bottom: 1px solid #F1F5F9;
+      background: white;
+    }
+
+    .cs-layer:last-child { border-bottom: none; }
+
+    /* Icon badge */
+    .cs-icon-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: white;
+    }
+
+    .cs-icon-badge svg {
+      width: 13px;
+      height: 13px;
+      stroke: white;
+      color: white;
+    }
+
+    /* Layer content */
+    .cs-layer-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cs-layer-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .cs-layer-num {
+      font-size: 8px;
+      font-weight: 700;
+      color: #94A3B8;
+      flex-shrink: 0;
+    }
+
+    .cs-layer-name {
+      font-size: 10px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .cs-layer-question {
+      font-size: 8.5px;
+      font-weight: 500;
+      color: #475569;
+      font-style: italic;
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+
+    .cs-layer-stat {
+      font-size: 8.5px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    /* Critical layer (Layer 3) */
+    .cs-layer--critical {
+      background: #FFF7ED;
+      border-left: 3px solid #C85C1A;
+    }
+
+    .cs-critical-tag {
+      display: inline-block;
+      background: #C85C1A;
+      color: white;
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      padding: 1px 4px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    /* ── BOTTOM CALLOUT (~38px) ──────────────────────────── */
+    .cs-callout {
+      background: #1A1A1A;
+      padding: 0 14px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .cs-callout-icon {
+      width: 20px;
+      height: 20px;
+      background: #FBBF24;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cs-callout-icon svg {
+      width: 11px;
+      height: 11px;
+      stroke: #1A1A1A;
+      color: #1A1A1A;
+    }
+
+    .cs-callout-text {
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .cs-callout-text em {
+      color: #FBBF24;
+      font-style: normal;
+    }
+
+    /* ── FOOTER (~32px) ──────────────────────────────────── */
+    .cs-footer {
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      padding: 0 12px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .cs-footer-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid #CBD5E1;
+      flex-shrink: 0;
+    }
+
+    .cs-footer-text {
+      font-size: 8.5px;
+      font-weight: 500;
+      color: #475569;
+      line-height: 1.3;
+    }
+
+    .cs-footer-text strong {
+      font-weight: 700;
+      color: #1E293B;
+    }
+
+    .cs-footer-divider {
+      width: 1px;
+      height: 16px;
+      background: #CBD5E1;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- TITLE BLOCK -->
+  <div class="cs-title-block">
+    <div class="cs-title">The 6 Layers AI <span>Actually</span> Requires</div>
+    <div class="cs-subtitle">Weakness in any one layer is a ceiling on everything above.</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 1 — Foundation (#1B4D3E dark green)        -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="cs-section">
+    <div class="cs-header" style="background:#1B4D3E;">
+      <i data-lucide="layers"></i>
+      <span class="cs-header-label">Foundation</span>
+      <span class="cs-header-tag">Layers 1–2</span>
+    </div>
+
+    <!-- Layer 1 — Infrastructure -->
+    <div class="cs-layer">
+      <div class="cs-icon-badge" style="background:#1B4D3E;">
+        <i data-lucide="server"></i>
+      </div>
+      <div class="cs-layer-content">
+        <div class="cs-layer-name-row">
+          <span class="cs-layer-num">01</span>
+          <span class="cs-layer-name">Infrastructure</span>
+        </div>
+        <div class="cs-layer-question">Can your systems run, scale, and connect?</div>
+        <div class="cs-layer-stat" style="color:#1B4D3E;">Only 15% of firms are infrastructure-ready vs. 71% of AI leaders</div>
+      </div>
+    </div>
+
+    <!-- Layer 2 — Data -->
+    <div class="cs-layer">
+      <div class="cs-icon-badge" style="background:#1B4D3E;">
+        <i data-lucide="database"></i>
+      </div>
+      <div class="cs-layer-content">
+        <div class="cs-layer-name-row">
+          <span class="cs-layer-num">02</span>
+          <span class="cs-layer-name">Data</span>
+        </div>
+        <div class="cs-layer-question">Do you have governed, accessible data?</div>
+        <div class="cs-layer-stat" style="color:#1B4D3E;">96% hit data quality problems; only 15% have mature governance</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 2 — Critical Gap (#C85C1A burnt orange)    -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="cs-section">
+    <div class="cs-header" style="background:#C85C1A;">
+      <i data-lucide="alert-triangle"></i>
+      <span class="cs-header-label">Critical Gap</span>
+      <span class="cs-critical-badge">Where Pilots Die</span>
+      <span class="cs-header-tag">Layers 3–4</span>
+    </div>
+
+    <!-- Layer 3 — Process (CRITICAL) -->
+    <div class="cs-layer cs-layer--critical">
+      <div class="cs-icon-badge" style="background:#C85C1A;">
+        <i data-lucide="git-branch"></i>
+      </div>
+      <div class="cs-layer-content">
+        <div class="cs-layer-name-row">
+          <span class="cs-layer-num">03</span>
+          <span class="cs-layer-name">Process ⚠<span class="cs-critical-tag">Critical</span></span>
+        </div>
+        <div class="cs-layer-question">Are workflows defined and repeatable?</div>
+        <div class="cs-layer-stat" style="color:#C85C1A;">Only 1% of firms have processes ready. Most pilots die here.</div>
+      </div>
+    </div>
+
+    <!-- Layer 4 — Governance -->
+    <div class="cs-layer">
+      <div class="cs-icon-badge" style="background:#C85C1A;">
+        <i data-lucide="shield"></i>
+      </div>
+      <div class="cs-layer-content">
+        <div class="cs-layer-name-row">
+          <span class="cs-layer-num">04</span>
+          <span class="cs-layer-name">Governance</span>
+        </div>
+        <div class="cs-layer-question">Are there guardrails for AI use?</div>
+        <div class="cs-layer-stat" style="color:#C85C1A;">50% use unapproved AI; 269 shadow tools per 1,000 employees</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SECTION 3 — Amplifiers (#6B21A8 deep purple)       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="cs-section">
+    <div class="cs-header" style="background:#6B21A8;">
+      <i data-lucide="trending-up"></i>
+      <span class="cs-header-label">Amplifiers</span>
+      <span class="cs-header-tag">Layers 5–6</span>
+    </div>
+
+    <!-- Layer 5 — People -->
+    <div class="cs-layer">
+      <div class="cs-icon-badge" style="background:#6B21A8;">
+        <i data-lucide="users"></i>
+      </div>
+      <div class="cs-layer-content">
+        <div class="cs-layer-name-row">
+          <span class="cs-layer-num">05</span>
+          <span class="cs-layer-name">People</span>
+        </div>
+        <div class="cs-layer-question">Can your people collaborate with AI?</div>
+        <div class="cs-layer-stat" style="color:#6B21A8;">57% of AI failures involve adoption resistance from teams</div>
+      </div>
+    </div>
+
+    <!-- Layer 6 — Strategy -->
+    <div class="cs-layer">
+      <div class="cs-icon-badge" style="background:#6B21A8;">
+        <i data-lucide="compass"></i>
+      </div>
+      <div class="cs-layer-content">
+        <div class="cs-layer-name-row">
+          <span class="cs-layer-num">06</span>
+          <span class="cs-layer-name">Strategy</span>
+        </div>
+        <div class="cs-layer-question">Is AI aligned to business outcomes?</div>
+        <div class="cs-layer-stat" style="color:#6B21A8;">Leaders on 3.5 use cases see 2.1× ROI vs those spread across 6.1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CALLOUT -->
+  <div class="cs-callout">
+    <div class="cs-callout-icon">
+      <i data-lucide="alert-circle"></i>
+    </div>
+    <div class="cs-callout-text">
+      Your lowest score is your ceiling. <em>Fix that layer first.</em>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cs-footer">
+    <img
+      class="cs-footer-avatar"
+      src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png"
+      alt="Alvis House"
+    />
+    <div class="cs-footer-text"><strong>Alvis House</strong></div>
+    <div class="cs-footer-divider"></div>
+    <div class="cs-footer-text">linkedin.com/in/alvishouse · alvishouse.io</div>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

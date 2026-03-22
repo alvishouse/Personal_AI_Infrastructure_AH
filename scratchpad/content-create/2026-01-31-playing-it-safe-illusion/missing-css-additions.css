@@ -1,0 +1,52 @@
+/* ============================================
+   MISSING STYLES - Add to existing CSS
+   ============================================ */
+
+/* Callout variants: tip and insight */
+.elementor-widget-container,
+.elementor,
+body {
+  .callout.tip {
+    border-left: 5px solid var(--slate) !important;
+    border-style: solid !important;
+    border-width: 1.5px 1.5px 1.5px 5px !important;
+  }
+
+  .callout.insight {
+    border-left: 5px solid var(--ink) !important;
+    border-style: solid !important;
+    border-width: 1.5px 1.5px 1.5px 5px !important;
+  }
+
+  .callout.insight .label,
+  .callout.tip .label {
+    color: var(--ink) !important;
+  }
+
+  /* Arrow List */
+  .arrow-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+  }
+
+  .arrow-list li {
+    padding-left: 1.5em !important;
+    position: relative !important;
+    margin-bottom: 0.8em !important;
+  }
+
+  .arrow-list li::before {
+    content: "→" !important;
+    position: absolute !important;
+    left: 0 !important;
+    color: var(--ink) !important;
+  }
+}
+
+/* Spacing fix: paragraphs after lists */
+.elementor-widget-text-editor ul + p,
+.elementor-widget-text-editor ol + p,
+.elementor-widget-container ul + p,
+.elementor-widget-container ol + p {
+    margin-top: 1.5em !important;
+}

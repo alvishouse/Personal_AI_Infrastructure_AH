@@ -1,0 +1,70 @@
+/* ============================================
+   TITLE FORMAT CSS - Add to Additional CSS
+   ============================================ */
+
+/* Article Header Container */
+.article-header {
+    margin-bottom: 2.5em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* Eyebrow Text - Above Title */
+.eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+/* Main Title - Keep Elementor defaults */
+.post-title {
+    /* Elementor will style this */
+}
+
+/* Subtitle - Below Title */
+.subtitle {
+    font-size: 1.2em;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.5em;
+    line-height: 1.5;
+    display: block;
+}
+
+/* Author Meta Line */
+.meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: var(--slate);
+    margin-top: 1.5em;
+    display: block;
+}
+
+.meta strong {
+    color: var(--ink);
+}
+
+/* ============================================
+   USAGE IN ELEMENTOR:
+
+   1. Create Text Editor widget for eyebrow:
+      - Add class: eyebrow
+      - Dynamic Tags: Post Custom Field → eyebrow_text
+
+   2. Use Post Title widget for main title:
+      - Keep default styling
+
+   3. Create Text Editor widget for subtitle:
+      - Add class: subtitle
+      - Dynamic Tags: Post Custom Field → subtitle
+
+   4. Create Text Editor widget for author meta:
+      - Add class: meta
+      - Content: <strong>Alvis Lazarus</strong> • AI Readiness Consultant • 22 min read
+      - Use Dynamic Tags for author_title and read_time
+   ============================================ */

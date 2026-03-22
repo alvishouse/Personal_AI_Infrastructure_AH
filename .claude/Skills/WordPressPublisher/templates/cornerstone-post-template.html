@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[HEADLINE]</title>
+</head>
+<body>
+
+<!-- ============================================================
+     CORNERSTONE POST TEMPLATE
+     Always use this as the wrapper for WordPress post content.
+     Provides the full brand CSS + component library.
+
+     ⚠️  REQUIRED ORDER (do not change):
+     1. Article header block (eyebrow → h1 → deck)
+     2. Featured image
+     3. Lead section (.lead-section)
+     4. Body content
+
+     ⚠️  CHARSET: meta charset="UTF-8" is in the <head> above.
+         Never remove it — without it em dashes and curly quotes
+         render as â€" garbage in browser preview.
+
+     COMPONENTS AVAILABLE:
+     - .lead-section          → Dark navy opening hook box
+     - .pull-quote            → Centered italic quote with top/bottom borders
+     - .stat-highlight        → Stat number + label in parchment box
+       └ .stat-number         → Big number (e.g. 40%, 3.6×, 360K)
+       └ .stat-label          → Description text beside number
+     - .callout.mechanism     → Navy left-border concept/example box
+     - .callout.warning       → Warning/mistake/obstacle box
+     - .framework-box         → Parchment framework container
+       └ .framework-visual    → Steps container
+       └ .framework-step      → Single step row
+         └ .step-title        → Step label (e.g. AUDIT, WEEK 1)
+         └ .step-desc         → Step description
+       └ .framework-arrow     → Arrow between steps (use &#8595;)
+       └ .framework-summary   → Summary line below steps
+     - .case-study            → Case study card
+       └ .result              → Dark navy result box inside case study
+     - .cta-box               → Dark navy CTA/closing action box
+     - .final-quote           → Large closing quote with borders
+     - h2                     → Section heading WITH bottom underline (automatic)
+     - h4                     → Uppercase label in slate color (THE PATTERN, etc.)
+     - blockquote             → Parchment left-border quote
+     - .inline-image          → Full-width image with border
+     - hr                     → Light rule divider between sections
+     ============================================================ -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+:root {
+    --ink: #3b546b;
+    --rust: #cf5828;
+    --slate: #7a8c9b;
+    --paper: #ece6d9;
+    --text: #2b2b2b;
+    --muted: rgba(59,84,107,.75);
+    --rule: rgba(59,84,107,.22);
+    --bg: #ffffff;
+}
+* { box-sizing: border-box; }
+body { font-family: "Lora", Georgia, serif; line-height: 1.8; background: var(--bg); color: var(--text); }
+article { max-width: 100%; margin: 0 auto; background: var(--bg); padding: 20px 0; }
+img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5em 0; display: block; }
+.inline-image { width: 100%; border-radius: 8px; margin: 2em 0; border: 1px solid var(--rule); }
+h1, h2, h3, h4 { font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; font-weight: 700; line-height: 1.3; color: var(--ink); }
+h2 { font-size: 1.6em; margin-top: 2.5em; margin-bottom: 0.8em; padding-bottom: 0.4em; border-bottom: 2px solid var(--ink); }
+h3 { font-size: 1.25em; margin-top: 2em; margin-bottom: 0.6em; }
+h4 { font-family: "Montserrat", sans-serif; font-size: 0.85em; font-weight: 600; margin-top: 1.5em; margin-bottom: 0.5em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate); }
+p { margin-bottom: 1.5em; font-size: 1.05em; }
+.lead-section { background: rgba(59,84,107,.92); border: 1px solid rgba(0,0,0,.08); color: #fff; padding: 2.5em; margin: 2em 0; border-radius: 8px; }
+.lead-section p { color: rgba(255,255,255,.88); font-size: 1.05em; }
+.lead-section strong { color: #fff; }
+.lead-section .highlight-text { color: #ece6d9; font-weight: 500; }
+blockquote { margin: 2em 0; padding: 1.5em 2em; background: var(--paper); border-left: 4px solid var(--ink); border-radius: 0 8px 8px 0; color: var(--text); font-style: italic; }
+.callout { background: var(--paper); border-radius: 10px; padding: 20px 22px; margin: 2em 0; }
+.callout .label { font-family: "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.7em; font-weight: 600; color: rgba(59,84,107,.85); margin-bottom: 10px; }
+.callout.mechanism { background: var(--paper); border: 1.5px solid rgba(59,84,107,.5); border-left: 5px solid #3b546b; }
+.callout.mechanism .label { color: #3b546b; }
+.callout.warning { background: rgba(59,84,107,.08); border: 1.5px solid rgba(59,84,107,.3); border-left: 5px solid #3b546b; }
+.callout.warning .label { color: #3b546b; }
+.pull-quote { font-family: "Lora", Georgia, serif; font-size: 1.35em; font-weight: 500; font-style: italic; color: var(--ink); text-align: center; padding: 1.5em 2em; margin: 2em 0; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); line-height: 1.5; }
+.stat-highlight { display: flex; align-items: center; gap: 1.5em; margin: 2em 0; padding: 1.5em; background: var(--paper); border-radius: 8px; border: 1px solid var(--rule); }
+.stat-number { font-family: "Montserrat", sans-serif; font-size: 3em; font-weight: 700; color: var(--ink); line-height: 1; white-space: nowrap; }
+.stat-label { font-size: 1em; color: var(--text); }
+.stat-label strong { color: var(--ink); }
+.framework-box { background: var(--paper); padding: 2em; margin: 2em 0; border-radius: 10px; border: 2px solid var(--rule); }
+.framework-box h3 { margin-top: 0; color: var(--ink); text-align: center; }
+.framework-visual { display: flex; flex-direction: column; gap: 0.5em; margin: 1.5em 0; padding: 1.5em; background: rgba(255,255,255,.6); border-radius: 8px; border: 1px solid var(--rule); }
+.framework-step { display: flex; align-items: center; gap: 1em; padding: 0.75em 1em; background: rgba(255,255,255,.5); border-radius: 6px; }
+.step-title { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 1em; color: #3b546b; min-width: 100px; }
+.step-desc { font-size: 0.9em; color: #7a8c9b; flex: 1; }
+.framework-arrow { text-align: center; color: #7a8c9b; font-size: 1em; padding: 0.1em 0; }
+.framework-summary { text-align: center; font-family: "Montserrat", sans-serif; font-size: 0.9em; font-weight: 600; color: var(--ink); margin-top: 1em; margin-bottom: 0; }
+.case-study { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 2em; margin: 2em 0; }
+.case-study h4 { color: var(--ink); margin-top: 0; margin-bottom: 1em; }
+.case-study .result { background: #3b546b; padding: 1em; border-radius: 6px; margin-top: 1em; }
+.case-study .result p { margin: 0; font-size: 0.95em; color: rgba(255,255,255,.9); }
+.case-study .result strong { color: #fff; }
+.cta-box { background: rgba(59,84,107,.92); border: 1px solid rgba(0,0,0,.08); color: #fff; padding: 2.5em; margin: 3em 0; border-radius: 10px; text-align: center; }
+.cta-box h3 { color: #fff; margin-top: 0; font-size: 1.4em; }
+.cta-box p { color: rgba(255,255,255,.88); margin-bottom: 1em; }
+.cta-box .cta-list { text-align: left; max-width: 520px; margin: 1.5em auto; padding-left: 1.5em; }
+.cta-box .cta-list li { color: rgba(255,255,255,.88); margin-bottom: 1em; }
+.cta-box .cta-list strong { color: #fff; }
+.final-quote { font-family: "Lora", Georgia, serif; font-size: 1.4em; font-weight: 500; text-align: center; color: var(--ink); padding: 2em; margin: 2em 0; line-height: 1.5; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+hr { border: none; border-top: 1px solid var(--rule); margin: 3em 0; }
+ul, ol { margin: 1.5em 0; padding-left: 1.5em; }
+li { margin-bottom: 0.8em; font-size: 1.05em; }
+strong { font-weight: 600; color: var(--ink); }
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: var(--rust); }
+@media (max-width: 700px) {
+    article { padding: 24px 16px !important; }
+    .stat-highlight { flex-direction: column; text-align: center; }
+    .framework-step { flex-direction: column; text-align: center; }
+    .step-title { min-width: auto; }
+}
+</style>
+
+<article>
+
+<!-- ============================================================
+     ARTICLE HEADER — ALWAYS FIRST, BEFORE FEATURED IMAGE
+     Replace [EYEBROW], [HEADLINE], [DECK] with actual content.
+     ============================================================ -->
+<div class="article-header" style="padding: 1.5em 0 2em 0;">
+  <p class="eyebrow" style="font-family:'Montserrat',sans-serif; font-size:0.8em; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; color:#7a8c9b; margin:0 0 0.6em 0;">[EYEBROW]</p>
+  <h1 style="font-family:'Montserrat',sans-serif; font-size:2.4em; font-weight:700; color:#3b546b; line-height:1.2; margin:0 0 0.5em 0;">[HEADLINE]</h1>
+  <p class="deck" style="font-family:'Lora',Georgia,serif; font-size:1.2em; color:#7a8c9b; line-height:1.6; margin:0; border-left:4px solid #cf5828; padding-left:1em;">[DECK]</p>
+</div>
+
+<!-- Featured image — AFTER header, BEFORE lead section -->
+<img class="featured-image" src="[FEATURED_IMAGE_PATH]" alt="[FEATURED_IMAGE_ALT]" style="width:100%; border-radius:8px; margin:0 0 2em 0;">
+
+<!-- ============================================================
+     LEAD SECTION (dark navy hook box — always first)
+     ============================================================ -->
+<section class="lead-section">
+    <p><strong>[CONTRARIAN OPENING STATEMENT — one sentence that flips the conventional wisdom]</strong></p>
+    <p>[Context sentence — who this is for and what the paradox is]</p>
+    <p>This is for [ICP description — role, pain, context].</p>
+    <p>If you have struggled with:</p>
+    <ul>
+        <li><span class="highlight-text">[Pain point 1]</span></li>
+        <li><span class="highlight-text">[Pain point 2]</span></li>
+        <li><span class="highlight-text">[Pain point 3]</span></li>
+    </ul>
+    <p>You are in the right place.</p>
+    <p>Because what if you could [transformation promise 1] — [transformation promise 2] — and [transformation promise 3]?</p>
+    <p><strong>Here is how.</strong></p>
+</section>
+
+<hr>
+
+<!-- ============================================================
+     SECTION: Expert Story (h2 + h4 labels + blockquote + pull-quote)
+     ============================================================ -->
+<h2>[Section Heading]</h2>
+
+<h4>The Pattern</h4>
+<p>[Observation-framed setup]</p>
+
+<h4>The Story</h4>
+<p>[Expert story — Option B framing, observed/researched]</p>
+
+<blockquote>"[Key quote from the story]"</blockquote>
+
+<p>[Continuation]</p>
+
+<div class="pull-quote">
+    [Pull quote — the core insight in one sentence]
+</div>
+
+<hr>
+
+<!-- ============================================================
+     SECTION: Framework (callout.mechanism + framework-box)
+     ============================================================ -->
+<h2>[Framework Section Heading]</h2>
+
+<div class="callout mechanism">
+    <div class="label">Core Concept</div>
+    <p>[Framework definition or equation]</p>
+</div>
+
+<div class="framework-box">
+    <h3>[Framework Name]</h3>
+    <div class="framework-visual">
+        <div class="framework-step">
+            <div class="step-title">STEP 1</div>
+            <div class="step-desc">[Step description]</div>
+        </div>
+        <div class="framework-arrow">&#8595;</div>
+        <div class="framework-step">
+            <div class="step-title">STEP 2</div>
+            <div class="step-desc">[Step description]</div>
+        </div>
+        <div class="framework-arrow">&#8595;</div>
+        <div class="framework-step">
+            <div class="step-title">STEP 3</div>
+            <div class="step-desc">[Step description]</div>
+        </div>
+        <div class="framework-arrow">&#8595;</div>
+        <div class="framework-step">
+            <div class="step-title">STEP 4</div>
+            <div class="step-desc">[Step description]</div>
+        </div>
+    </div>
+    <p class="framework-summary">[Phase 1] &#8594; [Phase 2] &#8594; [Phase 3]</p>
+</div>
+
+<!-- Step detail with stat + callout example -->
+<h3>Step 1: [Step Name]</h3>
+
+<div class="stat-highlight">
+    <div class="stat-number">[NUMBER]</div>
+    <div class="stat-label"><strong>[Stat headline]</strong> — [Stat context and source]</div>
+</div>
+
+<p>[Body copy]</p>
+
+<div class="callout mechanism">
+    <div class="label">Example</div>
+    <p>[Concrete example with specifics]</p>
+</div>
+
+<!-- Inline image after framework section -->
+<img class="inline-image" src="[WP_IMAGE_URL]" alt="[Alt text]">
+
+<hr>
+
+<!-- ============================================================
+     SECTION: Research (stat-highlight blocks)
+     ============================================================ -->
+<h2>The Research Backs This Up</h2>
+
+<div class="stat-highlight">
+    <div class="stat-number">[%]</div>
+    <div class="stat-label"><strong>[Stat headline]</strong> — [Source and context]</div>
+</div>
+
+<div class="stat-highlight">
+    <div class="stat-number">[X&times;]</div>
+    <div class="stat-label"><strong>[Stat headline]</strong> — [Source and context]</div>
+</div>
+
+<hr>
+
+<!-- ============================================================
+     SECTION: Case Studies
+     ============================================================ -->
+<h2>Real-World Applications</h2>
+
+<div class="case-study">
+    <h4>[Company/Scenario Name] &#8212; [Subtitle]</h4>
+    <p><strong>Situation:</strong> [Context]</p>
+    <p><strong>Action:</strong> [What they did]</p>
+    <div class="result">
+        <p><strong>Result:</strong> [Outcome with numbers]</p>
+    </div>
+</div>
+
+<!-- Inline image after case studies -->
+<img class="inline-image" src="[WP_IMAGE_URL]" alt="[Alt text]">
+
+<hr>
+
+<!-- ============================================================
+     SECTION: Myth/Mindset (callout.warning)
+     ============================================================ -->
+<h2>What Most People Get Wrong</h2>
+
+<h4>The Myth</h4>
+<p>[What everyone believes and why]</p>
+
+<div class="callout warning">
+    <div class="label">The Hidden Cost</div>
+    <ul>
+        <li>[Hidden cost 1]</li>
+        <li>[Hidden cost 2]</li>
+        <li>[Hidden cost 3]</li>
+    </ul>
+</div>
+
+<div class="pull-quote">
+    [Truth statement — the mindset shift in one sentence]
+</div>
+
+<hr>
+
+<!-- ============================================================
+     SECTION: Implementation (framework-box + callout.warning obstacles)
+     ============================================================ -->
+<h2>How to Implement This (Starting Today)</h2>
+
+<div class="framework-box">
+    <h3>Your 4-Week Implementation Plan</h3>
+    <div class="framework-visual">
+        <div class="framework-step">
+            <div class="step-title">WEEK 1</div>
+            <div class="step-desc"><strong>[Action].</strong> [Detail]</div>
+        </div>
+        <div class="framework-arrow">&#8595;</div>
+        <div class="framework-step">
+            <div class="step-title">WEEK 2</div>
+            <div class="step-desc"><strong>[Action].</strong> [Detail]</div>
+        </div>
+        <div class="framework-arrow">&#8595;</div>
+        <div class="framework-step">
+            <div class="step-title">WEEK 3</div>
+            <div class="step-desc"><strong>[Action].</strong> [Detail]</div>
+        </div>
+        <div class="framework-arrow">&#8595;</div>
+        <div class="framework-step">
+            <div class="step-title">WEEK 4</div>
+            <div class="step-desc"><strong>[Action].</strong> [Detail]</div>
+        </div>
+    </div>
+</div>
+
+<div class="callout warning">
+    <div class="label">Common Obstacle: "[Obstacle]"</div>
+    <p>[Solution]</p>
+</div>
+
+<hr>
+
+<!-- ============================================================
+     CLOSE (cta-box + final-quote)
+     ============================================================ -->
+<h2>The Bottom Line</h2>
+
+<p>[One-paragraph summary of the core argument]</p>
+
+<div class="cta-box">
+    <h3>[CTA Heading]</h3>
+    <p>[CTA opening]</p>
+    <ul class="cta-list">
+        <li><strong>[Action 1]</strong> — [Detail]</li>
+        <li><strong>[Action 2]</strong> — [Detail]</li>
+        <li><strong>[Action 3]</strong> — [Detail]</li>
+    </ul>
+    <p>[Closing CTA line with link placeholder]</p>
+</div>
+
+<div class="final-quote">
+    [Closing story callback — 2-3 short lines]<br><br>
+    [The punchline]
+</div>
+
+</article>
+
+</body>
+</html>

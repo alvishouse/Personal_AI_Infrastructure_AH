@@ -408,7 +408,7 @@ async function main() {
           console.error(`🗣️ MAIN CUSTOM VOICE: ${message}`);
         } else {
           // Custom completed too long, fall back to regular COMPLETED
-          const completedMatch = content.match(/🎯\s*COMPLETED:\s*(.+?)(?:\n|$)/im);
+          const completedMatch = content.match(/(?:🎯\s*)?COMPLETED:\s*(.+?)(?:\n|$)/im);
           if (completedMatch) {
             let completedText = completedMatch[1].trim();
             message = generateIntelligentResponse(lastUserQuery, content, completedText);
@@ -417,7 +417,7 @@ async function main() {
         }
       } else if (!isAgentTask) {
         // No CUSTOM COMPLETED and no agent - look for regular COMPLETED line
-        const completedMatch = content.match(/🎯\s*COMPLETED:\s*(.+?)(?:\n|$)/im);
+        const completedMatch = content.match(/(?:🎯\s*)?COMPLETED:\s*(.+?)(?:\n|$)/im);
 
         if (completedMatch) {
           // Get the raw text after the colon
@@ -458,7 +458,7 @@ async function main() {
         console.error(`🗣️ AGENT CUSTOM VOICE (fallback): ${message}`);
       } else {
         // Custom completed too long, fall back to regular COMPLETED
-        const completedMatch = taskResult.match(/🎯\s*COMPLETED:\s*(.+?)$/im);
+        const completedMatch = taskResult.match(/(?:🎯\s*)?COMPLETED:\s*(.+?)$/im);
         if (completedMatch) {
           let completedText = completedMatch[1].trim()
             .replace(/\*+/g, '')
@@ -471,7 +471,7 @@ async function main() {
       }
     } else {
       // No CUSTOM COMPLETED, look for regular COMPLETED line
-      const completedMatch = taskResult.match(/🎯\s*COMPLETED:\s*(.+?)$/im);
+      const completedMatch = taskResult.match(/(?:🎯\s*)?COMPLETED:\s*(.+?)$/im);
 
       if (completedMatch) {
         // Get exactly what the agent said after COMPLETED:
@@ -495,7 +495,7 @@ async function main() {
   // FIRST: Send voice notification if we have a message
   if (message) {
     // Align voice payload with initialize-pai-session.ts (prefer voice_id)
-    const voiceId = process.env.DA_VOICE_ID || 'default-voice-id';
+    const voiceId = process.env.DA_VOICE_ID || '21m00Tcm4TlvDq8ikWAM'; // Rachel (free tier)
     const priority = 'low';
     // Send to voice server
     await fetch('http://localhost:8888/notify', {
@@ -527,7 +527,7 @@ async function main() {
       const entry = JSON.parse(lastResponse);
       if (entry.type === 'assistant' && entry.message?.content) {
         const content = contentToText(entry.message.content);
-        const completedMatch = content.match(/🎯\s*COMPLETED:\s*(.+?)(?:\n|$)/im);
+        const completedMatch = content.match(/(?:🎯\s*)?COMPLETED:\s*(.+?)(?:\n|$)/im);
         if (completedMatch) {
           tabTitle = completedMatch[1].trim()
             .replace(/\*+/g, '')

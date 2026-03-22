@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Competitor Stopped Hiring. They Started Winning.</title>
+    <meta name="description" content="One logistics company cut inventory costs 30%, improved on-time delivery 25%, and increased retention 15% -- without adding a single person. The strategy is not a secret. It is just uncomfortable.">
+    <meta name="keywords" content="AI operations, intelligence per person, headcount scaling, workflow automation, mid-market operations">
+    <meta name="author" content="Alvis House">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Your Competitor Stopped Hiring. They Started Winning.">
+    <meta property="og:description" content="One logistics company cut inventory costs 30%, improved on-time delivery 25%, and increased retention 15% -- without adding a single person.">
+    <meta property="og:type" content="article">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+/* ============================================
+   BRAND COLOR SYSTEM
+   ============================================ */
+:root {
+    --ink: #3b546b;
+    --rust: #cf5828;
+    --slate: #7a8c9b;
+    --paper: #ece6d9;
+    --text: #2b2b2b;
+    --muted: rgba(59,84,107,.75);
+    --rule: rgba(59,84,107,.22);
+    --bg: #ffffff;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    line-height: 1.8;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* ============================================
+   ARTICLE CONTAINER
+   ============================================ */
+article {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 50px 40px;
+}
+
+/* ============================================
+   IMAGES
+   ============================================ */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5em 0;
+    display: block;
+}
+
+.featured-image {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 0 2.5em 0;
+}
+
+.inline-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 2em 0;
+    border: 1px solid var(--rule);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+h1 { font-size: 2.4em; margin-bottom: 0.3em; letter-spacing: -0.02em; }
+
+h2 {
+    font-size: 1.6em;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--ink);
+}
+
+h3 { font-size: 1.25em; margin-top: 2em; margin-bottom: 0.6em; }
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+}
+
+p { margin-bottom: 1.5em; font-size: 1.05em; }
+
+/* ============================================
+   ARTICLE HEADER
+   ============================================ */
+.article-header {
+    margin-bottom: 2.5em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.5em;
+    line-height: 1.5;
+}
+
+.meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: var(--slate);
+    margin-top: 1.5em;
+}
+
+.meta strong { color: var(--ink); }
+
+/* ============================================
+   LEAD SECTION
+   ============================================ */
+.lead-section {
+    background: rgba(59,84,107,.92);
+    border: 1px solid rgba(0,0,0,.08);
+    color: #fff;
+    padding: 2.5em;
+    margin: 2em -20px;
+    border-radius: 8px;
+}
+
+.lead-section p { color: rgba(255,255,255,.88); font-size: 1.1em; }
+.lead-section strong { color: #fff; }
+.lead-section .highlight-text { color: var(--paper); font-weight: 500; }
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+blockquote {
+    margin: 2em 0;
+    padding: 1.5em 2em;
+    background: var(--paper);
+    border-left: 4px solid var(--ink);
+    border-radius: 0 8px 8px 0;
+    color: var(--text);
+    font-style: italic;
+}
+
+blockquote p { margin-bottom: 0.5em; }
+blockquote p:last-child { margin-bottom: 0; }
+blockquote cite { display: block; font-size: 0.9em; color: var(--muted); margin-top: 1em; font-style: normal; }
+
+/* ============================================
+   CALLOUT BOXES
+   ============================================ */
+.callout {
+    background: var(--paper);
+    border: 1.5px dashed rgba(59,84,107,.5);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 2em 0;
+    position: relative;
+}
+
+.callout .label {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: rgba(59,84,107,.85);
+    margin-bottom: 10px;
+}
+
+.callout p { margin-bottom: 0.8em; }
+.callout p:last-child { margin-bottom: 0; }
+
+.callout.mechanism {
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+.callout.mechanism .label { color: var(--ink); }
+
+.callout.insight {
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+.callout.insight .label { color: var(--ink); }
+
+.callout.warning {
+    background: rgba(59,84,107,.08);
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+.callout.warning .label { color: var(--ink); }
+
+/* ============================================
+   PULL QUOTES
+   ============================================ */
+.pull-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.35em;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ink);
+    text-align: center;
+    padding: 1.5em 2em;
+    margin: 2em 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    line-height: 1.5;
+}
+
+/* ============================================
+   STATISTICS HIGHLIGHT
+   ============================================ */
+.stat-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin: 2em 0;
+    padding: 1.5em;
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+}
+
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.stat-label { font-size: 1em; color: var(--text); }
+.stat-label strong { color: var(--ink); }
+
+/* ============================================
+   FRAMEWORK BOX
+   ============================================ */
+.framework-box {
+    background: var(--paper);
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 10px;
+    border: 2px solid var(--rule);
+}
+
+.framework-box h3 { margin-top: 0; color: var(--ink); text-align: center; }
+
+.framework-visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5em 0;
+    padding: 1.5em;
+    background: rgba(255,255,255,.6);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+}
+
+.framework-step { text-align: center; flex: 1; }
+.framework-step .step-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1em; color: var(--ink); margin-bottom: 0.3em; }
+.framework-step .step-desc { font-size: 0.85em; color: var(--slate); }
+.framework-arrow { font-size: 1.5em; color: var(--slate); padding: 0 0.5em; }
+.framework-summary { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 0.9em; font-weight: 600; color: var(--ink); margin-top: 1em; margin-bottom: 0; }
+
+/* ============================================
+   CASE STUDY BOX
+   ============================================ */
+.case-study {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+.case-study h4 { color: var(--ink); margin-top: 0; margin-bottom: 1em; font-size: 0.9em; }
+
+.case-study .approach-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    margin: 1em 0;
+}
+
+.case-study .approach { padding: 1em; border-radius: 6px; }
+.case-study .approach.traditional { background: #ffffff; border-left: 3px solid var(--slate); }
+.case-study .approach.amplification { background: #ffffff; border-left: 3px solid var(--ink); }
+
+.case-study .approach h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.5em 0;
+}
+
+.case-study .approach.traditional h5 { color: var(--slate); }
+.case-study .approach.amplification h5 { color: var(--ink); }
+.case-study .approach p { font-size: 0.95em; margin: 0; }
+.case-study .strategy { margin: 1em 0; font-size: 0.95em; }
+
+.case-study .result {
+    background: var(--ink);
+    padding: 1em;
+    border-radius: 6px;
+    margin-top: 1em;
+}
+
+.case-study .result strong { color: #fff; }
+.case-study .result p { margin: 0; font-size: 0.95em; color: rgba(255,255,255,.9); }
+
+/* ============================================
+   RESEARCH TABLE
+   ============================================ */
+.research-table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.9em; }
+.research-table th { font-family: 'Montserrat', sans-serif; background: var(--ink); color: #fff; padding: 1em; text-align: left; font-weight: 600; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; }
+.research-table th:first-child { border-radius: 6px 0 0 0; }
+.research-table th:last-child { border-radius: 0 6px 0 0; }
+.research-table td { padding: 1em; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.research-table tr:nth-child(even) { background: rgba(255,255,255,.4); }
+
+/* ============================================
+   LISTS
+   ============================================ */
+ul, ol { margin: 1.5em 0; padding-left: 1.5em; }
+li { margin-bottom: 0.8em; font-size: 1.05em; }
+
+/* ============================================
+   LINKS
+   ============================================ */
+a { color: var(--ink); text-decoration: none; border-bottom: 1px solid rgba(59,84,107,.3); transition: all 0.2s ease; }
+a:hover { color: var(--rust); border-bottom-color: var(--rust); }
+
+/* ============================================
+   EMPHASIS
+   ============================================ */
+strong { font-weight: 600; color: var(--ink); }
+em { font-style: italic; }
+
+/* ============================================
+   HORIZONTAL RULE
+   ============================================ */
+hr { border: none; border-top: 1px solid var(--rule); margin: 3em 0; }
+
+/* ============================================
+   CTA BOX
+   ============================================ */
+.cta-box {
+    background: rgba(59,84,107,.92);
+    border: 1px solid rgba(0,0,0,.08);
+    color: #fff;
+    padding: 2.5em;
+    margin: 3em 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta-box h3 { color: #fff; margin-top: 0; font-size: 1.4em; }
+.cta-box p { color: rgba(255,255,255,.88); margin-bottom: 1em; }
+.cta-box .cta-list { text-align: left; max-width: 520px; margin: 1.5em auto; padding-left: 1.5em; }
+.cta-box .cta-list li { color: rgba(255,255,255,.88); margin-bottom: 1em; }
+.cta-box .cta-list strong { color: #fff; }
+.cta-box strong { color: #fff; }
+
+/* ============================================
+   FINAL QUOTE
+   ============================================ */
+.final-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    color: var(--ink);
+    padding: 2em;
+    margin: 2em 0;
+    line-height: 1.5;
+}
+
+.final-quote .highlight { color: var(--ink); font-weight: 600; }
+.final-quote strong { color: var(--ink); }
+
+/* ============================================
+   AUTHOR BOX
+   ============================================ */
+.author-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+    padding: 2em;
+    background: var(--paper);
+    border-radius: 10px;
+    margin-top: 3em;
+    border: 1px solid var(--rule);
+}
+
+.author-box .author-info h4 { margin: 0 0 0.5em 0; color: var(--ink); text-transform: none; letter-spacing: 0; font-size: 1em; }
+.author-box .author-info p { font-size: 0.95em; color: var(--text); margin: 0; }
+.author-box .author-info p em { color: var(--slate); }
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 700px) {
+    body { padding: 20px 12px; }
+    article { padding: 30px 20px; }
+    h1 { font-size: 1.9em; }
+    h2 { font-size: 1.4em; }
+    .lead-section, .cta-box { margin-left: -10px; margin-right: -10px; border-radius: 0; padding: 2em 1.5em; }
+    .case-study .approach-comparison { grid-template-columns: 1fr; }
+    .framework-visual { flex-direction: column; gap: 1em; }
+    .framework-arrow { transform: rotate(90deg); }
+    .stat-highlight { flex-direction: column; text-align: center; }
+}
+    </style>
+</head>
+<body>
+
+<article>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <p class="eyebrow">The 30-Point Gap Between AI Adopters and Everyone Else</p>
+        <h1>Your Competitor Stopped Hiring. They Started Winning.</h1>
+        <p class="subtitle">One logistics company cut inventory costs 30%, improved on-time delivery 25%, and increased retention 15% -- without adding a single person. The strategy is not a secret. It is just uncomfortable.</p>
+        <p class="meta">By <strong>Alvis House</strong> | February 2026 | 15 min read</p>
+    </header>
+
+    <!-- Featured Image -->
+    <img src="./10-images/featured.png" alt="Two strategic paths -- one scaling through headcount, the other through intelligence per person" class="featured-image">
+
+    <!-- Lead Section: Opening Hook -->
+    <section class="lead-section">
+        <p><strong>Your CFO is accidentally right.</strong></p>
+        <p>Everyone says "do more with less" is a budget excuse. A corporate mantra designed to squeeze blood from a stone. That is exactly why most operations teams stay on the treadmill -- running faster, hiring more, and watching margins shrink anyway.</p>
+        <p>This is for operations leaders who want to scale output without scaling headcount but feel trapped between a CFO who says no and a team that is already drowning.</p>
+        <p>If you have ever struggled with:</p>
+        <ul>
+            <li><span class="highlight-text">Headcount requests denied while workload doubles</span></li>
+            <li><span class="highlight-text">Your best people burning out on data entry, report formatting, and copy-paste workflows</span></li>
+            <li><span class="highlight-text">Watching competitors announce results you cannot match no matter how many hours your team works</span></li>
+        </ul>
+        <p>You are in the right place.</p>
+        <p>Because what if you could handle 55% more work with the same team -- redirect the salary of one unfilled position into intelligence that multiplies everyone's output -- and show your board measurable results in 30 to 90 days instead of 18-month transformation timelines?</p>
+        <p><strong>Here is how.</strong></p>
+    </section>
+
+    <hr>
+
+    <!-- Section: Expert Story -->
+    <h2>How $2.4 Million Walks Out the Door</h2>
+
+    <img src="./10-images/inline-01-journey-map.png" alt="Journey from manual operations chaos to intelligent workflow design" class="inline-image">
+
+    <h4>The Pattern</h4>
+    <p>Researching how mid-market companies respond to operational pressure, the same story keeps surfacing. Different industries, different company sizes, different leadership teams -- but the same sequence of events every time. More work arrives. Headcount requests get denied. The team absorbs the load until something breaks.</p>
+    <p>The math everyone is using is wrong.</p>
+
+    <h4>The Struggle</h4>
+    <p>One mid-market distribution company became the clearest example. Forty million in revenue. Growing fast. The VP of Operations brought the same request to leadership three quarters in a row: five more analysts to handle order processing, inventory reconciliation, and customer reporting.</p>
+    <p>Three times, the CFO said no.</p>
+    <p>What happened next is what always happens. The VP absorbed the work himself. His team started pulling 55-hour weeks. Then 60. Their best inventory analyst quit. A major customer complained about shipping accuracy. The VP started updating his resume.</p>
+    <p>That company was bleeding $2.4 million a year in operational inefficiency. Not because the team was bad. Because the team was doing work that should never have required human hands.</p>
+    <p>They were copying data from emails into spreadsheets. Reformatting reports for three different stakeholders. Manually reconciling inventory across two systems that should have talked to each other. Smart, talented people doing the operational equivalent of carrying water in buckets when a pipe was available.</p>
+
+    <h4>The Turning Point</h4>
+    <p>The shift happened when leadership stopped asking "How many people do we need?" and started asking "How much intelligence does each person need?"</p>
+    <p>That single question changed the trajectory.</p>
+
+    <h4>The Results</h4>
+    <p>Instead of hiring five analysts at $75,000 each, the company redirected one unfilled position's salary into an intelligence layer. Automated data flows between systems. Predictive alerts for inventory exceptions. Auto-generated reports that used to take two days of manual assembly.</p>
+    <p>Within 90 days, the same team handled 40% more order volume. Error rates dropped by half. The VP who was updating his resume got promoted to Chief Operating Officer the following year.</p>
+
+    <div class="pull-quote">
+        You do not need more people. You need more intelligence per person. And the gap between companies that understand this and companies that do not is accelerating every quarter.
+    </div>
+
+    <hr>
+
+    <!-- Section: Framework -->
+    <h2>The Intelligence-Per-Person Framework</h2>
+
+    <img src="./10-images/inline-02-staircase.png" alt="The Intelligence-Per-Person Framework -- four steps from audit to compound intelligence scaling" class="inline-image">
+
+    <p>Here is the truth: the companies pulling ahead are not spending more. They are spending differently. They redirected the headcount budget they were never going to get into intelligence that multiplies what their existing team can do.</p>
+
+    <div class="framework-box">
+        <h3>The Intelligence-Per-Person Framework</h3>
+        <div class="framework-visual">
+            <div class="framework-step">
+                <div class="step-title">AUDIT</div>
+                <div class="step-desc">Map where your team bleeds hours to repetitive work</div>
+            </div>
+            <div class="framework-arrow">→</div>
+            <div class="framework-step">
+                <div class="step-title">REDIRECT</div>
+                <div class="step-desc">Turn denied headcount into intelligence investment</div>
+            </div>
+            <div class="framework-arrow">→</div>
+            <div class="framework-step">
+                <div class="step-title">LAYER</div>
+                <div class="step-desc">Amplify your existing team -- don't replace them</div>
+            </div>
+            <div class="framework-arrow">→</div>
+            <div class="framework-step">
+                <div class="step-title">COMPOUND</div>
+                <div class="step-desc">Use early wins to fund the next intelligence layer</div>
+            </div>
+        </div>
+        <p class="framework-summary">Linear Scaling → Intelligence Scaling → Permanent Competitive Advantage</p>
+    </div>
+
+    <h3>Step 1: Audit the Repetition Tax — Know Where Your Team Bleeds Hours</h3>
+
+    <div class="callout mechanism">
+        <div class="label">Core Concept</div>
+        <p><strong>Every operations team carries the Repetition Tax</strong> -- the hours burned each week on tasks that follow a predictable pattern. Data entry. Report assembly. Cross-system reconciliation. Status updates that require pulling numbers from four different tools.</p>
+        <p>Most leaders underestimate this tax by 40 to 60%. Skip this step and you will automate the wrong things -- spending money on tools that solve a problem nobody had.</p>
+    </div>
+
+    <p><strong>Example:</strong> A 150-employee e-commerce company did this audit and found their engineering team spent 35% of its time on deployment processes and manual testing. Not building. Not improving. Deploying and testing. That single insight redirected their entire automation strategy.</p>
+
+    <h3>Step 2: Redirect the Headcount Budget — Turn Denied Positions Into Intelligence Investment</h3>
+    <p>This is where the CFO becomes your ally instead of your obstacle.</p>
+    <p>Take the salary of one unfilled position -- the one you are not getting approved -- and propose redirecting it into workflow intelligence. You are not asking for new money. You are reallocating money that was already earmarked but going nowhere.</p>
+    <p>A single $75,000 salary funds a meaningful intelligence layer. Automated data flows. Predictive exception handling. Self-generating reports. AI-assisted decision support.</p>
+    <p>The conversation with finance shifts from "I need more people" to "I can deliver more output at the same cost." No CFO argues against that.</p>
+    <p><strong>Example:</strong> A logistics company redirected the budget of two unfilled positions into automated supply chain management. The result: 30% reduction in inventory holding costs, 25% improvement in on-time deliveries, and 15% increase in customer retention. The headcount they did not hire became the margin they kept.</p>
+
+    <h3>Step 3: Layer Intelligence Onto Existing Operations — Amplify People, Don't Replace Them</h3>
+    <p>This is not about ripping out your current systems. It is about adding an intelligence layer on top of what you already have.</p>
+    <p>Think about it like electricity. When electricity became cheap and reliable, the companies that won were not the ones building power plants. They were the ones building appliances -- products that created new value using commodity power. Your ERP, your CRM, your spreadsheets -- that is your infrastructure. The intelligence layer is the appliance that makes it useful.</p>
+    <p>Your people stop being data processors and start being decision makers. Same team. Dramatically higher output.</p>
+
+    <h3>Step 4: Compound the Advantage — Use Early Wins to Fund the Next Layer</h3>
+    <p>Here is where the gap between adopters and everyone else becomes permanent.</p>
+    <p>The first intelligence layer generates savings and capacity. You take those results -- measurable, documented, real -- back to leadership. Now you are not asking for budget. You are showing ROI and requesting expansion.</p>
+    <p>Each layer compounds. Your team gets more capable. Your operations get more intelligent. Your margins improve because revenue grows without proportional cost.</p>
+    <p><strong>Example:</strong> The mid-market e-commerce company that started with deployment automation eventually saved $600,000 annually and increased deployment frequency 15x. Each win funded the next layer. Within two years, they operated at a scale that would have required triple the headcount under the old model.</p>
+
+    <hr>
+
+    <!-- Section: Research -->
+    <h2>The Research Backs This Up</h2>
+
+    <div class="stat-highlight">
+        <div class="stat-number">55%</div>
+        <div class="stat-label"><strong>more work handled by early AI adopters</strong> vs. only 25% for laggards -- a 30-point gap that is not closing. It is accelerating. <em>(McKinsey State of AI, 2025)</em></div>
+    </div>
+
+    <p>McKinsey found that redesign of workflows -- not technology deployment -- has the biggest effect on whether organizations see EBIT impact from AI. Companies that focused on <em>how work gets done</em> rather than <em>which tools to buy</em> captured disproportionate value. And only 6% of organizations have achieved 5% or greater EBIT impact from AI -- meaning the window to gain competitive advantage is still wide open for those willing to move.</p>
+
+    <div class="stat-highlight">
+        <div class="stat-number">18%</div>
+        <div class="stat-label"><strong>cost savings achieved by intelligence-driven automation leaders</strong> -- double the 9% achieved by basic process automation. The lesson: basic automation is table stakes. Intelligence-layered automation is where the margin advantage lives. <em>(Bain &amp; Company Automation Scorecard)</em></div>
+    </div>
+
+    <hr>
+
+    <!-- Section: Real-World Applications -->
+    <h2>Real-World Applications</h2>
+
+    <img src="./10-images/inline-03-flywheel.png" alt="Intelligence-Per-Person Framework visualized as an accelerating flywheel" class="inline-image">
+
+    <div class="case-study">
+        <h4>Example 1: Netflix — Building a Billion-Dollar Engine on Commodity Infrastructure</h4>
+        <div class="approach-comparison">
+            <div class="approach traditional">
+                <h5>Traditional Approach</h5>
+                <p>Build and own data centers. Control infrastructure as a competitive advantage. Scale capacity through capital expenditure.</p>
+            </div>
+            <div class="approach amplification">
+                <h5>Intelligence Approach</h5>
+                <p>Complete migration to AWS commodity infrastructure. Pour resources into <strong>what actually creates value: recommendation algorithms, content delivery optimization, and user experience intelligence.</strong></p>
+            </div>
+        </div>
+        <p class="strategy"><strong>The insight:</strong> Treat infrastructure as a utility. Build proprietary value only at the intelligence layer.</p>
+        <div class="result">
+            <p><strong>Result:</strong> Between 2007 and 2015, content streaming hours increased 1,000x. Netflix became a $150 billion company not by owning infrastructure but by owning the intelligence layer on top of it. The competitive moat is never in the pipes.</p>
+        </div>
+    </div>
+
+    <div class="case-study">
+        <h4>Example 2: A Logistics Company That Stopped Hiring and Started Winning</h4>
+        <div class="approach-comparison">
+            <div class="approach traditional">
+                <h5>Before</h5>
+                <p>Manual supply chain management. Routine inventory errors. Inconsistent on-time delivery. Customer churn climbing. Operations team requesting more analysts every quarter.</p>
+            </div>
+            <div class="approach amplification">
+                <h5>After Intelligence Layer</h5>
+                <p>Automated supply chain with predictive analytics. <strong>Same infrastructure. Same team. New intelligence.</strong> Zero new hires.</p>
+            </div>
+        </div>
+        <div class="result">
+            <p><strong>Result:</strong> 30% reduction in inventory holding costs. 25% improvement in on-time deliveries. 15% increase in customer retention. The team went from data entry operators to strategic logistics managers -- same headcount, completely different output.</p>
+        </div>
+    </div>
+
+    <div class="case-study">
+        <h4>Example 3: When I Applied This to Content Operations</h4>
+        <div class="approach-comparison">
+            <div class="approach traditional">
+                <h5>The Challenge</h5>
+                <p>15 to 20 hours per cornerstone article. Research, synthesis, drafting, editing, extraction into multiple platforms. Good work -- unsustainable pace.</p>
+            </div>
+            <div class="approach amplification">
+                <h5>The Intelligence Layer</h5>
+                <p>Applied the four-step framework to my own workflow. Audited hours. Redirected tool budget from three underused SaaS into AI-powered research and drafting. <strong>Focused human judgment on voice, strategy, and insight.</strong></p>
+            </div>
+        </div>
+        <div class="result">
+            <p><strong>Result:</strong> Same quality. Three times the output. The framework scales down to a team of one and up to teams of hundreds. The principle is identical.</p>
+        </div>
+    </div>
+
+    <div class="case-study">
+        <h4>Example 4: The Morning Report That Nobody Needed to Build</h4>
+        <div class="approach-comparison">
+            <div class="approach traditional">
+                <h5>Wrong Approach</h5>
+                <p>Hire a junior analyst at $55,000 to spend 2 hours every Monday pulling numbers from three systems, pasting into a spreadsheet, and emailing to leadership.</p>
+            </div>
+            <div class="approach amplification">
+                <h5>Right Approach</h5>
+                <p>Layer intelligence onto existing systems. <strong>Auto-pull. Auto-format. Auto-distribute Sunday night.</strong> The analyst you did not hire is the margin you kept.</p>
+            </div>
+        </div>
+        <div class="result">
+            <p><strong>Result:</strong> The manager gets Monday morning back for strategic work. Total cost: a fraction of that analyst's salary. The Intelligence-Per-Person Framework targets exactly this kind of Repetition Tax.</p>
+        </div>
+    </div>
+
+    <div class="callout warning">
+        <div class="label">Common Mistake</div>
+        <p><strong>A $60M manufacturing company built a custom AI scheduling system from scratch.</strong> Six developers. Eighteen months. $1.2 million budget. At month eighteen, they had an incomplete prototype -- while a competitor bought a vertical AI scheduling solution for $80,000/year and was operational in six weeks.</p>
+        <p>In 2024, 47% of AI solutions were built internally. By 2025, 76% are purchased. The Repetition Tax of building infrastructure you could buy is one of the most expensive mistakes a mid-market company can make.</p>
+    </div>
+
+    <hr>
+
+    <!-- Section: Myth vs Truth -->
+    <h2>What Most People Get Wrong</h2>
+
+    <img src="./10-images/inline-04-myth-vs-truth.png" alt="Myth versus truth comparison -- adding headcount versus adding intelligence per person" class="inline-image">
+
+    <p><strong>The Myth:</strong> Scaling operations requires proportional headcount growth. Twice the revenue means twice the team. Three new product lines mean three new departments.</p>
+
+    <p><strong>Why They Believe It:</strong> Because it worked for fifty years. The industrial model was built on this math. More output required more hands. Every MBA program taught it. Every operations playbook assumed it. And when you are underwater with work, the instinct is visceral -- "I need help" means "I need another person."</p>
+
+    <p><strong>The Hidden Cost:</strong> This belief leads to margin compression that worsens with every hire, your best employees burned out doing work that should not require human hands, and a permanent speed disadvantage against competitors who invest in intelligence per person instead of headcount per function.</p>
+
+    <div class="pull-quote">
+        Headcount scaling is linear. Intelligence scaling is exponential. Every person you add creates a fixed increase in capacity. Every intelligence layer you add multiplies the capacity of everyone already on the team.
+    </div>
+
+    <p><strong>The Truth:</strong> The directive "do more with less" is correct. The method is wrong.</p>
+    <p>The problem was never that you need fewer people. The problem is you need more intelligence per person. AI capabilities reduce manual effort by 60 to 70%. Early adopters handle 55% more work. The gap is real and it is compounding.</p>
+    <p>It is not a budget problem. It is a model problem. When you shift from "I need headcount" to "I need intelligence per person," the constraint dissolves. The CFO becomes your partner. The team becomes more capable instead of more exhausted.</p>
+
+    <hr>
+
+    <!-- Section: Implementation -->
+    <h2>How to Implement This (Starting Today)</h2>
+
+    <div class="cta-box">
+        <h3>Your 4-Week Implementation Plan</h3>
+        <p>You do not need a transformation budget. You need one week of data and one conversation.</p>
+        <ol class="cta-list">
+            <li><strong>Week 1 — Audit the Repetition Tax:</strong> Have every team member track their time for five days. Categorize each task: "requires human judgment" or "follows a predictable pattern." Most leaders find 30–50% of total hours are pattern-based.</li>
+            <li><strong>Week 2 — Identify the Highest-Value Redirect:</strong> Rank pattern-based tasks by hours consumed and business impact of errors. Pick one. Not five. Not ten. One.</li>
+            <li><strong>Week 3 — Build the Business Case:</strong> Calculate the cost of your target process. Research purchased AI solutions. Present a one-page comparison: "Cost of doing nothing vs. cost of intelligence layer." Frame it as redirecting an unfilled position's salary, not new spending.</li>
+            <li><strong>Week 4 — Deploy the First Layer:</strong> Implement. Start with a 2-week parallel run alongside the manual process. Validate accuracy. Cut over. Document everything -- this is the proof that funds Layer Two.</li>
+        </ol>
+        <p><strong>This is how you shift the conversation from "should we do this?" to "where do we do this next?"</strong></p>
+    </div>
+
+    <h3>Quick-Start Checklist</h3>
+    <p><strong>Before you begin:</strong></p>
+    <ul>
+        <li>Identify your team's top 3 time-consuming pattern-based tasks (you know them -- they are the ones your team complains about)</li>
+        <li>Calculate the loaded cost per hour of the people doing those tasks</li>
+        <li>Identify one unfilled or upcoming headcount request you can redirect</li>
+    </ul>
+
+    <p><strong>Your first 24 hours:</strong></p>
+    <ul>
+        <li>Send your team a simple time-tracking template -- a shared spreadsheet with task name, time spent, and "judgment required: yes/no"</li>
+        <li>Block 30 minutes on your calendar this Friday to review the first week's data</li>
+        <li>Research 3 vertical AI or automation solutions specific to your industry and your highest-pain process</li>
+    </ul>
+
+    <div class="callout mechanism">
+        <div class="label">On Resistance</div>
+        <p><strong>Do not expect your team to immediately embrace the change.</strong> People fear what they do not understand. Expect resistance to melt once people see the intelligence layer handling the work they hated doing.</p>
+        <p>Nobody mourns copy-paste tasks.</p>
+    </div>
+
+    <hr>
+
+    <!-- Closing -->
+    <h2>The Bottom Line</h2>
+    <p>The Intelligence-Per-Person Framework comes down to this:</p>
+    <p>Stop asking for more people. Start asking for more intelligence per person.</p>
+    <p>The companies winning right now are not bigger. They are not spending more. They invested differently -- redirecting headcount budgets into intelligence layers that multiply what their existing teams can do. Early adopters handle 55% more work. Laggards handle 25%. That gap compounds every quarter.</p>
+    <p>The people who win at this are not technical wizards. They are not AI experts. They are operations leaders who are tired of the headcount treadmill and willing to try a different kind of investment. They are the ones who redirect instead of request.</p>
+
+    <p><strong>If you do nothing else, start here:</strong> Track your team's time for one week. Separate "requires human judgment" from "follows a predictable pattern." When you see the Repetition Tax number, you will not be able to unsee it.</p>
+
+    <p><strong>Your next step:</strong> Take the one process that bleeds the most hours and build a one-page business case for replacing it with intelligence. Frame it as a redirect of existing budget, not new spending. Present it to your CFO this month.</p>
+
+    <hr>
+
+    <p><em>If this shifted how you think about scaling operations, share it with an operations leader who is stuck on the headcount treadmill. They need to see this.</em></p>
+
+    <div class="final-quote">
+        <span class="highlight">The headcount you do not hire</span><br>
+        becomes the competitive advantage<br>
+        you cannot lose.
+    </div>
+
+    <!-- Author Box -->
+    <div class="author-box">
+        <div class="author-info">
+            <h4>About the Author</h4>
+            <p><strong>Alvis House</strong> helps mid-market operations leaders scale output without scaling headcount. After years inside enterprise technology implementations, he built the Intelligence-Per-Person Framework to give operations teams a practical path from headcount treadmill to intelligent leverage.</p>
+            <p style="margin-top: 1em;"><em>Follow for weekly insights on AI-powered operations strategy for mid-market leaders.</em></p>
+        </div>
+    </div>
+
+</article>
+
+</body>
+</html>

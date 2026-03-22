@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DARI Framework — Editorial Infographic v4</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy:   #1a1f2e;
+  --orange: #e85d04;
+  --teal:   #0d9488;
+  --amber:  #d97706;
+  --steel:  #374151;
+  --ink:    #111827;
+  --offwhite: #f7f6f3;   /* base background */
+  --white:  #ffffff;
+  --red:    #c0392b;
+  --teal-light: #edfaf8;
+  --border: #e2e0db;
+}
+
+body { background: #d9d6cf; display: flex; justify-content: center; padding: 24px; }
+
+.ig {
+  width: 540px;
+  background: var(--offwhite);
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+.ig-header {
+  background: var(--navy);
+  padding: 28px 32px 22px;
+}
+.header-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 11px;
+}
+.header-h1 {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.08;
+  color: white;
+  margin-bottom: 6px;
+}
+.header-h1 em {
+  color: var(--amber);
+  font-style: italic;
+}
+.header-sub {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
+  margin-top: 6px;
+}
+
+/* ── SECTION WRAPPER ─────────────────────────────── */
+.ig-section {
+  background: var(--white);
+  padding: 20px 28px;
+  margin-bottom: 3px;
+}
+
+.section-title {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 7px;
+  margin-bottom: 15px;
+  border-bottom: 2.5px solid var(--ink);
+}
+
+/* ── ICON BADGES ─────────────────────────────────── */
+/* Colored rounded-square badges — the visual weight of the reference */
+.ibadge {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.ibadge svg { display: block; }
+.ibadge.teal   { background: var(--teal); }
+.ibadge.orange { background: var(--orange); }
+.ibadge.amber  { background: var(--amber); }
+.ibadge.navy   { background: var(--navy); }
+.ibadge.red    { background: var(--red); }
+.ibadge.green  { background: #059669; }
+.ibadge.steel  { background: var(--steel); }
+
+/* Small compare badges */
+.cbadge {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.cbadge.r { background: var(--red); }
+.cbadge.g { background: var(--teal); }
+
+/* ── THE PERFORMANCE GAP ─────────────────────────── */
+.gap-row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;   /* both children grow to same height */
+}
+.gap-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Comparison — flex: 1 so it fills gap-main height */
+.comparison {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.compare-col {
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+}
+.compare-col.bad  { background: #fff8f7; }
+.compare-col.good { background: #f5fefb; border-left: 1px solid var(--border); }
+
+.compare-head {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.compare-col.bad  .compare-head { color: var(--red);  border-color: var(--red); }
+.compare-col.good .compare-head { color: var(--teal); border-color: var(--teal); }
+
+.compare-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-bottom: 9px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #374151;
+}
+
+/* Reality Check box */
+.reality-check {
+  width: 150px;
+  flex-shrink: 0;
+  border: 2px solid var(--teal);
+  border-radius: 5px;
+  padding: 12px;
+  background: var(--teal-light);
+  display: flex;
+  flex-direction: column;
+}
+.rc-label {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.rc-source { font-size: 8px; color: #6b7280; margin-top: 2px; margin-bottom: 10px; }
+.rc-big {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.rc-desc { font-size: 8.5px; color: var(--ink); line-height: 1.4; margin-bottom: 10px; }
+.rc-hr { height: 1px; background: var(--teal); opacity: 0.3; margin: 6px 0 10px; }
+.rc-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.rc-half { text-align: center; }
+.rc-num { font-size: 22px; font-weight: 900; line-height: 1; }
+.rc-num.g { color: var(--teal); }
+.rc-num.r { color: var(--red); }
+.rc-caption { font-size: 7.5px; color: #6b7280; line-height: 1.35; margin-top: 2px; }
+
+/* ── DARI STRIP ──────────────────────────────────── */
+.dari-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--ink);
+  margin: 16px -28px 0;
+}
+.dari-step {
+  padding: 10px 6px 11px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.dari-step:last-child { border-right: none; }
+.dari-letter {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: var(--amber);
+  line-height: 1;
+}
+.dari-verb {
+  display: block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-top: 2px;
+}
+
+/* ── STAGE GRID 2×2 ──────────────────────────────── */
+.stage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+.stage-card {
+  background: var(--offwhite);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.stage-hd {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px 8px;
+}
+.stage-hd.t { background: var(--teal); }
+.stage-hd.o { background: var(--orange); }
+.stage-hd.a { background: var(--amber); }
+.stage-hd.n { background: var(--navy); }
+
+/* Stage header icon: white-tinted badge */
+.stage-hd-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stage-hd-name {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  line-height: 1;
+}
+.stage-hd-sub {
+  font-size: 8px;
+  color: rgba(255,255,255,0.72);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+.stage-body { padding: 10px 10px 8px; }
+.stage-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+.stage-item:last-of-type { margin-bottom: 4px; }
+.sit-title { font-size: 9.5px; font-weight: 700; color: var(--ink); display: block; line-height: 1.2; }
+.sit-sub   { font-size: 8.5px; font-weight: 400; color: #555; display: block; line-height: 1.35; margin-top: 1px; }
+.stage-callout {
+  margin-top: 8px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 8.5px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+.stage-callout.a { background: var(--amber); }
+.stage-callout.s { background: var(--steel); }
+
+/* ── QUESTIONS ───────────────────────────────────── */
+.ig-questions {
+  background: var(--ink);
+  padding: 18px 28px 20px;
+  margin-bottom: 3px;
+}
+.q-title {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 13px;
+}
+.q-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 9px;
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.45;
+}
+.q-arrow {
+  color: var(--amber);
+  font-weight: 900;
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+/* ── BOTTOM LINE ─────────────────────────────────── */
+.ig-bottom {
+  background: var(--steel);
+  padding: 18px 28px 20px;
+  margin-bottom: 3px;
+}
+.bl-title {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+.bl-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.bl-col { border-top: 2px solid; padding-top: 9px; }
+.bl-col:nth-child(1) { border-color: var(--teal); }
+.bl-col:nth-child(2) { border-color: var(--orange); }
+.bl-col:nth-child(3) { border-color: var(--amber); }
+.bl-col-head { font-size: 8.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: white; margin-bottom: 4px; }
+.bl-col-text { font-size: 9.5px; color: rgba(255,255,255,0.65); line-height: 1.45; }
+.bl-quote {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 12px;
+  font-size: 11px;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  line-height: 1.55;
+}
+
+/* ── FOOTER ──────────────────────────────────────── */
+.ig-footer {
+  background: var(--navy);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.footer-ctas { flex: 1; }
+.footer-line {
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-line:last-child { margin-bottom: 0; }
+.footer-badge {
+  width: 14px; height: 14px; border-radius: 3px;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.footer-badge.li { background: #0077b5; }
+.footer-badge.nl { background: var(--amber); }
+.footer-url { color: var(--amber); }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <div class="ig-header">
+    <div class="header-kicker">Process Discipline for AI Delegation</div>
+    <div class="header-h1">Lean gave you PDCA.<br>AI needs <em>DARI.</em></div>
+    <div class="header-sub">The method high performers use before they deploy.</div>
+  </div>
+
+  <!-- ═══════════ THE PERFORMANCE GAP ═══════════ -->
+  <div class="ig-section">
+    <div class="section-title">The Performance Gap</div>
+    <div class="gap-row">
+
+      <!-- Comparison — same height as reality check via align-items:stretch -->
+      <div class="gap-main">
+        <div class="comparison">
+          <div class="compare-col bad">
+            <div class="compare-head">
+              <div class="cbadge r">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <line x1="2.5" y1="2.5" x2="7.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                  <line x1="7.5" y1="2.5" x2="2.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              Most teams
+            </div>
+            <div class="compare-item">
+              <div class="cbadge r">
+                <!-- flame/explosion = chaotic deploy -->
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2c0 4-4 6-4 10a4 4 0 008 0c0-4-4-6-4-10zm0 14a2 2 0 01-2-2c0-2 2-3 2-5 0 2 2 3 2 5a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              Deploy AI, fix problems later
+            </div>
+            <div class="compare-item">
+              <div class="cbadge r">
+                <!-- broken link -->
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M8 12h2m4 0h2"/>
+                  <path d="M6.5 8.5A4 4 0 006 17h2"/>
+                  <path d="M17.5 8.5A4 4 0 0118 17h-2"/>
+                </svg>
+              </div>
+              No process for delegation
+            </div>
+            <div class="compare-item">
+              <div class="cbadge r">
+                <!-- recycle/loop = treating like software iterations -->
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                  <polyline points="1,4 1,10 7,10"/>
+                  <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+                </svg>
+              </div>
+              Treat AI like regular software
+            </div>
+          </div>
+          <div class="compare-col good">
+            <div class="compare-head">
+              <div class="cbadge g">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round">
+                  <polyline points="4,12 9,17 20,6"/>
+                </svg>
+              </div>
+              High performers
+            </div>
+            <div class="compare-item">
+              <div class="cbadge g">
+                <!-- map/route = map before automating -->
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                  <polygon points="3,6 3,20 9,17 15,20 21,17 21,4 15,7 9,4"/>
+                  <line x1="9" y1="4" x2="9" y2="17"/>
+                  <line x1="15" y1="7" x2="15" y2="20"/>
+                </svg>
+              </div>
+              Map work before automating it
+            </div>
+            <div class="compare-item">
+              <div class="cbadge g">
+                <!-- nodes connected = explicit handoff design -->
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                  <circle cx="5" cy="12" r="3" fill="white" opacity="0.3"/>
+                  <circle cx="19" cy="12" r="3" fill="white" opacity="0.3"/>
+                  <line x1="8" y1="12" x2="16" y2="12"/>
+                  <circle cx="12" cy="12" r="2" fill="white"/>
+                </svg>
+              </div>
+              Design every handoff explicitly
+            </div>
+            <div class="compare-item">
+              <div class="cbadge g">
+                <!-- trending up with eye = track drift -->
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                  <polyline points="2,18 8,12 12,15 18,7 22,9"/>
+                  <polyline points="17,7 22,7 22,12"/>
+                </svg>
+              </div>
+              Track drift, not just errors
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reality Check Sidebar -->
+      <div class="reality-check">
+        <div class="rc-label">Reality Check</div>
+        <div class="rc-source">McKinsey, 2025</div>
+        <div class="rc-big">2.8×</div>
+        <div class="rc-desc">more likely to redesign workflows before deploying AI</div>
+        <div class="rc-hr"></div>
+        <div class="rc-pair">
+          <div class="rc-half">
+            <div class="rc-num g">55%</div>
+            <div class="rc-caption">high performers redesign first</div>
+          </div>
+          <div class="rc-half">
+            <div class="rc-num r">20%</div>
+            <div class="rc-caption">laggards do the same</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════ THE DARI FRAMEWORK ═══════════ -->
+  <div class="ig-section">
+    <div class="section-title">The DARI Framework</div>
+
+    <!-- Letter strip -->
+    <div class="dari-strip">
+      <div class="dari-step"><span class="dari-letter">D</span><span class="dari-verb">Discover</span></div>
+      <div class="dari-step"><span class="dari-letter">A</span><span class="dari-verb">Architect</span></div>
+      <div class="dari-step"><span class="dari-letter">R</span><span class="dari-verb">Run</span></div>
+      <div class="dari-step"><span class="dari-letter">I</span><span class="dari-verb">Improve</span></div>
+    </div>
+
+    <!-- 2×2 stage grid -->
+    <div class="stage-grid">
+
+      <!-- ── DISCOVER ── -->
+      <div class="stage-card">
+        <div class="stage-hd t">
+          <div class="stage-hd-badge">
+            <!-- Magnifying glass with + inside = active discovery -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+              <circle cx="10.5" cy="10.5" r="6.5"/>
+              <line x1="15.5" y1="15.5" x2="21" y2="21"/>
+              <line x1="7.5" y1="10.5" x2="13.5" y2="10.5" stroke-width="2"/>
+              <line x1="10.5" y1="7.5" x2="10.5" y2="13.5" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stage-hd-name">Discover</div>
+            <div class="stage-hd-sub">Map before you automate</div>
+          </div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-item">
+            <div class="ibadge teal">
+              <!-- Branching fork = boundary between human & agent -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <circle cx="12" cy="4" r="2" fill="white" stroke="none"/>
+                <line x1="12" y1="6" x2="12" y2="12"/>
+                <path d="M12 12 L6 18"/>
+                <path d="M12 12 L18 18"/>
+                <circle cx="6" cy="19" r="1.5" fill="white" stroke="none"/>
+                <circle cx="18" cy="19" r="1.5" fill="white" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Boundary Mapping</span>
+              <span class="sit-sub">Every task crossing a human-agent line</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge teal">
+              <!-- Box with arrows in/out = I/O specification -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <rect x="7" y="7" width="10" height="10" rx="1.5" stroke="white" fill="none"/>
+                <line x1="2" y1="9" x2="7" y2="9"/>
+                <polyline points="4,7 2,9 4,11"/>
+                <line x1="17" y1="15" x2="22" y2="15"/>
+                <polyline points="20,13 22,15 20,17"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">I/O Spec</span>
+              <span class="sit-sub">Define "done right" before you start</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge teal">
+              <!-- Bullseye = define success precisely -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <circle cx="12" cy="12" r="9"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="12" cy="12" r="2" fill="white" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Define Success</span>
+              <span class="sit-sub">Can't detect failure without a definition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ARCHITECT ── -->
+      <div class="stage-card">
+        <div class="stage-hd o">
+          <div class="stage-hd-badge">
+            <!-- Blueprint/grid = design the structure -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+              <rect x="3" y="3" width="18" height="18" rx="1.5"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="3" y1="15" x2="21" y2="15"/>
+              <line x1="9" y1="9" x2="9" y2="21"/>
+              <line x1="15" y1="9" x2="15" y2="21"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stage-hd-name">Architect</div>
+            <div class="stage-hd-sub">Design the handoffs</div>
+          </div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-item">
+            <div class="ibadge orange">
+              <!-- Person-to-box arrow = human feeds agent -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <circle cx="5" cy="5" r="2.5" fill="white" stroke="none"/>
+                <path d="M5 8v3"/>
+                <line x1="7" y1="10" x2="13" y2="10"/>
+                <polyline points="11,8 13,10 11,12"/>
+                <rect x="13" y="7" width="6" height="6" rx="1.5" fill="none" stroke="white"/>
+                <line x1="16" y1="7" x2="16" y2="6"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Human → Agent</span>
+              <span class="sit-sub">What does the agent need?</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge orange">
+              <!-- Box-to-person with verify eye = agent output needs human check -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <rect x="5" y="7" width="6" height="6" rx="1.5" fill="none" stroke="white"/>
+                <line x1="8" y1="7" x2="8" y2="6"/>
+                <line x1="11" y1="10" x2="16" y2="10"/>
+                <polyline points="14,8 16,10 14,12"/>
+                <circle cx="19" cy="5" r="2.5" fill="white" stroke="none"/>
+                <path d="M19 8v3"/>
+                <!-- eye shape = verify -->
+                <path d="M16 16.5c0-1 1.3-2 3-2s3 1 3 2-1.3 2-3 2-3-1-3-2z" fill="none" stroke="white" stroke-width="1.5"/>
+                <circle cx="19" cy="16.5" r="0.8" fill="white"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Agent → Human</span>
+              <span class="sit-sub">What must a human verify?</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge orange">
+              <!-- Two boxes with relay dot = agent-to-agent chain checkpoint -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <rect x="1" y="8" width="7" height="7" rx="1.5"/>
+                <rect x="16" y="8" width="7" height="7" rx="1.5"/>
+                <line x1="8" y1="11.5" x2="16" y2="11.5"/>
+                <circle cx="12" cy="11.5" r="2" fill="white" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Agent → Agent</span>
+              <span class="sit-sub">Checkpoints between models in a chain</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge orange">
+              <!-- Shield with checkmark = guardrail before live system -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <path d="M12 2L4 6v5c0 5.25 3.5 9 8 10.5C17.5 20 21 16.25 21 11V6L12 2z"/>
+                <polyline points="8.5,12 11,14.5 15.5,9.5"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Agent → System</span>
+              <span class="sit-sub">Guardrails before data hits live systems</span>
+            </div>
+          </div>
+          <div class="stage-callout a">Every handoff: Clear · Verifiable · Recoverable</div>
+        </div>
+      </div>
+
+      <!-- ── RUN ── -->
+      <div class="stage-card">
+        <div class="stage-hd a">
+          <div class="stage-hd-badge">
+            <!-- Eye with activity line = execute with visibility -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+              <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <circle cx="12" cy="12" r="1" fill="white" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stage-hd-name">Run</div>
+            <div class="stage-hd-sub">Execute with visibility</div>
+          </div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-item">
+            <div class="ibadge amber">
+              <!-- Document with rows = traceable log output -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="7" y1="13" x2="17" y2="13"/>
+                <line x1="7" y1="17" x2="13" y2="17"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Log Outputs</span>
+              <span class="sit-sub">Every run produces a traceable record</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge amber">
+              <!-- Bell with dot = alert before problems compound -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 01-3.46 0"/>
+                <circle cx="18" cy="6" r="3" fill="#ef4444" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Flag Deviations</span>
+              <span class="sit-sub">Surface exceptions before they compound</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge amber">
+              <!-- Person with star badge = designated accountable owner -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <circle cx="10" cy="6" r="3" fill="white" fill-opacity="0.3"/>
+                <path d="M5 19v-2a5 5 0 0110 0v2"/>
+                <circle cx="18" cy="8" r="4" fill="#d97706" stroke="white" stroke-width="1.5"/>
+                <polygon points="18,5.5 18.8,7.5 21,7.5 19.4,8.9 20,11 18,9.7 16,11 16.6,8.9 15,7.5 17.2,7.5" fill="white" stroke="none"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Designated Owner</span>
+              <span class="sit-sub">Every agent needs an accountable human</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── IMPROVE ── -->
+      <div class="stage-card">
+        <div class="stage-hd n">
+          <div class="stage-hd-badge">
+            <!-- Trending up with cycle arrow = continuous improvement -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="2,16 7,11 11,14 16,8 20,10 23,7"/>
+              <polyline points="18,7 23,7 23,12"/>
+            </svg>
+          </div>
+          <div>
+            <div class="stage-hd-name">Improve</div>
+            <div class="stage-hd-sub">Measure what's drifting</div>
+          </div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-item">
+            <div class="ibadge navy">
+              <!-- Lightning bolt = sudden capability change (model update) -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="white" stroke="none">
+                <polygon points="13,2 4,14 11,14 11,22 20,10 13,10"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Capability Drift</span>
+              <span class="sit-sub">The model itself changes</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge navy">
+              <!-- Declining pulse/activity = performance sliding down -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <polyline points="2,7 6,7 8,4 10,11 13,6 15,9 17,13 22,13"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Performance Drift</span>
+              <span class="sit-sub">Outputs decline without model change</span>
+            </div>
+          </div>
+          <div class="stage-item">
+            <div class="ibadge navy">
+              <!-- Refresh cycle = world changed, agent stuck in past -->
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                <polyline points="23,4 23,10 17,10"/>
+                <polyline points="1,20 1,14 7,14"/>
+                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+              </svg>
+            </div>
+            <div>
+              <span class="sit-title">Context Drift</span>
+              <span class="sit-sub">Business changed, agent didn't</span>
+            </div>
+          </div>
+          <div class="stage-callout s">Review cadence: Daily · Weekly · Monthly</div>
+        </div>
+      </div>
+
+    </div><!-- /stage-grid -->
+  </div><!-- /ig-section -->
+
+  <!-- ═══════════ BEFORE YOU DELEGATE ═══════════ -->
+  <div class="ig-questions">
+    <div class="q-title">Before You Delegate to an Agent, Ask:</div>
+    <div class="q-item"><span class="q-arrow">→</span>Have I mapped every task crossing a human-agent boundary?</div>
+    <div class="q-item"><span class="q-arrow">→</span>Can I define what "done right" looks like for every output?</div>
+    <div class="q-item"><span class="q-arrow">→</span>Does every handoff have a verifiable, recoverable checkpoint?</div>
+    <div class="q-item"><span class="q-arrow">→</span>Is there a traceable log for every agent run?</div>
+    <div class="q-item"><span class="q-arrow">→</span>Is there an accountable human for this agent — same as a machine operator?</div>
+  </div>
+
+  <!-- ═══════════ THE BOTTOM LINE ═══════════ -->
+  <div class="ig-bottom">
+    <div class="bl-title">The Bottom Line</div>
+    <div class="bl-cols">
+      <div class="bl-col">
+        <div class="bl-col-head">Discover</div>
+        <div class="bl-col-text">Map the work before you automate it</div>
+      </div>
+      <div class="bl-col">
+        <div class="bl-col-head">Architect</div>
+        <div class="bl-col-text">Design the handoffs, not just the tasks</div>
+      </div>
+      <div class="bl-col">
+        <div class="bl-col-head">Run + Improve</div>
+        <div class="bl-col-text">Execute with visibility. Measure what drifts.</div>
+      </div>
+    </div>
+    <div class="bl-quote">DARI isn't a replacement for Lean — it's Lean extended to the delegation problem.</div>
+  </div>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <div class="ig-footer">
+    <img class="footer-pic" src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis">
+    <div class="footer-ctas">
+      <div class="footer-line">
+        <div class="footer-badge li">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2" fill="white"/></svg>
+        </div>
+        Follow for daily AI operations insights → <span class="footer-url">linkedin.com/in/alvishouse</span>
+      </div>
+      <div class="footer-line">
+        <div class="footer-badge nl">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="white"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" fill="none"/></svg>
+        </div>
+        Weekly newsletter → <span class="footer-url">alvishouse.io</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

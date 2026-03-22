@@ -1,0 +1,36 @@
+services:
+
+  # ── Cron scheduler (ofelia) ─────────────────────────────────────────────────
+  # Ofelia is a lightweight Docker-native job scheduler.
+  # It reads cron labels from the monitor service and triggers it on schedule.
+  scheduler:
+    image: mcuadros/ofelia:latest
+    restart: unless-stopped
+    depends_on:
+      - monitor
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: daemon --docker
+
+  # ── LinkedIn Monitor ────────────────────────────────────────────────────────
+  monitor:
+    build: .
+    restart: "no"          # Ofelia re-runs the container; it should exit cleanly
+    env_file:
+      - .env
+    volumes:
+      - ./profiles.json:/app/profiles.json:ro   # Edit profiles without rebuild
+      - monitor_data:/app/data                   # Persist SQLite dedup database
+    labels:
+      # ┌───────── minute (0-59)
+      # │  ┌──────── hour (0-23)
+      # │  │  ┌───── day of month (1-31)
+      # │  │  │  ┌── month (1-12)
+      # │  │  │  │  ┌─ day of week (0-6, Sun=0)
+      # │  │  │  │  │
+      # Run once daily at 8:00am (VPS local time) — adjust hour to taste
+      ofelia.job-run.monitor.schedule: "0 8 * * *"
+      ofelia.job-run.monitor.container: "linkedin-monitor-monitor-1"
+
+volumes:
+  monitor_data:

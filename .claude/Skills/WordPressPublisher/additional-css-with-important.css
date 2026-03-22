@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ============================================
+   BRAND COLOR SYSTEM
+   ============================================ */
+:root {
+    --ink: #3b546b;
+    --rust: #cf5828;
+    --slate: #7a8c9b;
+    --paper: #ece6d9;
+    --text: #2b2b2b;
+    --muted: rgba(59,84,107,.75);
+    --rule: rgba(59,84,107,.22);
+    --bg: #ffffff;
+}
+
+/* ============================================
+   CALLOUT BOXES - Johnson Box Style (FORCED)
+   ============================================ */
+.elementor-widget-container .callout,
+.elementor .callout,
+body .callout {
+    background: var(--paper) !important;
+    border: 1.5px dashed rgba(59,84,107,.5) !important;
+    border-radius: 10px !important;
+    padding: 20px 22px !important;
+    margin: 2em 0 !important;
+    position: relative !important;
+}
+
+.elementor-widget-container .callout .label,
+.elementor .callout .label,
+body .callout .label {
+    font-family: 'Montserrat', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    font-size: 0.7em !important;
+    font-weight: 600 !important;
+    color: rgba(59,84,107,.85) !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+}
+
+.elementor-widget-container .callout p,
+.elementor .callout p,
+body .callout p {
+    margin-bottom: 0.8em !important;
+}
+
+.elementor-widget-container .callout p:last-child,
+.elementor .callout p:last-child,
+body .callout p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Mechanism Callout - Ink accent */
+.elementor-widget-container .callout.mechanism,
+.elementor .callout.mechanism,
+body .callout.mechanism {
+    border-left: 5px solid var(--ink) !important;
+    border-style: solid !important;
+    border-width: 1.5px 1.5px 1.5px 5px !important;
+}
+
+.elementor-widget-container .callout.mechanism .label,
+.elementor .callout.mechanism .label,
+body .callout.mechanism .label {
+    color: var(--ink) !important;
+}
+
+/* Key Insight Callout */
+.elementor-widget-container .callout.insight,
+.elementor .callout.insight,
+body .callout.insight {
+    border-left: 5px solid var(--ink) !important;
+    border-style: solid !important;
+    border-width: 1.5px 1.5px 1.5px 5px !important;
+}
+
+.elementor-widget-container .callout.insight .label,
+.elementor .callout.insight .label,
+body .callout.insight .label {
+    color: var(--ink) !important;
+}
+
+/* Warning Callout */
+.elementor-widget-container .callout.warning,
+.elementor .callout.warning,
+body .callout.warning {
+    background: rgba(59,84,107,.08) !important;
+    border-left: 5px solid var(--ink) !important;
+    border-style: solid !important;
+    border-width: 1.5px 1.5px 1.5px 5px !important;
+}
+
+.elementor-widget-container .callout.warning .label,
+.elementor .callout.warning .label,
+body .callout.warning .label {
+    color: var(--ink) !important;
+}
+
+/* ============================================
+   STATISTICS HIGHLIGHT (FORCED)
+   ============================================ */
+.elementor-widget-container .stat-highlight,
+.elementor .stat-highlight,
+body .stat-highlight {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5em !important;
+    margin: 2em 0 !important;
+    padding: 1.5em !important;
+    background: var(--paper) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--rule) !important;
+}
+
+.elementor-widget-container .stat-number,
+.elementor .stat-number,
+body .stat-number {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 3em !important;
+    font-weight: 700 !important;
+    color: var(--ink) !important;
+    line-height: 1 !important;
+}
+
+.elementor-widget-container .stat-label,
+.elementor .stat-label,
+body .stat-label {
+    font-size: 1em !important;
+    color: var(--text) !important;
+}
+
+.elementor-widget-container .stat-label strong,
+.elementor .stat-label strong,
+body .stat-label strong {
+    color: var(--ink) !important;
+}
+
+/* ============================================
+   PULL QUOTES (FORCED)
+   ============================================ */
+.elementor-widget-container .pull-quote,
+.elementor .pull-quote,
+body .pull-quote {
+    font-family: 'Lora', Georgia, serif !important;
+    font-size: 1.35em !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    color: var(--ink) !important;
+    text-align: center !important;
+    padding: 1.5em 2em !important;
+    margin: 2em 0 !important;
+    border-top: 2px solid var(--ink) !important;
+    border-bottom: 2px solid var(--ink) !important;
+    line-height: 1.5 !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* ============================================
+   LEAD SECTION - Ink Wash Style (FORCED)
+   ============================================ */
+.elementor-widget-container .lead-section,
+.elementor .lead-section,
+body .lead-section {
+    background: rgba(59,84,107,.92) !important;
+    border: 1px solid rgba(0,0,0,.08) !important;
+    color: #fff !important;
+    padding: 2.5em !important;
+    margin: 2em 0 !important;
+    border-radius: 8px !important;
+}
+
+.elementor-widget-container .lead-section p,
+.elementor .lead-section p,
+body .lead-section p {
+    color: rgba(255,255,255,.88) !important;
+    font-size: 1.1em !important;
+}
+
+.elementor-widget-container .lead-section strong,
+.elementor .lead-section strong,
+body .lead-section strong {
+    color: #fff !important;
+}
+
+.elementor-widget-container .lead-section .highlight-text,
+.elementor .lead-section .highlight-text,
+body .lead-section .highlight-text {
+    color: var(--paper) !important;
+    font-weight: 500 !important;
+}
+
+/* ============================================
+   BLOCKQUOTES - Margin Note Style (FORCED)
+   ============================================ */
+.elementor-widget-container blockquote,
+.elementor blockquote,
+body blockquote {
+    margin: 2em 0 !important;
+    padding: 1.5em 2em !important;
+    background: var(--paper) !important;
+    border-left: 4px solid var(--ink) !important;
+    border-radius: 0 8px 8px 0 !important;
+    color: var(--text) !important;
+    font-style: italic !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.elementor-widget-container blockquote p,
+.elementor blockquote p,
+body blockquote p {
+    margin-bottom: 0.5em !important;
+}
+
+.elementor-widget-container blockquote p:last-child,
+.elementor blockquote p:last-child,
+body blockquote p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.elementor-widget-container blockquote cite,
+.elementor blockquote cite,
+body blockquote cite {
+    display: block !important;
+    font-size: 0.9em !important;
+    color: var(--muted) !important;
+    margin-top: 1em !important;
+    font-style: normal !important;
+}
+
+/* ============================================
+   CTA BOX - Ink Wash Style (FORCED)
+   ============================================ */
+.elementor-widget-container .cta-box,
+.elementor .cta-box,
+body .cta-box {
+    background: rgba(59,84,107,.92) !important;
+    border: 1px solid rgba(0,0,0,.08) !important;
+    color: #fff !important;
+    padding: 2.5em !important;
+    margin: 3em 0 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+}
+
+.elementor-widget-container .cta-box h3,
+.elementor .cta-box h3,
+body .cta-box h3 {
+    color: #fff !important;
+    margin-top: 0 !important;
+    font-size: 1.4em !important;
+}
+
+.elementor-widget-container .cta-box p,
+.elementor .cta-box p,
+body .cta-box p {
+    color: rgba(255,255,255,.88) !important;
+    margin-bottom: 1em !important;
+}
+
+/* ============================================
+   FRAMEWORK BOX (FORCED)
+   ============================================ */
+.elementor-widget-container .framework-box,
+.elementor .framework-box,
+body .framework-box {
+    background: var(--paper) !important;
+    padding: 2em !important;
+    margin: 2em 0 !important;
+    border-radius: 10px !important;
+    border: 2px solid var(--rule) !important;
+}
+
+.elementor-widget-container .framework-visual,
+.elementor .framework-visual,
+body .framework-visual {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: 1.5em 0 !important;
+    padding: 1.5em !important;
+    background: rgba(255,255,255,.6) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--rule) !important;
+}
+
+/* ============================================
+   CASE STUDY BOX (FORCED)
+   ============================================ */
+.elementor-widget-container .case-study,
+.elementor .case-study,
+body .case-study {
+    background: var(--paper) !important;
+    border: 1px solid var(--rule) !important;
+    border-radius: 10px !important;
+    padding: 2em !important;
+    margin: 2em 0 !important;
+}
+
+.elementor-widget-container .case-study .approach-comparison,
+.elementor .case-study .approach-comparison,
+body .case-study .approach-comparison {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5em !important;
+    margin: 1em 0 !important;
+}
+
+/* ============================================
+   RESEARCH TABLE (FORCED)
+   ============================================ */
+.elementor-widget-container .research-table,
+.elementor .research-table,
+body .research-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 2em 0 !important;
+    font-size: 0.9em !important;
+}
+
+.elementor-widget-container .research-table th,
+.elementor .research-table th,
+body .research-table th {
+    font-family: 'Montserrat', sans-serif !important;
+    background: var(--ink) !important;
+    color: #fff !important;
+    padding: 1em !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+}
+
+/* ============================================
+   ALL OTHER ORIGINAL STYLES
+   Keep these for elements not needing !important
+   ============================================ */
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+/* ARTICLE HEADER */
+.article-header {
+    margin-bottom: 2.5em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.5em;
+    line-height: 1.5;
+}
+
+.meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: var(--slate);
+    margin-top: 1.5em;
+}
+
+.meta strong {
+    color: var(--ink);
+}
+
+/* FINAL QUOTE */
+.final-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    color: var(--ink);
+    padding: 2em;
+    margin: 2em 0;
+    line-height: 1.5;
+}
+
+.final-quote .highlight {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.final-quote strong {
+    color: var(--ink);
+}
+
+/* AUTHOR BOX */
+.author-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+    padding: 2em;
+    background: var(--paper);
+    border-radius: 10px;
+    margin-top: 3em;
+    border: 1px solid var(--rule);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 700px) {
+    .stat-highlight {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .case-study .approach-comparison {
+        grid-template-columns: 1fr !important;
+    }
+
+    .framework-visual {
+        flex-direction: column !important;
+        gap: 1em !important;
+    }
+}

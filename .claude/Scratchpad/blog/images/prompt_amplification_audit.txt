@@ -1,0 +1,74 @@
+2x2 framework matrix in Leonardo da Vinci notebook style
+on warm parchment background (#ECE6D9).
+
+FRAMEWORK: The Amplification Audit
+
+AXES:
+- X-axis (horizontal): "Replaces Humans" (left) ←→ "Amplifies Humans" (right)
+- Y-axis (vertical): "Low Impact" (bottom) ↕ "High Impact" (top)
+- Hand-drawn with intentional imperfection
+- Measurement ticks along both axes (5-7 marks per axis)
+- Deep slate blue (#3B546B) linework with variable width
+- Arrow heads at axis ends
+
+QUADRANTS:
+
+Q1 (Top Right - GOAL): "Force Multiplier"
+- Burnt copper (#CF5828) highlight on this quadrant
+- Key characteristic: AI amplifies human capability, high value
+- Small icon: Hand operating lever with gears
+- This is the TARGET quadrant
+
+Q2 (Top Left): "Efficiency Trap"
+- Key characteristic: Replaces humans but delivers results
+- Small icon: Automated robot arm
+- Muted steel gray (#7A8C9B) for this label
+
+Q3 (Bottom Left): "Waste Zone"
+- Key characteristic: Replaces humans with poor results
+- Small icon: Crossed out automation symbol
+- Lightest treatment
+
+Q4 (Bottom Right): "Potential Unlocked"
+- Key characteristic: Amplifies humans, needs scale
+- Small icon: Growth arrow with human silhouette
+- Medium emphasis
+
+VISUAL STYLE:
+- Hand-drawn axis lines (slight wave, not laser-straight)
+- Sketchy quadrant divisions with construction guides
+- Hand-lettered quadrant labels in architectural style
+- Proportion marks along axes showing scale
+- Construction circles at origin (0,0) point
+- Ghost lines showing how quadrants were measured out
+
+CONSTRUCTION GEOMETRY:
+- Overlapping guide circles at axis intersection
+- Measurement ticks every 20% along each axis
+- Diagonal construction lines from origin to corners
+- Proportion marks showing quadrant divisions
+- Light grid structure barely visible
+- Golden ratio guides for label placement
+
+ANNOTATIONS:
+- Small arrows pointing from lower quadrants toward Q1
+- Note: "Aim here" with arrow to Force Multiplier
+- Axis labels clearly visible and readable
+- Origin marked with small construction star
+
+ACCENT TREATMENT:
+- Burnt copper (#CF5828) bold outline on Q1 "Force Multiplier"
+- Copper arrow pointing to Q1 from title
+- Copper measurement marks on "Amplifies Humans" axis
+- Copper star at Q1 corner
+
+CRITICAL:
+- Hand-drawn imperfect lines (wobble is authentic)
+- Visible construction geometry shows thinking process
+- Clear axis labels, readable quadrant names
+- Leonardo notebook aesthetic - this is a thinking tool
+- Q1 (top right) is visually emphasized as the goal
+- Cross-hatching for shading only, NO gradients
+- Should feel like strategic framework sketched during planning
+
+--no perfect perpendicular lines, --no corporate chart aesthetic, --no digital polish, --no clean vectors, --no gradients, --no illegible text

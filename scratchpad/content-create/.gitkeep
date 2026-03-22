@@ -1,0 +1,22 @@
+# Content Creation Workflow Output Directory
+
+This directory contains in-progress content creation workflows.
+
+## Structure
+
+Each workflow is stored in its own subdirectory:
+```
+content-create/
+├── 2026-01-31-ai-strategy-gap/
+│   ├── 01-research.md
+│   ├── 02-big-ideas.md
+│   ├── ...
+│   └── metadata.json
+└── [another-workflow-id]/
+    └── ...
+```
+
+## Cleanup
+
+Completed workflows should be archived to History.
+Delete abandoned workflows after 30 days.

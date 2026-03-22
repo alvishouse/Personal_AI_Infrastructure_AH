@@ -1,0 +1,201 @@
+{
+  "workflow_id": "2026-03-08-efficiency-gateway-drug",
+  "topic": "Efficiency Is the Gateway Drug (Efficiency → Innovation)",
+  "track": "Track 9",
+  "pillar": "Pillar 4: Outcomes",
+  "status": "step-14-complete",
+  "created_at": "2026-03-08T19:05:00Z",
+  "updated_at": "2026-03-16T01:57:27.993Z",
+  "brief": "00-brief.md",
+  "checkpoints": {
+    "step-1": {
+      "completed": true,
+      "selection": "Track 9 - Efficiency Is the Gateway Drug",
+      "timestamp": "2026-03-08T19:05:00Z"
+    },
+    "step-2": {
+      "completed": false
+    },
+    "step-3": {
+      "completed": false
+    },
+    "step-4": {
+      "completed": true,
+      "selection": "Combined: Big Idea 3 (Efficiency Paradox) + Big Idea 2 (Lemonade Stand Lie) + Big Idea 4 (Capacity Dividend)",
+      "timestamp": "2026-03-08T19:10:00Z"
+    },
+    "step-5": {
+      "completed": true,
+      "agent": "content-writer",
+      "timestamp": "2026-03-08T19:15:00Z"
+    },
+    "step-6": {
+      "completed": true,
+      "selection": "Set 3 — The Lemonade Stand Lie",
+      "timestamp": "2026-03-08T19:15:00Z"
+    },
+    "step-7": {
+      "completed": false
+    },
+    "step-8": {
+      "completed": false
+    },
+    "step-9": {
+      "completed": false
+    },
+    "step-10": {
+      "completed": false
+    },
+    "step-11": {
+      "completed": false
+    },
+    "step-12": {
+      "completed": false
+    },
+    "step-13": {
+      "completed": true,
+      "completion_date": "2026-03-09",
+      "approach": "linkedin-first-scout-validated",
+      "linkedin_pieces": 8,
+      "newsletter_editions": 0,
+      "scout_analysis": "13-extracted-content/00-scout-analysis.yaml",
+      "posting_schedule": "13-extracted-content/posting-schedule.md",
+      "priority_posts": [
+        "01-authority-post.md",
+        "02-story-post.md"
+      ],
+      "twitter_extracted": false,
+      "visuals_extracted": false,
+      "future_extraction": {
+        "twitter": "on-demand (Step 13b)",
+        "newsletter": "automated (Step 14)",
+        "visuals": "on-demand"
+      }
+    },
+    "step-13b": {
+      "completed": true,
+      "completion_date": "2026-03-09",
+      "images_created": 8,
+      "images_total": 8,
+      "posts_with_images": [
+        "post-01",
+        "post-02",
+        "post-03",
+        "post-04",
+        "post-05",
+        "post-06",
+        "post-07",
+        "post-08"
+      ],
+      "images_dir": "13-extracted-content/linkedin/images/",
+      "notion_image_ids": [
+        {
+          "file": "post-01-authority.png",
+          "notion_id": "31e0760e-b0cd-81fc-bbf3-f15eadd2e265",
+          "notion_url": "https://www.notion.so/31e0760eb0cd81fcbbf3f15eadd2e265"
+        },
+        {
+          "file": "post-02-story.png",
+          "notion_id": "31e0760e-b0cd-81ae-861b-d41c317156e1",
+          "notion_url": "https://www.notion.so/31e0760eb0cd81ae861bd41c317156e1"
+        },
+        {
+          "file": "post-03-framework.png",
+          "notion_id": "31e0760e-b0cd-81b9-bd48-fc6ef80d4a19",
+          "notion_url": "https://www.notion.so/31e0760eb0cd81b9bd48fc6ef80d4a19"
+        },
+        {
+          "file": "post-04-myth-buster.png",
+          "notion_id": "31e0760e-b0cd-8137-b954-e9999cd75b20",
+          "notion_url": "https://www.notion.so/31e0760eb0cd8137b954e9999cd75b20"
+        },
+        {
+          "file": "post-05-lemonade.png",
+          "notion_id": "31e0760e-b0cd-8117-a536-db95aff79057",
+          "notion_url": "https://www.notion.so/31e0760eb0cd8117a536db95aff79057"
+        },
+        {
+          "file": "post-06-case-study.png",
+          "notion_id": "31e0760e-b0cd-8139-bf4c-d58f6abae445",
+          "notion_url": "https://www.notion.so/31e0760eb0cd8139bf4cd58f6abae445"
+        },
+        {
+          "file": "post-07-stats.png",
+          "notion_id": "31e0760e-b0cd-81b5-b69e-cfc2b3370290",
+          "notion_url": "https://www.notion.so/31e0760eb0cd81b5b69ecfc2b3370290"
+        },
+        {
+          "file": "post-08-quick-win.png",
+          "notion_id": "31e0760e-b0cd-811d-9599-dfe182d3a201",
+          "notion_url": "https://www.notion.so/31e0760eb0cd811d9599dfe182d3a201"
+        }
+      ],
+      "notion_push_completed": true,
+      "notion_push_timestamp": "2026-03-09T04:45:07.735Z"
+    },
+    "step-14": {
+      "completed": true,
+      "completion_date": "2026-03-15",
+      "validation_score": 0.77,
+      "forward_test_score": 4,
+      "word_count": 1687,
+      "subject_line": "Your AI savings are disappearing.",
+      "notion_page_id": "3250760e-b0cd-8144-9e48-daec69d2cdcb",
+      "notion_url": "https://www.notion.so/3250760eb0cd81449e48daec69d2cdcb",
+      "outputs": {
+        "markdown": "14-newsletter/newsletter-final.md",
+        "html": "14-newsletter/newsletter-final.html",
+        "html_template": "14-newsletter/newsletter-wp.html",
+        "meta": "14-newsletter/issue-meta-final.yaml"
+      },
+      "wordpress_newsletter": {
+        "post_id": 866,
+        "post_url": "https://alvishouse.io/newsletter/newsletter-efficiency-gateway-drug/",
+        "status": "publish",
+        "media_ids": {
+          "myth_infographic": 867,
+          "metric_infographic": 868,
+          "hero_image": 869
+        }
+      }
+    }
+  },
+  "wordpress": {
+    "post_id": 860,
+    "post_url": "https://alvishouse.io/?p=860",
+    "status": "draft",
+    "media_ids": {
+      "featured": 857,
+      "inline_01_framework": 858,
+      "inline_02_myth_reality": 859
+    }
+  },
+  "notion": {
+    "workflow_id": "31e0760e-b0cd-8112-9f74-dd94b06dc323",
+    "content_id": "31e0760e-b0cd-8195-85ce-fc8fd22abace",
+    "content_url": "https://www.notion.so/Efficiency-Is-the-Gateway-Drug-Efficiency-Innovation-31e0760eb0cd819585cefc8fd22abace",
+    "synced_at": "2026-03-09T02:55:35.918Z"
+  },
+  "image_manifest": {
+    "featured": {
+      "status": "complete",
+      "path": "./images/featured.png"
+    },
+    "inline": [
+      {
+        "id": "inline-01-framework",
+        "status": "complete",
+        "path": "./images/inline-01-framework.png"
+      },
+      {
+        "id": "inline-02-myth-reality",
+        "status": "complete",
+        "path": "./images/inline-02-myth-reality.png"
+      }
+    ],
+    "extraction": []
+  },
+  "newsletter_post_id": 866,
+  "newsletter_post_url": "https://alvishouse.io/newsletter/newsletter-efficiency-gateway-drug/",
+  "newsletter_published_at": "2026-03-16T02:10:46.570Z"
+}

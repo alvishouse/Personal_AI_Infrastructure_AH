@@ -1,0 +1,83 @@
+{
+  "workflow_id": "2026-01-31-playing-it-safe-illusion",
+  "topic": "The Illusion of Playing It Safe — Singapore's AI Pivot",
+  "related_track": "Track 4: The 60% Problem (Strategy)",
+  "status": "step-14-complete",
+  "created_at": "2026-01-31T17:55:00Z",
+  "updated_at": "2026-02-11T21:20:00Z",
+  "selected_headline": {
+    "set": 5,
+    "eyebrow": "For Directors and Executives Feeling Pressure to Move on AI",
+    "headline": "The 2-Year Head Start You Can't Buy Back (And the \"Grow-With\" Model That Creates It)",
+    "deck": "Singapore discovered something the cautious refuse to see: partnering with unproven AI players early isn't reckless — it's the only way to catch the giants everyone else will overpay for later."
+  },
+  "big_idea": "'Playing it safe' on AI is an illusion — one that masks the slow, silent decay of everything that makes an organization competitive.",
+  "magic_mechanism": "The Grow-With Model",
+  "one_reader": "Hesitant AI Decision-Maker — Director+ level",
+  "checkpoints": {
+    "step-1": { "completed": true, "selection": "Custom topic" },
+    "step-2": { "completed": true, "agent": "content-researcher", "output": "01-research.md" },
+    "step-3": { "completed": true, "agent": "content-writer", "output": "02-big-ideas.md" },
+    "step-4": { "completed": true, "selection": "Original big idea statement" },
+    "step-5": { "completed": true, "agent": "content-writer", "output": "04-headlines.md" },
+    "step-6": { "completed": true, "selection": "Headline Set #5" },
+    "step-7": { "completed": true, "agent": "content-writer", "output": "06-cornerstone-draft.md", "word_count": 4254, "revised": "06-cornerstone-draft-v2.md", "revised_word_count": 4485, "with_callouts": "06-cornerstone-draft-v3.md", "callout_count": 13 },
+    "step-8": { "completed": true, "agent": "content-editor", "output": "07-editor-review.md", "verdict": "READY WITH MINOR REVISIONS", "quality_score": "8.5/10" },
+    "step-9": { "completed": true, "output": "06-cornerstone-draft-v3.md", "tags_added": true },
+    "step-10": { "completed": true, "images": ["01-featured.png", "02-flywheel.png", "03-compound-curve.png"], "styles": ["User-provided", "Napkin", "Da Vinci"] },
+    "step-11": { "completed": true, "output": "08-html-preview.html", "converter": "BrandHTMLConverter" },
+    "step-12": { "completed": true, "wordpress_post_id": 604, "wordpress_url": "https://alvishouse.io/?p=604", "wordpress_slug": "grow-with-model-ai-strategy", "status": "draft", "featured_media_id": 605, "images_uploaded": { "01-featured.png": 605, "02-flywheel.png": 607, "03-compound-curve.png": 608 } },
+    "step-13": {
+      "completed": true,
+      "completion_date": "2026-02-05",
+      "approach": "linkedin-first-scout-validated",
+      "linkedin_pieces": 8,
+      "scout_analysis": "13-extracted-content/00-scout-analysis.yaml",
+      "posting_schedule": "13-extracted-content/posting-schedule.md",
+      "priority_posts": [
+        "01-authority-post.md",
+        "02-framework-article.md"
+      ],
+      "total_words": 5746,
+      "estimated_reach": "250K-450K impressions",
+      "golden_ratio_avg": 0.21,
+      "campaign_duration": "3 weeks (Feb 10-28, 2026)"
+    },
+    "step-14": {
+      "completed": true,
+      "completion_date": "2026-02-11",
+      "issue_number": 1,
+      "issue_date": "2026-02-11",
+      "insight_atoms_extracted": 13,
+      "sections": {
+        "tldr": true,
+        "myth_buster": true,
+        "quick_win": true,
+        "metric": true,
+        "rotating_section": "case_study",
+        "tool_spotlight": false,
+        "forward_cta": true
+      },
+      "validation_score": 0.953,
+      "forward_test_score": 5,
+      "word_count": 1847,
+      "linkedin_references": 3,
+      "subject_lines": [
+        "The $680K mistake: why 'playing it safe' failed",
+        "Singapore's $1B bet proves waiting kills you",
+        "Why 80% succeed while you're stuck at 37%"
+      ],
+      "selected_subject": "The $680K mistake: why 'playing it safe' failed",
+      "outputs": {
+        "markdown": "14-newsletter/newsletter-final.md",
+        "html": "14-newsletter/newsletter-final.html",
+        "meta": "14-newsletter/issue-meta-final.yaml"
+      }
+    }
+  },
+  "agents_used": {
+    "content-researcher": { "color": "cyan", "model": "sonnet" },
+    "content-writer": { "color": "green", "model": "opus" },
+    "content-editor": { "color": "orange", "model": "sonnet" }
+  }
+}

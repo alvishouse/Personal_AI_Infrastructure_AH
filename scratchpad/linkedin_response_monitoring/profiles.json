@@ -1,0 +1,14 @@
+[
+  {
+    "name": "John Doe",
+    "linkedin_url": "https://www.linkedin.com/in/johndoe",
+    "notify_email": true,
+    "notify_telegram": true
+  },
+  {
+    "name": "Jane Smith",
+    "linkedin_url": "https://www.linkedin.com/in/janesmith",
+    "notify_email": true,
+    "notify_telegram": true
+  }
+]

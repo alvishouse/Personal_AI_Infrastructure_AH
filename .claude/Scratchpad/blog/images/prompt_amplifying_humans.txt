@@ -1,0 +1,41 @@
+Editorial illustration in Leonardo da Vinci notebook style on warm parchment background (#ECE6D9).
+
+CONCEPT: AI as mechanical advantage — a human hand operating precision levers that multiply force, not a machine replacing the hand.
+
+CENTRAL ELEMENT:
+A detailed hand (drawn with anatomical precision) grasping the handle of an elegant lever mechanism. The lever connects to a system of gears, pulleys, and counterweights that amplify the hand's movement. Draw as if Leonardo was exploring this mechanism of amplification.
+
+The hand is clearly human, organic, with visible bone structure sketched beneath. The mechanical system it operates shows visible construction geometry — overlapping guide circles for gears, proportion marks showing the mechanical advantage ratio (e.g., "5:1" marked), ghost construction lines revealing the thinking process.
+
+AESTHETIC:
+- Variable stroke width (thicker at pressure points on the hand and lever contact)
+- Multiple overlapping sketch strokes showing exploration
+- Ghost construction lines for gear centers and lever fulcrum
+- Cross-hatching for shading on the hand's palm
+- Paper grain texture visible throughout
+- Measurement ticks showing proportions and ratios
+
+COMPOSITION:
+- Human hand is hero element (40-50% of frame, left-center)
+- Lever and gear mechanism extends to right
+- Generous negative space in upper left (thinking space)
+- Asymmetric but visually balanced
+- 3-4 annotation elements:
+  - "5:1" ratio marker near lever fulcrum
+  - Small arrow showing direction of amplified force
+  - Cross-section detail of gear teeth
+  - Anatomical note near hand bones
+
+COLOR:
+- Deep slate blue (#3B546B) for all primary linework (hand, gears, levers)
+- Muted steel gray (#7A8C9B) for construction lines and ghost circles
+- Burnt copper (#CF5828) accent ONLY on the point where hand meets lever (focal point) and on the "5:1" ratio marker
+
+CRITICAL:
+- Hand-drawn imperfect quality (NOT vectors)
+- Looks like inventor's notebook page exploring "how to amplify human capability"
+- Abstract metaphor — this is about amplification, not literal machinery
+- Construction geometry shows the thinking: "What if we gave humans leverage instead of replacing them?"
+- Should feel thought through by Leonardo himself
+
+--no digital polish, --no neon colors, --no glow effects, --no perfect symmetry, --no gradients, --no corporate illustration, --no futuristic aesthetic, --no clean vector lines

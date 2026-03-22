@@ -66,3 +66,40 @@ credentials/
 .claude/pai_updates/
 .claude/pai_backups/
 .claude/.pai-sync-history
+
+# Claude runtime & sensitive data — never commit
+.claude/.credentials.json
+.claude/history.jsonl
+.claude/agent-sessions.json
+.claude/mcp-needs-auth-cache.json
+.claude/mcpServers.json
+.claude/settings.local.json
+.claude/stats-cache.json
+
+# Claude ephemeral/session data — raw event logs capture everything verbatim (may include secrets)
+.claude/History/raw-outputs/
+.claude/projects/
+.claude/cache/
+.claude/image-cache/
+.claude/paste-cache/
+.claude/shell-snapshots/
+.claude/statsig/
+.claude/telemetry/
+.claude/debug/
+.claude/file-history/
+.claude/backups/
+.claude/tasks/
+.claude/todos/
+.claude/plans/
+
+# Screenshots (local only)
+Screenshots/
+
+# LinkedInMonitor SQLite data
+.claude/Skills/LinkedInMonitor/data/
+
+# Claude plugins marketplace (external git repo — use submodule if needed)
+.claude/plugins/marketplaces/
+
+# Large reference PDFs (>50MB - use LFS or store externally)
+.claude/Skills/LeadMagnet/reference-images/infographics/*.pdf

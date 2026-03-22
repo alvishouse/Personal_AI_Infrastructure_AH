@@ -1,0 +1,169 @@
+/* ============================================
+   MOBILE TYPOGRAPHY + CUSTOM CONTAINER
+   Uses custom CSS class for precise targeting
+   ============================================ */
+
+/* Mobile breakpoint: screens 768px and below */
+@media (max-width: 768px) {
+
+    /* CUSTOM CONTAINER - Add "post-content-wrapper" class in Elementor */
+    .post-content-wrapper {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    /* POST CONTENT BODY TEXT */
+    .elementor-widget-post-content p,
+    .elementor-widget-theme-post-content p,
+    article p,
+    .post-content p {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 1.2em !important;
+    }
+
+    /* POST CONTENT HEADERS */
+    .elementor-widget-post-content h1,
+    .elementor-widget-theme-post-content h1,
+    article h1 {
+        font-size: 29px !important;
+        line-height: 1.2 !important;
+        margin-top: 1.5em !important;
+        margin-bottom: 0.6em !important;
+    }
+
+    .elementor-widget-post-content h2,
+    .elementor-widget-theme-post-content h2,
+    article h2 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        margin-top: 1.5em !important;
+        margin-bottom: 0.6em !important;
+    }
+
+    .elementor-widget-post-content h3,
+    .elementor-widget-theme-post-content h3,
+    article h3 {
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+        margin-top: 1.3em !important;
+        margin-bottom: 0.5em !important;
+    }
+
+    .elementor-widget-post-content h4,
+    .elementor-widget-theme-post-content h4,
+    article h4 {
+        font-size: 18px !important;
+        line-height: 1.3 !important;
+        margin-top: 1.2em !important;
+        margin-bottom: 0.5em !important;
+    }
+
+    /* LISTS */
+    .elementor-widget-post-content ul,
+    .elementor-widget-post-content ol,
+    article ul,
+    article ol {
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        padding-left: 1.5em !important;
+    }
+
+    /* TITLE FORMAT ELEMENTS */
+    .eyebrow {
+        font-size: 11px !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    .subtitle {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* AESTHETIC ELEMENTS */
+    .callout {
+        padding: 16px 18px !important;
+        font-size: 15px !important;
+    }
+
+    .callout .label {
+        font-size: 10px !important;
+    }
+
+    .stat-number {
+        font-size: 40px !important;
+    }
+
+    .stat-label {
+        font-size: 14px !important;
+    }
+
+    .pull-quote {
+        font-size: 19px !important;
+        padding: 1.2em 1.5em !important;
+    }
+
+    .lead-section,
+    .lead-section p {
+        font-size: 16px !important;
+        padding: 2em 1.5em !important;
+    }
+
+    .cta-box {
+        padding: 2em 1.5em !important;
+    }
+
+    .cta-box h3 {
+        font-size: 19px !important;
+    }
+
+    blockquote {
+        font-size: 15px !important;
+        padding: 1.2em 1.5em !important;
+    }
+}
+
+/* Extra small mobile: screens 480px and below */
+@media (max-width: 480px) {
+
+    .elementor-widget-post-content p,
+    article p {
+        font-size: 15px !important;
+    }
+
+    .elementor-widget-post-content h2,
+    article h2 {
+        font-size: 21px !important;
+    }
+
+    .elementor-widget-post-content h3,
+    article h3 {
+        font-size: 19px !important;
+    }
+
+    .stat-number {
+        font-size: 32px !important;
+    }
+
+    .pull-quote {
+        font-size: 18px !important;
+        padding: 1em !important;
+    }
+}
+
+/* ============================================
+   SETUP INSTRUCTIONS:
+
+   1. Go to: Elementor → Theme Builder → Single Post
+   2. Click: Edit with Elementor
+   3. Select the container holding featured image + post content
+   4. Go to: Advanced tab → CSS Classes
+   5. Add: post-content-wrapper
+   6. Click: Update
+   7. This CSS will now ONLY target that container!
+
+   Benefits:
+   - Surgical precision
+   - Won't affect any other containers
+   - Works immediately without cache clearing
+   ============================================ */

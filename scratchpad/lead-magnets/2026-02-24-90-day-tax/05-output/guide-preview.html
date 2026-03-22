@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hidden "90-Day Tax" — Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --navy:      #0D1B2A;
+      --blue-dark: #1E40AF;
+      --blue:      #3B82F6;
+      --emerald:   #10B981;
+      --amber:     #F59E0B;
+      --slate:     #64748B;
+      --gray-light:#F8F9FA;
+      --white:     #FFFFFF;
+      --rule:      #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #CBD5E1;
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 40px 20px;
+    }
+
+    .preview-header {
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--navy);
+    }
+    .preview-header h1 { font-size: 18px; font-weight: 700; }
+    .preview-header p  { font-size: 13px; color: var(--slate); margin-top: 4px; }
+
+    /* PAGE SHELL */
+    .page {
+      width: 816px;
+      min-height: 1056px;
+      background: var(--white);
+      margin: 0 auto 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      position: relative;
+      padding: 72px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-label {
+      position: absolute;
+      top: -26px;
+      left: 0;
+      font-size: 11px;
+      font-weight: 600;
+      color: #475569;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── COVER ─── */
+    .page-cover {
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      min-height: unset;
+    }
+    .cover-bg {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .cover-gradient { display: none; }
+    .cover-content {
+      position: relative;
+      z-index: 1;
+      padding: 72px;
+      display: flex;
+      flex-direction: column;
+      min-height: 1056px;
+    }
+    .cover-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0;
+    }
+    .cover-middle {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 48px;
+    }
+    .cover-kicker {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .cover-title {
+      font-size: 64px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 28px;
+      letter-spacing: -0.025em;
+    }
+    .cover-title span { color: var(--blue); }
+    .cover-big-idea {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.65;
+      max-width: 560px;
+      border-left: 3px solid var(--blue);
+      padding-left: 18px;
+      font-style: italic;
+    }
+    .cover-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-bottom-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.06em;
+    }
+    .cover-bottom-brand {
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ─── INTERIOR PAGES ─── */
+    .eyebrow {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-bottom: 12px;
+    }
+    .page-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .body-copy {
+      font-size: 12px;
+      color: var(--navy);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .body-copy strong { font-weight: 700; }
+    .page-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      margin: 24px 0;
+    }
+
+    /* STAT BLOCK */
+    .stat-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: 1.5px solid var(--navy);
+      margin: 24px 0;
+    }
+    .stat-cell {
+      padding: 20px 16px;
+      border-right: 1.5px solid var(--navy);
+      text-align: center;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-number {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .stat-label {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--slate);
+      margin-top: 8px;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* NAMED CALLOUT */
+    .callout-named {
+      border-left: 4px solid var(--blue-dark);
+      background: var(--gray-light);
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .callout-named-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-bottom: 8px;
+    }
+    .callout-named-body {
+      font-size: 11.5px;
+      color: var(--navy);
+      line-height: 1.65;
+    }
+
+    /* ICON CALLOUTS */
+    .callout {
+      display: flex;
+      gap: 14px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      border-radius: 2px;
+    }
+    .callout-warning {
+      background: rgba(245,158,11,0.07);
+      border-left: 3px solid var(--amber);
+    }
+    .callout-remember {
+      background: rgba(59,130,246,0.07);
+      border-left: 3px solid var(--blue);
+    }
+    .callout-tip {
+      background: rgba(16,185,129,0.07);
+      border-left: 3px solid var(--emerald);
+    }
+    .callout-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .callout-icon svg { width: 16px; height: 16px; }
+    .callout-warning .callout-icon svg  { color: var(--amber); }
+    .callout-remember .callout-icon svg { color: var(--blue); }
+    .callout-tip .callout-icon svg      { color: var(--emerald); }
+    .callout-content {}
+    .callout-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .callout-warning  .callout-label { color: var(--amber); }
+    .callout-remember .callout-label { color: var(--blue); }
+    .callout-tip      .callout-label { color: var(--emerald); }
+    .callout-body {
+      font-size: 11.5px;
+      color: var(--navy);
+      line-height: 1.65;
+    }
+    .callout-body strong { font-weight: 700; }
+    .callout-body em { font-style: italic; }
+
+    /* COMPARISON TABLES */
+    .table-wrap { margin: 20px 0; }
+    .table-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      color: var(--white);
+    }
+    .table-label-navy { background: var(--navy); }
+    .table-label-blue { background: var(--blue-dark); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    thead th {
+      background: var(--gray-light);
+      color: var(--slate);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--rule);
+    }
+    tbody tr:nth-child(even) td { background: var(--gray-light); }
+    tbody tr:nth-child(odd)  td { background: var(--white); }
+    tbody td {
+      padding: 9px 12px;
+      color: var(--navy);
+      line-height: 1.5;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    tbody td:first-child { font-weight: 700; white-space: nowrap; }
+    .row-highlight td {
+      background: rgba(30,64,175,0.06) !important;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    .row-highlight-navy td {
+      background: rgba(13,27,42,0.06) !important;
+      font-weight: 700;
+    }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-left: 4px solid var(--blue);
+      padding: 12px 20px;
+      margin: 20px 0;
+    }
+    .pull-quote p {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--blue-dark);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* DIAGNOSTIC QUESTIONS */
+    .question-block {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .question-number {
+      font-size: 27.5px;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 36px;
+    }
+    .question-content {}
+    .question-text {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .question-body {
+      font-size: 11px;
+      color: var(--navy);
+      line-height: 1.65;
+    }
+
+    /* SERVICE BLOCKS */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .service-block {
+      padding: 20px;
+      background: var(--gray-light);
+      position: relative;
+    }
+    .service-block-blue { border-left: 4px solid var(--blue-dark); }
+    .service-block-navy { border-left: 4px solid var(--navy); }
+    .service-block-icon {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      color: var(--blue);
+    }
+    .service-block-icon svg { width: 22px; height: 22px; }
+    .service-block-navy .service-block-icon svg { color: var(--slate); }
+    .service-tag {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .service-tag-blue { color: var(--blue-dark); }
+    .service-tag-navy { color: var(--navy); }
+    .service-heading {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .service-meta {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--slate);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 8px 0 4px;
+    }
+    .service-body {
+      font-size: 11px;
+      color: var(--navy);
+      line-height: 1.6;
+    }
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0;
+    }
+    .service-list li {
+      font-size: 11px;
+      color: var(--navy);
+      line-height: 1.6;
+      padding-left: 14px;
+      position: relative;
+    }
+    .service-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 10.5px;
+    }
+    .service-result {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--rule);
+      font-size: 10.5px;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+    .service-result strong { font-weight: 700; color: var(--blue-dark); }
+
+    /* PAGE IMAGE */
+    .page-image-wrap {
+      margin: 24px 0;
+      width: 100%;
+    }
+    .page-image-wrap img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--rule);
+    }
+    .image-caption {
+      font-size: 8.5px;
+      color: var(--slate);
+      font-style: italic;
+      text-align: center;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--navy);
+      margin: 0 -72px -72px;
+      padding: 44px 72px;
+      margin-top: auto;
+    }
+    .cta-profile {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .cta-profile-name {
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .cta-profile-title {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .cta-headline-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .cta-sub-text {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .cta-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--white);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 8px 14px;
+      letter-spacing: 0.02em;
+    }
+    .cta-contact-item svg { width: 12px; height: 12px; color: var(--blue); }
+    .cta-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 auto 16px;
+    }
+    .inspire-tag {
+      font-size: 8px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* CLOSING PARAGRAPHS */
+    .closing-block { margin: 16px 0; }
+    .closing-line {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+
+    /* PAGE FOOTER */
+    .page-footer {
+      position: absolute;
+      bottom: 28px;
+      left: 72px;
+      right: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8px;
+      color: var(--slate);
+      border-top: 1px solid var(--rule);
+      padding-top: 10px;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .preview-header { display: none; }
+      .page-label { display: none; }
+
+      /* ── Lock every page to Letter height ── */
+      .page {
+        box-shadow: none;
+        margin: 0;
+        page-break-after: always;
+        break-after: page;
+        height: 1056px !important;
+        min-height: unset !important;
+        overflow: hidden;
+        padding: 48px 72px 76px;
+      }
+      .page-cover { padding: 0 !important; }
+
+      /* ── Cover image: force to exact Letter height, slight vertical compress ── */
+      .cover-bg {
+        width: 816px !important;
+        height: 1056px !important;
+        object-fit: fill;
+        display: block;
+      }
+
+      /* ── Images: cap height so they don't blow pages ── */
+      .page-image-wrap { margin: 8px 0; }
+      .page-image-wrap img { max-height: 140px; object-fit: contain; width: auto; max-width: 100%; }
+      .image-caption { font-size: 8px; margin-top: 3px; }
+
+      /* ── Typography ── */
+      .eyebrow { margin-bottom: 6px; font-size: 9.5px; }
+      .page-title { margin-bottom: 10px; font-size: 21px; line-height: 1.2; }
+      .body-copy { margin-bottom: 8px; line-height: 1.55; font-size: 11px; }
+      .page-rule { margin: 10px 0; }
+
+      /* ── Stat block ── */
+      .stat-block { margin: 10px 0; }
+      .stat-cell { padding: 10px 12px; }
+      .stat-number { font-size: 36px; }
+      .stat-label { margin-top: 3px; font-size: 9px; }
+
+      /* ── Callouts ── */
+      .callout-named { margin: 8px 0; padding: 8px 14px; }
+      .callout-named-label { margin-bottom: 3px; font-size: 9.5px; }
+      .callout-named-body { font-size: 10.5px; line-height: 1.5; }
+      .callout { margin: 8px 0; padding: 7px 12px; gap: 10px; }
+      .callout-label { margin-bottom: 2px; font-size: 9.5px; }
+      .callout-body { font-size: 10.5px; line-height: 1.5; }
+      .callout-icon svg { width: 14px; height: 14px; }
+
+      /* ── Tables ── */
+      .table-wrap { margin: 8px 0; }
+      thead th { padding: 5px 10px; font-size: 8px; }
+      tbody td { padding: 5px 10px; font-size: 10px; line-height: 1.4; }
+      .table-label { padding: 7px 12px; font-size: 9.5px; }
+
+      /* ── Pull quote ── */
+      .pull-quote { margin: 10px 0; padding: 8px 16px; }
+      .pull-quote p { font-size: 13px; line-height: 1.5; }
+
+      /* ── Diagnostic questions ── */
+      .question-block { padding: 7px 0; gap: 12px; }
+      .question-number { font-size: 22px; width: 30px; }
+      .question-text { font-size: 11px; margin-bottom: 3px; }
+      .question-body { font-size: 10px; line-height: 1.45; }
+
+      /* ── Service blocks (page 5) ── */
+      .service-grid { margin: 10px 0; gap: 14px; }
+      .service-block { padding: 14px; }
+      .service-block-tag { font-size: 9px; margin-bottom: 3px; }
+      .service-block-title { font-size: 13px; margin-bottom: 6px; }
+      .service-items li { font-size: 10.5px; line-height: 1.4; }
+      .service-result { margin-top: 10px; padding-top: 8px; font-size: 10px; }
+
+      /* ── CTA section (page 5) ── */
+      .cta-section { padding: 28px 72px; }
+      .cta-profile { margin-bottom: 14px; }
+      .cta-profile-pic { width: 56px; height: 56px; }
+      .cta-profile-name { font-size: 20px; }
+      .cta-headline { font-size: 15px; margin-bottom: 8px; }
+      .cta-body { font-size: 11px; line-height: 1.5; margin-bottom: 14px; }
+      .cta-links { gap: 10px; }
+      .cta-link { padding: 8px 14px; font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-header">
+  <h1>The Hidden "90-Day Tax" — Guide Preview</h1>
+  <p>5-page Executive Briefing · Letter format (8.5×11) · alvishouse.io</p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1 — COVER
+════════════════════════════════════════════ -->
+<div class="page page-cover">
+  <span class="page-label">Cover</span>
+  <img class="cover-bg" src="../04-assets/Hidden%2090%20Day%20Tax%20Cover.png" alt="The Hidden 90-Day Tax — Cover">
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2 — NAME THE PROBLEM
+════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 100px;">
+  <span class="page-label">Page 2 — The Problem</span>
+
+  <div class="eyebrow">The Problem No One Is Calculating</div>
+  <div class="page-title">You Already Made the Right Hire.<br>Here's Why It Won't Matter.</div>
+
+  <p class="body-copy">You did everything right. You spent months searching. You vetted dozens of candidates. You negotiated a $250K–$400K package for a leader with the exact blend of technical depth and executive presence your AI initiative demands.</p>
+  <p class="body-copy">Then they started. And something predictable happened.</p>
+  <p class="body-copy">Not a failure. Not a bad hire. Something quieter. Something almost every company experiences but nobody talks about: Your new AI leader disappeared into a <strong>90-day black hole of discovery</strong> — and you didn't even notice because it looked like "onboarding."</p>
+
+  <div class="page-image-wrap">
+    <img src="../04-assets/black-hole.png" alt="The 90-Day Black Hole">
+    <div class="image-caption">The organizational black hole that consumes your most expensive hire's first quarter — salary, opportunity cost, and organizational momentum spiraling into the void.</div>
+  </div>
+
+  <div class="stat-block">
+    <div class="stat-cell">
+      <div class="stat-number">60–90</div>
+      <div class="stat-label">Days<br>Average time an AI hire spends on discovery before delivering any value</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-number">3–5</div>
+      <div class="stat-label">Months<br>Before executive alignment on AI priorities typically solidifies</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-number">40%</div>
+      <div class="stat-label">Stall Rate<br>Of AI initiatives stall due to misaligned expectations — not bad technology</div>
+    </div>
+  </div>
+
+  <div class="callout-named">
+    <div class="callout-named-label">The 90-Day Tax</div>
+    <div class="callout-named-body">The invisible toll buried inside every AI leadership hire. It never shows up on a budget. It never gets approved by the CFO. It never gets questioned in a board meeting. But it's real — and it's expensive.</div>
+  </div>
+
+  <div class="callout callout-warning">
+    <div class="callout-icon"><i data-lucide="triangle-alert"></i></div>
+    <div class="callout-content">
+      <div class="callout-label">The Math</div>
+      <div class="callout-body">A $300K AI leader costs roughly <strong>$1,500 per working day</strong> in loaded costs. Multiply that by 60–90 days of discovery-phase work — listening tours, stakeholder alignment meetings, data archaeology, governance reviews — and you're looking at <strong>$90,000–$135,000 in salary alone</strong> before a single AI solution enters production. Factor in opportunity cost, delayed revenue impact, and organizational drag... and the true 90-Day Tax often exceeds <strong>$250,000 per hire.</strong></div>
+    </div>
+  </div>
+
+  <p class="body-copy">But here's what makes this tax so dangerous: <strong>your new AI leader doesn't even know they're paying it.</strong></p>
+  <p class="body-copy">They think this is normal. They assume the first 90 days <em>should</em> be spent on discovery. That mapping the data landscape, mediating competing executive visions, and building governance frameworks from scratch is simply "the job."</p>
+  <p class="body-copy">It isn't. It's an organizational readiness failure they're quietly absorbing on your behalf — and it's burning through your most expensive quarter before a single line of production AI gets written.</p>
+
+  <div class="page-footer">
+    <span>alvishouse.io</span>
+    <span>2</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3 — THE TWO PATHS
+════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 100px;">
+  <span class="page-label">Page 3 — The Two Paths</span>
+
+  <div class="eyebrow">The Fork in the Road</div>
+  <div class="page-title">Same Hire. Two Timelines.<br>One Gets Production AI in 45 Days. The Other Is Still Scheduling Stakeholder Meetings.</div>
+
+  <p class="body-copy">Every AI leader who walks through your door faces the same fork. Not because of their skill level. Not because of your technology stack. But because of one variable that determines everything that follows:</p>
+  <p class="body-copy"><strong>Was the organizational groundwork done before they arrived — or are they expected to do it themselves?</strong></p>
+  <p class="body-copy">That single variable is the difference between a 90-day ramp and a 45-day result.</p>
+
+  <div class="page-image-wrap">
+    <img src="../04-assets/fork-in-road.png" alt="The Fork in the Road">
+    <div class="image-caption">Two paths. Same hire. One organizational decision determines which timeline your AI leader travels.</div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-label table-label-navy">The Unassisted Path</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Timeline</th>
+          <th>What Your AI Leader Is Doing</th>
+          <th>What You're Getting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Days 1–30</td><td>Listening tours, relationship building, learning the political landscape</td><td>Understanding — but zero deliverables</td></tr>
+        <tr><td>Days 31–60</td><td>Data ecosystem mapping, stakeholder alignment, governance review</td><td>Assessment complete — but no production AI</td></tr>
+        <tr><td>Days 61–90</td><td>First use case scoping, executive alignment on priorities</td><td>Finally ready to build</td></tr>
+        <tr class="row-highlight-navy"><td>Day 90+</td><td>First AI solution enters development</td><td>3 months of salary spent before value begins</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap" style="margin-top: 16px;">
+    <div class="table-label table-label-blue">The Accelerated Path</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Timeline</th>
+          <th>What Your AI Leader Is Doing</th>
+          <th>What You're Getting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Pre-hire / Week 1</td><td>Executive alignment + data readiness assessment already complete</td><td>Shared priorities and validated use cases — before Day 1</td></tr>
+        <tr><td>Days 1–15</td><td>Relationship building <em>with strategy already in hand</em></td><td>Trust + immediate credibility (they arrived with answers, not questions)</td></tr>
+        <tr><td>Days 16–30</td><td>First use case in development (backlog already prioritized)</td><td>Building, not discovering</td></tr>
+        <tr class="row-highlight"><td>Day 45</td><td>First AI solution in production</td><td>50% faster to value — at half the cost</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="body-copy" style="margin-top: 16px;">Look at both timelines. The hire is the same person. The technology is the same. The market conditions are the same.</p>
+  <p class="body-copy">The only difference is what was waiting for them when they walked in the door.</p>
+
+  <div class="pull-quote">
+    <p>"The difference isn't the hire. It's what's waiting for them when they arrive — or who's working alongside them when they get there."</p>
+  </div>
+
+  <p class="body-copy">Which path is your organization on right now? Most leaders assume they're closer to the accelerated path than they actually are. The following six questions will tell you exactly where you stand — and whether the 90-Day Tax is already built into your next AI hire.</p>
+
+  <div class="page-footer">
+    <span>alvishouse.io</span>
+    <span>3</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4 — THE DIAGNOSTIC
+════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 100px;">
+  <span class="page-label">Page 4 — The Diagnostic</span>
+
+  <div class="eyebrow">The Readiness Diagnostic</div>
+  <div class="page-title">6 Questions That Determine Whether Your Next AI Hire Launches — Or Stalls</div>
+
+  <p class="body-copy">These aren't theoretical. They're the six organizational readiness factors that determine whether your AI leader's first 90 days are spent executing or excavating. Answer honestly — because your new hire will discover the truth either way. The only question is whether they discover it on Day 1... or Day 90.</p>
+
+  <div class="page-rule"></div>
+
+  <div class="question-block">
+    <div class="question-number">01</div>
+    <div class="question-content">
+      <div class="question-text">Do your executives share a common definition of "AI success"?</div>
+      <div class="question-body">Without shared outcomes, your hire will spend months mediating competing visions instead of building. If your CEO, CTO, and COO would each give a different answer to "What does AI success look like here in 12 months?" — your new leader's first job isn't AI. It's alignment.</div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-number">02</div>
+    <div class="question-content">
+      <div class="question-text">Have you assessed your data landscape through an AI-readiness lens?</div>
+      <div class="question-body">AI readiness ≠ data warehouse readiness. Your data team may have clean pipelines for reporting — but AI use cases demand different things: integration across silos, quality thresholds for training data, governance models for sensitive inputs. If these gaps haven't been surfaced, your hire's first quarter is data archaeology.</div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-number">03</div>
+    <div class="question-content">
+      <div class="question-text">Can you name your top 3 AI use cases — and rank them by feasibility?</div>
+      <div class="question-body">Ideas are cheap. Every department has an AI wish list. But validated, prioritized use cases — scored against actual data availability, technical feasibility, and business impact — are what a new hire needs to execute against. Without them, they'll spend weeks running a use case beauty pageant.</div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-number">04</div>
+    <div class="question-content">
+      <div class="question-text">Is there an AI governance framework in place or in progress?</div>
+      <div class="question-body">Without guardrails on data classification, approved AI tools, responsible AI principles, and security requirements, your hire will build policy before they build solutions. Governance isn't bureaucracy — it's the foundation that lets your AI leader move fast without creating risk.</div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <div class="question-number">05</div>
+    <div class="question-content">
+      <div class="question-text">Have you identified AI champions in each department?</div>
+      <div class="question-body">Your AI hire can't transform the organization alone. They need internal advocates — people in finance, operations, marketing, and product who understand their department's pain points and can translate between business need and AI capability. Companies with champion networks see adoption accelerate 3x faster.</div>
+    </div>
+  </div>
+
+  <div class="question-block" style="border-bottom: none;">
+    <div class="question-number">06</div>
+    <div class="question-content">
+      <div class="question-text">Does the executive team agree on how AI success will be measured?</div>
+      <div class="question-body">If you can't define the KPIs before the hire starts, you can't hold anyone accountable — and the initiative risks becoming a science project. Clear success metrics aren't just for performance reviews. They're the navigation system your AI leader uses to prioritize every decision in their first 90 days.</div>
+    </div>
+  </div>
+
+  <div class="page-rule"></div>
+
+  <div class="callout callout-remember">
+    <div class="callout-icon"><i data-lucide="bookmark-check"></i></div>
+    <div class="callout-content">
+      <div class="callout-label">Where Do You Stand?</div>
+      <div class="callout-body">
+        <strong>5–6 "Yes" answers:</strong> You're ready. Your AI leader will hit the ground executing.<br>
+        <strong>3–4 "Yes" answers:</strong> Gaps exist. Your hire will find them — the hard way, on your dime.<br>
+        <strong>0–2 "Yes" answers:</strong> The 90-Day Tax isn't a risk. It's a certainty.
+      </div>
+    </div>
+  </div>
+
+  <p class="body-copy">If you scored lower than you expected, you're not alone. Most companies we work with are at 2–3. The good news: these gaps don't require a six-month transformation to close. They require a structured sprint — either before your hire starts or embedded alongside them in their first 90 days.</p>
+  <p class="body-copy">Here's what that looks like.</p>
+
+  <div class="page-footer">
+    <span>alvishouse.io</span>
+    <span>4</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5 — TWO MODELS + CTA
+════════════════════════════════════════════ -->
+<div class="page" style="padding-bottom: 0;">
+  <span class="page-label">Page 5 — Two Models + CTA</span>
+
+  <div class="eyebrow">Eliminating the Tax</div>
+  <div class="page-title">Two Models. Same Outcome.<br>The Right One Depends on Where You Are Today.</div>
+
+  <p class="body-copy">The gaps you identified above aren't permanent. They're solvable — and they're solvable fast. The only question is timing: do you close them <em>before</em> your AI leader starts, or <em>alongside</em> them in the critical first 90 days?</p>
+  <p class="body-copy">Both paths lead to the same destination: <strong>an AI leader who executes from Day 1 instead of discovering for 90.</strong></p>
+
+  <div class="service-grid">
+    <div class="service-block service-block-blue">
+      <div class="service-block-icon"><i data-lucide="target"></i></div>
+      <div class="service-tag service-tag-blue">Done For You</div>
+      <div class="service-heading">Prepare the Ground<br>Before They Arrive</div>
+      <div class="service-meta">Best for</div>
+      <div class="service-body">Organizations in active search or early-stage hiring where 2–4 weeks of pre-work is available.</div>
+      <div class="service-meta">What we do</div>
+      <ul class="service-list">
+        <li>Facilitate executive AI alignment workshop</li>
+        <li>Conduct AI readiness assessment across all 6 pillars</li>
+        <li>Validate and prioritize top use cases against real data readiness</li>
+        <li>Produce prioritized roadmap your new hire executes from Day 1</li>
+      </ul>
+      <div class="service-result"><strong>Timeline:</strong> 2–4 weeks &nbsp;|&nbsp; <strong>Result:</strong> Production AI by Day 45</div>
+    </div>
+
+    <div class="service-block service-block-navy">
+      <div class="service-block-icon"><i data-lucide="users"></i></div>
+      <div class="service-tag service-tag-navy">Done With You</div>
+      <div class="service-heading">Accelerate Alongside<br>Your New Hire</div>
+      <div class="service-meta">Best for</div>
+      <div class="service-body">Organizations that have already hired (or are close) and want to amplify their new leader's impact from the start.</div>
+      <div class="service-meta">What we do</div>
+      <ul class="service-list">
+        <li>Embed alongside your AI leader as a strategic accelerant</li>
+        <li>Bring structured frameworks so they don't build from scratch</li>
+        <li>Supplement capacity: data assessment, governance, rapid prototyping</li>
+        <li>Provide sounding board for cross-functional alignment</li>
+      </ul>
+      <div class="service-result"><strong>Timeline:</strong> 30–90 days embedded &nbsp;|&nbsp; <strong>Result:</strong> 90-day results in 45 days</div>
+    </div>
+  </div>
+
+  <div class="page-rule"></div>
+
+  <div class="closing-block">
+    <p class="body-copy">The companies that move fastest on AI don't have better AI talent than you. They don't have bigger budgets. They don't have more advanced technology.</p>
+    <p class="body-copy">They simply refused to make their most expensive hire figure it all out alone.</p>
+    <p class="body-copy" style="font-weight: 700; color: var(--navy);">The 90-Day Tax is real. But it's also optional.</p>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-profile">
+      <div class="cta-profile-name">Alvis House</div>
+      <div class="cta-profile-title">AI Strategy &amp; Transformation</div>
+    </div>
+    <div class="cta-headline-text">Ready to eliminate the 90-Day Tax<br>before your next AI hire badges in?</div>
+    <div class="cta-sub-text">I'd welcome 15 minutes to show you exactly which of these readiness gaps apply to your organization — and how to close them before Day 1.</div>
+    <div class="cta-contact-row">
+      <div class="cta-contact-item"><i data-lucide="globe"></i> alvishouse.io</div>
+      <div class="cta-contact-item"><i data-lucide="linkedin"></i> /in/alvishouse</div>
+      <div class="cta-contact-item"><i data-lucide="mail"></i> alvis.house@inspire11.com</div>
+    </div>
+    <div class="cta-divider"></div>
+    <div class="inspire-tag">alvishouse.io</div>
+  </div>
+</div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# WordPress Post Configuration Template
+# Save as: your-post-name.yaml
+
+# Path to markdown file
+markdown: ~/temp_test_files/your-article.md
+
+# Path to folder containing images referenced in markdown
+images: ~/temp_test_files/blog-images/your-article/
+
+# Post metadata
+metadata:
+  eyebrow: "YOUR EYEBROW TEXT"
+  subtitle: "Your subtitle text - will display below the title in italic"
+  author_title: "AI Readiness Consultant"
+  read_time: "8"
+  excerpt: "Optional excerpt for SEO and previews"
+
+# WordPress settings
+category: "Strategy"  # Category name (will be looked up automatically)
+status: "draft"       # draft or publish
+featured_image: "hero.jpg"  # Optional: specific image for featured, defaults to first image
+
+# Optional: Override title (defaults to markdown filename or frontmatter)
+# title: "Custom Post Title"

@@ -1,0 +1,248 @@
+issue_metadata:
+  issue_number: "TBD"
+  issue_date: "2026-03-15"
+  campaign_tag: "2026-03-08-efficiency-gateway-drug"
+
+  # -----------------------------------------------------------------------
+  # INBOX HOOK — Subject + Preheader (read as one sentence)
+  # -----------------------------------------------------------------------
+  subject_line_options:
+    - option: 1
+      subject: "Your AI savings are disappearing."
+      preheader: "21,000 hours gone per year. Not a technology failure. A leadership one."
+      chars_subject: 34
+      chars_preheader: 59
+      hook_type: "Direct wound"
+      ranking: 1
+      rationale: "Names the loss without explanation. Preheader adds the scale and flips the blame — both land viscerally."
+
+    - option: 2
+      subject: "Your dashboard is lying to you."
+      preheader: "Not about the data. About what the data is measuring."
+      chars_subject: 31
+      chars_preheader: 52
+      hook_type: "Contrarian"
+      ranking: 2
+      rationale: "Creates immediate distrust of a tool every exec uses. Preheader deepens the wound without giving away the answer."
+
+    - option: 3
+      subject: "You saved the time. Now it's gone."
+      preheader: "BCG found the companies chasing savings lost to the ones building things."
+      chars_subject: 34
+      chars_preheader: 71
+      hook_type: "Story / consequence"
+      ranking: 3
+      rationale: "Short declarative + irony in five words. Preheader introduces the BCG data as a threat, not a statistic."
+
+    - option: 4
+      subject: "Efficiency obsession is the trap."
+      preheader: "The companies that stopped chasing savings got 40% more of them."
+      chars_subject: 32
+      chars_preheader: 63
+      hook_type: "Contrarian"
+      ranking: 4
+      rationale: "Strong contrarian, but leads slightly close to a stat setup. Solid B-tier option."
+
+    - option: 5
+      subject: "Your CFO is optimizing the wrong number."
+      preheader: "The denominator shrank. The numerator didn't move. That's the whole problem."
+      chars_subject: 40
+      chars_preheader: 74
+      hook_type: "Direct wound — named stakeholder"
+      ranking: 5
+      rationale: "Names the CFO specifically, which sharpens the wound. Slightly longer subject — works for audiences with finance background."
+
+  recommended_subject: "Option 1"
+  recommended_rationale: >
+    Option 1 hits the direct-wound criteria cleanest: states the loss in four words,
+    preheader adds scale (21,000 hours) and emotional reframe (leadership problem, not
+    technology problem) without being explanatory. Reads as one complete thought aloud.
+    Under 50 chars subject, under 100 chars preheader. Opens a wound without closing it.
+
+  # -----------------------------------------------------------------------
+  # CONTENT SUMMARY
+  # -----------------------------------------------------------------------
+  content_summary:
+    intro_hook: "A $150 million company just proved that saving money is the wrong goal."
+    intro_company: "Booking Holdings ($24B revenue, 2025 results)"
+    tldr_topic: "BCG paradox — efficiency-obsessed companies lose the efficiency race to innovation-focused ones"
+    myth_addressed: "Your AI dashboard shows whether AI is working"
+    myth_reality: "Your measurement system is a leadership problem — tracking savings without tracking what you built"
+    quick_win_action: "60-minute Capacity Dividend Audit: calculate freed hours, assign dollar value, present as capital"
+    metric_introduced: "Capacity Reinvestment Ratio (CRR) — hours redirected to new output value ÷ total hours freed"
+    deep_section_type: "Case Study"
+    deep_section_companies:
+      - "Mid-market distribution company (processing time -40%, zero differentiation)"
+      - "Booking Holdings ($150M savings → $170M reinvestment → 10-17% growth)"
+      - "JPMorgan Chase (COiN 360,000 hours freed → IndexGPT product development)"
+    tool_included: "N"
+    forward_cta_role: "VP of Operations or Head of Strategy"
+    forward_cta_question: "What are we building with the hours AI is freeing up?"
+
+  # -----------------------------------------------------------------------
+  # PILLAR DISTRIBUTION
+  # -----------------------------------------------------------------------
+  pillar_distribution:
+    strategy: "35%"
+    operations: "35%"
+    culture: "5%"
+    roi: "25%"
+    note: >
+      Slightly heavy on Strategy/Operations vs. target (30/30/20/20) due to campaign topic.
+      ROI above target (25% vs 20%) — justified by Capacity Dividend reinvestment thesis.
+      Culture underweighted; acceptable for this issue given topic focus.
+
+  # -----------------------------------------------------------------------
+  # ATOMS USED
+  # -----------------------------------------------------------------------
+  atoms_used:
+    # LinkedIn atoms
+    - id: "atom-001"
+      source: "LinkedIn Posts - Authority Post, Myth Buster, Stats Post"
+      used_in: "TL;DR, Intro"
+      usage: "BCG 40% cost savings paradox, 3.6x TSR differential"
+
+    - id: "atom-002"
+      source: "LinkedIn Posts - Authority Post, Stats Post"
+      used_in: "TL;DR, Metric That Matters"
+      usage: "21,000 hours waste, 5.7 hours/employee McKinsey data, CRR metric foundation"
+
+    - id: "atom-004"
+      source: "LinkedIn Posts - Authority Post, Case Study Post"
+      used_in: "Intro, Case Study, Metric That Matters"
+      usage: "Booking Holdings $150M/$170M story, JPMorgan COiN/IndexGPT"
+
+    - id: "atom-005"
+      source: "LinkedIn Posts - Framework Post"
+      used_in: "Quick Win of the Week"
+      usage: "4-step framework — audit step specifically; 50-person team math"
+
+    # Cornerstone atoms
+    - id: "atom-001-bcg-inverse-paradox"
+      source: "Cornerstone Blog - BCG Study Section"
+      used_in: "TL;DR, Metric That Matters"
+      usage: "1.7x revenue growth, 3.6x TSR, 40% cost savings data from BCG 1,800-company study"
+
+    - id: "atom-002-capacity-dividend-evaporation"
+      source: "Cornerstone Blog - McKinsey & Research Section"
+      used_in: "TL;DR, Metric That Matters, Quick Win"
+      usage: "5.7 hours/week McKinsey, 83% waste HBR, 21,000 hours/100-person company math"
+
+    - id: "atom-004-booking-holdings-case-study"
+      source: "Cornerstone Blog - Real-World Applications Section"
+      used_in: "Introduction, Case Study"
+      usage: "Full Booking Holdings story: $150M savings, $170M reinvestment, 10/11/17% growth"
+
+    - id: "atom-005-measurement-problem-is-leadership-problem"
+      source: "Cornerstone Blog - What Most Get Wrong Section"
+      used_in: "Myth vs Reality"
+      usage: "Dashboard measurement problem, denominator vs numerator metrics, HBR manager waste data"
+
+    - id: "atom-006-distribution-company-silence"
+      source: "Cornerstone Blog - How Capacity Dividend Walks Out the Door"
+      used_in: "Case Study"
+      usage: "Distribution company: 40% processing time reduction, 200 hours/month freed, zero reinvestment plan, vs competitor who built logistics dashboard"
+
+  atoms_not_used:
+    - id: "atom-003"
+      reason: "Covered adequately by atoms 004 and 006 (same companies, richer detail in those)"
+    - id: "atom-006-linkedin"
+      reason: "4-week plan depth not needed in this issue; Quick Win uses audit step only (more actionable in 60 min)"
+    - id: "atom-003-productivity-equation-numerator"
+      reason: "Numerator/denominator concept embedded in Intro and Myth sections; standalone section would duplicate"
+    - id: "atom-007-four-week-implementation"
+      reason: "4-week plan detail reserved for a future implementation-focused issue"
+
+  # -----------------------------------------------------------------------
+  # WORD COUNT
+  # -----------------------------------------------------------------------
+  word_count:
+    total: 1687
+    by_section:
+      inbox_hook: 25
+      introduction: 155
+      tldr: 72
+      myth_vs_reality: 248
+      quick_win: 198
+      metric_that_matters: 237
+      case_study: 478
+      forward_cta: 91
+    note: "Total within 1,500-2,000 range. All sections within template bounds."
+
+  # -----------------------------------------------------------------------
+  # LINKEDIN CROSS-REFERENCES
+  # -----------------------------------------------------------------------
+  linkedin_references:
+    - post_title: "Companies chasing AI efficiency hardest are losing the efficiency race"
+      notion_url: "https://www.notion.so/31e0760eb0cd81c4bcc2f66a0a00eb08"
+      section: "TL;DR"
+      cross_reference_type: "Amplifies authority post data for email audience"
+
+    - post_title: "21,000 hours per year. Wasted. In a 100-person company."
+      notion_url: "https://www.notion.so/31e0760eb0cd818a858bd3c130a89651"
+      section: "Metric That Matters"
+      cross_reference_type: "Stats post data expanded with CRR metric framework"
+
+    - post_title: "Two girls. One lemonade stand each. Only one built a business."
+      notion_url: "https://www.notion.so/31e0760eb0cd81d1af32e6515a004076"
+      section: "Introduction (numerator/denominator framing)"
+      cross_reference_type: "Lemonade stand metaphor grounds the denominator/numerator language in intro"
+
+  # -----------------------------------------------------------------------
+  # SOURCES CITED
+  # -----------------------------------------------------------------------
+  sources_cited:
+    - "BCG 'Capturing the Full Value of Generative AI' (2025) — 1,800-company study"
+    - "McKinsey State of AI 2025-2026 — 5.7 hours freed per employee per week"
+    - "Harvard Business Review — 83% of AI users wasted ≥25% of freed time; 36% of managers wasted >50%"
+    - "Booking Holdings 2025 Annual Report / 10-K — $150M savings, $170M reinvestment, gross bookings $166B (+10%), revenue $24B (+11%), EBITDA $8B+ (+17%)"
+    - "JPMorgan Chase — COiN platform (360,000 work hours freed annually), IndexGPT product development"
+    - "Mid-market distribution company case study (anonymized) — 40% processing time reduction, zero reinvestment plan outcome vs. competitor with reinvestment thesis"
+
+  # -----------------------------------------------------------------------
+  # QUALITY FLAGS
+  # -----------------------------------------------------------------------
+  quality_flags:
+    - flag: "Pillar balance slightly off-target"
+      severity: "LOW"
+      detail: "Culture at 5% vs 20% target. Acceptable for this campaign topic. Correct in next issue."
+
+    - flag: "Case study section at high end of word count range"
+      severity: "LOW"
+      detail: "478 words (target 400-500). Within bounds but tight. No cuts recommended — Booking Holdings story requires full arc to land."
+
+    - flag: "Distribution company case study is anonymized"
+      severity: "INFO"
+      detail: "Mid-market distribution company case study uses anonymized example. All outcomes are real data points from documented engagement. No fabrication."
+
+    - flag: "Booking Holdings financial data should be verified against 2025 10-K"
+      severity: "MEDIUM"
+      detail: "Numbers sourced from cornerstone atom (HIGH confidence). Validator should confirm gross bookings $166B, revenue $24B, EBITDA $8B+ against official filing before send."
+
+    - flag: "No Tool Spotlight in this issue"
+      severity: "INFO"
+      detail: "Consistent with 'every 2-3 issues' schedule. Include in next issue."
+
+  # -----------------------------------------------------------------------
+  # VALIDATION CHECKLIST (pre-send)
+  # -----------------------------------------------------------------------
+  validation_checklist:
+    mid_market_relevance: "PASS — distribution company example directly names 50-100 person teams; math uses 50-person and 100-person company examples"
+    belief_shift: "PASS — challenges core executive belief that AI dashboards showing cost savings = AI working"
+    quantified_evidence: "PASS — all claims attributed (BCG, McKinsey, HBR, Booking 10-K)"
+    actionability: "PASS — Quick Win implementable in 60 minutes with no vendor dependencies"
+    jargon_check: "PASS — 'Capacity Dividend,' 'CRR,' 'denominator/numerator' all defined on first use"
+    word_count: "PASS — 1,687 words total; all sections within template ranges"
+    confidence_tone: "PASS — no hedge words; all claims stated declaratively"
+    forward_test: "PASS — BCG paradox and 21,000-hour stat are high-shareability; CTA names specific roles"
+    cocktail_party_test: "PASS — 30-second version: 'AI frees time, but 70% gets wasted. BCG shows companies that reinvest it outperform by 3.6x. Here's how to stop the waste.'"
+    pillar_balance: "MONITOR — strategy/operations heavy this issue; correct toward culture in next"
+    no_duplicates: "PASS — distinct from Dumb Pipe and Playing It Safe issues"
+    source_attribution: "PASS — all data points cited with primary source"
+    recency_check: "PASS — all sources 2025-2026"
+
+  publication_ready: false
+  publication_ready_pending:
+    - "Validator review of Booking Holdings financial figures against 2025 10-K"
+    - "Issue number assignment"
+    - "LinkedIn post scheduling coordination (post 01 authority post before send)"

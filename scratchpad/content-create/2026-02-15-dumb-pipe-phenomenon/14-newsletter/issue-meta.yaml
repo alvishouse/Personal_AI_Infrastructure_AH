@@ -1,0 +1,174 @@
+issue_metadata:
+  issue_number: 2
+  issue_date: "2026-02-28"
+  newsletter_name: "The Mid-Market AI Playbook"
+  campaign: "The Dumb Pipe Phenomenon"
+
+  subject_line_options:
+    - option_1: "Your CFO just became your biggest AI ally"
+      chars: 41
+      hook_type: "Benefit + curiosity gap"
+    - option_2: "55% more output. Zero new hires. 90 days."
+      chars: 41
+      hook_type: "Metric stack + timeline"
+    - option_3: "The headcount trap widening your comp gap"
+      chars: 41
+      hook_type: "Pain point + consequence"
+  recommended_subject: "option_2"
+  recommended_rationale: >
+    Option 2 leads with three stacked metrics (55%, zero, 90 days) creating maximum
+    credibility and curiosity in minimum characters. Numerical subject lines average
+    15-20% higher open rates. Option 1 is strongest backup for segmented sends to
+    Finance-titled recipients.
+
+  preheader: "One sentence shifts your CFO from obstacle to co-designer — here's the exact framing."
+  preheader_chars: 87
+
+  content_summary:
+    tldr_topic: "One VP redirected a $75K unfilled position into an intelligence layer — 40% more volume, same cost, and the McKinsey data confirming the pattern is real."
+    myth_addressed: "Twice the revenue requires twice the team (linear headcount = linear output)"
+    quick_win_action: "5-day Repetition Tax Audit using a 3-column task log to surface the CFO-unlocking capacity percentage"
+    metric_introduced: "55% vs 25% output gap between intelligence adopters and laggards (McKinsey 2025)"
+    deep_section_type: "Case Study Spotlight"
+    deep_section_subject: "$40M logistics company intelligence layer redirect — 90-day results"
+    tool_included: "N"
+
+  pillar_distribution:
+    strategy: "32%"
+    operations: "36%"
+    culture: "12%"
+    roi: "20%"
+    note: >
+      Strategy slightly over target (30%) due to Myth vs Reality section and Case Study framing.
+      Operations over target due to Quick Win and Metric sections both being operations-focused.
+      Culture underweight (target 20%) — no standalone culture atom used; VP story embedded in
+      Case Study partially covers culture angle. ROI on target (20%) via Case Study metrics.
+      Recommend next issue prioritise a Culture section to rebalance monthly total.
+
+  atoms_used:
+    - id: "li-004"
+      section: "TL;DR + Case Study (reframe sentence)"
+      usage: "CFO redirect framing, 'same cost more output' sentence"
+      source: "LinkedIn Post - Quick Win CFO Redirect (post-06-quick-win-cfo-redirect.md)"
+
+    - id: "li-003"
+      section: "Myth vs Reality"
+      usage: "Linear vs exponential scaling belief shift; 30-point gap framing"
+      source: "LinkedIn Post - Myth-Buster (post-04-myth-buster.md)"
+
+    - id: "li-002"
+      section: "Quick Win of the Week"
+      usage: "Repetition Tax audit mechanics; 40-60% range; 2-column log structure"
+      source: "LinkedIn Post - Framework Article (post-02-framework.md)"
+
+    - id: "cs-001"
+      section: "Quick Win of the Week (supporting)"
+      usage: "Engineering/operations examples of 40-60% pattern-work discovery"
+      source: "Cornerstone Blog - The Headcount Trap + Expert Story section"
+
+    - id: "cs-003"
+      section: "Metric That Matters"
+      usage: "McKinsey 55% vs 25% gap; workflow redesign vs tool selection budget split; Bain 18% vs 9% savings"
+      source: "Cornerstone Blog - The Research Backs This Up + McKinsey Study section"
+
+    - id: "li-005"
+      section: "Case Study Spotlight (primary)"
+      usage: "90-day results: 30% inventory cost reduction, 25% on-time delivery, 15% retention"
+      source: "LinkedIn Post - Case Study Logistics (post-07-case-study-logistics.md)"
+
+    - id: "li-006"
+      section: "Case Study Spotlight (story texture)"
+      usage: "VP question reframe ('how many people' to 'how much intelligence'); COO promotion story"
+      source: "LinkedIn Post - Story Post (post-03-story.md)"
+
+    - id: "cs-002"
+      section: "Case Study Spotlight (framework layer)"
+      usage: "Intelligence-Per-Person Framework as the system behind the redirect decision"
+      source: "Cornerstone Blog - Intelligence-Per-Person Framework (4-Step System) section"
+
+  atoms_not_used:
+    - id: "li-001"
+      reason: "Metric content covered by cs-003 which has stronger research depth; li-001 would duplicate 55% gap"
+    - id: "cs-004"
+      reason: "Netflix / Dumb Pipe concept reserved for next issue's build-vs-buy teaser (Forward CTA references it)"
+    - id: "cs-005"
+      reason: "Build-vs-buy ($1.2M cautionary tale) reserved for next issue per Forward CTA teaser"
+    - id: "cs-006"
+      reason: "Thematically overlaps with li-003 (linear vs exponential); li-003 chosen for stronger shareability score (5 vs 4)"
+
+  word_counts:
+    total_editorial: 1504
+    total_with_yaml_front_matter: 1604
+    by_section:
+      intro_masthead: 73
+      tldr: 72
+      myth_vs_reality: 234
+      quick_win: 191
+      metric_that_matters: 248
+      case_study_spotlight: 499
+      forward_cta: 97
+      footer: 90
+    targets:
+      tldr: "50-75 (PASS: 72)"
+      myth_vs_reality: "200-250 (PASS: 234)"
+      quick_win: "150-200 (PASS: 191)"
+      metric_that_matters: "200-250 (PASS: 248)"
+      case_study_spotlight: "400-500 (PASS: 499)"
+      forward_cta: "75-100 (PASS: 97)"
+      total: "1500-2000 (PASS: 1504)"
+
+  linkedin_references:
+    - post_title: "How 40-60% of your team's hours disappear into pattern work"
+      file: "post-02-framework.md"
+      section: "Quick Win of the Week"
+      usage: "Repetition Tax concept and audit mechanism sourced from this post"
+
+    - post_title: "Headcount scaling is linear; intelligence scaling is exponential"
+      file: "post-04-myth-buster.md"
+      section: "Myth vs Reality"
+      usage: "Core belief-shift framework; 55% vs 25% data cited"
+
+    - post_title: "One sentence converts your CFO from obstacle to champion"
+      file: "post-06-quick-win-cfo-redirect.md"
+      section: "TL;DR + Case Study Spotlight"
+      usage: "CFO reframe sentence; redirect framing; 'same cost more output' language"
+
+    - post_title: "How one logistics team added 30% profit and 15% retention without hiring"
+      file: "post-07-case-study-logistics.md"
+      section: "Case Study Spotlight"
+      usage: "Primary case study — 90-day results, inventory and delivery metrics, retention data"
+
+    - post_title: "Changing one question got this VP promoted from crisis to COO"
+      file: "post-03-story.md"
+      section: "Case Study Spotlight"
+      usage: "Question reframe story; VP to COO narrative; the $2.4M inefficiency framing"
+
+  sources_cited:
+    - "McKinsey State of AI (2025) — 55% vs 25% output gap between early adopters and laggards"
+    - "McKinsey State of AI (2025) — Companies prioritizing workflow redesign capture 30 additional percentage points"
+    - "Bain Automation Scorecard — Intelligent automation delivers 18% cost savings vs 9% for simple automation"
+    - "Bain Automation Scorecard — Organizations allocating 20%+ of IT budget to intelligent automation cut costs 17%"
+    - "Mid-market logistics distribution company case study — $40M company, 90-day intelligence layer results"
+
+  quality_flags:
+    - "Culture pillar underweighted at 12% vs 20% target. Recommend adding Culture/Leadership section in Issue #3."
+    - "cs-004 (Netflix/Dumb Pipe) and cs-005 (build-vs-buy) deliberately held for Issue #3 — strong atoms available."
+    - "Forward CTA teases Issue #3 topic (build-vs-buy, 76% market shift) — ensure Issue #3 delivers on that promise."
+    - "Subject line option_2 contains three numbers in sequence — test open rate; may benefit from A/B split with option_1."
+    - "Preheader at 87 chars is within 50-100 target but close to upper limit for some mobile clients (Gmail clips at ~90)."
+
+  validation_notes:
+    mid_market_relevance: "PASS — all examples cite $40M-$150M companies; McKinsey/Bain data applicable at that scale"
+    belief_shift_present: "PASS — Myth vs Reality directly challenges 'more revenue = more headcount' model with mechanism"
+    quantified_evidence: "PASS — every claim has a specific number (55%, 25%, 30%, 18%, 9%, $75K, 90 days, 15%)"
+    actionability: "PASS — Quick Win executable in 5 days with zero budget or vendor dependency"
+    jargon_check: "PASS — 'intelligence layer' defined in context on first use; 'Repetition Tax' defined immediately"
+    word_count: "PASS — all sections within range; total 1,504 words"
+    confidence_tone: "PASS — no hedging language detected; active voice throughout"
+    forward_test: "PASS — TL;DR, Myth, and Case Study all board-forwardable"
+    cocktail_party_test: "PASS — TL;DR communicates core insight in under 30 seconds"
+    pillar_balance: "PARTIAL — Operations overweight; Culture underweight; acceptable for single issue, flag for monthly rebalance"
+    no_duplicates: "N/A — Issue #2, no prior issues to check against"
+    source_attribution: "PASS — McKinsey 2025, Bain Scorecard, case study all attributed"
+    recency_check: "PASS — all research from 2025; case study timeframes unspecified but framed as recent"
+    overall_assessment: "PUBLICATION READY"

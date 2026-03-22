@@ -1,0 +1,34 @@
+/* ============================================
+   SECTION HEADER SPACING - More breathing room
+   ============================================ */
+
+/* Add more space above horizontal rules */
+.elementor-widget-text-editor hr,
+.elementor-widget-container hr,
+.wp-block-separator {
+    margin-top: 4em !important;
+    margin-bottom: 2.5em !important;
+}
+
+/* Add extra space for H2 headers that follow horizontal rules */
+.elementor-widget-text-editor hr + h2,
+.elementor-widget-container hr + h2,
+.wp-block-separator + .wp-block-heading {
+    margin-top: 3em !important;
+}
+
+/* Mobile: reduce spacing slightly */
+@media (max-width: 768px) {
+    .elementor-widget-text-editor hr,
+    .elementor-widget-container hr,
+    .wp-block-separator {
+        margin-top: 3em !important;
+        margin-bottom: 2em !important;
+    }
+
+    .elementor-widget-text-editor hr + h2,
+    .elementor-widget-container hr + h2,
+    .wp-block-separator + .wp-block-heading {
+        margin-top: 2.5em !important;
+    }
+}

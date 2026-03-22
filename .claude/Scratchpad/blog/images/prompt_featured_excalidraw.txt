@@ -1,0 +1,77 @@
+Digital whiteboard illustration in Excalidraw style
+on white background (#FFFFFF).
+
+CONCEPT: Two diverging AI strategy paths - Deploy AI (automation) vs Amplify Humans (multiplication). Shows the critical decision point organizations face.
+
+CENTRAL ELEMENT:
+A flowchart-style decision diagram drawn on digital whiteboard. Starting from center-top with "AI STRATEGY" box, two wiggly arrows diverge downward:
+
+LEFT PATH (Deploy AI):
+- Arrow labeled "DEPLOY"
+- Box with "AUTOMATE TASKS"
+- Hatched box showing "REPLACE HUMANS"
+- Small output indicator "1x → 0.8x" (showing decline)
+- Red accent on this path to show warning
+
+RIGHT PATH (Amplify Humans):
+- Arrow labeled "AMPLIFY"
+- Box with "MULTIPLY CAPABILITY"
+- Three stacked elements (The Amplification Audit):
+  * "PROTECT" (small box with hatched fill)
+  * "ELIMINATE" (small box with hatched fill)
+  * "AMPLIFY" (small box with hatched fill)
+- Large output indicator "1x → 10x" (showing growth)
+- Blue accent on this path to show recommended
+
+AESTHETIC:
+- Wiggly imperfect lines throughout (deliberate jitter)
+- Lines overshoot at corners slightly
+- Boxes drawn with multiple overlapping strokes
+- Arrows with wobble, hand-drawn quality
+- Variable line thickness
+- Digital whiteboard energy
+
+FILLS:
+- Hatched diagonal lines for all boxes
+- Cross-hatching on the three audit framework boxes
+- Scribbled texture on "10x" indicator for emphasis
+- NO solid colors anywhere
+
+COMPOSITION:
+- "AI STRATEGY" starting box (center-top, 15% of frame)
+- Two diverging paths flow downward
+- Left path (Deploy) takes 35% of left side
+- Right path (Amplify) takes 45% of right side
+- Generous white space around edges
+- Key labels:
+  * "AI STRATEGY" at top
+  * "DEPLOY" and "AMPLIFY" on arrows
+  * "AUTOMATE TASKS" vs "MULTIPLY CAPABILITY"
+  * "REPLACE HUMANS" vs "THE AMPLIFICATION AUDIT"
+  * "1x → 0.8x" vs "1x → 10x"
+  * "PROTECT / ELIMINATE / AMPLIFY" stacked
+
+TEXT:
+- All-caps architect print font
+- Blocky handwritten style
+- Labels on every key element
+- Hand-drawn appearance
+- Slightly uneven letter spacing
+
+COLOR:
+- Black (#1E1E1E) for all primary lines and text
+- Red (#EF4444) accent on left "DEPLOY" path and decline indicator
+- Blue (#3B82F6) accent on right "AMPLIFY" path and growth indicator
+- White background
+
+CRITICAL:
+- Wiggly imperfect lines (NOT straight vectors)
+- Hatched fills only for boxes, never solid
+- Digital whiteboard energy
+- Abstract metaphor showing strategic choice
+- Should look like sketched on Excalidraw.com
+- Approachable diagram explaining blog thesis
+- Clear visual contrast between two paths
+- Must convey "amplify beats deploy" message
+
+--no perfect lines, --no solid colors, --no typed fonts, --no corporate polish, --no photorealism

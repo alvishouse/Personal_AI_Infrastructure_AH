@@ -1,0 +1,13 @@
+{
+  "sites": {
+    "alvishouse": {
+      "url": "https://alvishouse.io",
+      "username": "alvishousepoompow@gmail.com",
+      "password": "ez4D2i98iKJJ7JDo2K2PNZmE",
+      "description": "Alvis House main website",
+      "default_author": 1,
+      "default_status": "draft"
+    }
+  },
+  "active_site": "alvishouse"
+}
