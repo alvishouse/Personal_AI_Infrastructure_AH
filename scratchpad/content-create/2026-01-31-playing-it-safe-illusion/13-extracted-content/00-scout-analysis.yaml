@@ -1,0 +1,143 @@
+scout_analysis:
+  cornerstone_title: "For Directors and Executives Feeling Pressure to Move on AI: The 2-Year Head Start You Can't Buy Back"
+  analysis_date: "2026-02-05"
+  total_sections: 11
+  reading_level: "Executive (8-minute read)"
+  primary_audience: "C-suite/Directors in cautious organizations"
+
+  format_recommendations:
+
+    # PRIORITY 1 - AUTHORITY POST
+    - section: "The Illusion That's Costing You Everything + Singapore Insight"
+      format: "Authority Post (Credibility + Framework)"
+      engagement_potential: "HIGH"
+      priority: 1
+      hook_type: "Contrarian + Statistic"
+      estimated_engagement_score: 0.28
+      golden_ratio_drivers:
+        - "Uncomfortable reframe of familiar concept (playing it safe = failure)"
+        - "National-level case study (Singapore $1B commitment)"
+        - "Explicit mechanism explaining why caution fails"
+
+      psychological_pattern: |
+        This works because:
+        1. CONTRARIAN HOOK: Inverts what reader believes to be true
+        2. CREDIBILITY ANCHOR: Singapore (risk-averse nation) validates the audacity
+        3. MECHANISM CLARITY: Shows WHY this works (not just THAT it works)
+        4. STAKES PERSONALIZATION: "The question is: what are YOU waiting for?"
+
+    # PRIORITY 2 - FRAMEWORK POST
+    - section: "The Grow-With Model: Four-Stage Flywheel Framework"
+      format: "Framework Post (800-1200 words)"
+      engagement_potential: "HIGH"
+      priority: 2
+      hook_type: "Framework + Bold Claim"
+      estimated_engagement_score: 0.24
+      golden_ratio_drivers:
+        - "Reusable framework (4-stage model readers can apply immediately)"
+        - "Clear progression (Stage 1 → 4 creates narrative momentum)"
+        - "Actionable implementation path"
+        - "Reframes failure as legitimate business input"
+
+    # PRIORITY 3 - STORY POST
+    - section: "The Retailer Who Spent $680K and Learned Nothing"
+      format: "Story Post (Vulnerability-Based)"
+      engagement_potential: "HIGH"
+      priority: 3
+      hook_type: "Story + Cautionary Tale"
+      estimated_engagement_score: 0.22
+
+    # PRIORITY 4 - CASE STUDY POST
+    - section: "The Mid-Market Firm That Succeeded (3 wins, 3 failures = net positive)"
+      format: "Case Study Post (Social Proof)"
+      engagement_potential: "HIGH"
+      priority: 4
+      hook_type: "Success Pattern + Surprising Finding"
+      estimated_engagement_score: 0.20
+
+    # PRIORITY 5 - MYTH-BUSTING POST
+    - section: "The Myth That Playing It Safe Reduces Risk"
+      format: "Myth-Busting Post (Contrarian)"
+      engagement_potential: "HIGH"
+      priority: 5
+      hook_type: "Myth + Mechanism Reversal"
+      estimated_engagement_score: 0.21
+
+    # PRIORITY 6 - QUICK WIN POST
+    - section: "Week 1: Audit the Shadow AI in Your Organization"
+      format: "Quick Win Post (Actionable)"
+      engagement_potential: "MEDIUM-HIGH"
+      priority: 6
+      hook_type: "Bold Claim + Immediate Action"
+      estimated_engagement_score: 0.18
+
+    # PRIORITY 7 - AUTHORITY POST
+    - section: "Statistical Evidence: MIT/BCG 80% vs 37% Success Rate"
+      format: "Authority Post (Data-Backed)"
+      engagement_potential: "MEDIUM-HIGH"
+      priority: 7
+      hook_type: "Statistic + Implication"
+      estimated_engagement_score: 0.19
+
+    # PRIORITY 8 - FRAMEWORK POST
+    - section: "4-Week Implementation Roadmap: From Insight to Action"
+      format: "Framework Post (Implementation Guide)"
+      engagement_potential: "MEDIUM"
+      priority: 8
+      hook_type: "Roadmap + Obstacle Resolution"
+      estimated_engagement_score: 0.17
+
+  extraction_priority:
+    priority_1:
+      section: "The Illusion + Singapore $1B Case Study"
+      format: "Authority Post"
+      rationale: "Singapore's credibility + explicit mechanism statement. Highest engagement potential."
+
+    priority_2:
+      section: "The Grow-With Model Flywheel"
+      format: "Framework Article"
+      rationale: "Reusable framework. Can be applied immediately. High shareability."
+
+    priority_3:
+      section: "Retailer Case: $680K wasted"
+      format: "Story Post"
+      rationale: "Cautionary impact through specific numbers. High identification factor."
+
+    priority_4:
+      section: "Mid-Market Firm: 3+3 Success"
+      format: "Case Study"
+      rationale: "Social proof with surprising math. Relatable company size."
+
+    priority_5:
+      section: "Playing It Safe Myth"
+      format: "Myth-Busting"
+      rationale: "Cognitive disruption. Inverts core belief. High engagement."
+
+    priority_6:
+      section: "Week 1 Shadow AI Audit"
+      format: "Quick Win"
+      rationale: "Immediately actionable. Converts awareness to behavior."
+
+    priority_7:
+      section: "MIT/BCG 80% vs 37% Stat"
+      format: "Authority Post"
+      rationale: "Credibility building. Stark contrast creates urgency."
+
+    priority_8:
+      section: "4-Week Roadmap"
+      format: "Implementation Guide"
+      rationale: "Converts understanding to action. Pre-empts obstacles."
+
+  strategic_notes: |
+    EXCEPTIONALLY HIGH LinkedIn potential. Contains 5 contrarian claims, 4 stories/cases, 3 statistics, 2 frameworks, 1 quick win.
+
+    Golden Ratio potential: 0.22-0.32 (well above 0.15 threshold)
+    Estimated reach: 300-500K impressions across 10 posts
+    Extension potential: Can expand to 20-25 posts from existing architecture
+
+    Recommended extraction sequence:
+    - Phase 1: Authority building (Posts 1, 7)
+    - Phase 2: Framework teaching (Posts 2, 8)
+    - Phase 3: Proof/social proof (Posts 3, 4)
+    - Phase 4: Myth disruption (Post 5)
+    - Phase 5: Action conversion (Post 6)

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The One Architecture Layer Lean Never Gave You</title>
+    <meta name="description" content="Why rigorous process shops fail at AI delegation — and the missing discipline that fixes it.">
+    <meta name="author" content="Alvis House">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The one architecture layer Lean never gave you — and why your AI agents keep failing without it">
+    <meta property="og:description" content="Why rigorous process shops fail at AI delegation — and the missing discipline that fixes it.">
+    <meta property="og:type" content="article">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+/* ============================================
+   BRAND COLOR SYSTEM
+   ============================================ */
+:root {
+    --ink: #3b546b;
+    --rust: #cf5828;
+    --slate: #7a8c9b;
+    --paper: #ece6d9;
+    --text: #2b2b2b;
+    --muted: rgba(59,84,107,.75);
+    --rule: rgba(59,84,107,.22);
+    --bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    line-height: 1.8;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+article {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 50px 40px;
+}
+
+/* ============================================
+   IMAGES
+   ============================================ */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5em 0;
+    display: block;
+}
+
+.featured-image {
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 0 2.5em 0;
+}
+
+.inline-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: 2em 0;
+    border: 1px solid var(--rule);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+h1 { font-size: 2.4em; margin-bottom: 0.3em; letter-spacing: -0.02em; }
+
+h2 {
+    font-size: 1.6em;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--ink);
+}
+
+h3 { font-size: 1.25em; margin-top: 2em; margin-bottom: 0.6em; }
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+}
+
+p { margin-bottom: 1.5em; font-size: 1.05em; }
+
+strong { color: var(--ink); }
+
+em { font-style: italic; color: var(--muted); }
+
+/* ============================================
+   ARTICLE HEADER
+   ============================================ */
+.article-header {
+    margin-bottom: 2.5em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.5em;
+    line-height: 1.5;
+}
+
+.meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: var(--slate);
+    margin-top: 1.5em;
+}
+
+.meta strong { color: var(--ink); }
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+blockquote {
+    margin: 2em 0;
+    padding: 1.5em 2em;
+    background: var(--paper);
+    border-left: 4px solid var(--ink);
+    border-radius: 0 8px 8px 0;
+    color: var(--text);
+    font-style: italic;
+}
+
+blockquote p { margin-bottom: 0.5em; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ============================================
+   CALLOUT BOXES
+   ============================================ */
+.callout {
+    background: var(--paper);
+    border: 1.5px dashed rgba(59,84,107,.5);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 2em 0;
+}
+
+.callout.mechanism {
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+/* ============================================
+   PULL QUOTES
+   ============================================ */
+.pull-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.35em;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ink);
+    text-align: center;
+    padding: 1.5em 2em;
+    margin: 2em 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    line-height: 1.5;
+}
+
+/* ============================================
+   STAT HIGHLIGHTS
+   ============================================ */
+.stat-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin: 2em 0;
+    padding: 1.5em;
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+}
+
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.stat-label { font-size: 1em; color: var(--text); }
+.stat-label strong { color: var(--ink); }
+
+/* ============================================
+   DIAGNOSTIC / ORDERED LIST
+   ============================================ */
+ol, ul {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+}
+
+li { margin-bottom: 0.6em; font-size: 1.05em; }
+
+/* ============================================
+   HORIZONTAL RULE
+   ============================================ */
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 3em 0;
+}
+
+/* ============================================
+   FOOTER TAGLINE
+   ============================================ */
+.article-footer {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--rule);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    font-style: italic;
+    color: var(--muted);
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+<article>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <p class="eyebrow">Process Architecture · AI Operations</p>
+        <h1>The One Architecture Layer Lean Never Gave You — And Why Your AI Agents Keep Failing Without It</h1>
+        <p class="subtitle">Why rigorous process shops fail at AI delegation — and the missing discipline that fixes it.</p>
+        <p class="meta"><strong>Alvis House</strong> · March 2026</p>
+    </header>
+
+    <!-- Featured Image -->
+    <img
+        class="featured-image"
+        src="./images/featured.png"
+        alt="Layered architecture diagram showing the Process Layer with Flow Bridges as the connective tissue between AI agents and organizational infrastructure"
+    >
+
+    <!-- Hook -->
+    <h2>You Built Process Disciplines for Everything Except Delegation</h2>
+
+    <p>You have a process discipline for manufacturing defects. You have a process discipline for customer experience. You have a process discipline for software delivery.</p>
+
+    <p>You have no process discipline for the thing that will reshape all three: handing work to AI agents.</p>
+
+    <p>That is the gap. Not a technology gap. Not a talent gap. A discipline gap — sitting in the one place your Lean toolkit never thought to look.</p>
+
+    <p>This article gives you three things:</p>
+
+    <ul>
+        <li>The name for the missing discipline and why your existing frameworks cannot cover it</li>
+        <li>Two core tools — Flow Bridges and Drift Signals — that make human-agent collaboration reliable and improvable</li>
+        <li>A concrete walkthrough showing how one team went from 12 to 20 deliverables per month on the same headcount, and a 10-question diagnostic so you know exactly where to start</li>
+    </ul>
+
+    <p>The discipline is called <strong>Agentic Process Architecture</strong>. It is the operations manual that Lean forgot to write for the AI era.</p>
+
+    <p>Here is how it works.</p>
+
+    <div class="callout mechanism">
+        <p><strong>This is for process leaders — Six Sigma Black Belts, Lean practitioners, VPs of Operations who built their credibility on methodology</strong> — who know AI should be producing real results but keep watching pilots stall, outputs drift, and agent-assisted workflows quietly degrade.</p>
+        <p>If you have struggled with:</p>
+        <ul>
+            <li>AI tools that work in demos but produce inconsistent results in live operations</li>
+            <li>Trying to apply Lean or Six Sigma thinking to AI workflows and finding it does not fit</li>
+            <li>Suspecting the problem is structural but having no name for it and no framework to present upward</li>
+        </ul>
+        <p>Then you are in the right place. Because what becomes possible is:</p>
+        <ul>
+            <li>A named discipline for human-agent collaboration that extends what you already know</li>
+            <li>A way to increase agent autonomy safely over time without increasing risk</li>
+            <li>A framework your team can operate and your executives can understand</li>
+            <li>The ability to diagnose exactly where your agent-assisted workflows are breaking and why</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <!-- Blind Spot -->
+    <h2>Your Process Toolkit Has a Blind Spot the Size of a Building</h2>
+
+    <p>Every framework in your toolkit was designed before AI agents became collaborators. Full stop.</p>
+
+    <p><strong>Lean</strong> reduces waste by optimizing how materials and information flow through a system. <strong>Design Thinking</strong> reduces solution risk by deeply understanding the problem before building. Both are powerful. Neither answers the question you are asking right now: what happens when you hand work to a non-human collaborator that can fail in ways no machine on your factory floor ever did?</p>
+
+    <p>Think of it this way. Your factory floor has safety rails, quality gates, and escalation paths for every machine. Your AI agents have... a prompt and a prayer.</p>
+
+    <p>The missing discipline is called <strong>Agentic Process Architecture (APA)</strong>. It reduces the cost of handing work to an agent without a safety net — by designing the handshakes, guardrails, and learning loops that make human-agent collaboration reliable, improvable, and scalable.</p>
+
+    <p>This is not a technology decision. It is a process discipline.</p>
+
+    <div class="stat-highlight">
+        <div class="stat-number">2.8×</div>
+        <div class="stat-label"><strong>McKinsey's 2025 State of AI:</strong> High performers are 2.8x more likely to redesign workflows when deploying AI — 55% versus 20% among all others. But "workflow redesign" is not the same as "process improvement."</div>
+    </div>
+
+    <p>Redesigning a workflow for AI delegation requires answering questions Lean never asks: Where does human judgment hand off to agent execution? What happens when the agent's output drifts off spec? How do you verify quality at handoff points without creating bottlenecks? When does the agent stop and escalate?</p>
+
+    <p>These are architecture questions. And they need a discipline purpose-built for the answer.</p>
+
+    <hr>
+
+    <!-- Failure Stats -->
+    <h2>95% of AI Pilots Fail — And It Is Never the Technology</h2>
+
+    <p>Before introducing the framework, look at what happens without it.</p>
+
+    <p><strong>The failure rate is structural, not anecdotal.</strong> MIT's NANDA Initiative found that 95% of enterprise AI pilots fail to deliver measurable P&L impact. Over 80% of organizations piloted tools like ChatGPT or Copilot. The systems boosted individual productivity. They did not deliver enterprise-level value. The consistent cause was not the technology — it was the absence of process architecture around delegation.</p>
+
+    <p><strong>The math is unforgiving.</strong> In multi-agent pipelines, errors compound at every transition — like a game of telephone where each whisper loses fidelity. If each agent in a three-step pipeline performs at 90% accuracy, the pipeline delivers 72.9% accuracy (0.9 × 0.9 × 0.9). Add a fourth agent and you drop to 65.6%. The risk is not in the steps. <strong>The risk is in the transitions.</strong> UC Berkeley researchers confirmed this in production: multi-agent frameworks showed failure rates up to 86.7% across real deployments.</p>
+
+    <p><strong>Drift is the default state.</strong> A 2022 Gartner study found that 91% of machine learning models degrade over time as real-world data shifts away from training conditions. A bank deployed a credit risk model in January 2024 that correctly identified 95% of defaults. By September, accuracy had fallen to 87% — an 8-point drop in 8 months with no changes to the model itself. The decline was gradual, like a tire losing air. No blowout. No warning light. Just a slow fade that was only visible through monitoring. Most teams have no system for detecting it.</p>
+
+    <p><strong>Optimism-based deployment has a price tag.</strong> Klarna replaced human customer service agents with AI, cutting headcount from 5,500 to under 3,000. Within six months, customer satisfaction dropped sharply, service quality became inconsistent, and the CEO acknowledged the approach "reduced the quality of the company's offerings and eroded trust with customers." Klarna began rehiring in May 2025.</p>
+
+    <div class="pull-quote">The AI worked. The governance architecture did not.</div>
+
+    <p>Every one of these failures traces to the same root cause: no process discipline for delegation. Not bad technology. Not insufficient data. Not the wrong model.</p>
+
+    <p>A missing architecture layer.</p>
+
+    <p>So let's build it.</p>
+
+    <hr>
+
+    <!-- Framework -->
+    <h2>Why AI Agents Fail at Transitions, Not Tasks</h2>
+
+    <p>Agentic Process Architecture rests on two tools that work as a closed loop. One designs the handshake between human and agent. The other watches for the moment that handshake stops working.</p>
+
+    <h3>Flow Bridges — The Tollbooths on the AI Highway</h3>
+
+    <p>A Flow Bridge is a structured transition between collaborators. Think of it as a tollbooth on a highway. You do not eliminate tollbooths — you calibrate them to the traffic. Some lanes get an EZ-Pass. Some require a full stop. The design depends on what is at stake if the wrong vehicle gets through.</p>
+
+    <p>There are four types of Flow Bridge:</p>
+
+    <ul>
+        <li><strong>Human to Agent</strong> — a person hands work to an agent</li>
+        <li><strong>Agent to Human</strong> — an agent hands output back for review or decision</li>
+        <li><strong>Agent to Agent</strong> — one agent passes an artifact to another</li>
+        <li><strong>Agent to System</strong> — an agent interacts with a tool or database</li>
+    </ul>
+
+    <p>In traditional process mapping, you model steps. In agentic process design, you model bridges. Because the risk is not in the step. <strong>The risk is in the transition.</strong></p>
+
+    <p>Every strong Flow Bridge has three properties:</p>
+
+    <p><strong>Clear</strong> — Inputs and outputs are explicitly defined. No ambiguity about what one party is handing to another, in what format, and with what expectations. An agent receiving a vague instruction is not crossing a bridge — it is jumping off a cliff.</p>
+
+    <p><strong>Verifiable</strong> — Each bridge has validation logic matched to the stakes of getting it wrong. Low-risk transitions pass through with automated checks or sampling. High-risk transitions require structured human review against defined criteria. Verification effort matches the consequence of failure at that specific transition.</p>
+
+    <p><strong>Recoverable</strong> — There is a defined rollback, retry, or escalation path. If a bridge fails, the system knows what to do next. Recovery is designed in advance, not improvised in the moment.</p>
+
+    <p>Without Flow Bridges, five things happen predictably. Agents overreach and produce unverified output. Humans over-review and become bottlenecks. Errors compound silently across multiple transitions. Trust collapses and organizations retreat to manual processes. Every handoff becomes an ad hoc negotiation.</p>
+
+    <p>The practitioner's working document for each bridge is the <strong>Flow Bridge Spec</strong> — one card per transition point. Think of it as the APA equivalent of Lean's A3 report: a single-page artifact capturing everything needed to understand, operate, and improve a specific human-agent handoff. A living document, not a filing exercise.</p>
+
+    <!-- Inline Image -->
+    <img
+        class="inline-image"
+        src="./images/inline-01.png"
+        alt="Diagram of the four Flow Bridge types with the three required properties labeled beneath each bridge connection"
+    >
+
+    <h3>Drift Signals — The Vital Signs Monitor for Your AI Workflows</h3>
+
+    <p>Traditional continuous improvement assumes machines fail predictably and humans vary. Agentic systems invert this. Agents are highly capable, but their failure patterns evolve continuously — with each model release, each tool update, and each shift in the business environment.</p>
+
+    <p>A Drift Signal is an observable indicator that something in your delegation architecture has shifted and needs attention. It works like a vital signs monitor in an ICU. You are not waiting for a cardiac arrest. You are tracking trends — heart rate, blood pressure, oxygen — so you can intervene before the crisis.</p>
+
+    <p>Drift Signals fall into three distinct categories, each requiring a different response.</p>
+
+    <p><strong>Capability Drift</strong> — The agent's ability has shifted. A model update changes what it can do, for better or worse. After an update, a legal review agent begins catching non-standard termination language it previously missed. The Flow Bridge that required human review of all termination clauses can now be narrowed — freeing human attention for higher-value work. Or the opposite happens: a capability regresses, and the bridge must tighten. Different signal, different response.</p>
+
+    <p><strong>Performance Drift</strong> — The agent's output quality is shifting within its current capability range, without any change to the agent itself. This is the hardest type to detect because each individual output looks acceptable while the trend is concerning. That bank credit risk model dropping from 95% to 87% over eight months? That is Performance Drift in action — like a faucet dripping so slowly you do not notice until the water bill arrives. The bridge placement stays the same, but the verification checks need recalibrating.</p>
+
+    <p><strong>Context Drift</strong> — The business environment has changed, making the current Flow Bridge architecture misaligned even though neither the agent nor its performance has changed. A new regulation requires audit trails for all AI-generated content reaching clients. The agent has not changed. Every Flow Bridge in the workflow now needs documentation artifacts that did not exist before.</p>
+
+    <p>This taxonomy matters because different drift types require fundamentally different responses. Treating all signals the same leads to either paralysis or neglect.</p>
+
+    <p>The cadence that makes Drift Signals operational: <strong>daily signal capture</strong> (a 2-minute habit, not a bureaucratic burden), <strong>weekly bridge review</strong> (15-30 minutes per bridge owner), and <strong>monthly autonomy assessment</strong> (1-2 hours reviewing whether workflows are ready for more or less delegation).</p>
+
+    <p>APA runs through four phases — <strong>Discover, Architect, Run, Improve</strong> — like Lean's PDCA cycle, but purpose-built for delegation design. The case study below shows all four in action.</p>
+
+    <hr>
+
+    <!-- Case Study -->
+    <h2>From 12 to 20 Posts per Month — Same Team, New Architecture</h2>
+
+    <p>Here is APA applied to a content production workflow.</p>
+
+    <p><strong>The problem.</strong> A B2B marketing team produces 12 blog posts per month. A content strategist outlines each piece, a writer drafts it, an editor reviews, and a manager approves before publication. The team wants to increase output without increasing headcount.</p>
+
+    <p><strong>Phase 1: Discover.</strong> The team maps five recurring tasks: topic ideation, outline creation, first draft writing, editing, and SEO optimization. They identify where human judgment is required (topic selection, brand voice) versus where agents can execute (first drafts, SEO). They map risk: editing is high-risk (final quality gate), SEO is low-risk (technical, verifiable), first drafts are medium-risk (could damage brand if unreviewed).</p>
+
+    <p><strong>Phase 2: Architect.</strong> The team designs five Flow Bridges. Bridge 1: strategy input to agent for topic ideation — human selects from 20 agent-generated suggestions. Bridge 2: approved topic to agent for outline — human reviews each outline against audience knowledge (5 minutes). Bridge 3: approved outline to agent for first draft — human editor reviews against brand voice checklist and factual accuracy (this is the highest-leverage bridge). Bridge 4: approved draft to agent for SEO optimization — automated score checks plus 25% human spot-check. Bridge 5: optimized draft to human for final approval — 100% review, final gate.</p>
+
+    <p><strong>Phase 3: Run.</strong> The team specifies where attention goes: deep review at Bridges 3 and 5, light review at Bridge 2, spot-check at Bridge 4, selection only at Bridge 1. They operate this workflow for 8 weeks, logging Drift Signals throughout.</p>
+
+    <p><strong>Phase 4: Improve.</strong> Three Drift Signals emerged. Each required a different response — and that is the point.</p>
+
+    <p>Week 3 — <strong>Performance Drift</strong> at Bridge 3. The editor noticed agent drafts were gradually shifting toward a formal tone that did not match the brand's conversational voice. Each individual draft was acceptable. The trend was not. Like a chef whose dishes are slowly getting saltier — no single plate sends back, but regulars start noticing. Response: the team added three specific voice markers to the brand voice checklist and capped agent revision cycles at two. The drift stabilized.</p>
+
+    <p>Week 6 — <strong>Capability Drift</strong> at Bridge 1. After a model update, topic suggestions became significantly more sophisticated — the agent began identifying content gaps in the competitive landscape the strategist had not considered. Response: the team promoted Bridge 1 from "human selects from list" to "agent proposes topics with competitive gap analysis; human approves or redirects." The strategist's role shifted from ideation to validation.</p>
+
+    <p>Week 8 — <strong>Context Drift</strong> at Bridge 5. The company announced a new product line. The approval criteria at the final bridge needed to account for cross-product messaging consistency. Response: the team added a cross-product messaging check and created new multi-product positioning guidelines for the agent at Bridge 3. A bridge redesign triggered by business context change, not agent capability change.</p>
+
+    <div class="stat-highlight">
+        <div class="stat-number">67%</div>
+        <div class="stat-label"><strong>Output increase on same headcount.</strong> From 12 to 20 posts per month. The content strategist spent roughly 2 hours per month on APA maintenance — signal review, bridge recalibration, and autonomy assessment. The framework did not replace anybody. It replaced the guesswork.</div>
+    </div>
+
+    <hr>
+
+    <!-- Diagnostic -->
+    <h2>You Now Have the Name for the Thing That Has Been Frustrating You</h2>
+
+    <p>Your agents are not failing. Your architecture is.</p>
+
+    <p>You deployed AI on top of processes that were never designed for non-human collaborators. Every stalled pilot, every inconsistent output, every workflow that quietly degraded — same root cause. And now it has a name. And a discipline to close it.</p>
+
+    <p>The question is: where do you stand?</p>
+
+    <p><strong>The APA Readiness Diagnostic</strong> answers that. Ten questions. Five minutes. The score tells you not just where you are, but where to start.</p>
+
+    <p>Score each 1 (not at all) through 5 (fully in place):</p>
+
+    <ol>
+        <li>Can you identify, for each major workflow, which steps are performed by humans, which by agents, and where the transitions occur?</li>
+        <li>Is the depth of human review at each transition matched to the stakes of getting it wrong — or applied the same everywhere?</li>
+        <li>When an agent produces unacceptable output, is there a defined recovery path — or does the team improvise?</li>
+        <li>Are practitioners logging when agents surprise them, or do those observations go unrecorded?</li>
+        <li>Does your team maintain a differentiated understanding of how agents fail on different task types?</li>
+        <li>How frequently do you review and update your delegation architecture in response to changes?</li>
+        <li>Is there an explicit, documented policy for where human attention goes in agent-assisted workflows?</li>
+        <li>When you increase autonomy, is the decision based on documented evidence or general confidence?</li>
+        <li>Is there a named person whose responsibility includes maintaining the delegation architecture?</li>
+        <li>Do failure patterns and bridge designs transfer across teams, or does each team start from scratch?</li>
+    </ol>
+
+    <p><strong>Score 10–20:</strong> Practice Level 1. Start with Phase 1 (Discover) on your highest-volume workflow.<br>
+    <strong>Score 21–30:</strong> Practice Level 2. Formalize Flow Bridge Specs and begin systematic Drift Signal capture.<br>
+    <strong>Score 31–40:</strong> Practice Level 3. Implement the full APA cadence and Failure Model Library.<br>
+    <strong>Score 41–50:</strong> Practice Level 4–5. Focus on cross-team pattern reuse and continuous recalibration.</p>
+
+    <p>Most teams score between 12 and 22. That is not a failure. That is a starting point.</p>
+
+    <h3>What to Do With Your Score</h3>
+
+    <p><strong>Today: self-assess.</strong> Take the diagnostic. Know where you stand before you build. Clarity precedes action — you already know that from Lean.</p>
+
+    <p><strong>This week: map one workflow.</strong> Pick your highest-volume or highest-frustration agent-assisted process. Map the transitions. Design one Flow Bridge. Define what is clear, what is verifiable, and what the recovery path is. One bridge, fully specified, teaches you more than any amount of reading.</p>
+
+    <p><strong>When you want a guide: work with us.</strong> Our AI Readiness and Adoption Program is built on the APA framework. If you want a structured path from diagnostic through full implementation — with the Discover, Architect, Run, and Improve cycle applied to your specific operations — that program exists. It was designed for process leaders who do not need to be convinced AI matters. They need the architecture to make it work.</p>
+
+    <p>The organizations that will achieve outsized output-to-headcount ratios in the next two years are not the ones with the best AI models. They are the ones with the best delegation architecture.</p>
+
+    <p>You have the name now. You have the tools. The only question left is which workflow you start with.</p>
+
+    <hr>
+
+    <div class="article-footer">
+        <em>Agentic Process Architecture. Designing delegation you can trust.</em>
+    </div>
+
+</article>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "sites": {
+    "production": {
+      "url": "https://your-wordpress-site.com",
+      "username": "your_wp_username",
+      "password": "your_application_password_here",
+      "description": "Main production website",
+      "default_author": 1,
+      "default_status": "draft"
+    },
+    "staging": {
+      "url": "https://staging.your-site.com",
+      "username": "staging_username",
+      "password": "staging_app_password",
+      "description": "Staging environment for testing",
+      "default_author": 1,
+      "default_status": "draft"
+    }
+  },
+  "active_site": "production"
+}

@@ -1,0 +1,199 @@
+Modern Alchemist illustration on warm cream technical paper
+with faint grid background.
+
+CONCEPT: Human mechanic and robotic assistant collaborating on vintage car repair - visual metaphor showing AI as amplification tool, not replacement. Both human and robot working together on the same task, representing partnership and capability multiplication.
+
+STYLE: "Modern Alchemist / Intellectual Blueprint"
+- Sophisticated blend of vintage engineering schematics and modern corporate design
+- Leonardo da Vinci notebook aesthetic updated for Silicon Valley era
+- Clean technical precision meets timeless strategic insight
+
+BACKGROUND:
+- Warm cream/bone color (#F5F5DC)
+- FAINT technical grid pattern throughout (graph paper style)
+- Grid lines VERY light (#E8E6E0) - barely visible, not strong
+- Subtle paper grain texture on background
+- Square grid pattern (not isometric)
+
+LINE WORK:
+- Clean, uniform weight mono-line vectors
+- Deep charcoal/jet black (#2C2C2C) for all primary linework
+- Patent illustration precision style
+- Modern readability (not scratchy vintage)
+- Consistent line thickness throughout
+- Digital precision with analog warmth
+
+MAIN ELEMENTS:
+
+**Human Figure (Left-Center):**
+- Rendered with patent illustration precision
+- Simplified geometric forms showing posture and gesture
+- Figure bent forward over car engine
+- Arms extended working on engine compartment
+- Clean mono-line rendering of human form
+- Technical schematic quality with modern readability
+- Deep charcoal (#2C2C2C) linework
+- Minimal detail - focus on silhouette and action
+- Professional drafting style (not photorealistic)
+
+**Robotic Assistant (Right Side):**
+- Articulated robot arm extending from upper right
+- Rendered as series of cylindrical segments with joints
+- Multiple segments showing mechanical precision:
+  * Shoulder joint (top)
+  * Upper arm segment
+  * Elbow joint
+  * Forearm segment
+  * Wrist joint
+  * Hand/gripper at end
+- Clean geometric construction
+- Joint circles showing connection points
+- Mechanical precision with patent illustration quality
+- Arm extends downward toward engine
+- Hand/gripper positioned over same work area as human
+- Deep charcoal (#2C2C2C) with geometric accuracy
+
+**Vintage Car (Center):**
+- Classic car design with geometric boxy form
+- Hood open showing engine compartment
+- Simple geometric rendering:
+  * Rounded front fender curves
+  * Hood propped open at angle
+  * Grille rendered with clean lines
+  * Headlight circles
+  * Engine block visible inside
+- Technical schematic style (not photorealistic)
+- Deep charcoal mono-line throughout
+- Positioned centrally as focal point of collaboration
+
+**Engine/Collaboration Point:**
+- Engine compartment where both human and robot work
+- Geometric representation of engine components
+- Simple cylindrical and rectangular forms
+- This is the strategic emphasis point (highlighted in gold)
+- Shows convergence of human expertise and robotic assistance
+
+SUPPORTING ELEMENTS:
+
+**Technical Annotations:**
+- Small leader lines pointing to key components
+- Geometric markers (small circles) at connection points
+- Optional labels in clean sans-serif:
+  * "Human expertise"
+  * "Robotic precision"
+  * "Amplification point"
+- Minimal annotations - let visual speak
+
+**Mechanical Symbols:**
+- Small gear icons indicating systems/process
+- Arrows showing motion or interaction
+- Compass rose or directional indicator (optional)
+- Tool symbols (wrench, etc.) rendered geometrically
+
+**Ground Plane:**
+- Simple horizontal line establishing spatial relationship
+- Minimal shadow indication (light grey wash)
+- Provides grounding without clutter
+
+COMPOSITION:
+- Human figure occupies left 40% of frame
+- Vintage car occupies center 50% of frame
+- Robot arm extends from upper right into center
+- Collaboration point (engine) at center of composition
+- Generous negative space in upper left and corners
+- Balanced asymmetry
+- Professional whitespace management
+- Elements aligned to faint background grid
+
+ACCENT COLOR (Muted Gold/Bronze #C5A059):
+- Used SPARINGLY (5-10% of composition)
+- Applied to collaboration elements:
+  * Robot arm joints (showing mechanical precision)
+  * Engine compartment where hands meet
+  * Highlights at the amplification point
+  * Small accent on human hand position
+- Guides eye to the partnership concept
+- Never overwhelming - creates hierarchy
+
+SHADING:
+- Minimal light grey washes (#D3D3D3) for volume
+- Applied sparingly to:
+  * Car body for dimensionality
+  * Robot arm segments for depth
+  * Human figure for form
+  * Engine compartment for emphasis
+- Creates subtle dimensionality without clutter
+
+TYPOGRAPHY:
+
+**Headings (Bold Authoritative Serif):**
+- Optional title if needed: "Human + AI Collaboration" or "Amplification, Not Replacement"
+- Font style: Garamond/Baskerville character
+- Deep charcoal (#2C2C2C)
+- Positioned at top or integrated into composition
+
+**Body/Annotations (Clean Geometric Sans-Serif):**
+- Technical callouts if used
+- Font style: Inter/Helvetica character
+- Maximum legibility
+- Deep charcoal (#2C2C2C)
+- Professional spacing
+
+VISUAL HIERARCHY:
+1. Eye drawn to collaboration point (engine compartment center)
+2. Then notices human figure (left)
+3. Follows robot arm from upper right to center
+4. Recognizes partnership and amplification concept
+5. Gold accents reinforce collaboration points
+6. Understands message: working together, not replacement
+
+STRATEGIC METAPHOR:
+- Human represents expertise, judgment, experience
+- Robot represents precision, consistency, assistance
+- Vintage car represents work/task/challenge
+- Open hood represents transparency and access
+- Collaboration point represents amplification
+- Not replacement: both working together on same task
+- Visual shows AI as tool that multiplies human capability
+
+TEXTURE:
+- Background: Subtle paper grain (aged technical paper quality)
+- Foreground: Smooth digital precision
+- Contrast between textured background and clean elements
+- No excessive weathering or distressing
+- Professional finish
+
+CRITICAL CHARACTERISTICS:
+- Faint grid lines (NOT strong/dark) - barely visible
+- Clean mono-line vectors (uniform weight throughout)
+- 3-color palette: Cream background, charcoal primary, gold accents on collaboration points
+- Modern readability with vintage engineering warmth
+- Professional sophistication appropriate for thought leadership
+- Technical precision meets strategic depth
+- Leonardo meets Silicon Valley aesthetic
+- Patent illustration quality
+
+COMPOSITIONAL INTENT:
+- Show human-AI collaboration as partnership
+- Visualize amplification concept (not replacement)
+- Demonstrate complementary capabilities
+- Robot assists rather than replaces
+- Both focused on same goal
+- Strategic insight: AI multiplies human capability
+- Professional technical aesthetic for business context
+
+THEMATIC ALIGNMENT:
+- Supports messaging around AI amplification
+- Reinforces "humans + AI" not "AI instead of humans"
+- Professional Modern Alchemist style positions as thought leadership
+- Visual metaphor for strategic AI implementation
+- Shows practical collaboration in tangible scenario
+- Vintage car adds timeless quality to modern concept
+- Technical precision reflects engineering mindset
+
+ASPECT RATIO:
+- 16:9 landscape for blog featured image
+- Or 4:3 for presentation use
+- Horizontal orientation supports left-to-right visual flow
+
+--no strong grid lines, --no multiple bright colors, --no variable line weights, --no watercolor texture, --no soft blending, --no photorealism, --no cartoon style, --no scratchy vintage texture, --no solid color fills, --no gradients, --no cluttered composition, --no informal aesthetic

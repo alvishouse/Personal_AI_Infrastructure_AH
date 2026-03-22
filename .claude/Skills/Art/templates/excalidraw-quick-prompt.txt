@@ -1,0 +1,59 @@
+EXCALIDRAW QUICK PROMPT (Copy & Customize)
+================================================
+
+Digital whiteboard Excalidraw style on white background.
+
+CONCEPT: [Describe your main idea in one sentence]
+
+MAIN ELEMENTS:
+- [Element 1]
+- [Element 2]
+- [Element 3]
+[Add arrows, connections, relationships]
+
+TEXT:
+Title: "[YOUR TITLE IN ALL-CAPS]"
+Labels: "[Label 1]", "[Label 2]", "[Label 3]"
+
+COLORS:
+- Black (#1E1E1E) - primary elements
+- Blue (#3B82F6) - [positive/technical]
+- Red (#DC2626) - [warnings/problems]
+
+STYLE REQUIREMENTS:
+- Wiggly imperfect lines throughout (NOT straight)
+- Hatched diagonal fills ONLY (no solid colors)
+- All-caps architect font for text
+- Circles as overlapping spirals
+- Lines overshoot at corners
+- Hand-drawn with mouse quality
+- Generous white space
+- Digital whiteboard energy
+
+--no perfect lines, --no solid fills, --no gradients
+
+================================================
+EXAMPLES OF MAIN ELEMENTS:
+
+Process Flow:
+- Box 1 → Box 2 → Box 3 (left to right)
+- Wiggly arrows connecting stages
+- Labels above each box
+
+Comparison:
+- Left column: [Option A]
+- Right column: [Option B]
+- Dividing line in center
+- Checkmarks/crosses for features
+
+Framework:
+- 2x2 matrix with quadrants
+- X-axis: [Low to High X]
+- Y-axis: [Low to High Y]
+- Items plotted in quadrants
+
+System Diagram:
+- Central component
+- Connected sub-components
+- Data flow arrows
+- Labels for each part

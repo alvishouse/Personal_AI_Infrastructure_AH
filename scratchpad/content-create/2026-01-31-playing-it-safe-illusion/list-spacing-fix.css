@@ -1,0 +1,31 @@
+/* ============================================
+   LIST SPACING - Larger bullets with more spacing (PIXEL VALUES)
+   ============================================ */
+
+/* Bullet and numbered list items */
+.elementor-widget-post-content ul li,
+.elementor-widget-post-content ol li,
+.elementor-widget-theme-post-content ul li,
+.elementor-widget-theme-post-content ol li,
+.elementor-widget-text-editor ul li,
+.elementor-widget-text-editor ol li,
+article ul li,
+article ol li {
+    font-size: 18px !important;          /* ← INCREASE for larger text */
+    line-height: 30px !important;        /* ← INCREASE for taller lines */
+    margin-bottom: 16px !important;      /* ← INCREASE for more space between bullets */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .elementor-widget-post-content ul li,
+    .elementor-widget-post-content ol li,
+    .elementor-widget-text-editor ul li,
+    .elementor-widget-text-editor ol li,
+    article ul li,
+    article ol li {
+        font-size: 16px !important;
+        line-height: 26px !important;
+        margin-bottom: 12px !important;
+    }
+}

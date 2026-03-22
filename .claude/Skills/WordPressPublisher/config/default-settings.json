@@ -1,0 +1,59 @@
+{
+  "publishing": {
+    "default_status": "draft",
+    "auto_publish": false,
+    "require_approval": true,
+    "archive_after_publish": true,
+    "notify_on_publish": true
+  },
+  "content": {
+    "default_author": 1,
+    "default_categories": [],
+    "default_tags": [],
+    "strip_html_comments": true,
+    "add_generated_notice": false
+  },
+  "media": {
+    "compress_images": true,
+    "max_image_size_mb": 2,
+    "generate_thumbnails": true,
+    "alt_text_required": true
+  },
+  "seo": {
+    "auto_generate_excerpt": true,
+    "excerpt_length": 160,
+    "add_schema_markup": false,
+    "generate_meta_description": true
+  },
+  "workflow": {
+    "batch_delay_seconds": 3,
+    "max_retries": 3,
+    "timeout_seconds": 30,
+    "log_operations": true
+  },
+  "paths": {
+    "archive_published": "${PAI_DIR}/History/blog/published/",
+    "archive_html": "${PAI_DIR}/History/blog/html/",
+    "publishing_log": "${PAI_DIR}/History/blog/publishing-log.md",
+    "drafts_folder": "${PAI_DIR}/Scratchpad/blog/drafts/"
+  },
+  "categories": {
+    "AI Strategy": "ai-strategy",
+    "Digital Transformation": "digital-transformation",
+    "Leadership": "leadership",
+    "Business Process": "business-process",
+    "Technology": "technology"
+  },
+  "tags": {
+    "artificial intelligence": "artificial-intelligence",
+    "automation": "automation",
+    "business strategy": "business-strategy",
+    "capability amplification": "capability-amplification",
+    "change management": "change-management",
+    "digital strategy": "digital-strategy",
+    "human amplification": "human-amplification",
+    "process optimization": "process-optimization",
+    "strategic planning": "strategic-planning",
+    "workflow automation": "workflow-automation"
+  }
+}

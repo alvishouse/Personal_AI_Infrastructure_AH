@@ -1,0 +1,429 @@
+# Modern Alchemist - Reference Image Template
+
+**For use with PromptFromImage workflow: Converts any reference image into Modern Alchemist style.**
+
+---
+
+## Purpose
+
+This template is used when you have a reference image and want to recreate its content in Modern Alchemist / Intellectual Blueprint aesthetic.
+
+**Usage:**
+```
+"Analyze this image and generate a prompt using the modern alchemist style"
+[Provide image path]
+```
+
+PAI will automatically:
+1. Read and analyze the reference image
+2. Extract content, composition, and concepts
+3. Map to Modern Alchemist aesthetic using this template
+4. Generate complete prompt ready for image generation
+
+---
+
+## Template Structure
+
+When converting a reference image to Modern Alchemist style, follow this structure:
+
+```
+Modern Alchemist illustration on warm cream technical paper
+with faint grid background.
+
+CONCEPT: [Extract the core concept/message from reference image - one sentence]
+
+STYLE: "Modern Alchemist / Intellectual Blueprint"
+- Sophisticated blend of vintage engineering schematics and modern corporate design
+- Leonardo da Vinci notebook aesthetic updated for Silicon Valley era
+- Clean technical precision meets timeless strategic insight
+
+BACKGROUND:
+- Warm cream/bone color (#F5F5DC)
+- FAINT technical grid pattern throughout (graph paper style)
+- Grid lines VERY light (#E8E6E0) - barely visible, not strong
+- Subtle paper grain texture on background
+- Square grid pattern (not isometric)
+
+LINE WORK:
+- Clean, uniform weight mono-line vectors
+- Deep charcoal/jet black (#2C2C2C) for all primary linework
+- Patent illustration precision style
+- Modern readability (not scratchy vintage)
+- Consistent line thickness throughout
+- Digital precision with analog warmth
+
+[CONTENT SECTION - Map reference image elements]
+
+MAIN ELEMENTS:
+[Analyze reference image and describe primary visual components]
+[Translate to Modern Alchemist aesthetic:]
+- [Element 1 from reference] → Clean geometric version in deep charcoal
+- [Element 2 from reference] → Precise mono-line rendering
+- [Element 3 from reference] → Patent illustration quality
+[Maintain reference composition but apply Modern Alchemist line quality]
+
+SUPPORTING ELEMENTS:
+[Analyze reference image supporting visuals]
+[Translate to Modern Alchemist aesthetic:]
+- [Supporting element 1] → Geometric precision version
+- [Supporting element 2] → Clean technical rendering
+- [Icons, symbols, annotations from reference] → Modern Alchemist style
+
+COMPOSITION:
+[Mirror reference image composition]
+- [Primary element placement from reference]
+- [Layout structure from reference]
+- [Maintain spatial relationships but add:]
+  * Grid-based alignment (faint background grid)
+  * Professional whitespace management
+  * Technical precision with breathing room
+
+TEXT & TYPOGRAPHY:
+[Extract text from reference image]
+
+**Headings (Bold Authoritative Serif):**
+- [Main title from reference] → Garamond/Baskerville style
+- [Key labels from reference] → Bold serif treatment
+- Deep charcoal (#2C2C2C)
+
+**Body/Annotations (Clean Geometric Sans-Serif):**
+- [Supporting text from reference] → Inter/Helvetica style
+- [Annotations from reference] → Clean sans-serif
+- Maximum legibility
+
+ACCENT COLOR (Muted Gold/Bronze #C5A059):
+[Identify most important element from reference]
+- Used SPARINGLY (5-10% of composition)
+- Applied to:
+  * [Most critical element from reference] → Gold accent for emphasis
+  * [Key outcome or insight] → Gold highlight
+  * [Strategic emphasis point] → Gold treatment
+- Guides eye to main message
+
+SHADING:
+- Minimal light grey washes (#D3D3D3) for volume
+- Applied to [elements needing depth from reference]
+- Creates subtle dimensionality without clutter
+
+VISUAL HIERARCHY:
+[Map reference image visual flow]
+1. [Primary focus from reference] → Maintained in Modern Alchemist
+2. [Secondary elements from reference] → Rendered with appropriate weight
+3. [Supporting details from reference] → Clean geometric treatment
+- Gold accent guides eye to critical insight
+
+CRITICAL MODERN ALCHEMIST CHARACTERISTICS:
+- Faint grid (NOT strong) - barely visible background
+- Clean mono-line vectors (uniform weight throughout)
+- 3-color palette: Cream (#F5F5DC), Charcoal (#2C2C2C), Gold (#C5A059)
+- Modern readability (no scratchy texture)
+- Professional sophistication
+- Technical precision with breathing room
+
+CONTENT TRANSLATION NOTES:
+[Reference image style] → Modern Alchemist aesthetic
+- [Original background] → Warm cream with faint grid
+- [Original line style] → Clean mono-line vectors
+- [Original colors] → Cream/charcoal/gold only
+- [Original texture] → Subtle paper grain + smooth precision
+- Preserve CONCEPT and COMPOSITION
+- Transform AESTHETIC to Modern Alchemist
+
+--no strong grid lines, --no multiple bright colors, --no variable line weights, --no scratchy texture, --no solid fills, --no gradients, --no [reference image aesthetic], --no [reference image style]
+```
+
+---
+
+## Analysis Framework
+
+When analyzing a reference image for Modern Alchemist conversion, systematically extract:
+
+### 1. Core Concept
+**Question:** What is this image communicating?
+- Main message or insight
+- Strategic framework or model
+- Decision or comparison
+- Process or flow
+
+**Extract:** One sentence summarizing the concept
+
+### 2. Primary Visual Elements
+**Question:** What are the main components?
+- Shapes, diagrams, frameworks
+- Human figures or objects
+- Charts, graphs, or visualizations
+- Icons or symbols
+
+**Extract:** List of elements to recreate
+
+### 3. Composition & Layout
+**Question:** How is it arranged?
+- Center-weighted, asymmetric, grid-based?
+- Main element placement and size
+- Supporting elements arrangement
+- White space usage
+
+**Extract:** Spatial relationships to preserve
+
+### 4. Text & Labels
+**Question:** What text is present?
+- Main title or heading
+- Key labels and callouts
+- Annotations or descriptions
+- Data or metrics
+
+**Extract:** All text content with hierarchy
+
+### 5. Visual Hierarchy
+**Question:** What draws the eye first?
+- Primary focal point
+- Secondary elements
+- Supporting details
+- Reading flow
+
+**Extract:** Priority order for emphasis
+
+### 6. Strategic Emphasis
+**Question:** What's the most important element?
+- Key insight or outcome
+- Critical decision point
+- Main message
+- Call to action
+
+**Extract:** Target for gold accent
+
+---
+
+## Style Translation Rules
+
+### Background Conversion
+| Reference Has | Modern Alchemist Uses |
+|---------------|----------------------|
+| White background | Warm cream (#F5F5DC) |
+| Colored background | Warm cream (#F5F5DC) |
+| Textured background | Cream + faint grid + subtle grain |
+| Plain background | Cream + faint grid |
+| Dark background | Warm cream (#F5F5DC) |
+
+**Always:** Cream background with FAINT grid (barely visible)
+
+### Line Style Conversion
+| Reference Has | Modern Alchemist Uses |
+|---------------|----------------------|
+| Wiggly/hand-drawn lines | Clean uniform mono-line |
+| Variable weight lines | Consistent mono-line weight |
+| Sketchy lines | Precise patent illustration |
+| Rough textures | Smooth digital precision |
+| Multiple line styles | Single uniform line style |
+
+**Always:** Deep charcoal (#2C2C2C) mono-line vectors
+
+### Color Palette Conversion
+| Reference Has | Modern Alchemist Uses |
+|---------------|----------------------|
+| Multiple colors | 3-color only (cream/charcoal/gold) |
+| Bright colors | Muted gold for key emphasis only |
+| Color-coded sections | Gold accent on most important only |
+| Solid fills | Light grey washes if needed |
+| Gradients | Minimal grey washes only |
+
+**Always:** Cream background, charcoal primary, gold sparingly
+
+### Typography Conversion
+| Reference Has | Modern Alchemist Uses |
+|---------------|----------------------|
+| Sans-serif headings | Bold serif (Garamond/Baskerville) |
+| Handwritten text | Clean architect serif/sans-serif |
+| Mixed fonts | Two fonts max (serif + sans-serif) |
+| Informal text | Professional typography |
+| All-caps labels | Appropriate case with hierarchy |
+
+**Always:** Serif headings + sans-serif body
+
+### Texture Conversion
+| Reference Has | Modern Alchemist Uses |
+|---------------|----------------------|
+| Parchment texture | Subtle paper grain on cream |
+| Digital flat | Subtle grain + smooth precision |
+| Heavy weathering | Minimal aged paper quality |
+| Napkin texture | Cream with faint grid instead |
+| No texture | Subtle paper grain added |
+
+**Always:** Subtle grain background, smooth foreground
+
+---
+
+## Common Reference Image Types
+
+### Type 1: Whiteboard/Excalidraw Style
+**Reference characteristics:**
+- White background, wiggly lines, hatched fills
+- Informal hand-drawn aesthetic
+- Multiple colors, architect font
+
+**Modern Alchemist translation:**
+- Replace white → warm cream with faint grid
+- Replace wiggly lines → clean mono-line vectors
+- Reduce colors → cream/charcoal/gold only
+- Keep composition and concept
+- Add professional sophistication
+
+### Type 2: Da Vinci/Parchment Style
+**Reference characteristics:**
+- Aged parchment, cross-hatching, variable lines
+- Renaissance notebook aesthetic
+- Copper and slate blue inks
+
+**Modern Alchemist translation:**
+- Replace parchment → warm cream with faint grid
+- Replace cross-hatching → light grey washes
+- Replace variable lines → uniform mono-line
+- Replace copper/blue → gold accent sparingly
+- Modernize while keeping technical precision
+
+### Type 3: Napkin Sketch Style
+**Reference characteristics:**
+- Napkin texture, single ballpoint pen
+- Spontaneous gestural energy
+- Visible corrections
+
+**Modern Alchemist translation:**
+- Replace napkin → cream with faint grid
+- Replace gestural lines → precise mono-line
+- Remove corrections → clean final version
+- Keep concept and spontaneity of idea
+- Add professional polish
+
+### Type 4: Corporate Diagram
+**Reference characteristics:**
+- Clean digital, multiple bright colors
+- Sans-serif fonts, gradient fills
+- PowerPoint aesthetic
+
+**Modern Alchemist translation:**
+- Replace flat white → cream with faint grid
+- Replace gradients → light grey washes
+- Reduce colors → cream/charcoal/gold
+- Replace sans-serif everywhere → serif headings + sans body
+- Add vintage engineering aesthetic
+
+### Type 5: Technical Illustration
+**Reference characteristics:**
+- Engineering drawing, precise lines
+- Multiple line weights, dimension callouts
+- Technical annotations
+
+**Modern Alchemist translation:**
+- Keep technical precision
+- Unify line weights → mono-line
+- Replace background → cream with faint grid
+- Simplify colors → cream/charcoal/gold
+- Maintain patent illustration quality
+
+---
+
+## Quick Reference Checklist
+
+When converting reference image to Modern Alchemist:
+
+**✓ Preserve:**
+- Core concept and message
+- Main composition and layout
+- Visual hierarchy and flow
+- Text content and labels
+- Spatial relationships
+
+**✗ Replace:**
+- Background → Cream with faint grid
+- Line style → Clean mono-line
+- Color palette → 3-color system
+- Typography → Serif + sans-serif
+- Aesthetic → Professional technical
+
+**↑ Enhance:**
+- Technical precision
+- Professional sophistication
+- Intellectual authority
+- Grid-based alignment
+- Strategic emphasis (gold accent)
+
+---
+
+## Usage Examples
+
+### Example 1: Newsletter with Chaos-to-Clarity Diagram
+```
+Reference: Newsletter showing tangled red circles vs clean blue graph
+Modern Alchemist:
+- Cream background with faint grid
+- Tangled circles → clean charcoal geometric complexity
+- Blue graph → charcoal ascending line
+- Red/blue colors → charcoal primary, gold on clarity outcome
+- Maintain composition, transform aesthetic
+```
+
+### Example 2: Human-Robot Collaboration
+```
+Reference: Watercolor human and robot working on car
+Modern Alchemist:
+- Replace watercolor → patent illustration precision
+- Cream background with faint grid
+- Clean mono-line rendering of figures
+- Maintain collaboration concept
+- Gold accent on connection point between human and robot
+```
+
+### Example 3: Framework Diagram
+```
+Reference: Colorful four-quadrant matrix
+Modern Alchemist:
+- Replace colors → charcoal structure, gold on key quadrant
+- Cream background with faint grid
+- Clean geometric quadrants
+- Serif heading, sans-serif labels
+- Maintain framework logic, elevate aesthetic
+```
+
+---
+
+## Prompt Generation Workflow
+
+**When user provides reference image:**
+
+1. **Read image** using Read tool
+2. **Analyze** using framework above:
+   - Core concept (one sentence)
+   - Main elements (list)
+   - Composition (layout)
+   - Text content (all labels)
+   - Visual hierarchy (priority)
+   - Strategic emphasis (gold target)
+3. **Map to Modern Alchemist** using translation rules
+4. **Construct prompt** using template structure
+5. **Save prompt** to file
+6. **Validate** against checklist
+
+**Output:** Complete Modern Alchemist prompt ready for generation
+
+---
+
+## Key Success Principles
+
+### 1. Concept Over Aesthetic
+Preserve what the image **communicates**, transform how it **looks**.
+
+### 2. Composition Fidelity
+Keep spatial relationships, enhance with grid alignment and breathing room.
+
+### 3. Professional Elevation
+Reference may be informal (napkin, whiteboard) → Modern Alchemist adds intellectual authority.
+
+### 4. Strategic Accent
+Gold accent on single most important element reinforces the message.
+
+### 5. Style Discipline
+Always maintain 3-color palette, mono-line precision, faint grid. No exceptions.
+
+---
+
+**This template ensures any reference image can be faithfully recreated in Modern Alchemist style while preserving its core message and composition.**

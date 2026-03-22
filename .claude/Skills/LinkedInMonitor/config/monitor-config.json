@@ -1,0 +1,11 @@
+{
+  "watched_profiles": [],
+  "own_posts": [],
+  "notion_engagement_db_id": "",
+  "settings": {
+    "posts_per_profile": 5,
+    "inactive_skip_days": 30,
+    "own_post_expiry_days": 10,
+    "generate_replies": false
+  }
+}

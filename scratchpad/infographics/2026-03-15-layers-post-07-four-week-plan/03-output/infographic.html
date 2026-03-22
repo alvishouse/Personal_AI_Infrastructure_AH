@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Four-Week AI Starting Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body { background: white; padding: 0; margin: 0; font-family: 'Inter', sans-serif; }
+
+  .ig {
+    width: 540px;
+    height: 675px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── TITLE BLOCK ~52px ── */
+  .title-block {
+    background: #0F0F0F;
+    padding: 10px 16px 9px;
+    flex-shrink: 0;
+  }
+  .title-eyebrow {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #C85C1A;
+    margin-bottom: 3px;
+  }
+  .title-h1 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.15;
+    margin-bottom: 3px;
+  }
+  .title-sub {
+    font-size: 8.5px;
+    font-weight: 400;
+    color: #9E9E9E;
+  }
+
+  /* ── SECTION HEADER ~22px ── */
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 14px;
+    flex-shrink: 0;
+  }
+  .sec-header.green { background: #1B4D3E; }
+  .sec-header.orange { background: #C85C1A; }
+  .sec-header-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: white;
+  }
+  /* Icon fix: target parent color and explicit SVG rules */
+  .sec-header { color: white; }
+  .sec-header svg { width: 13px; height: 13px; stroke: white; color: white; flex-shrink: 0; }
+
+  /* ── WEEK ROWS container ~232px (4 × 58px) ── */
+  .weeks-wrap {
+    background: #F7F7F5;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .week-row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 14px;
+    border-bottom: 1px solid #E8E8E6;
+  }
+  .week-row:last-child { border-bottom: none; }
+
+  .week-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #1B4D3E;
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .week-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background: #1B4D3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+  .week-icon svg { width: 11px; height: 11px; stroke: white; color: white; }
+
+  .week-text { flex: 1; min-width: 0; }
+  .week-wklabel {
+    font-size: 7px;
+    font-weight: 600;
+    color: #1B4D3E;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-bottom: 1px;
+  }
+  .week-title {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.2;
+    margin-bottom: 1.5px;
+  }
+  .week-body {
+    font-size: 8.5px;
+    color: #555;
+    line-height: 1.3;
+  }
+  .week-body strong { font-weight: 600; color: #333; }
+
+  /* ── OBSTACLE ROWS container ~135px (3 × 45px) ── */
+  .obs-wrap {
+    background: #FFF8F4;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .obs-row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 14px;
+    border-bottom: 1px solid #F0E4D8;
+  }
+  .obs-row:last-child { border-bottom: none; }
+
+  .obs-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #C85C1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+  .obs-icon svg { width: 10px; height: 10px; stroke: white; color: white; }
+
+  .obs-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #1A1A1A;
+    flex-shrink: 0;
+    width: 78px;
+  }
+  .obs-divider {
+    width: 1px;
+    height: 14px;
+    background: #DCC8B8;
+    flex-shrink: 0;
+  }
+  .obs-answer {
+    font-size: 8.5px;
+    color: #666;
+    line-height: 1.3;
+    flex: 1;
+  }
+  .obs-answer strong { font-weight: 600; color: #444; }
+
+  /* ── CALLOUT ~38px ── */
+  .callout {
+    background: #1A1A1A;
+    padding: 8px 14px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .callout-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: #C85C1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+  .callout-icon svg { width: 10px; height: 10px; stroke: white; color: white; }
+  .callout-text {
+    font-size: 8.5px;
+    font-weight: 500;
+    color: #F0F0F0;
+    line-height: 1.35;
+    flex: 1;
+  }
+  .callout-text em { font-style: normal; color: #C85C1A; font-weight: 700; }
+
+  /* ── FOOTER ~34px ── */
+  .footer {
+    background: #EFEFED;
+    border-top: 1px solid #DEDEDC;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+  .footer-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1.5px solid #1B4D3E;
+  }
+  .footer-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .footer-info { flex: 1; }
+  .footer-name { font-size: 8.5px; font-weight: 700; color: #1A1A1A; line-height: 1.2; }
+  .footer-links { font-size: 7.5px; color: #777; line-height: 1.3; }
+  .footer-badge {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: white;
+    background: #1B4D3E;
+    padding: 3px 7px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- TITLE BLOCK -->
+  <div class="title-block">
+    <div class="title-eyebrow">AI Readiness · The Layer Framework</div>
+    <h1 class="title-h1">Your Four-Week AI Starting Plan</h1>
+    <div class="title-sub">No consulting engagement. No budget. Four weeks.</div>
+  </div>
+
+  <!-- SECTION 1 HEADER -->
+  <div class="sec-header green">
+    <i data-lucide="calendar"></i>
+    <span class="sec-header-label">The Plan</span>
+  </div>
+
+  <!-- WEEK ROWS -->
+  <div class="weeks-wrap">
+
+    <div class="week-row">
+      <div class="week-circle">W1</div>
+      <div class="week-icon"><i data-lucide="search"></i></div>
+      <div class="week-text">
+        <div class="week-wklabel">Week 1</div>
+        <div class="week-title">Layer Diagnostic</div>
+        <div class="week-body">Score 6 layers 1–5. <strong>Lowest score = your ceiling.</strong></div>
+      </div>
+    </div>
+
+    <div class="week-row">
+      <div class="week-circle">W2</div>
+      <div class="week-icon"><i data-lucide="layers"></i></div>
+      <div class="week-text">
+        <div class="week-wklabel">Week 2</div>
+        <div class="week-title">Determine Your Rung</div>
+        <div class="week-body">Most are Rung 1 or 2. <strong>Name it without defending it.</strong></div>
+      </div>
+    </div>
+
+    <div class="week-row">
+      <div class="week-circle">W3</div>
+      <div class="week-icon"><i data-lucide="target"></i></div>
+      <div class="week-text">
+        <div class="week-wklabel">Week 3</div>
+        <div class="week-title">One Intervention</div>
+        <div class="week-body">Fix the single weakest layer. <strong>One layer only.</strong></div>
+      </div>
+    </div>
+
+    <div class="week-row">
+      <div class="week-circle">W4</div>
+      <div class="week-icon"><i data-lucide="git-merge"></i></div>
+      <div class="week-text">
+        <div class="week-wklabel">Week 4</div>
+        <div class="week-title">First Flow Bridge</div>
+        <div class="week-body">One human-to-agent handoff. Define: <strong>input → output → verify → escalate.</strong></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 2 HEADER -->
+  <div class="sec-header orange">
+    <i data-lucide="alert-triangle"></i>
+    <span class="sec-header-label">Three Obstacles</span>
+  </div>
+
+  <!-- OBSTACLE ROWS -->
+  <div class="obs-wrap">
+
+    <div class="obs-row">
+      <div class="obs-icon"><i data-lucide="alert-triangle"></i></div>
+      <div class="obs-label">"No budget"</div>
+      <div class="obs-divider"></div>
+      <div class="obs-answer">Diagnostic costs <strong>$0.</strong> Budget comes after evidence.</div>
+    </div>
+
+    <div class="obs-row">
+      <div class="obs-icon"><i data-lucide="user-x"></i></div>
+      <div class="obs-label">"No sponsor"</div>
+      <div class="obs-divider"></div>
+      <div class="obs-answer">The diagnostic <strong>IS</strong> your pitch.</div>
+    </div>
+
+    <div class="obs-row">
+      <div class="obs-icon"><i data-lucide="help-circle"></i></div>
+      <div class="obs-label">"Don't know where"</div>
+      <div class="obs-divider"></div>
+      <div class="obs-answer">Start with the <strong>Layer Diagnostic.</strong></div>
+    </div>
+
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-icon"><i data-lucide="zap"></i></div>
+    <div class="callout-text">
+      <em>Four weeks.</em> One diagnostic. One Flow Bridge. That's the foundation.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-avatar">
+      <img src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+    </div>
+    <div class="footer-info">
+      <div class="footer-name">Alvis House</div>
+      <div class="footer-links">linkedin.com/in/alvishouse · alvishouse.io</div>
+    </div>
+    <div class="footer-badge">Layer Framework</div>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

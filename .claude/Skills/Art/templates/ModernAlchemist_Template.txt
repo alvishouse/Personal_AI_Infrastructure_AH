@@ -1,0 +1,314 @@
+Modern Alchemist illustration on warm cream technical paper
+with faint grid background.
+
+CONCEPT: [One sentence describing the strategic concept, framework, or metaphor being visualized]
+
+STYLE: "Modern Alchemist / Intellectual Blueprint"
+- Sophisticated blend of vintage engineering schematics and modern corporate design
+- Leonardo da Vinci notebook aesthetic updated for Silicon Valley era
+- Clean technical precision meets timeless strategic insight
+- Professional thought leadership visual
+
+BACKGROUND:
+- Warm cream/bone color (#F5F5DC or #FAF9F6)
+- FAINT technical grid pattern throughout (graph paper style)
+- Grid lines VERY light (#E8E6E0 or #EBEBEB) - barely visible, not strong
+- Subtle paper grain texture on background
+- Square grid pattern (not isometric)
+- Grid provides subtle structure without competing with content
+- Professional technical substrate
+
+LINE WORK:
+- Clean, uniform weight mono-line vectors
+- Deep charcoal/jet black (#2C2C2C) for all primary linework
+- Patent illustration or technical etching precision
+- Modern readability (not scratchy vintage)
+- Consistent line thickness throughout (no variable weight)
+- Precise, measured, deliberate strokes
+- Digital precision with analog warmth
+- Removes vintage "scratchiness" for clarity
+
+MAIN ELEMENTS:
+[Describe the primary visual components - frameworks, diagrams, metaphorical objects, etc.]
+[Examples:
+- Four-quadrant matrix with labeled sections
+- Process flow showing sequential steps
+- Mechanical device as business metaphor (lever, gears, compass)
+- Decision tree or branching paths
+- Interconnected system diagram
+- Human figure with technical annotations
+- Strategic framework visualization]
+
+- Rendered with geometric precision
+- Clean edges and consistent spacing
+- Occupies [40-60%] of composition
+- Positioned [center / center-left / strategically placed]
+- Main subject uses deep charcoal (#2C2C2C)
+
+SUPPORTING ELEMENTS:
+[Describe secondary visual components that support the main concept]
+[Examples:
+- Geometric shapes (circles, triangles, squares) for framing
+- Compass roses for direction/orientation
+- Gears or mechanical symbols for process/systems
+- Rulers or measuring tools for precision
+- Mathematical symbols or formulae
+- Arrows showing flow or relationships
+- Icons representing abstract concepts
+- Annotation callouts with leaders]
+
+- Positioned around main subject [orbiting / structured grid / along edges]
+- Some elements highlighted in muted gold (#C5A059)
+- Clean geometric construction
+- Aligned to background grid where possible
+
+ACCENT COLOR (Muted Gold/Bronze #C5A059):
+- Used SPARINGLY (5-10% of composition maximum)
+- Applied strategically to:
+  * [Key geometric shapes or emphasis elements]
+  * [Important mechanical components]
+  * [Critical pathway or decision point]
+  * [Primary call-to-action or outcome]
+  * [Strategic highlights only]
+- Guides eye to most important elements
+- Never overwhelming - creates hierarchy
+
+SHADING:
+- Minimal light grey washes (#D3D3D3 or #C0C0C0) for volume
+- Applied with restraint to avoid clutter:
+  * [Element 1 requiring depth]
+  * [Element 2 requiring emphasis]
+  * [Background sections for organization]
+- Creates subtle dimensionality
+- Used sparingly - less is more
+
+TYPOGRAPHY:
+**Headings (Bold Authoritative Serif):**
+- Font style: Garamond, Baskerville, or Caslon character
+- Used for: [Main title, key labels, primary concepts]
+- Examples: "[HEADING 1]", "[HEADING 2]", "[HEADING 3]"
+- Deep charcoal color (#2C2C2C)
+- Professional gravitas and intellectual authority
+
+**Body/Annotations (Clean Geometric Sans-Serif):**
+- Font style: Inter, Helvetica Neue, or Arial character
+- Used for: [Descriptions, supporting text, callouts, details]
+- Examples: "[Body text 1]", "[Annotation 1]", "[Label 1]"
+- Maximum legibility and modern readability
+- Deep charcoal color (#2C2C2C)
+
+**Text Placement:**
+- Professional typographic spacing
+- Text aligned with background grid where possible
+- Clean hierarchy: Large serif headings → Medium labels → Small annotations
+- Adequate whitespace around all text
+
+COMPOSITION:
+- [Main element placement and percentage of frame]
+- [Supporting elements arrangement]
+- Technical precision with generous breathing room
+- Grid-based alignment (following faint background grid)
+- Balanced negative space (not cramped)
+- Professional whitespace management
+- Elements arranged with geometric intent
+- [Specify: center-weighted / asymmetric / quadrant layout / etc.]
+
+VISUAL HIERARCHY:
+1. [Primary focal point - what draws eye first]
+2. [Secondary elements - where eye moves next]
+3. [Supporting details - tertiary attention]
+4. [Text hierarchy - title → labels → annotations]
+- Gold accents guide eye to critical elements
+- Size and position create clear reading order
+
+TEXTURE:
+- Background: Subtle paper grain (aged technical paper quality)
+- Foreground: Smooth digital precision
+- Contrast between textured background and clean elements
+- No excessive weathering or distressing
+- Professional finish - not overly vintage
+
+ANNOTATIONS (Optional):
+[If including technical callouts or explanatory notes:]
+- Thin leader lines from labels to elements
+- Small geometric markers (circles, arrows) at connection points
+- Annotation text in clean sans-serif
+- Positioned to not interfere with main composition
+- Examples: "[Annotation text 1]", "[Annotation text 2]"
+
+MATHEMATICAL/FORMULAIC ELEMENTS (Optional):
+[If including equations, ratios, or mathematical notation:]
+- Clean geometric notation
+- Examples: "[Formula 1]", "[Ratio: X → Y]", "[Equation]"
+- Positioned in [geometric badges / along elements / in margin]
+- Serif font for mathematical elegance
+- May be highlighted in muted gold for emphasis
+
+METAPHORICAL OBJECTS (Optional):
+[If using physical objects to represent abstract concepts:]
+Common Modern Alchemist metaphors:
+- Telescope = Vision/Foresight
+- Compass = Direction/Strategy
+- Gears = Systems/Processes
+- Lever = Leverage/Amplification
+- Scale = Balance/Measurement
+- Drafting tools = Precision/Planning
+- Light bulb = Ideas/Innovation
+- Keys = Access/Solutions
+
+[Specify which objects and their meaning in your composition]
+
+CRITICAL CHARACTERISTICS (Non-Negotiable):
+- Faint grid lines (NOT strong/dark) - barely visible background element
+- Clean mono-line vectors (uniform weight throughout)
+- 3-color palette strictly maintained:
+  * Cream background (#F5F5DC)
+  * Charcoal primary (#2C2C2C)
+  * Gold accents (#C5A059) used sparingly
+- Modern readability (not scratchy or vintage texture)
+- Professional sophistication appropriate for executive audiences
+- Technical precision with breathing room
+- Leonardo meets Silicon Valley aesthetic
+- Patent illustration quality with strategic depth
+
+COMPOSITIONAL INTENT:
+[What should the viewer understand immediately?]
+[What's the strategic insight or framework being communicated?]
+[How do the visual elements support the conceptual message?]
+
+Examples:
+- "Show interconnected systems creating momentum"
+- "Illustrate decision fork with contrasting outcomes"
+- "Visualize transformation from chaos to order"
+- "Demonstrate amplification through mechanical advantage"
+- "Present strategic framework as technical schematic"
+
+THEMATIC ALIGNMENT:
+[How does this visual support the broader message, article, or content?]
+[What business concept or strategic principle is being reinforced?]
+[Why is Modern Alchemist style appropriate for this content?]
+
+Examples:
+- "Supports thought leadership on AI transformation strategy"
+- "Reinforces professional authority on technical subject matter"
+- "Bridges historical wisdom with contemporary business challenges"
+- "Positions strategic frameworks with intellectual depth"
+
+ASPECT RATIO GUIDANCE:
+- **Blog featured image:** 16:9 landscape (hero format)
+- **Social media:** 1:1 square or 4:5 portrait
+- **Presentation slide:** 16:9 landscape
+- **Newsletter header:** 2:1 wide landscape
+- **Infographic:** 2:3 or 3:4 portrait
+
+[Specify desired ratio based on usage]
+
+SIZE RECOMMENDATIONS:
+- **Web/blog:** 2K (2048px) or 1536×1024 minimum
+- **Print quality:** 4K (4096px) for reproduction
+- **Social media:** 1200×1200 (square) or 1080×1350 (portrait)
+
+[Specify target output size]
+
+--no strong grid lines, --no multiple bright colors, --no variable line weights, --no excessive weathering, --no flat modern design without depth, --no photorealism, --no cartoon style, --no scratchy vintage texture, --no solid color fills, --no gradients, --no cluttered composition, --no informal whiteboard aesthetic, --no hand-drawn imperfection
+
+---
+
+## TEMPLATE USAGE INSTRUCTIONS
+
+**How to use this template:**
+
+1. **Replace bracketed placeholders** with your specific content:
+   - [CONCEPT] → Your strategic idea in one sentence
+   - [MAIN ELEMENTS] → Your primary visual components
+   - [HEADING 1], [HEADING 2] → Your actual text labels
+   - [Annotation text] → Your specific callouts
+
+2. **Choose appropriate elements** from optional sections:
+   - Include metaphorical objects if using business metaphors
+   - Include mathematical elements if showing ratios/formulas
+   - Include annotations if technical callouts are needed
+
+3. **Specify composition details**:
+   - Replace percentage placeholders (e.g., [40-60%] → 50%)
+   - Choose placement options (e.g., [center / center-left] → center-left)
+   - Select layout type (e.g., [quadrant / asymmetric] → quadrant)
+
+4. **Define visual hierarchy**:
+   - List what viewers should see first, second, third
+   - Specify which elements get gold accent treatment
+   - Describe the reading flow
+
+5. **Maintain style consistency**:
+   - Keep all "Critical Characteristics" unchanged
+   - Preserve 3-color palette (cream, charcoal, gold only)
+   - Maintain faint grid specification
+   - Keep mono-line uniformity
+
+6. **Add context**:
+   - Explain the strategic insight being visualized
+   - Describe how visual supports your message
+   - Connect to broader content or campaign
+
+**Result:** A complete, generation-ready prompt maintaining Modern Alchemist style consistency while visualizing your specific concept.
+
+---
+
+## QUICK START EXAMPLES
+
+### Example 1: Strategic Framework
+```
+CONCEPT: Four-pillar business transformation framework showing interconnected systems
+
+MAIN ELEMENTS:
+- Four vertical pillars arranged in row
+- Each pillar labeled: "Strategy", "People", "Process", "Technology"
+- Connecting arch at top showing integration
+- Foundation platform at bottom labeled "Culture"
+
+ACCENT COLOR: Applied to connecting arch and "Culture" foundation
+
+TYPOGRAPHY:
+Headings: "TRANSFORMATION FRAMEWORK" (top center)
+Labels: Four pillar names, "Culture"
+Annotations: Brief descriptor under each pillar
+```
+
+### Example 2: Decision Diagram
+```
+CONCEPT: Binary decision tree showing optimal path selection
+
+MAIN ELEMENTS:
+- Single path entering from left
+- Splits into two paths (upper and lower)
+- Upper path curves upward with positive outcome
+- Lower path curves downward with negative outcome
+- Decision point marked with question icon
+
+ACCENT COLOR: Applied to upper path and positive outcome only
+
+TYPOGRAPHY:
+Headings: Decision question at fork point
+Labels: Path names, outcome metrics
+```
+
+### Example 3: Process Flow
+```
+CONCEPT: Five-step methodology showing sequential progression
+
+MAIN ELEMENTS:
+- Five geometric shapes (circles or rectangles) in horizontal line
+- Arrows connecting left to right
+- Each shape contains icon representing step
+- Numbers 1-5 marking sequence
+
+ACCENT COLOR: Applied to final step (outcome/goal)
+
+TYPOGRAPHY:
+Headings: Each step name
+Body: Brief description under each step
+```
+
+---
+
+**This template maintains Modern Alchemist style consistency while allowing infinite content variations.**

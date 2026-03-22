@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0;padding:0;box-sizing:border-box; }
+    body {
+      width:800px; height:380px;
+      background:#ede5d0;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    }
+    .paper {
+      width:762px; height:352px;
+      background:#f6efd8;
+      border:2px solid rgba(59,84,107,.32);
+      border-radius:6px;
+      box-shadow:
+        inset 0 0 0 5px #ede5d0,
+        inset 0 0 0 7px rgba(59,84,107,.1),
+        3px 4px 14px rgba(59,84,107,.2);
+      display:flex; flex-direction:column; overflow:hidden;
+      position:relative;
+    }
+    .paper::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:repeating-linear-gradient(180deg,transparent,transparent 31px,rgba(59,84,107,.045) 31px,rgba(59,84,107,.045) 32px);
+    }
+    .hdr {
+      text-align:center; padding:10px 20px 7px;
+      border-bottom:1px dashed rgba(59,84,107,.28);
+      position:relative; z-index:1;
+    }
+    .hdr h2 {
+      font-size:26px; font-weight:800; letter-spacing:.28em;
+      text-transform:uppercase; color:#3b546b;
+    }
+    .hdr p {
+      font-size:17px; letter-spacing:.1em; text-transform:uppercase;
+      color:#3b546b; margin-top:3px;
+    }
+    .body { display:flex; flex:1; position:relative; z-index:1; }
+    .col {
+      flex:1; padding:12px 20px 10px;
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+    }
+    .col-myth { border-right:1px dashed rgba(59,84,107,.22); }
+    .lbl {
+      display:flex; align-items:center; gap:7px;
+      font-size:21px; font-weight:700; letter-spacing:.18em;
+      text-transform:uppercase; margin-bottom:9px;
+    }
+    .lbl-myth { color:#cf5828; }
+    .lbl-reality { color:#3b546b; }
+    .ibox {
+      width:68px; height:68px;
+      border:1.5px solid rgba(59,84,107,.2); border-radius:8px;
+      background:rgba(255,255,255,.5);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:9px;
+    }
+    .claim { font-size:22px; font-weight:600; color:#2b2b2b; line-height:1.45; margin-bottom:8px; }
+    .note { font-size:18px; color:#3b546b; letter-spacing:.05em; text-transform:uppercase; line-height:1.45; }
+    .stat { font-size:28px; font-weight:800; color:#3b546b; margin-bottom:4px; }
+    .stat-myth { color:#cf5828; }
+    .vs {
+      width:44px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(59,84,107,.03);
+    }
+    .vs-badge {
+      width:34px; height:34px; border-radius:50%;
+      border:2px solid rgba(59,84,107,.3);
+      display:flex; align-items:center; justify-content:center;
+      font-size:17px; font-weight:800; color:#3b546b;
+      background:#f6efd8; letter-spacing:.03em;
+    }
+  </style>
+</head><body>
+<div class="paper">
+  <div class="hdr">
+    <h2>MYTH &nbsp; · &nbsp; vs. &nbsp; · &nbsp; REALITY</h2>
+    <p>The Governance Assumption &nbsp;—&nbsp; Mid-Market AI Playbook · Issue #12</p>
+  </div>
+  <div class="body">
+
+    <!-- MYTH -->
+    <div class="col col-myth">
+      <div class="lbl lbl-myth">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="#cf5828" stroke-width="2.4" stroke-linecap="round">
+          <line x1="13" y1="3" x2="3" y2="13"/><line x1="3" y1="3" x2="13" y2="13"/>
+        </svg>
+        THE MYTH
+      </div>
+      <div class="ibox">
+        <!-- Brake pedal / slow symbol -->
+        <svg viewBox="0 0 68 68" width="64" height="64" fill="none" stroke="#cf5828" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Clock with X = slowing down -->
+          <circle cx="34" cy="32" r="18" stroke-dasharray="4 2.5"/>
+          <line x1="34" y1="20" x2="34" y2="32" stroke-width="2.2"/>
+          <line x1="34" y1="32" x2="43" y2="38" stroke-width="2.2"/>
+          <!-- X overlay = myth/wrong -->
+          <line x1="22" y1="20" x2="46" y2="44" stroke-width="2" stroke-dasharray="3 2"/>
+          <line x1="46" y1="20" x2="22" y2="44" stroke-width="2" stroke-dasharray="3 2"/>
+          <text x="34" y="59" text-anchor="middle" font-size="7" fill="#cf5828" font-family="Montserrat" font-weight="700" stroke="none" letter-spacing="0.5">SLOWS AI</text>
+        </svg>
+      </div>
+      <div class="claim">"Governance slows<br>AI adoption."</div>
+      <div class="note stat-myth" style="font-size:14px;margin-top:4px;">20% project survival<br>without oversight</div>
+    </div>
+
+    <!-- VS -->
+    <div class="vs"><div class="vs-badge">vs</div></div>
+
+    <!-- REALITY -->
+    <div class="col">
+      <div class="lbl lbl-reality">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="#3b546b" stroke-width="2.4" stroke-linecap="round">
+          <polyline points="2 8 6 12 14 4"/>
+        </svg>
+        THE REALITY
+      </div>
+      <div class="ibox">
+        <!-- Shield + upward arrow = governance accelerates -->
+        <svg viewBox="0 0 68 68" width="64" height="64" fill="none" stroke="#3b546b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Shield -->
+          <path d="M34 14 L52 20 L52 36 Q52 52 34 58 Q16 52 16 36 L16 20 Z" stroke-width="1.6"/>
+          <!-- Up arrow inside shield -->
+          <line x1="34" y1="44" x2="34" y2="28" stroke-width="2.4"/>
+          <polyline points="28 34 34 28 40 34" stroke-width="2.4"/>
+          <text x="34" y="11" text-anchor="middle" font-size="7" fill="#3b546b" font-family="Montserrat" font-weight="700" stroke="none" letter-spacing="0.5">SURVIVES 2×</text>
+        </svg>
+      </div>
+      <div class="claim">"Governance keeps<br>AI projects alive."</div>
+      <div class="note" style="font-size:14px;margin-top:4px;color:#3b546b;font-weight:700;">45% project survival<br>with mature oversight</div>
+    </div>
+
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,139 @@
+Digital whiteboard illustration in Excalidraw style
+on white background (#FFFFFF).
+
+CONCEPT: Human and robot collaborating on car repair - robot amplifying human work, not replacing it. Side-by-side teamwork showing AI as assistant, not replacement.
+
+CENTRAL ELEMENT:
+A human figure (simplified with wiggly lines) bent over an open car hood, hands working on the engine. From the right, a robotic arm (drawn as connected cylinders and circles with deliberate jitter) extends inward holding a tool. Both human and robot focused on the same engine work area. The positioning clearly shows collaboration and amplification - the robot supports the human's expertise.
+
+Draw as if sketching on Excalidraw.com whiteboard with a mouse - wiggly, imperfect, approachable.
+
+HUMAN FIGURE:
+- Simple but recognizable form with wiggly outline
+- Glasses indicated with two circles (overlapping spirals)
+- Blue jacket shown with hatched diagonal fills
+- Bent posture leaning over engine bay
+- Hands reaching into engine area (simple gestural shapes)
+- Hair indicated with quick wiggly lines
+- NOT detailed - simplified whiteboard sketch style
+
+VINTAGE CAR:
+- Simple boxy car shape with wiggly edges
+- Hood open (lifted at 45° angle, shown with hatched underside)
+- Vintage front grille indicated with 3-4 horizontal wiggly lines
+- Headlights as circles drawn with overlapping spirals
+- Car body with hatched diagonal fills for depth
+- Wheels as circles with wiggly spokes indicated
+- Engine bay visible as darker hatched area under open hood
+
+ROBOT ARM:
+- Series of cylindrical segments (drawn as wiggly rectangles)
+- Joint circles at connection points (overlapping spiral circles)
+- Tool/gripper at end (simple claw or wrench shape)
+- Arm extending from right side toward engine
+- Blue accent on robot elements (see COLOR section)
+- Hatched fills on cylinder segments for volume
+- Mechanical joints emphasized with extra wiggly circles
+
+AESTHETIC MARKERS:
+- Wiggly imperfect lines throughout (deliberate jitter, NOT straight)
+- Lines overshoot at corners slightly
+- Circles drawn as multiple overlapping strokes (spiral quality)
+- Variable line thickness (heavier on main elements, lighter on details)
+- Hand-drawn whiteboard quality - looks sketched with mouse/tablet
+- Corners don't perfectly connect (Excalidraw characteristic)
+- Some lines have multiple strokes showing sketching process
+
+FILLS & SHADING:
+- Hatched diagonal lines for ALL fills (never solid colors)
+- Human jacket: Diagonal hatching
+- Car body: Diagonal hatching
+- Engine bay shadow: Cross-hatching (denser)
+- Hood underside: Diagonal hatching
+- Robot arm segments: Light diagonal hatching for volume
+- Ground shadow: Very light hatching beneath figures
+- NO solid colors, NO gradients anywhere
+
+COMPOSITION:
+- Human figure: Left-center, occupying 30% of frame
+- Car with open hood: Center-left, 40% of composition
+- Robot arm: Right side extending left, 25% of frame
+- Collaborative convergence point: Both working on same engine spot
+- Generous white space: Upper portions and edges
+- Low horizon line: Figures and car on ground plane
+
+LABELS & TEXT (All-caps architect font):
+- "HUMAN" with arrow pointing to person
+- "AI ASSISTANT" with arrow pointing to robot
+- "COLLABORATION" label near convergence point where both work
+- "AMPLIFY NOT REPLACE" as key annotation
+- "ENGINE" label pointing into car
+- "TOOL" label on what robot is holding
+- Optional: "EXPERTISE" label near human's head/hands
+
+ARROWS & CONNECTORS:
+- Wiggly arrow from "HUMAN" label to figure
+- Wiggly arrow from "AI ASSISTANT" label to robot
+- Curved wiggly arrow showing flow of collaboration
+- Small arrows indicating motion or interaction
+- All arrows with hand-drawn quality (not perfect curves)
+
+COLOR (Excalidraw Palette):
+- Black (#1E1E1E) for ALL primary lines, human figure, car, text, labels
+- Blue (#3B82F6) accent ONLY on:
+  * Robot arm segments (blue outlines)
+  * Robot joint circles (blue)
+  * Tool held by robot (blue)
+  * "AI ASSISTANT" label text (blue)
+- White background (#FFFFFF)
+- NO other colors (strictly black + blue + white)
+
+CRITICAL EXCALIDRAW CHARACTERISTICS:
+- Wiggly imperfect lines (NOT straight vectors, NOT clean)
+- Hatched diagonal fills only (never solid colors)
+- Digital whiteboard energy (modern, approachable)
+- Circles as overlapping spirals (not perfect circles)
+- Lines overshoot at corners
+- Hand-drawn with mouse/tablet quality
+- Architect print all-caps font for text
+- Looks like someone sketched this on Excalidraw.com
+- Approachable and non-intimidating (not formal or polished)
+- Variable line thickness adds character
+
+COMPOSITIONAL INTENT:
+- Show COLLABORATION not replacement (same as Da Vinci version)
+- Human expertise remains central
+- Robot positioned as ASSISTANT (supporting role)
+- Both focused on SAME task (convergence point visible)
+- Side-by-side partnership clear in positioning
+- Tools and work happening together
+- Visual metaphor: mechanical advantage through collaboration
+
+THEMATIC ALIGNMENT:
+Directly supports blog thesis: "Stop Deploying AI, Start Amplifying Humans"
+- Robot doesn't replace human mechanic
+- Robot amplifies human capability
+- Human knowledge and expertise guide the work
+- AI provides mechanical advantage (reach, tool holding, assistance)
+- Collaboration > Automation
+- Human becomes MORE capable with AI assistant
+
+STYLE COMPARISON TO REFERENCE:
+- Reference: Watercolor, soft edges, painted quality, muted colors
+- Excalidraw: Digital whiteboard, wiggly lines, hatched fills, black+blue
+- Reference: Polished illustration
+- Excalidraw: Sketch-like, approachable, hand-drawn whiteboard feel
+- Reference: Realistic shading and depth
+- Excalidraw: Hatched fills and simplified forms
+- CONCEPT REMAINS IDENTICAL: Human-robot collaboration showing amplification
+
+WHITEBOARD CONTEXT:
+Imagine this sketched during a team meeting explaining AI strategy:
+- Quick but clear communication
+- Not overly detailed or formal
+- Captures concept efficiently
+- Approachable for non-technical audience
+- Could be drawn in 5-10 minutes on actual whiteboard
+- Emphasizes IDEA over artistic execution
+
+--no perfect lines, --no straight edges, --no solid color fills, --no gradients, --no photorealism, --no typed fonts, --no corporate polish, --no CAD precision, --no watercolor style, --no clean vectors, --no perfectly connected corners

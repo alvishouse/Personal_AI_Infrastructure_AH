@@ -1,0 +1,69 @@
+Analyze the attached reference image and recreate it in Modern Alchemist style.
+
+PRESERVE FROM REFERENCE IMAGE:
+- Core concept and message (what it's communicating)
+- Main composition and layout (spatial arrangement)
+- Visual hierarchy and reading flow
+- Text content and labels (all words/numbers)
+- Strategic emphasis (what's most important)
+
+TRANSFORM TO MODERN ALCHEMIST STYLE:
+
+BACKGROUND:
+- Warm cream/bone color (#F5F5DC)
+- FAINT technical grid pattern (barely visible, not strong)
+- Grid lines VERY light (#E8E6E0)
+- Subtle paper grain texture
+- Square grid pattern
+
+LINE WORK:
+- Clean uniform mono-line vectors throughout
+- Deep charcoal/jet black (#2C2C2C) for all linework
+- Patent illustration precision
+- Consistent line thickness (no variable weight)
+- Replace any wiggly/sketchy/rough lines with clean precise vectors
+
+COLOR PALETTE (3 colors only):
+- Background: Cream (#F5F5DC)
+- Primary: Deep charcoal (#2C2C2C) for all main elements
+- Accent: Muted gold (#C5A059) - use SPARINGLY on most important element only (5-10% max)
+- Convert ALL other colors from reference to this 3-color system
+
+TYPOGRAPHY:
+- Headings: Bold authoritative serif (Garamond/Baskerville style) in charcoal
+- Body/Labels: Clean geometric sans-serif (Inter/Helvetica style) in charcoal
+- Maintain all text from reference image
+- Professional typographic spacing
+
+STYLE TRANSLATION:
+- White background → Cream with faint grid
+- Colored background → Cream with faint grid
+- Multiple colors → Reduce to cream/charcoal/gold only
+- Hand-drawn lines → Clean mono-line vectors
+- Variable line weights → Uniform mono-line
+- Gradient fills → Minimal light grey washes if needed
+- Rough textures → Smooth precision with subtle paper grain on background only
+
+COMPOSITION:
+- Maintain reference image's spatial layout
+- Keep same element positioning and relationships
+- Preserve visual hierarchy from reference
+- Add professional whitespace management
+- Align elements to faint background grid
+
+ACCENT COLOR USAGE:
+- Apply muted gold (#C5A059) to ONE most important element only
+- Typically: final outcome, winning path, key insight, primary goal
+- Creates clear visual hierarchy
+- Never use on everything - extreme restraint
+
+CRITICAL CHARACTERISTICS:
+- Faint grid (NOT strong) - barely visible
+- Mono-line precision (uniform weight)
+- 3-color palette only
+- Modern readability (not scratchy vintage)
+- Professional sophistication
+- Leonardo meets Silicon Valley aesthetic
+- Patent illustration quality
+
+--no strong grid lines, --no multiple bright colors, --no variable line weights, --no scratchy texture, --no solid fills, --no gradients, --no photorealism, --no cartoon style, --no cluttered composition

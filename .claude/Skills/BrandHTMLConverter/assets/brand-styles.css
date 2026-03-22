@@ -1,0 +1,712 @@
+/* ============================================
+   BRAND COLOR SYSTEM
+   ============================================ */
+:root {
+    --ink: #3b546b;
+    --rust: #cf5828;
+    --slate: #7a8c9b;
+    --paper: #ece6d9;
+    --text: #2b2b2b;
+    --muted: rgba(59,84,107,.75);
+    --rule: rgba(59,84,107,.22);
+    --bg: #ffffff;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    line-height: 1.8;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* ============================================
+   ARTICLE CONTAINER
+   ============================================ */
+article {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--bg);
+    padding: 50px 40px;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+h1 {
+    font-size: 2.4em;
+    margin-bottom: 0.3em;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--ink);
+}
+
+h3 {
+    font-size: 1.25em;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate);
+}
+
+p {
+    margin-bottom: 1.5em;
+    font-size: 1.05em;
+}
+
+/* ============================================
+   ARTICLE HEADER
+   ============================================ */
+.article-header {
+    margin-bottom: 2.5em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.5em;
+    line-height: 1.5;
+}
+
+.meta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+    color: var(--slate);
+    margin-top: 1.5em;
+}
+
+.meta strong {
+    color: var(--ink);
+}
+
+/* ============================================
+   LEAD SECTION - Ink Wash Style
+   ============================================ */
+.lead-section {
+    background: rgba(59,84,107,.92);
+    border: 1px solid rgba(0,0,0,.08);
+    color: #fff;
+    padding: 2.5em;
+    margin: 2em -20px;
+    border-radius: 8px;
+}
+
+.lead-section p {
+    color: rgba(255,255,255,.88);
+    font-size: 1.1em;
+}
+
+.lead-section strong {
+    color: #fff;
+}
+
+.lead-section .highlight-text {
+    color: var(--paper);
+    font-weight: 500;
+}
+
+/* ============================================
+   BLOCKQUOTES - Margin Note Style
+   ============================================ */
+blockquote {
+    margin: 2em 0;
+    padding: 1.5em 2em;
+    background: var(--paper);
+    border-left: 4px solid var(--ink);
+    border-radius: 0 8px 8px 0;
+    color: var(--text);
+    font-style: italic;
+}
+
+blockquote p {
+    margin-bottom: 0.5em;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 0.9em;
+    color: var(--muted);
+    margin-top: 1em;
+    font-style: normal;
+}
+
+/* ============================================
+   CALLOUT BOXES - Johnson Box Style
+   ============================================ */
+.callout {
+    background: var(--paper);
+    border: 1.5px dashed rgba(59,84,107,.5);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 2em 0;
+    position: relative;
+}
+
+.callout .label {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: rgba(59,84,107,.85);
+    margin-bottom: 10px;
+}
+
+.callout p {
+    margin-bottom: 0.8em;
+}
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mechanism Callout - Ink accent */
+.callout.mechanism {
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+.callout.mechanism .label {
+    color: var(--ink);
+}
+
+/* Key Insight Callout */
+.callout.insight {
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+.callout.insight .label {
+    color: var(--ink);
+}
+
+/* Warning Callout */
+.callout.warning {
+    background: rgba(59,84,107,.08);
+    border-left: 5px solid var(--ink);
+    border-style: solid;
+    border-width: 1.5px 1.5px 1.5px 5px;
+}
+
+.callout.warning .label {
+    color: var(--ink);
+}
+
+/* ============================================
+   PULL QUOTES
+   ============================================ */
+.pull-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.35em;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--ink);
+    text-align: center;
+    padding: 1.5em 2em;
+    margin: 2em 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    line-height: 1.5;
+}
+
+/* ============================================
+   STATISTICS HIGHLIGHT
+   ============================================ */
+.stat-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin: 2em 0;
+    padding: 1.5em;
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+}
+
+.stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1em;
+    color: var(--text);
+}
+
+.stat-label strong {
+    color: var(--ink);
+}
+
+/* ============================================
+   FRAMEWORK BOX
+   ============================================ */
+.framework-box {
+    background: var(--paper);
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 10px;
+    border: 2px solid var(--rule);
+}
+
+.framework-box h3 {
+    margin-top: 0;
+    color: var(--ink);
+    text-align: center;
+}
+
+.framework-visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5em 0;
+    padding: 1.5em;
+    background: rgba(255,255,255,.6);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+}
+
+.framework-step {
+    text-align: center;
+    flex: 1;
+}
+
+.framework-step .step-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--ink);
+    margin-bottom: 0.3em;
+}
+
+.framework-step .step-desc {
+    font-size: 0.85em;
+    color: var(--slate);
+}
+
+.framework-arrow {
+    font-size: 1.5em;
+    color: var(--slate);
+    padding: 0 0.5em;
+}
+
+.framework-summary {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   CASE STUDY BOX
+   ============================================ */
+.case-study {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 2em;
+    margin: 2em 0;
+}
+
+.case-study h4 {
+    color: var(--ink);
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+}
+
+.case-study .approach-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    margin: 1em 0;
+}
+
+.case-study .approach {
+    padding: 1em;
+    border-radius: 6px;
+}
+
+.case-study .approach.traditional {
+    background: rgba(122,140,155,.08);
+    border-left: 3px solid var(--slate);
+}
+
+.case-study .approach.amplification {
+    background: rgba(59,84,107,.08);
+    border-left: 3px solid var(--ink);
+}
+
+.case-study .approach h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.5em 0;
+}
+
+.case-study .approach.traditional h5 {
+    color: var(--slate);
+}
+
+.case-study .approach.amplification h5 {
+    color: var(--ink);
+}
+
+.case-study .approach p {
+    font-size: 0.95em;
+    margin: 0;
+}
+
+.case-study .strategy {
+    margin: 1em 0;
+    font-size: 0.95em;
+}
+
+.case-study .result {
+    background: rgba(59,84,107,.06);
+    padding: 1em;
+    border-radius: 6px;
+    margin-top: 1em;
+    border-left: 3px solid var(--slate);
+}
+
+.case-study .result strong {
+    color: var(--ink);
+}
+
+.case-study .result p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+/* ============================================
+   RESEARCH TABLE
+   ============================================ */
+.research-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.9em;
+}
+
+.research-table th {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--ink);
+    color: #fff;
+    padding: 1em;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.research-table th:first-child {
+    border-radius: 6px 0 0 0;
+}
+
+.research-table th:last-child {
+    border-radius: 0 6px 0 0;
+}
+
+.research-table td {
+    padding: 1em;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+}
+
+.research-table tr:nth-child(even) {
+    background: rgba(255,255,255,.4);
+}
+
+.research-table tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+
+.research-table tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+}
+
+.research-table a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.research-table a:hover {
+    color: var(--rust);
+    text-decoration: underline;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+ul, ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.8em;
+    font-size: 1.05em;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(59,84,107,.3);
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--rust);
+    border-bottom-color: var(--rust);
+}
+
+/* ============================================
+   EMPHASIS
+   ============================================ */
+strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+em {
+    font-style: italic;
+}
+
+/* ============================================
+   HORIZONTAL RULE
+   ============================================ */
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 3em 0;
+}
+
+/* ============================================
+   CTA BOX - Ink Wash Style
+   ============================================ */
+.cta-box {
+    background: rgba(59,84,107,.92);
+    border: 1px solid rgba(0,0,0,.08);
+    color: #fff;
+    padding: 2.5em;
+    margin: 3em 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cta-box h3 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.cta-box p {
+    color: rgba(255,255,255,.88);
+    margin-bottom: 1em;
+}
+
+.cta-box .cta-list {
+    text-align: left;
+    max-width: 520px;
+    margin: 1.5em auto;
+    padding-left: 1.5em;
+}
+
+.cta-box .cta-list li {
+    color: rgba(255,255,255,.88);
+    margin-bottom: 1em;
+}
+
+.cta-box .cta-list strong {
+    color: #fff;
+}
+
+/* ============================================
+   FINAL QUOTE
+   ============================================ */
+.final-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    color: var(--ink);
+    padding: 2em;
+    margin: 2em 0;
+    line-height: 1.5;
+}
+
+.final-quote .highlight {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.final-quote strong {
+    color: var(--ink);
+}
+
+/* ============================================
+   AUTHOR BOX
+   ============================================ */
+.author-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+    padding: 2em;
+    background: var(--paper);
+    border-radius: 10px;
+    margin-top: 3em;
+    border: 1px solid var(--rule);
+}
+
+.author-box .author-info h4 {
+    margin: 0 0 0.5em 0;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1em;
+}
+
+.author-box .author-info p {
+    font-size: 0.95em;
+    color: var(--text);
+    margin: 0;
+}
+
+.author-box .author-info p em {
+    color: var(--slate);
+}
+
+/* ============================================
+   CLOSING SECTION
+   ============================================ */
+.closing-thoughts {
+    text-align: center;
+    font-style: italic;
+    color: var(--muted);
+    margin: 2em 0;
+}
+
+.closing-thoughts p {
+    margin-bottom: 0.8em;
+}
+
+.closing-thoughts strong {
+    color: var(--ink);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 700px) {
+    body {
+        padding: 20px 12px;
+    }
+    
+    article {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.9em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    .lead-section,
+    .cta-box {
+        margin-left: -10px;
+        margin-right: -10px;
+        border-radius: 0;
+        padding: 2em 1.5em;
+    }
+    
+    .case-study .approach-comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .framework-visual {
+        flex-direction: column;
+        gap: 1em;
+    }
+    
+    .framework-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .stat-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .research-table {
+        font-size: 0.8em;
+    }
+    
+    .research-table th,
+    .research-table td {
+        padding: 0.7em;
+    }
+}

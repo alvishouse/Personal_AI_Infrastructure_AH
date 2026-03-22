@@ -1,0 +1,206 @@
+{
+  "workflow_id": "2026-02-15-dumb-pipe-phenomenon",
+  "topic": "The Dumb Pipe Phenomenon - Value Migration from Platforms to Intelligence",
+  "track": "Track 5 - From Pilot to Scale (Paradigm Shift)",
+  "big_idea_summary": "Microsoft becoming a commodity container while Anthropic captures intelligence value. Historic value migration pattern: containers commoditize, intelligence captures value.",
+  "source_material": "YouTube transcript - Claude in Excel/PowerPoint analysis",
+  "status": "step-14-complete",
+  "created_at": "2026-02-15T19:23:00Z",
+  "updated_at": "2026-02-23T04:10:21.547Z",
+  "checkpoints": {
+    "step-1": {
+      "completed": true,
+      "selection": "Custom Topic: The Dumb Pipe Phenomenon (Track 5 variant)",
+      "timestamp": "2026-02-15T19:23:00Z"
+    },
+    "step-2": {
+      "completed": true,
+      "agent": "content-researcher",
+      "research_points": 116,
+      "file_size": "72KB",
+      "timestamp": "2026-02-15T23:10:00Z"
+    },
+    "step-3": {
+      "completed": true,
+      "agent": "content-writer",
+      "big_ideas_count": 5,
+      "timestamp": "2026-02-15T23:15:00Z"
+    },
+    "step-4": {
+      "completed": true,
+      "selection": "Big Idea 3 - The Headcount Trap",
+      "discovery_method": "Controversial Opinion",
+      "timestamp": "2026-02-15T23:20:00Z"
+    },
+    "step-5": {
+      "completed": true,
+      "agent": "content-writer",
+      "headline_sets_count": 5,
+      "timestamp": "2026-02-15T23:25:00Z"
+    },
+    "step-6": {
+      "completed": true,
+      "selection": "Headline Set 3 - The Race You Are Losing",
+      "headline": "Your Competitor Stopped Hiring. They Started Winning.",
+      "timestamp": "2026-02-15T23:28:00Z"
+    },
+    "step-7": {
+      "completed": true,
+      "agent": "content-writer",
+      "word_count": 4140,
+      "file_size": "27KB",
+      "timestamp": "2026-02-15T23:40:00Z"
+    },
+    "step-8": {
+      "completed": true,
+      "agent": "content-editor",
+      "quality_score": 8.5,
+      "issues_found": 5,
+      "timestamp": "2026-02-16T04:45:00Z"
+    },
+    "step-13": {
+      "completed": true,
+      "agents": [
+        "LinkedInScout (haiku)",
+        "content-writer (sonnet)"
+      ],
+      "linkedin_pieces": 8,
+      "scout_analysis": "13-extracted-content/00-scout-analysis.yaml",
+      "posts_dir": "13-extracted-content/linkedin/posts/",
+      "posting_schedule": "13-extracted-content/posting-schedule.md",
+      "priority_1_posts": [
+        "post-01-authority.md",
+        "post-03-story.md"
+      ],
+      "highest_viral_potential": [
+        "post-03-story.md",
+        "post-08-contrarian-cfo.md"
+      ],
+      "timestamp": "2026-02-18T08:17:00Z"
+    },
+    "step-13b": {
+      "note": "Old PNG image pages (posts 01,02,03,07) archived from Notion on 2026-02-22 — replaced with validated image prompts",
+      "archived_notion_ids": [
+        "30b0760e-b0cd-81e7-a2eb-d88cf975e7b1",
+        "30b0760e-b0cd-81ab-9ee4-fa7afd918504",
+        "30b0760e-b0cd-8109-a028-c165501a1cd6",
+        "30b0760e-b0cd-81d8-b9bf-f7286d2c5a04"
+      ],
+      "image_prompts": {
+        "framework": "Opening Wound",
+        "generator_model": "haiku",
+        "validator_model": "haiku",
+        "all_passed": true,
+        "revision_count": {
+          "post-06": 2,
+          "post-08": 2
+        },
+        "prompts_file": "13-extracted-content/linkedin/image-prompts.md",
+        "notion_pages": [
+          {
+            "file": "post-01-authority",
+            "notion_id": "30f0760e-b0cd-8152-b000-ed65d6d75dff",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-01-Authority-CFO-Is-Accidentally-Right-30f0760eb0cd8152b000ed65d6d75dff"
+          },
+          {
+            "file": "post-02-framework",
+            "notion_id": "30f0760e-b0cd-8181-ba13-c8693d4ef2ea",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-02-Framework-Intelligence-Per-Person-4-Steps-30f0760eb0cd8181ba13c8693d4ef2ea"
+          },
+          {
+            "file": "post-03-story",
+            "notion_id": "30f0760e-b0cd-8148-8a2a-c90d923f5960",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-03-Story-VP-Who-Stopped-Asking-for-Headcount-30f0760eb0cd81488a2ac90d923f5960"
+          },
+          {
+            "file": "post-04-myth-buster",
+            "notion_id": "30f0760e-b0cd-8115-ae23-e59c54563413",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-04-Myth-Buster-Linear-vs-Exponential-30f0760eb0cd8115ae23e59c54563413"
+          },
+          {
+            "file": "post-05-repetition-tax",
+            "notion_id": "30f0760e-b0cd-817b-aa9b-cfa49e964f4e",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-05-Quick-Win-Repetition-Tax-Audit-30f0760eb0cd817baa9bcfa49e964f4e"
+          },
+          {
+            "file": "post-06-cfo-redirect",
+            "notion_id": "30f0760e-b0cd-818e-a091-d1f1fbee08d1",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-06-Quick-Win-Redirecting-Headcount-Budget-30f0760eb0cd818ea091d1f1fbee08d1"
+          },
+          {
+            "file": "post-07-case-study",
+            "notion_id": "30f0760e-b0cd-812e-835a-f41c684ff633",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-07-Case-Study-Logistics-Company-30f0760eb0cd812e835af41c684ff633"
+          },
+          {
+            "file": "post-08-contrarian-cfo",
+            "notion_id": "30f0760e-b0cd-8108-b4ac-f8a85b93c294",
+            "notion_url": "https://www.notion.so/Image-Prompt-Post-08-Contrarian-Your-CFO-Is-Accidentally-Right-30f0760eb0cd8108b4acf8a85b93c294"
+          }
+        ],
+        "completed_at": "2026-02-22T21:00:00Z"
+      },
+      "completed": true
+    },
+    "step-14": {
+      "completed": true,
+      "completion_date": "2026-02-22",
+      "issue_number": 2,
+      "issue_date": "2026-02-28",
+      "insight_atoms_extracted": 12,
+      "sections": {
+        "tldr": true,
+        "myth_buster": true,
+        "quick_win": true,
+        "metric": true,
+        "rotating_section": "case_study",
+        "tool_spotlight": false,
+        "forward_cta": true
+      },
+      "validation_score": 0.94,
+      "forward_test_score": 5,
+      "word_count": 1504,
+      "linkedin_references": 5,
+      "selected_subject": "55% more output. Zero new hires. 90 days.",
+      "preheader": "Why your competitor stopped asking for headcount — and how to close the gap in 90 days",
+      "outputs": {
+        "markdown": "14-newsletter/newsletter-final.md",
+        "html": "14-newsletter/newsletter-final.html",
+        "meta": "14-newsletter/issue-meta-final.yaml"
+      },
+      "notion_page_id": "3100760e-b0cd-815c-88d1-db78d4bab1e1",
+      "notion_url": "https://www.notion.so/Newsletter-Issue-2-Your-Competitor-Stopped-Hiring-They-Started-Winning-3100760eb0cd815c88d1db78d4bab1e1"
+    }
+  },
+  "notion": {
+    "workflow_id": "3090760e-b0cd-81f7-8385-ce34439f923d",
+    "content_id": "3090760e-b0cd-8175-bfdb-fb56f4a8a5b8",
+    "content_url": "https://www.notion.so/Your-Competitor-Stopped-Hiring-They-Started-Winning-3090760eb0cd8175bfdbfb56f4a8a5b8",
+    "synced_at": "2026-02-18T02:11:42.565Z"
+  },
+  "wordpress": {
+    "post_id": 765,
+    "post_url": "https://alvishouse.io/?p=765",
+    "status": "draft",
+    "updated_at": "2026-02-18T07:27:52Z",
+    "media_ids": {
+      "featured": 770,
+      "featured_url": "https://alvishouse.io/wp-content/uploads/2026/02/featured-scaled.jpg",
+      "inline_01": 771,
+      "inline_01_url": "https://alvishouse.io/wp-content/uploads/2026/02/inline-01-journey-map.jpg",
+      "inline_02": 772,
+      "inline_02_url": "https://alvishouse.io/wp-content/uploads/2026/02/inline-02-staircase.jpg",
+      "inline_03": 773,
+      "inline_03_url": "https://alvishouse.io/wp-content/uploads/2026/02/inline-03-flywheel.jpg",
+      "inline_04": 774,
+      "inline_04_url": "https://alvishouse.io/wp-content/uploads/2026/02/inline-04-myth-vs-truth.jpg"
+    }
+  },
+  "newsletter_post_id": 837,
+  "newsletter_post_url": "https://alvishouse.io/?post_type=newsletter&p=837",
+  "newsletter_published_at": "2026-03-02T06:45:05.121Z",
+  "step-14": {
+    "newsletter_post_id": 837,
+    "newsletter_post_url": "https://alvishouse.io/?post_type=newsletter&p=837"
+  }
+}

@@ -334,6 +334,68 @@ function enhancePromptForTransparency(prompt: string): string {
 }
 
 // ============================================================================
+// Retry Logic for Rate Limits
+// ============================================================================
+
+/**
+ * Sleep for specified milliseconds
+ */
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Retry wrapper with exponential backoff for rate limit errors
+ */
+async function withRetry<T>(
+  fn: () => Promise<T>,
+  maxRetries: number = 3,
+  initialDelay: number = 1000
+): Promise<T> {
+  let lastError: any;
+
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (error: any) {
+      lastError = error;
+
+      // Check if this is a rate limit error (429)
+      const isRateLimit =
+        error?.error?.code === 429 ||
+        error?.error?.status === "RESOURCE_EXHAUSTED" ||
+        error?.message?.includes("quota") ||
+        error?.message?.includes("rate limit");
+
+      if (!isRateLimit || attempt === maxRetries - 1) {
+        // Not a rate limit or final attempt - throw immediately
+        throw error;
+      }
+
+      // Extract retry delay from error if available
+      let retryDelay = initialDelay * Math.pow(2, attempt); // Exponential backoff
+
+      if (error?.error?.details) {
+        for (const detail of error.error.details) {
+          if (detail["@type"] === "type.googleapis.com/google.rpc.RetryInfo" && detail.retryDelay) {
+            // Parse delay like "56.140493121s" -> milliseconds
+            const delayMatch = detail.retryDelay.match(/^([\d.]+)s$/);
+            if (delayMatch) {
+              retryDelay = Math.ceil(parseFloat(delayMatch[1]) * 1000);
+            }
+          }
+        }
+      }
+
+      console.log(`⚠️  Rate limit hit. Waiting ${Math.ceil(retryDelay / 1000)}s before retry ${attempt + 1}/${maxRetries}...`);
+      await sleep(retryDelay);
+    }
+  }
+
+  throw lastError;
+}
+
+// ============================================================================
 // Background Removal
 // ============================================================================
 
@@ -503,17 +565,20 @@ async function generateWithNanoBananaPro(
   // Add text prompt
   parts.push({ text: prompt });
 
-  const response = await ai.models.generateContent({
-    model: "gemini-3-pro-image-preview",
-    contents: [{ parts }],
-    config: {
-      responseModalities: ["TEXT", "IMAGE"],
-      imageConfig: {
-        aspectRatio: aspectRatio,
-        imageSize: size,
+  // Use retry logic for rate limit handling
+  const response = await withRetry(() =>
+    ai.models.generateContent({
+      model: "gemini-3-pro-image-preview",
+      contents: [{ parts }],
+      config: {
+        responseModalities: ["TEXT", "IMAGE"],
+        imageConfig: {
+          aspectRatio: aspectRatio,
+          imageSize: size,
+        },
       },
-    },
-  });
+    })
+  );
 
   // Extract image data from response
   let imageData: string | undefined;
@@ -566,32 +631,36 @@ async function main(): Promise<void> {
       console.log(`   For true creative diversity, use the creative workflow in Kai with be-creative skill\n`);
 
       const basePath = args.output.replace(/\.png$/, "");
-      const promises: Promise<void>[] = [];
 
+      // Generate sequentially with delays to avoid rate limits
       for (let i = 1; i <= args.creativeVariations; i++) {
         const varOutput = `${basePath}-v${i}.png`;
-        console.log(`Variation ${i}/${args.creativeVariations}: ${varOutput}`);
+        console.log(`\nVariation ${i}/${args.creativeVariations}: ${varOutput}`);
 
         if (args.model === "flux") {
-          promises.push(generateWithFlux(finalPrompt, args.size as ReplicateSize, varOutput));
+          await generateWithFlux(finalPrompt, args.size as ReplicateSize, varOutput);
         } else if (args.model === "nano-banana") {
-          promises.push(generateWithNanoBanana(finalPrompt, args.size as ReplicateSize, varOutput));
+          await generateWithNanaBanana(finalPrompt, args.size as ReplicateSize, varOutput);
         } else if (args.model === "nano-banana-pro") {
-          promises.push(
-            generateWithNanoBananaPro(
-              finalPrompt,
-              args.size as GeminiSize,
-              args.aspectRatio!,
-              varOutput,
-              args.referenceImage
-            )
+          await generateWithNanaBananaPro(
+            finalPrompt,
+            args.size as GeminiSize,
+            args.aspectRatio!,
+            varOutput,
+            args.referenceImage
           );
         } else if (args.model === "gpt-image-1") {
-          promises.push(generateWithGPTImage(finalPrompt, args.size as OpenAISize, varOutput));
+          await generateWithGPTImage(finalPrompt, args.size as OpenAISize, varOutput);
+        }
+
+        // Add delay between variations to respect rate limits (except after last one)
+        if (i < args.creativeVariations) {
+          const delaySeconds = args.model === "nano-banana-pro" ? 60 : 5;
+          console.log(`⏳ Waiting ${delaySeconds}s before next variation...`);
+          await sleep(delaySeconds * 1000);
         }
       }
 
-      await Promise.all(promises);
       console.log(`\n✅ Generated ${args.creativeVariations} variations`);
       return;
     }

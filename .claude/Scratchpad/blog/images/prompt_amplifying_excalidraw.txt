@@ -1,0 +1,53 @@
+Digital whiteboard illustration in Excalidraw style
+on white background (#FFFFFF).
+
+CONCEPT: AI as mechanical advantage — human hand operating precision levers that multiply force, not a machine replacing the hand.
+
+CENTRAL ELEMENT:
+A hand (sketched with wiggly lines) grasping a lever mechanism. The lever connects to gears and pulleys that amplify the hand's movement. Draw as if sketching on Excalidraw.com whiteboard.
+
+The hand is clearly human, drawn with wiggly imperfect lines. The mechanical system shows hatched fills on gears, with wiggly connecting lines. Corners don't perfectly connect, lines have deliberate jitter.
+
+AESTHETIC:
+- Wiggly imperfect lines throughout (deliberate jitter)
+- Lines overshoot at corners slightly
+- Gears drawn as circles with multiple overlapping strokes
+- Variable line thickness
+- Hand-drawn whiteboard quality
+
+FILLS:
+- Hatched diagonal lines for gear fills
+- Cross-hatching on hand palm for shading
+- Scribbled texture on lever for emphasis
+- NO solid colors anywhere
+
+COMPOSITION:
+- Human hand with lever (left-center, 40% of frame)
+- Gear and pulley system extends right
+- Generous white space (upper left)
+- 3-4 labels with all-caps text:
+  - "HAND" pointing to hand
+  - "5:1" ratio marker near lever fulcrum
+  - Arrow showing "AMPLIFIED FORCE"
+  - "GEARS" labeling mechanism
+
+TEXT:
+- All-caps architect print font
+- Blocky handwritten style
+- Labels on key elements
+- Hand-drawn appearance
+
+COLOR:
+- Black (#1E1E1E) for all primary lines and text
+- Blue (#3B82F6) accent on the lever and "5:1" ratio marker
+- White background
+
+CRITICAL:
+- Wiggly imperfect lines (NOT straight vectors)
+- Hatched fills only for gears, never solid colors
+- Digital whiteboard energy
+- Abstract metaphor about amplification
+- Should look like someone drew this on Excalidraw.com
+- Approachable, non-intimidating technical sketch
+
+--no perfect lines, --no solid colors, --no typed fonts, --no corporate polish, --no photorealism

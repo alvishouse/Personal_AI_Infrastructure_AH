@@ -1,0 +1,192 @@
+Technical sketch on aged parchment in Leonardo da Vinci notebook style
+on warm parchment background (#ECE6D9).
+
+CONCEPT: AI Acceleration Flywheel - a systems thinking framework showing four interconnected loops that create organizational momentum. Mechanical flywheel metaphor with visible gear mechanisms and rotation dynamics.
+
+CENTRAL MECHANISM:
+A mechanical flywheel hub drawn at the center of the page. From this central hub, four circular loops radiate outward in four quadrants (top-left, top-right, bottom-left, bottom-right), each representing a different organizational system. The loops are interconnected through the central hub, showing how they reinforce each other to create accelerating momentum.
+
+Draw as Leonardo would sketch a mechanical system - showing both the conceptual framework and the mechanical operation simultaneously.
+
+MEDIUM & TEXTURE:
+- Aged parchment paper with visible grain throughout
+- Natural paper aging with slight yellowing
+- Parchment beige tone (#ECE6D9) as base
+- Ink absorbed into paper fibers showing slight bleeding
+- Centuries-old technical drawing quality
+
+LINE QUALITY:
+- Hand-drawn with deliberate imperfection
+- Variable line weight (heavier on primary circles, lighter on connecting lines)
+- Leonardo technical sketch style
+- Visible construction: compass marks at circle centers, guide lines radiating
+- Multiple overlapping strokes showing Leonardo's study process
+
+CENTRAL HUB:
+- Rectangular or rounded rectangular box at center of page
+- Label: "AI ACCELERATION FLYWHEEL" in hand-lettered Leonardo script
+- Cross-hatching inside box for depth and emphasis
+- Four radial lines extending from hub to each circular loop
+- Hub drawn with construction geometry visible (center point marked)
+
+FOUR CIRCULAR LOOPS (Quadrant Layout):
+
+**TOP-LEFT: SYSTEMS LOOP**
+- Large circle drawn with compass (center point visible as small dot)
+- Circular arrow showing clockwise rotation
+- Four elements positioned around circle:
+  * "Systems" (top of circle)
+  * "Work Flow" (left side)
+  * "Culture" (bottom)
+  * "CERTAINTY" (center of loop, emphasized with rounded box)
+- Arrow flows: Systems → Work Flow → Culture → Certainty → Systems
+- Circle connects to central hub with radial line
+
+**TOP-RIGHT: STRATEGY LOOP**
+- Large circle drawn with compass construction visible
+- Circular arrow showing clockwise rotation
+- Four elements:
+  * "Strategy" (top)
+  * "Communication" (left)
+  * "Paradigm Shift" (right)
+  * "CLARITY" (center, emphasized)
+- Arrow flows: Strategy → Communication → Paradigm Shift → Clarity → Strategy
+- Radial line connecting to hub
+
+**BOTTOM-LEFT: RESOURCES LOOP**
+- Large circle with compass construction
+- Clockwise rotation arrow
+- Four elements:
+  * "Resources" (top)
+  * "Resiliency" (left)
+  * "Commitment" (bottom - appears twice: in loop and as center)
+  * "COMMITMENT" (center, emphasized)
+- Arrow flows: Resources → Resiliency → Commitment → Commitment → Resources
+- Radial connection to hub
+
+**BOTTOM-RIGHT: INNOVATION LOOP**
+- Large circle with visible construction
+- Clockwise rotation arrow
+- Four elements:
+  * "Innovation" (top)
+  * "Decisions" (left)
+  * "Efficiency" (right)
+  * "OUTCOMES" (center, emphasized)
+- Arrow flows: Innovation → Decisions → Efficiency → Outcomes → Innovation
+- Radial line to hub
+
+CONSTRUCTION GEOMETRY (CRITICAL):
+- Compass center point visible in each of four circles
+- Guide lines radiating from central hub to each loop
+- Construction circles showing how Leonardo determined proportions
+- Light sketch lines showing the underlying geometry
+- Center point of entire diagram marked with small cross
+- Radial symmetry emphasized with faint guide lines
+
+ARROWS & FLOW INDICATORS:
+- Curved arrows on each circle showing clockwise rotation (motion)
+- Leonardo's characteristic curved motion lines
+- Arrow heads drawn with slight imperfection
+- Flow direction emphasized with motion indicators
+- Each arrow follows the circle's curvature naturally
+- Multiple small marks showing rotation direction
+
+SHADING & DEPTH:
+- Cross-hatching throughout for depth (NO solid fills)
+- Denser cross-hatching on:
+  * Central hub box (for emphasis)
+  * Center elements of each loop (CERTAINTY, CLARITY, COMMITMENT, OUTCOMES)
+  * Areas where circles overlap or connect
+- Lighter cross-hatching for circle outlines to show volume
+- Bare parchment for highlights
+- Hatching follows form (circular hatching inside circles)
+
+COLOR (Leonardo Palette):
+- Parchment background: #ECE6D9 (warm aged paper)
+- Deep slate blue ink: #3B546B (all primary linework - circles, arrows, labels)
+- Burnt copper accents: #CF5828 (used sparingly on):
+  * Central "AI ACCELERATION FLYWHEEL" text
+  * Radial connection lines from hub to loops (showing energy flow)
+  * Arrow heads indicating rotation (showing momentum)
+  * Center emphasized elements in each loop
+- Cross-hatching in slate blue
+
+TEXT & ANNOTATIONS (Leonardo Script):
+- Hand-lettered in Leonardo's technical script style (italicized, precise)
+- Central hub label: "AI ACCELERATION FLYWHEEL" (prominent)
+- Loop labels: "Systems", "Strategy", "Resources", "Innovation"
+- Element labels around each circle
+- Center emphasis labels: "CERTAINTY", "CLARITY", "COMMITMENT", "OUTCOMES"
+- Margin notes in smaller script:
+  * "Momentum creates velocity" (small note near central hub)
+  * "Systems reinforce" (marginal annotation)
+  * "Interconnected dynamics" (side note)
+- All text matches ink color (slate blue #3B546B)
+- Labels positioned naturally around circles with arrow indicators
+
+LEONARDO MECHANICAL STUDY CHARACTERISTICS:
+- Visible thinking process (construction lines show how it was built)
+- Multiple studies of motion (arrows, flow indicators)
+- Mechanical understanding (flywheel as momentum device)
+- Systems thinking shown as mechanical systems
+- Exploration of rotation and interconnection
+- Intellectual curiosity visible in annotations
+- Technical precision with hand-crafted warmth
+
+SYMMETRY & BALANCE:
+- Four loops arranged in perfect quadrant symmetry
+- Central hub as anchor point
+- Equal spacing between loops
+- Radial balance from center
+- Circular harmony (four circles of equal size)
+- Leonardo's love of geometric proportion visible
+
+FLYWHEEL METAPHOR EMPHASIS:
+- Central hub represents the axle of a flywheel
+- Four loops are like weighted sections that create momentum
+- Rotation arrows emphasize spinning/acceleration
+- Interconnection shows how momentum builds
+- As one section spins, it drives the others
+- Self-reinforcing system (flywheel keeps spinning once started)
+- Mechanical advantage through interconnected systems
+
+COMPOSITIONAL INTENT:
+- Show interconnected systems creating momentum
+- Each loop feeds the others through central hub
+- Flywheel = self-reinforcing acceleration
+- Four dimensions of organizational AI transformation
+- Systems thinking applied to AI strategy
+- Momentum builds as loops reinforce each other
+- Framework as mechanical system (Leonardo's genius)
+
+CRITICAL STYLE ELEMENTS:
+- Parchment texture visible throughout entire image
+- Cross-hatching for all shading and emphasis (no solid fills)
+- Visible construction geometry (compass points, guide lines, radial symmetry)
+- Hand-drawn deliberate imperfection (not digital vectors)
+- Leonardo da Vinci technical schematic aesthetic
+- Mechanical systems drawing style
+- Intellectual depth showing thinking process
+- Centuries-old engineering drawing quality
+- Four-fold symmetry with central hub
+- Circular motion and interconnection emphasized
+
+FRAMEWORK CLARITY:
+- Each loop clearly labeled and distinct
+- Flow direction obvious (clockwise arrows)
+- Central hub as integration point
+- Core concepts emphasized (center of each loop)
+- Interconnections visible (radial lines)
+- System dynamics apparent (rotation = momentum)
+- Leonardo-style clarity in complex systems
+
+THEMATIC ALIGNMENT:
+This framework supports organizational AI transformation:
+- Systems, Strategy, Resources, Innovation all work together
+- Central flywheel = AI acceleration
+- Each loop has core outcome (Certainty, Clarity, Commitment, Outcomes)
+- Interconnection creates momentum
+- Self-reinforcing system (like amplification concept)
+- Technical precision meets strategic thinking
+
+--no clean white paper, --no typed fonts, --no perfect lines, --no digital polish, --no CAD precision, --no solid color fills, --no gradients, --no modern flowchart style, --no corporate presentation aesthetic, --no clip art, --no stock imagery

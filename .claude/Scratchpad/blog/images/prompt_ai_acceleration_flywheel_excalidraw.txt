@@ -1,0 +1,196 @@
+Digital whiteboard illustration in Excalidraw style
+on white background (#FFFFFF).
+
+CONCEPT: AI Acceleration Flywheel framework - four interconnected loops creating organizational momentum. Strategic systems thinking visualized as digital whiteboard sketch during team brainstorm.
+
+CENTRAL MECHANISM:
+A central hub box labeled "AI ACCELERATION FLYWHEEL" with four circular loops radiating outward in quadrants (top-left, top-right, bottom-left, bottom-right). Each loop represents a different organizational system. The loops are interconnected through radial lines to the central hub, showing how they reinforce each other to create accelerating momentum.
+
+Draw as if sketching on Excalidraw.com whiteboard with a mouse - wiggly, imperfect, approachable digital whiteboard energy.
+
+MEDIUM & TEXTURE:
+- Digital whiteboard illustration
+- Clean white background (#FFFFFF)
+- Hand-drawn with mouse/tablet quality
+- Wiggly imperfect lines throughout (deliberate jitter)
+- Modern, approachable, non-intimidating aesthetic
+
+LINE QUALITY:
+- Wiggly imperfect lines throughout (NOT straight vectors)
+- Lines overshoot at corners slightly (Excalidraw characteristic)
+- Variable line thickness: heavier on main circles and hub, lighter on connecting lines
+- Circles drawn as multiple overlapping strokes (spiral quality, not perfect circles)
+- Corners don't perfectly connect (deliberate imperfection)
+- Hand-drawn whiteboard quality - looks sketched with mouse/tablet
+- Some lines have multiple strokes showing sketching process
+
+CENTRAL HUB:
+- Rectangular box in center with wiggly edges
+- Label: "AI ACCELERATION FLYWHEEL" in all-caps architect font
+- Box drawn with imperfect wiggly strokes
+- Four radial lines extending from hub to each circular loop
+- Center point indicated with small cross or dot
+- Light diagonal hatching inside box for emphasis
+
+FOUR CIRCULAR LOOPS (Quadrant Layout):
+
+**TOP-LEFT: SYSTEMS LOOP**
+- Large circle drawn with wiggly overlapping strokes
+- Circular arrow showing clockwise rotation (wiggly curved arrow)
+- Elements positioned around circle in all-caps architect font:
+  * "SYSTEMS" (top of circle)
+  * "WORK FLOW" (left side)
+  * "CULTURE" (bottom)
+  * "CERTAINTY" (center of loop, emphasized with rounded box)
+- Arrow flows: Systems → Work Flow → Culture → Certainty → Systems
+- Wiggly radial line connecting to central hub
+- Light diagonal hatching in center emphasis box
+
+**TOP-RIGHT: STRATEGY LOOP**
+- Large wiggly circle with overlapping strokes
+- Clockwise rotation arrow (wiggly)
+- Elements in all-caps architect font:
+  * "STRATEGY" (top)
+  * "COMMUNICATION" (left)
+  * "PARADIGM SHIFT" (right)
+  * "CLARITY" (center, emphasized with rounded box)
+- Arrow flows: Strategy → Communication → Paradigm Shift → Clarity → Strategy
+- Wiggly radial line to hub
+- Light diagonal hatching in center box
+
+**BOTTOM-LEFT: RESOURCES LOOP**
+- Large wiggly circle
+- Clockwise rotation arrow (wiggly)
+- Elements in all-caps architect font:
+  * "RESOURCES" (top)
+  * "RESILIENCY" (left)
+  * "COMMITMENT" (bottom)
+  * "COMMITMENT" (center, emphasized with rounded box)
+- Arrow flows: Resources → Resiliency → Commitment → Commitment → Resources
+- Wiggly radial line to hub
+- Light diagonal hatching in center box
+
+**BOTTOM-RIGHT: INNOVATION LOOP**
+- Large wiggly circle
+- Clockwise rotation arrow (wiggly)
+- Elements in all-caps architect font:
+  * "INNOVATION" (top)
+  * "DECISIONS" (left)
+  * "EFFICIENCY" (right)
+  * "OUTCOMES" (center, emphasized with rounded box)
+- Arrow flows: Innovation → Decisions → Efficiency → Outcomes → Innovation
+- Wiggly radial line to hub
+- Light diagonal hatching in center box
+
+FILLS & SHADING:
+- Hatched diagonal lines for ALL fills (never solid colors)
+- Central hub box: Light diagonal hatching
+- Center emphasis boxes in each loop: Light diagonal hatching
+- Circle outlines remain unfilled (just wiggly stroke outlines)
+- Arrow heads: Small diagonal hatching for emphasis
+- NO solid colors, NO gradients anywhere
+- Hatching lines are wiggly and imperfect (hand-drawn quality)
+
+ARROWS & FLOW INDICATORS:
+- Curved wiggly arrows on each circle showing clockwise rotation
+- Arrow heads drawn with wiggly triangular shapes (slight hatching)
+- Flow direction emphasized with motion indicators
+- Each arrow follows the circle's curvature naturally (but wiggly)
+- Radial lines from hub to loops are wiggly but roughly straight
+- Small directional indicators showing rotation
+
+TEXT & LABELS (All-caps Architect Font):
+- Central hub: "AI ACCELERATION FLYWHEEL" (prominent, black)
+- Loop labels: "SYSTEMS", "STRATEGY", "RESOURCES", "INNOVATION"
+- Element labels around each circle (positioned naturally)
+- Center emphasis labels: "CERTAINTY", "CLARITY", "COMMITMENT", "OUTCOMES"
+- Optional annotations:
+  * "MOMENTUM" (small label near central hub)
+  * "INTERCONNECTED" (marginal note)
+  * "SELF-REINFORCING" (side annotation)
+- All text in architectural print style (clean, all-caps, hand-lettered feel)
+
+COMPOSITION:
+- Four loops arranged in quadrants with radial symmetry
+- Central hub box in middle as anchor point
+- Equal spacing between loops (roughly)
+- Generous white space in corners and edges
+- Radial balance from center point
+- Uses 70-80% of canvas space
+- Organic placement (not perfectly aligned - has whiteboard spontaneity)
+
+COLOR (Excalidraw Palette - CRITICAL):
+- White background: #FFFFFF
+- Black (#1E1E1E) for ALL primary elements:
+  * All four circular loops
+  * Central hub box
+  * Most labels and text
+  * Radial connection lines
+  * Most arrows
+- Blue (#3B82F6) accent ONLY on:
+  * Rotation arrows on each circle (showing momentum)
+  * Center emphasis boxes in each loop (CERTAINTY, CLARITY, COMMITMENT, OUTCOMES)
+  * "AI ACCELERATION FLYWHEEL" text in central hub (optional - could be black)
+  * Arrow heads (showing motion)
+- NO other colors (strictly black + blue + white only)
+
+CRITICAL EXCALIDRAW CHARACTERISTICS:
+- Wiggly imperfect lines throughout (NOT straight vectors)
+- Hatched diagonal fills only (never solid colors)
+- Digital whiteboard energy (modern, approachable, informal)
+- Circles as overlapping spirals (not perfect circles)
+- Lines overshoot at corners
+- Hand-drawn with mouse/tablet quality
+- Architect print all-caps font for all text
+- Looks like someone sketched this on Excalidraw.com during meeting
+- Approachable and non-intimidating (not formal or polished)
+- Variable line thickness adds character
+- Some elements have multiple overlapping strokes
+
+COMPOSITIONAL INTENT:
+- Show interconnected systems creating momentum
+- Four loops = dimensions of AI transformation
+- Each loop feeds others through central hub
+- Rotation arrows = spinning momentum (flywheel effect)
+- Self-reinforcing acceleration visible through connections
+- Strategic framework as digital whiteboard concept sketch
+- Systems thinking visualized simply
+
+FRAMEWORK CLARITY:
+- Each loop clearly labeled and distinct
+- Flow direction obvious (clockwise rotation arrows)
+- Central hub as integration point clearly visible
+- Core concepts emphasized (center of each loop)
+- Interconnections visible (radial lines)
+- System dynamics apparent (rotation = momentum)
+- Excalidraw-style clarity in complex systems
+
+FLYWHEEL METAPHOR:
+- Central hub = axle/integration point
+- Four loops = weighted sections creating momentum
+- Rotation arrows = spinning/acceleration
+- Interconnection = reinforcement between systems
+- As one section spins, it drives the others
+- Self-reinforcing system (flywheel keeps spinning)
+- Mechanical advantage through interconnected systems
+
+THEMATIC ALIGNMENT:
+Framework supports organizational AI transformation:
+- Systems, Strategy, Resources, Innovation all work together
+- Central flywheel = AI acceleration hub
+- Each loop has core outcome (Certainty, Clarity, Commitment, Outcomes)
+- Interconnection creates self-reinforcing momentum
+- Strategic clarity captured in approachable whiteboard format
+- Modern digital whiteboard meets strategic systems thinking
+
+WHITEBOARD CONTEXT:
+Imagine this sketched during team strategy meeting:
+- Quick but clear visual communication
+- Not overly detailed or formal
+- Captures strategic framework efficiently
+- Approachable for all audiences (technical and non-technical)
+- Could be drawn in 10-15 minutes on actual digital whiteboard
+- Emphasizes CONCEPT over artistic execution
+- Team brainstorm energy (collaborative thinking)
+
+--no perfect lines, --no straight edges, --no solid color fills, --no gradients, --no photorealism, --no typed fonts, --no corporate polish, --no CAD precision, --no formal flowchart, --no clean vectors, --no perfectly connected corners, --no hand-drawn paper texture, --no parchment background

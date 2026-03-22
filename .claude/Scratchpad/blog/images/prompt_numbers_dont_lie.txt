@@ -1,0 +1,56 @@
+Stat card in Leonardo da Vinci notebook style
+on warm parchment background (#ECE6D9).
+
+STATISTIC: 10x
+LABEL: Human Output When Amplified vs. Replaced
+
+LAYOUT:
+- Large "10x" as hero element (50% of frame, center-right)
+- Label positioned below
+- Supporting sketch showing amplification concept
+- Construction geometry framing the number
+
+NUMBER TREATMENT:
+- Hand-lettered large "10x" numeral
+- Burnt copper (#CF5828) for the number itself
+- Thick, confident strokes with variable weight
+- Construction lines showing proportion and golden ratio
+- Guide circles establishing letter height and spacing
+- Measurement marks indicating scale
+
+LABEL:
+- "Human Output When Amplified vs. Replaced"
+- Deep slate blue (#3B546B)
+- Hand-lettered in clear, architectural style
+- Smaller than number but highly readable
+- Positioned beneath or beside number
+
+VISUAL CONTEXT (left side):
+- Small sketch of hand pulling lever (callback to main header image)
+- Upward trend arrow with measurement marks
+- Scale comparison: small figure vs amplified figure
+- Proportion annotations showing the multiplier effect
+
+CONSTRUCTION GEOMETRY:
+- Golden ratio spiral visible around number
+- Guide lines for letter baseline and cap height
+- Measurement ticks showing scale progression
+- Ghost circles defining number placement
+- Radiating construction lines from center
+- Cross-hatching to indicate emphasis zones
+
+ANNOTATIONS:
+- Small note: "Amplification > Automation"
+- Measurement marks along trend line
+- Proportion indicators on comparison sketches
+
+CRITICAL:
+- Number is HERO — large, bold, impossible to miss
+- Burnt copper (#CF5828) makes "10x" pop
+- Hand-drawn not typed — visible brush strokes
+- Leonardo notebook aesthetic throughout
+- Construction geometry reveals thinking process
+- Should feel like discovery sketched in inventor's notebook
+- Cross-hatching only, NO gradients
+
+--no digital polish, --no perfect symmetry, --no typed fonts, --no corporate charts, --no clean vectors, --no gradients

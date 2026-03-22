@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headcount vs Intelligence — Infographic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --cream:    #ece6d9;
+      --cream-dk: #ddd8ce;
+      --navy:     #3b546b;
+      --orange:   #cf5828;
+      --steel:    #7a8c9b;
+      --teal:     #2E7D6B;
+      --amber:    #F0A500;
+      --ink:      #1a2635;
+      --ink-mid:  #3d4f60;
+      --rule:     #d4cdc3;
+      --white:    #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #9a9490;
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 28px 20px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .preview-label {
+      font-size: 12px; font-weight: 600; color: #222;
+      margin-bottom: 14px; text-align: center;
+    }
+    .preview-label span { color: #555; font-weight: 400; }
+
+    /* ── CANVAS ── */
+    .ig {
+      width: 540px;
+      background: var(--white);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.30);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 4px;
+    }
+
+    /* ── HEADER ── */
+    .ig-header {
+      background: var(--navy);
+      padding: 5px 20px 4px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .ig-kicker {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2px;
+    }
+    .ig-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px; letter-spacing: 0.03em; color: var(--white); line-height: 1.05;
+    }
+    .ig-title em { font-style: normal; color: var(--amber); }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-section { overflow: hidden; border: 1px solid var(--rule); }
+    .problem-headline {
+      background: var(--orange);
+      padding: 5px 20px;
+      text-align: center;
+    }
+    .problem-headline-icon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .problem-headline-icon svg { stroke: var(--white) !important; width: 20px; height: 20px; }
+    .problem-headline-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+    }
+    .problem-headline-title em { font-style: normal; color: rgba(255,255,255,0.65); }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--white);
+    }
+    .stat-cell {
+      padding: 4px 8px 3px;
+      text-align: center;
+      border-right: 1.5px solid var(--rule);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; letter-spacing: 0.01em;
+      color: var(--navy); line-height: 1.0; display: block;
+    }
+    .stat-num-teal { color: var(--teal) !important; }
+    .stat-num-orange { color: var(--orange) !important; }
+    .stat-unit {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 2px;
+    }
+    .stat-unit-teal { color: var(--teal) !important; }
+    .stat-unit-orange { color: var(--orange) !important; }
+    .stat-desc {
+      font-size: 6.5px; color: var(--ink-mid); line-height: 1.4;
+      text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
+    }
+
+    /* ── THREE COLUMNS ── */
+    .three-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--cream);
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .col { display: flex; flex-direction: column; border-right: 1.5px solid var(--rule); background: var(--cream); overflow: hidden; }
+    .col:last-child { border-right: none; }
+    .col-header {
+      padding: 3px 8px;
+      font-size: 7.5px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white); text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+    }
+    .col-header svg { width: 9px; height: 9px; flex-shrink: 0; }
+    .col-header-amber  { background: var(--amber); color: var(--ink) !important; }
+    .col-header-navy   { background: var(--navy); }
+    .col-header-steel  { background: var(--steel); }
+    .col-body { padding: 4px 7px 5px; flex: 1; }
+
+    /* ── Obstacle List ── */
+    .obstacle-list { display: flex; flex-direction: column; gap: 1px; }
+    .obstacle-item {
+      display: flex; align-items: flex-start; gap: 5px;
+      padding-bottom: 2px; border-bottom: 1px solid var(--rule);
+    }
+    .obstacle-item:last-child { border-bottom: none; }
+    .obstacle-icon {
+      width: 16px; height: 16px; flex-shrink: 0;
+      background: var(--navy); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .obstacle-icon svg { width: 9px; height: 9px; stroke: var(--white); }
+    .obstacle-title { font-size: 7px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .obstacle-sub   { font-size: 6px; color: var(--steel); line-height: 1.3; }
+
+    /* ── Intelligence Layer List (Col 2) ── */
+    .layer-intro {
+      font-size: 6.5px; font-style: italic; color: var(--steel);
+      line-height: 1.4; margin-bottom: 4px; text-align: center;
+    }
+    .layer-list { display: flex; flex-direction: column; gap: 0; }
+    .layer-item {
+      display: flex; align-items: flex-start; gap: 6px;
+      padding: 3px 0; border-bottom: 1px solid var(--rule);
+    }
+    .layer-item:last-child { border-bottom: none; }
+    .layer-mult {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px; color: var(--navy); line-height: 1;
+      flex-shrink: 0; min-width: 28px; text-align: center;
+    }
+    .layer-item-teal .layer-mult { color: var(--teal); }
+    .layer-title { font-size: 7px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .layer-item-teal .layer-title { color: var(--teal); }
+    .layer-sub   { font-size: 6px; color: var(--steel); line-height: 1.3; }
+    .layer-item-teal .layer-sub { color: var(--teal); opacity: 0.85; }
+
+    /* IPP metric */
+    .ipp-block {
+      margin-top: 4px; border-top: 1px solid var(--rule); padding-top: 3px;
+      background: var(--cream-dk); border-radius: 2px; padding: 3px 5px;
+    }
+    .ipp-label {
+      font-size: 6px; font-weight: 800; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--navy); margin-bottom: 1px;
+    }
+    .ipp-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px; color: var(--teal); line-height: 1;
+    }
+    .ipp-desc { font-size: 6px; color: var(--steel); line-height: 1.3; }
+
+    /* ── Two-Path Block ── */
+    .path-block { margin-bottom: 3px; overflow: hidden; }
+    .path-block:last-child { margin-bottom: 0; }
+    .path-block-label {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 3px 7px; color: var(--white);
+    }
+    .path-block-label-grey { background: var(--steel); }
+    .path-block-label-teal { background: var(--teal); }
+    .path-milestones {
+      background: var(--white); border: 1px solid var(--rule); border-top: none;
+    }
+    .path-mile {
+      display: flex; align-items: baseline; gap: 5px;
+      padding: 1px 6px; border-bottom: 1px solid var(--cream-dk); font-size: 6.5px;
+    }
+    .path-mile:last-child { border-bottom: none; }
+    .path-day { font-weight: 800; color: var(--ink); white-space: nowrap; min-width: 36px; font-size: 6px; }
+    .path-act { color: var(--ink-mid); line-height: 1.25; }
+    .path-mile-grey .path-day { color: var(--steel); }
+    .path-mile-grey .path-act { color: var(--steel); }
+    .path-mile-highlight .path-day { color: var(--teal); }
+    .path-mile-highlight .path-act { color: var(--teal); font-weight: 700; }
+    .path-result-tag {
+      text-align: center; font-size: 6.5px; font-weight: 800;
+      padding: 2px 6px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .path-result-bad  { background: #f5ede8; color: var(--orange); }
+    .path-result-good { background: #e6f2ef; color: var(--teal); }
+
+    /* ── SOLUTION SECTION ── */
+    .solution-section { overflow: hidden; border: 1px solid var(--rule); }
+    .solution-header {
+      background: var(--orange);
+      padding: 5px 20px 4px;
+      text-align: center;
+    }
+    .solution-header-icon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .solution-header-icon svg { stroke: var(--white) !important; width: 20px; height: 20px; }
+    .solution-header-text { text-align: center; }
+    .solution-tag {
+      font-size: 8px; font-weight: 800; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+    }
+    .solution-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+    }
+    .solution-title em { font-style: normal; color: rgba(255,255,255,0.70); }
+
+    .two-models {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+    }
+    .model-block {
+      padding: 4px 9px 5px;
+      border-right: 1.5px solid var(--rule);
+      display: flex; flex-direction: column;
+    }
+    .model-block:last-child { border-right: none; }
+    .model-tag {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; margin-bottom: 2px;
+    }
+    .model-tag-blue   { color: var(--navy); }
+    .model-tag-teal   { color: var(--teal); }
+    .model-heading {
+      font-size: 9px; font-weight: 800; color: var(--ink);
+      line-height: 1.2; margin-bottom: 3px;
+    }
+    .model-for {
+      font-size: 6.5px; font-weight: 700; color: var(--steel);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1px;
+    }
+    .model-for-body { font-size: 7px; color: var(--ink-mid); line-height: 1.35; margin-bottom: 3px; }
+    .model-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .model-list li {
+      font-size: 7px; color: var(--ink); line-height: 1.25;
+      padding-left: 10px; position: relative;
+    }
+    .model-list li::before {
+      content: '→'; position: absolute; left: 0;
+      font-size: 7px; font-weight: 700;
+    }
+    .model-tag-blue ~ .model-list li::before { color: var(--navy); }
+    .model-tag-teal ~ .model-list li::before { color: var(--teal); }
+    .model-result {
+      margin-top: auto; padding-top: 3px; border-top: 1px solid var(--rule);
+      font-size: 7px; font-weight: 700; line-height: 1.3;
+    }
+    .model-result-blue { color: var(--navy); }
+    .model-result-teal { color: var(--teal); }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 5px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .profile-pic {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--amber); object-fit: cover; flex-shrink: 0;
+    }
+    .cta-oneline {
+      font-size: 8px; color: rgba(255,255,255,0.75); line-height: 1.4; white-space: nowrap;
+    }
+    .cta-oneline strong { color: var(--white); font-weight: 800; }
+    .cta-oneline span   { color: var(--amber); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="preview-label">
+  Headcount vs Intelligence — Infographic <span>· 1080×1350 (4:5) · LinkedIn · alvishouse.io</span>
+</div>
+
+<div class="ig">
+
+  <!-- ════ HEADER ════ -->
+  <div class="ig-header">
+    <div class="ig-kicker">The 50-Year Scaling Assumption Your Competitors Just Abandoned</div>
+    <div class="ig-title">Headcount Got You <em>Here.</em><br>Intelligence Gets You <em>There.</em></div>
+  </div>
+
+  <!-- ════ PROBLEM BAR + STAT STRIP ════ -->
+  <div class="problem-section">
+    <div class="problem-headline">
+      <div class="problem-headline-icon">
+        <i data-lucide="trending-down"></i>
+        <div class="problem-headline-title">The Math Changed. Most Playbooks Still Haven't.<br><em>Fifty Years of Linear Scaling Just Met Its Exponential Match.</em></div>
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <span class="stat-num stat-num-teal">55%</span>
+        <span class="stat-unit stat-unit-teal">Volume Growth</span>
+        <div class="stat-desc">Intelligence-first teams — McKinsey 2025</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num stat-num-orange">25%</span>
+        <span class="stat-unit stat-unit-orange">Volume Growth</span>
+        <div class="stat-desc">Teams still scaling with headcount</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">30PTS</span>
+        <span class="stat-unit">The Gap</span>
+        <div class="stat-desc">And it widens exponentially — every year you wait</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ THREE COLUMNS ════ -->
+  <div class="three-cols">
+
+    <!-- COL 1: WHY IT BREAKS -->
+    <div class="col">
+      <div class="col-header col-header-amber">
+        <i data-lucide="alert-triangle"></i>Why It Breaks
+      </div>
+      <div class="col-body">
+        <div class="obstacle-list">
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="minus-circle"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Linear ceiling</div>
+              <div class="obstacle-sub">One hire = one unit. Bounded by what one person does in a day.</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="dollar-sign"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Fixed cost trap</div>
+              <div class="obstacle-sub">Salary is permanent. Volume fluctuates. The math never favors you.</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="layers"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">No compounding</div>
+              <div class="obstacle-sub">Headcount stacks. Intelligence multiplies. Radically different math.</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="activity"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Margin compression</div>
+              <div class="obstacle-sub">Revenue must outpace headcount just to hold margins flat.</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="arrow-right"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Running to stand still</div>
+              <div class="obstacle-sub">Most mid-market teams are treading water, not gaining ground.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 2: THE NEW MATH -->
+    <div class="col">
+      <div class="col-header col-header-navy">
+        <i data-lucide="zap"></i>The New Math
+      </div>
+      <div class="col-body">
+        <div class="layer-intro">Intelligence doesn't add — it multiplies. Each layer compounds the last.</div>
+        <div class="layer-list">
+          <div class="layer-item">
+            <div class="layer-mult">×2</div>
+            <div>
+              <div class="layer-title">Intelligence Layer 1</div>
+              <div class="layer-sub">Each person handles 2× more. Same headcount. More volume.</div>
+            </div>
+          </div>
+          <div class="layer-item">
+            <div class="layer-mult">×4</div>
+            <div>
+              <div class="layer-title">Layer 2 Compounds</div>
+              <div class="layer-sub">Second layer multiplies the gains of Layer 1 — not adds to them.</div>
+            </div>
+          </div>
+          <div class="layer-item layer-item-teal">
+            <div class="layer-mult">×8+</div>
+            <div>
+              <div class="layer-title">Layer 3 Compounds Both</div>
+              <div class="layer-sub">Exponential advantage — the gap stops being arithmetic.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ipp-block">
+          <div class="ipp-label">The Metric That Matters</div>
+          <div class="ipp-value">Intelligence Per Person</div>
+          <div class="ipp-desc">Volume handled per headcount — the only number that tells the real story.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 3: TWO PATHS -->
+    <div class="col">
+      <div class="col-header col-header-steel">
+        <i data-lucide="git-branch"></i>Two Paths
+      </div>
+      <div class="col-body">
+        <div class="path-block">
+          <div class="path-block-label path-block-label-grey">❌ Headcount Path</div>
+          <div class="path-milestones">
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Year 1</span>
+              <span class="path-act">Hire for volume spike</span>
+            </div>
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Year 2</span>
+              <span class="path-act">Margins compress</span>
+            </div>
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Year 3</span>
+              <span class="path-act">25% volume growth, rising payroll</span>
+            </div>
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Year 4+</span>
+              <span class="path-act">Falling behind intelligence adopters</span>
+            </div>
+          </div>
+          <div class="path-result-tag path-result-bad">30-point gap — and growing</div>
+        </div>
+        <div class="path-block">
+          <div class="path-block-label path-block-label-teal">✓ Intelligence Path</div>
+          <div class="path-milestones">
+            <div class="path-mile">
+              <span class="path-day">Month 1</span>
+              <span class="path-act">First intelligence layer deployed</span>
+            </div>
+            <div class="path-mile">
+              <span class="path-day">Month 3</span>
+              <span class="path-act">Per-person output multiplied</span>
+            </div>
+            <div class="path-mile">
+              <span class="path-day">Month 6</span>
+              <span class="path-act">Layers compounding</span>
+            </div>
+            <div class="path-mile path-mile-highlight">
+              <span class="path-day">Today ✓</span>
+              <span class="path-act">55% more volume, same headcount</span>
+            </div>
+          </div>
+          <div class="path-result-tag path-result-good">Intelligence-Per-Person advantage</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /three-cols -->
+
+  <!-- ════ SOLUTION SECTION ════ -->
+  <div class="solution-section">
+    <div class="solution-header">
+      <div class="solution-header-icon">
+        <i data-lucide="zap"></i>
+        <div class="solution-header-text">
+          <div class="solution-tag">Closing the Gap</div>
+          <div class="solution-title">Stop Scaling Headcount.<br>Start Scaling <em>Intelligence Per Person.</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="two-models">
+
+      <div class="model-block">
+        <div class="model-tag model-tag-blue">Intelligence Audit</div>
+        <div class="model-heading">Map It Before You<br>Add Another Hire</div>
+        <div class="model-for">Best for</div>
+        <div class="model-for-body">Teams with a hiring plan in motion or a volume problem to solve now.</div>
+        <ul class="model-list">
+          <li>Map AI-feasible tasks vs headcount plan</li>
+          <li>Identify your first intelligence layer</li>
+          <li>Quantify headcount offset before next req</li>
+          <li>Deliver Intelligence-Per-Person baseline</li>
+        </ul>
+        <div class="model-result model-result-blue">⏱ 2–4 weeks → Replacement plan before next job req</div>
+      </div>
+
+      <div class="model-block">
+        <div class="model-tag model-tag-teal">Intelligence Embedding</div>
+        <div class="model-heading">Layer Intelligence Into<br>Your Existing Team</div>
+        <div class="model-for">Best for</div>
+        <div class="model-for-body">Teams ready to compound gains starting this quarter.</div>
+        <ul class="model-list">
+          <li>Tool stack per role, deployed and adopted</li>
+          <li>Volume-per-person baseline + tracking</li>
+          <li>Structured compounding: Layer 1 → 2 → 3</li>
+          <li>CFO-ready headcount offset reporting</li>
+        </ul>
+        <div class="model-result model-result-teal">⏱ 90 days → 55% more volume, same headcount</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════ FOOTER CTA ════ -->
+  <div class="footer-cta">
+    <img class="profile-pic" src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis">
+    <div class="cta-oneline">
+      Enjoy this? Follow <strong>Alvis House</strong> for more &nbsp;·&nbsp; <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div><!-- /ig -->
+<script>lucide.createIcons();</script>
+</body>
+</html>

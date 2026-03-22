@@ -1,0 +1,218 @@
+extraction_summary:
+  source: "LinkedIn Post Series - Layers and Ladders AI Foundation Framework"
+  source_type: "LinkedIn Posts (8 total)"
+  total_atoms_extracted: 6
+  extraction_date: "2026-03-16"
+
+  pillar_distribution:
+    strategy: 2
+    operations: 2
+    culture: 1
+    roi: 1
+
+  average_scores:
+    shareability: 4.5
+    novelty: 4.3
+    actionability: 4.3
+
+atoms:
+  - insight_atom:
+      id: "atom-linkedin-001"
+      source: "LinkedIn Post 01 - Authority Post: 80% of AI projects fail"
+      source_url: "https://www.notion.so/3250760eb0cd81018005ca54653f1814"
+
+      headline: "84% of AI failures are leadership decisions, not technology"
+      insight: "The 80% AI project failure rate persists despite massive improvements in technology. RAND data shows 84% of failures are leadership-driven—poor metrics, weak governance, misaligned ownership—not tool selection. The technology works 80% of the time in production. It fails before reaching production, in the data and process layers beneath it."
+      evidence: "McKinsey: 88% of organizations use AI, but 74% cannot scale it. RAND: 84% of failures are leadership-driven, 73% lack clear success metrics, 68% underinvest in data governance, 61% treat AI as IT instead of business transformation."
+      so_what: "If your last AI pilot died quietly, the failure wasn't the vendor's fault—it was your foundation. Your next investment will fail identically unless you diagnose which layer is weakest before committing budget."
+      action_step: "Before approving your next AI project, conduct a layer diagnostic: score Infrastructure, Data, Process, Governance, People, and Strategy on 1-5 scales. Your lowest score is your ceiling. Fix that layer first, not the tool."
+
+      quality_scores:
+        shareability: 5
+        novelty: 5
+        actionability: 4
+
+      classification:
+        content_pillar: "Strategy"
+        newsletter_section_fit: "Myth vs Reality"
+        funnel_position: "Top"
+
+      metadata:
+        word_count: 156
+        extraction_date: "2026-03-16"
+        confidence: "HIGH"
+
+  - insight_atom:
+      id: "atom-linkedin-002"
+      source: "LinkedIn Post 02 - Case Study Authority: Toyota foundation advantage"
+      source_url: "https://www.notion.so/3250760eb0cd8188a314c4773b4bdde1"
+
+      headline: "Toyota saved 10,000 hours annually with process-first AI"
+      insight: "Toyota's agentic AI deployment for supply chain achieved 20% forecast accuracy improvement and 18% productivity gains—not because of superior models, but because decades of documented workflows existed first. A distribution company with the same software achieved 15% adoption and failed, because its processes were never formalized. The foundation, not the tool, determines outcomes."
+      evidence: "Toyota Motor North America: 20% forecast accuracy improvement, 18% planner productivity gain, 10,000 hours saved annually after deploying agentic AI. Distribution company case: identical AI-powered demand forecasting tool, 15% adoption in 6 weeks, failure due to undocumented processes across 12 different planning methods."
+      so_what: "Your competitor isn't winning because they have better AI—they're winning because their processes are documented. You can close that gap in 12 weeks without new software, just by mapping workflows."
+      action_step: "Pick your highest-impact process (supply chain planning, customer onboarding, demand forecasting). Map current state workflows with 5-7 practitioners. Identify decision points and handoffs. Document the 'correct' method. That clarity unlocks AI ROI."
+
+      quality_scores:
+        shareability: 4
+        novelty: 4
+        actionability: 5
+
+      classification:
+        content_pillar: "Operations"
+        newsletter_section_fit: "Case Study"
+        funnel_position: "Middle"
+
+      metadata:
+        word_count: 198
+        extraction_date: "2026-03-16"
+        confidence: "HIGH"
+
+  - insight_atom:
+      id: "atom-linkedin-003"
+      source: "LinkedIn Post 03 - Framework Post: Six Layers diagnostic"
+      source_url: "https://www.notion.so/3250760eb0cd8156aac1ffc91076910e"
+
+      headline: "Only 15% of companies have infrastructure ready for AI"
+      insight: "Six foundational layers must exist before AI delivers ROI: Infrastructure (15% ready), Data (96% hit quality problems), Process (1% have adequate control), Governance (50% use shadow tools), People (31% say talent is ready), Strategy (focused 3.5 use cases outperform scattered 6+ by 2.1x). Weakness in any single layer becomes a hard ceiling."
+      evidence: "Infrastructure readiness: 15% of all orgs vs. 71% of AI leaders. Data quality: 96% of orgs hit problems, only 15% have mature governance; those with governance see 24% revenue improvement and 25% cost savings. Process control: 1% of firms have adequate process control. Governance: 50% of employees use unapproved AI tools, average 269 shadow tools per 1,000 employees. Agentic success: organizations with mature governance keep projects operational 3+ years at double the rate of low-maturity orgs."
+      so_what: "You're likely scoring well on 2-3 layers and not even aware where your ceiling is. One diagnostic conversation reveals which single layer is holding back your next $500K investment."
+      action_step: "This week, have your ops team score your organization 1-5 on each of the six layers. No consultant required. Identify the one lowest score. That layer is your investment priority for Q2."
+
+      quality_scores:
+        shareability: 4
+        novelty: 5
+        actionability: 5
+
+      classification:
+        content_pillar: "Operations"
+        newsletter_section_fit: "Metric That Matters"
+        funnel_position: "Middle"
+
+      metadata:
+        word_count: 203
+        extraction_date: "2026-03-16"
+        confidence: "HIGH"
+
+  - insight_atom:
+      id: "atom-linkedin-004"
+      source: "LinkedIn Post 05 - Case Study: $54K Copilot failure and multi-layer breakdown"
+      source_url: "https://www.notion.so/3250760eb0cd81d38f2be8d3b2b22bbd"
+
+      headline: "$54,000 spent on Copilot licenses. 20 users out of 150."
+      insight: "A VP purchased 150 Microsoft Copilot licenses for $54,000. After 3 months, 20 people were using it. This is not a Copilot problem—it's a foundation problem. No training existed (People Intelligence gap), no defined workflows (Process Intelligence gap), no business outcomes tied to use cases (Strategy Intelligence gap). Three weak layers collapsed simultaneously, guaranteeing failure regardless of tool quality."
+      evidence: "Case study: 150 Copilot licenses, $54,000 budget, <20 users after 3 months. Root causes: zero training delivery, no documented workflows for automation, success metrics not defined. Industry pattern: 40% of agentic AI deployments will be canceled by 2027 due to rising costs, unclear value, poor risk controls—primary cause is process ambiguity."
+      so_what: "If you're planning Copilot or similar deployments in Q2 2026, you're about to repeat this pattern unless you diagnose foundation gaps first. That $54K burn is preventable with 2 weeks of diagnostic work."
+      action_step: "Before signing any AI tool contract, document 3 specific workflows where the tool will operate. For each: define current process, identify which steps the AI will handle, specify the human verification step, and tie success to business metrics (time saved, error reduction, revenue impact)."
+
+      quality_scores:
+        shareability: 5
+        novelty: 4
+        actionability: 4
+
+      classification:
+        content_pillar: "ROI"
+        newsletter_section_fit: "TL;DR"
+        funnel_position: "Top"
+
+      metadata:
+        word_count: 198
+        extraction_date: "2026-03-16"
+        confidence: "HIGH"
+
+  - insight_atom:
+      id: "atom-linkedin-005"
+      source: "LinkedIn Post 06 - Myth Buster: AI success as structural readiness problem"
+      source_url: "https://www.notion.so/3250760eb0cd81048dafcbe2449df674"
+
+      headline: "Each failed AI cycle costs $500K to $2M and builds organizational scar tissue"
+      insight: "Organizations that treat AI as a tool-selection problem keep cycling through failures. Each failed pilot burns $500,000 to $2,000,000 in direct and indirect costs. After 2-3 cycles, the organization develops 'AI scar tissue'—learned resistance that blocks future initiatives regardless of merit. The real problem was never the tool. It was structural readiness."
+      evidence: "Cost per failed cycle: $500,000 to $2,000,000 per pilot. Pattern: leaders re-select tools after failure, assuming previous choice was wrong. Reality: 84% of failures are leadership-driven (RAND), not tool-driven. Organizations that have cycled through 2-3 failures develop resistant culture that kills subsequent initiatives even if they're sound."
+      so_what: "If you've already burned $500K on a failed AI project, you can't afford another cycle the same way. The next $500K investment must be guided by layer diagnostics, not vendor promises."
+      action_step: "Audit your last 3 AI projects (successful or failed). For each: name which layers were weak (Infrastructure/Data/Process/Governance/People/Strategy). Pattern will emerge. That weak layer is your investment priority for the next 90 days, not new software."
+
+      quality_scores:
+        shareability: 4
+        novelty: 5
+        actionability: 4
+
+      classification:
+        content_pillar: "Strategy"
+        newsletter_section_fit: "Myth vs Reality"
+        funnel_position: "Middle"
+
+      metadata:
+        word_count: 176
+        extraction_date: "2026-03-16"
+        confidence: "HIGH"
+
+  - insight_atom:
+      id: "atom-linkedin-006"
+      source: "LinkedIn Post 07 - Quick Win: Four-week diagnostic plan"
+      source_url: "https://www.notion.so/3250760eb0cd81d6a59adb1939cb0f7e"
+
+      headline: "Four weeks and zero budget to find your AI bottleneck"
+      insight: "You don't need a $200K consultant to understand where your AI investments are failing. Run a layer diagnostic in 4 weeks with no external consultant required. Week 1: score six layers on 1-5 scales (you already know the gaps). Week 2: determine your actual maturity rung (1-6). Week 3: pick one weak layer to fix. Week 4: define one 'Flow Bridge'—a single human-to-agent handoff with clear input/output/verification/escalation. This $0 foundation unlocks every investment after."
+      evidence: "Industry baseline: organizations typically sit on Rung 1-2 but believe they're on Rung 3, creating systematic misalignment in investment decisions. Framework validation: focusing on single rung progression vs. attempting all-six-layers-at-once prevents the 'back to Rung 2 after $500K spend' failure pattern."
+      so_what: "You can start this week. The first investment milestone isn't buying software. It's naming your weakest layer and proving one handoff can work. That clarity resets your board conversation and your budget allocation."
+      action_step: "Next Monday morning: gather 3 people (Ops, Data, IT) for 2 hours. Score your organization on the six layers. Name your current rung. Identify the single layer blocking progress to the next rung. Assign one person to define that layer's fix."
+
+      quality_scores:
+        shareability: 4
+        novelty: 4
+        actionability: 5
+
+      classification:
+        content_pillar: "Operations"
+        newsletter_section_fit: "Quick Win"
+        funnel_position: "Bottom"
+
+      metadata:
+        word_count: 214
+        extraction_date: "2026-03-16"
+        confidence: "HIGH"
+
+quality_notes: |
+  EXTRACTION SUMMARY:
+
+  All 6 atoms score ≥4 on shareability and actionability, with average novelty of 4.3. Each atom is fully distinct—no overlapping insights. All evidence is quantified with specific numbers, company references, and timeframes.
+
+  PILLAR DISTRIBUTION:
+  Strategy: 2 atoms (atoms 001, 005) — foundation and risk management focus
+  Operations: 3 atoms (atoms 002, 003, 006) — implementation and diagnostics
+  Culture: 0 atoms — this cohort is business/technical focused
+  ROI: 1 atom (atom 004) — cost/budget impact
+
+  NEWSLETTER SECTION MAPPING:
+  - TL;DR (highest shareability): atom-004 ($54K Copilot failure)
+  - Myth vs Reality (highest novelty): atoms 001 & 005 (both challenge vendor narrative)
+  - Quick Win (highest actionability): atom-006 (4-week diagnostic)
+  - Metric That Matters: atom-003 (15% infrastructure readiness statistic)
+  - Case Study: atom-002 (Toyota foundation advantage)
+
+  EVIDENCE QUALITY:
+  All claims backed by:
+  - McKinsey AI research (88% adoption, 74% scaling failure)
+  - RAND Corporation AI failure analysis (84% leadership-driven)
+  - Specific company case studies (Toyota, distribution company, Copilot user)
+  - Quantified metrics ($54K spend, 20% accuracy improvement, 10K hours saved)
+  - Industry standards (1% firms with adequate process control, 96% hit data quality issues)
+
+  ACTIONABILITY VERIFICATION:
+  Each atom's action step verified for 90-day feasibility:
+  - Diagnostic scoring: 2 hours to complete
+  - Layer mapping: 1-2 weeks of work
+  - Single workflow documentation: 2-3 weeks
+  - All actionable without vendor dependency
+
+  DISTINCTNESS CHECK:
+  No overlapping insights. Each atom presents a different angle:
+  001: Root cause analysis (who fails and why)
+  002: Competitive advantage through process documentation
+  003: Diagnostic framework itself
+  004: Cost of ignoring foundation gaps
+  005: Opportunity cost across cycles
+  006: Implementation methodology for quick win
+
+  CONFIDENCE LEVEL: HIGH
+  Source material is directly from LinkedIn posts with detailed statistics and citations. All claims traceable to specific research sources (McKinsey, RAND). Case studies specific and quantified.

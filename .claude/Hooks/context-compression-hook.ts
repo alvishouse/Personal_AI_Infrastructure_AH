@@ -169,6 +169,7 @@ async function main() {
     title: 'Kai Context',
     message: message,
     voice_enabled: true,
+    voice_id: process.env.DA_VOICE_ID || '21m00Tcm4TlvDq8ikWAM', // Rachel (free tier fallback)
     voice_name: kaiVoiceConfig.voice_name,
     rate: kaiVoiceConfig.rate_wpm,
     priority: 'low',

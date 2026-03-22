@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infographic v2 — The DARI Framework (Editorial)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════
+       DARI FRAMEWORK — EDITORIAL STYLE
+       Inspired by journalistic infographic layout
+       Canvas: 540px → 1080px LinkedIn (2x)
+       ══════════════════════════════════════ */
+
+    :root {
+      --bg:          #e8eef4;
+      --white:       #ffffff;
+      --ink:         #131c28;
+      --ink-mid:     #3d4f60;
+      --navy:        #3b546b;
+      --teal:        #2e7d6b;
+      --teal-light:  #e6f2ef;
+      --teal-mid:    #c0ddd8;
+      --orange:      #cf5828;
+      --orange-light:#fdf0eb;
+      --amber:       #f0a500;
+      --amber-light: #fdf6e3;
+      --steel:       #7a8c9b;
+      --rule:        #c8d4de;
+      --rule-dark:   #a0b0be;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #8a9aa8;
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 28px 20px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preview-label {
+      font-size: 12px; font-weight: 600; color: #222;
+      margin-bottom: 14px; text-align: center;
+    }
+    .preview-label span { color: #555; font-weight: 400; }
+
+    /* ══ CANVAS ══ */
+    .ig {
+      width: 540px;
+      background: var(--bg);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.32);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ══ HEADER ══ */
+    .ig-header {
+      background: var(--white);
+      padding: 12px 18px 10px;
+      text-align: center;
+      border-bottom: 2px solid var(--ink);
+    }
+    .ig-title {
+      font-size: 22px; font-weight: 900; line-height: 1.05;
+      letter-spacing: -0.01em; color: var(--ink);
+      text-transform: uppercase;
+    }
+    .ig-title em { font-style: normal; color: var(--teal); }
+    .ig-title strong { color: var(--orange); }
+    .ig-follow {
+      font-size: 7px; color: var(--steel); margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+    .ig-follow span { color: var(--navy); font-weight: 700; }
+
+    /* ══ SECTION DIVIDER ══ */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px 5px;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      height: 1.5px;
+      background: var(--ink);
+    }
+    .section-divider-text {
+      font-size: 8px; font-weight: 900;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink); white-space: nowrap;
+    }
+    .section-divider-text em {
+      font-style: normal; color: var(--teal);
+    }
+
+    /* ══ CONTENT PANELS ══ */
+    .panel-row {
+      display: flex;
+      gap: 6px;
+      padding: 0 8px 8px;
+    }
+    .panel {
+      background: var(--white);
+      border-radius: 3px;
+      border: 1.5px solid var(--rule);
+      overflow: hidden;
+    }
+    .panel-teal  { border-color: var(--teal); }
+    .panel-orange { border-color: var(--orange); }
+    .panel-navy  { border-color: var(--navy); }
+    .panel-amber { border-color: var(--amber); }
+
+    /* ══ THE PROBLEM ══ */
+    .problem-row {
+      display: flex;
+      gap: 6px;
+      padding: 0 8px 8px;
+    }
+    .problem-left {
+      flex: 1.1;
+      background: var(--white);
+      border: 1.5px solid var(--rule);
+      border-radius: 3px;
+      padding: 8px 10px;
+    }
+    .problem-left-title {
+      font-size: 7px; font-weight: 900;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .bad-item {
+      display: flex; align-items: flex-start; gap: 5px;
+      margin-bottom: 4px;
+    }
+    .bad-item:last-child { margin-bottom: 0; }
+    .bad-mark {
+      width: 14px; height: 14px; border-radius: 2px;
+      background: var(--orange); color: var(--white);
+      font-size: 8px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .bad-text {
+      font-size: 7.5px; color: var(--ink); line-height: 1.35;
+    }
+    .bad-text strong { font-weight: 800; }
+
+    .reality-box {
+      flex: 0.9;
+      background: var(--teal-light);
+      border: 2px solid var(--teal);
+      border-radius: 3px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .reality-tag {
+      font-size: 6.5px; font-weight: 900; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--teal);
+      background: var(--teal); color: var(--white);
+      padding: 2px 6px; border-radius: 2px;
+      display: inline-block; margin-bottom: 5px; width: fit-content;
+    }
+    .reality-source {
+      font-size: 6px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--steel); margin-bottom: 3px;
+    }
+    .reality-quote {
+      font-size: 11px; font-weight: 900; line-height: 1.1;
+      color: var(--ink); margin-bottom: 4px;
+    }
+    .reality-quote em { font-style: normal; color: var(--teal); }
+    .reality-sub {
+      font-size: 6.5px; color: var(--ink-mid); line-height: 1.4;
+    }
+
+    /* ══ DARI FRAMEWORK STRIP ══ */
+    .framework-strip-wrap {
+      padding: 0 8px 6px;
+    }
+    .framework-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      background: var(--ink);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .stage-pill {
+      padding: 7px 6px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .stage-pill:last-child { border-right: none; }
+    .stage-letter {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; line-height: 1; display: block;
+      color: var(--amber);
+    }
+    .stage-name {
+      font-size: 6px; font-weight: 800; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      display: block; margin-top: 1px;
+    }
+    .stage-one-liner {
+      font-size: 6px; color: rgba(255,255,255,0.50);
+      line-height: 1.3; margin-top: 3px;
+      font-style: italic;
+    }
+
+    /* ══ STAGE CARDS (2+2) ══ */
+    .stage-row {
+      display: flex;
+      gap: 6px;
+      padding: 0 8px 6px;
+    }
+    .stage-card {
+      flex: 1;
+      background: var(--white);
+      border: 1.5px solid var(--rule);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .stage-card-header {
+      padding: 4px 10px;
+      font-size: 7.5px; font-weight: 900;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--white); text-align: center;
+    }
+    .stage-card-header.teal   { background: var(--teal); }
+    .stage-card-header.orange { background: var(--orange); }
+    .stage-card-header.amber  { background: var(--amber); color: var(--ink); }
+    .stage-card-header.navy   { background: var(--navy); }
+    .stage-card-body { padding: 6px 9px; }
+    .stage-card-tagline {
+      font-size: 6.5px; font-style: italic; color: var(--steel);
+      text-align: center; margin-bottom: 5px;
+      padding-bottom: 4px; border-bottom: 1px solid var(--rule);
+    }
+    .check-item {
+      display: flex; align-items: flex-start; gap: 5px; margin-bottom: 3px;
+    }
+    .check-item:last-child { margin-bottom: 0; }
+    .check-mark {
+      width: 13px; height: 13px; border-radius: 2px;
+      font-size: 8px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+      color: var(--white);
+    }
+    .check-mark.teal   { background: var(--teal); }
+    .check-mark.orange { background: var(--orange); }
+    .check-mark.amber  { background: var(--amber); color: var(--ink); }
+    .check-mark.navy   { background: var(--navy); }
+    .check-text {
+      font-size: 7px; color: var(--ink); line-height: 1.3;
+    }
+    .check-text strong { font-weight: 800; }
+
+    .card-rule {
+      font-size: 6.5px; font-weight: 800; text-align: center;
+      padding: 3px 6px; margin-top: 5px; border-radius: 2px;
+      letter-spacing: 0.03em;
+    }
+    .card-rule.amber-rule  { background: var(--amber-light); color: var(--ink); border: 1px solid var(--amber); }
+    .card-rule.steel-rule  { background: #eef2f5; color: var(--navy); border: 1px solid var(--rule-dark); }
+
+    /* ══ BOTTOM LINE ══ */
+    .bottom-row {
+      display: flex;
+      gap: 6px;
+      padding: 0 8px 8px;
+    }
+    .bottom-left {
+      flex: 1;
+      background: var(--ink);
+      border-radius: 3px;
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .bottom-left-label {
+      font-size: 6.5px; font-weight: 900; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 4px;
+    }
+    .bottom-left-text {
+      font-size: 9px; font-weight: 800; color: var(--white);
+      line-height: 1.3;
+    }
+    .bottom-left-text em { font-style: normal; color: var(--amber); }
+    .bottom-right {
+      flex: 1;
+      background: var(--white);
+      border: 1.5px solid var(--rule);
+      border-radius: 3px;
+      padding: 8px 10px;
+    }
+    .bottom-right-title {
+      font-size: 7px; font-weight: 900; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 5px;
+    }
+    .action-item {
+      display: flex; align-items: flex-start; gap: 5px; margin-bottom: 3px;
+    }
+    .action-item:last-child { margin-bottom: 0; }
+    .action-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--teal); flex-shrink: 0; margin-top: 4px;
+    }
+    .action-text {
+      font-size: 7px; color: var(--ink); line-height: 1.35;
+    }
+
+    /* ══ FOOTER ══ */
+    .ig-footer {
+      background: var(--navy);
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .profile-pic {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--amber); object-fit: cover; flex-shrink: 0;
+    }
+    .footer-text {
+      font-size: 7.5px; color: rgba(255,255,255,0.75); line-height: 1.4;
+    }
+    .footer-text strong { color: var(--white); font-weight: 800; }
+    .footer-text span   { color: var(--amber); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<div class="preview-label">
+  The DARI Framework — v2 (Editorial Style) <span>· 1080×1350 (4:5) · LinkedIn · alvishouse.io</span>
+</div>
+
+<div class="ig">
+
+  <!-- ══ HEADER ══ -->
+  <div class="ig-header">
+    <div class="ig-title">Lean gave you PDCA.<br><em>AI</em> needs <strong>DARI.</strong></div>
+    <div class="ig-follow">Follow <span>@AlvisHouse</span> for more AI operations frameworks</div>
+  </div>
+
+  <!-- ══ THE DELEGATION GAP ══ -->
+  <div class="section-divider">
+    <div class="section-divider-text">The Delegation Gap</div>
+  </div>
+
+  <div class="problem-row">
+    <div class="problem-left">
+      <div class="problem-left-title">How most teams deploy AI agents:</div>
+      <div class="bad-item">
+        <div class="bad-mark">✕</div>
+        <div class="bad-text">Write a prompt, hope for the best, check output <strong>manually</strong></div>
+      </div>
+      <div class="bad-item">
+        <div class="bad-mark">✕</div>
+        <div class="bad-text">No defined handoffs — <strong>agent output goes nowhere structured</strong></div>
+      </div>
+      <div class="bad-item">
+        <div class="bad-mark">✕</div>
+        <div class="bad-text">No owner. No monitoring. <strong>First sign of drift = a crisis</strong></div>
+      </div>
+    </div>
+
+    <div class="reality-box">
+      <div class="reality-tag">McKinsey 2025</div>
+      <div class="reality-source">High performers are:</div>
+      <div class="reality-quote"><em>2.8×</em> more likely<br>to redesign workflows<br>before deploying.</div>
+      <div class="reality-sub">55% of leaders redesign first.<br>Only 20% of laggards do.</div>
+    </div>
+  </div>
+
+  <!-- ══ THE DARI FRAMEWORK ══ -->
+  <div class="section-divider">
+    <div class="section-divider-text">The <em>DARI</em> Framework</div>
+  </div>
+
+  <div class="framework-strip-wrap">
+    <div class="framework-strip">
+      <div class="stage-pill">
+        <span class="stage-letter">D</span>
+        <span class="stage-name">Discover</span>
+        <div class="stage-one-liner">Map before you automate</div>
+      </div>
+      <div class="stage-pill">
+        <span class="stage-letter">A</span>
+        <span class="stage-name">Architect</span>
+        <div class="stage-one-liner">Design the handoffs</div>
+      </div>
+      <div class="stage-pill">
+        <span class="stage-letter">R</span>
+        <span class="stage-name">Run</span>
+        <div class="stage-one-liner">Execute with visibility</div>
+      </div>
+      <div class="stage-pill">
+        <span class="stage-letter">I</span>
+        <span class="stage-name">Improve</span>
+        <div class="stage-one-liner">Measure drift, not just breaks</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 1: DISCOVER | ARCHITECT -->
+  <div class="stage-row">
+    <div class="stage-card">
+      <div class="stage-card-header teal">Discover</div>
+      <div class="stage-card-body">
+        <div class="stage-card-tagline">Map the work before you automate it.</div>
+        <div class="check-item">
+          <div class="check-mark teal">✓</div>
+          <div class="check-text">Identify every <strong>human-agent boundary</strong></div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark teal">✓</div>
+          <div class="check-text">Document <strong>inputs, outputs</strong>, and done-right criteria</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark teal">✓</div>
+          <div class="check-text"><strong>Define success</strong> before you define the agent</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-card-header orange">Architect</div>
+      <div class="stage-card-body">
+        <div class="stage-card-tagline">Design the handoffs, not just the tasks.</div>
+        <div class="check-item">
+          <div class="check-mark orange">→</div>
+          <div class="check-text"><strong>Human → Agent:</strong> What does it need?</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark orange">←</div>
+          <div class="check-text"><strong>Agent → Human:</strong> What needs verification?</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark orange">⇄</div>
+          <div class="check-text"><strong>Agent → System:</strong> Guardrails before live data</div>
+        </div>
+        <div class="card-rule amber-rule">Every handoff: Clear · Verifiable · Recoverable</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: RUN | IMPROVE -->
+  <div class="stage-row">
+    <div class="stage-card">
+      <div class="stage-card-header amber">Run</div>
+      <div class="stage-card-body">
+        <div class="stage-card-tagline">Execute with visibility.</div>
+        <div class="check-item">
+          <div class="check-mark amber">✓</div>
+          <div class="check-text"><strong>Log outputs</strong> — every run leaves a traceable record</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark amber">✓</div>
+          <div class="check-text"><strong>Flag deviations</strong> before they compound</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark amber">✓</div>
+          <div class="check-text"><strong>Designated owner</strong> — accountability doesn't disappear when the worker is a model</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-card-header navy">Improve</div>
+      <div class="stage-card-body">
+        <div class="stage-card-tagline">Measure what's drifting, not just what's broken.</div>
+        <div class="check-item">
+          <div class="check-mark navy">⚡</div>
+          <div class="check-text"><strong>Capability Drift:</strong> The model itself changes</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark navy">↘</div>
+          <div class="check-text"><strong>Performance Drift:</strong> Output declines, no model change</div>
+        </div>
+        <div class="check-item">
+          <div class="check-mark navy">⟳</div>
+          <div class="check-text"><strong>Context Drift:</strong> Business changed, agent didn't</div>
+        </div>
+        <div class="card-rule steel-rule">Review cadence: Daily · Weekly · Monthly</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BOTTOM LINE ══ -->
+  <div class="section-divider">
+    <div class="section-divider-text">The Bottom Line</div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="bottom-left">
+      <div class="bottom-left-label">The Positioning</div>
+      <div class="bottom-left-text">
+        DARI isn't a replacement for Lean.<br>
+        It's <em>Lean extended</em> to the delegation problem.
+      </div>
+    </div>
+    <div class="bottom-right">
+      <div class="bottom-right-title">Start This Week</div>
+      <div class="action-item">
+        <div class="action-dot"></div>
+        <div class="action-text">Pick one agent process. List every handoff boundary.</div>
+      </div>
+      <div class="action-item">
+        <div class="action-dot"></div>
+        <div class="action-text">Assign a human owner. Add one log checkpoint.</div>
+      </div>
+      <div class="action-item">
+        <div class="action-dot"></div>
+        <div class="action-text">Schedule a 15-min weekly drift check.</div>
+      </div>
+      <div class="action-item">
+        <div class="action-dot"></div>
+        <div class="action-text">Full framework at <strong>alvishouse.io</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="ig-footer">
+    <img class="profile-pic" src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis">
+    <div class="footer-text">
+      Follow <strong>Alvis House</strong> for AI operations frameworks &nbsp;·&nbsp;
+      <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div><!-- /ig -->
+</body>
+</html>

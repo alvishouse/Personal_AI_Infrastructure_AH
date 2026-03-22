@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>90-Day Tax — Infographic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --cream:    #ece6d9;
+      --cream-dk: #ddd8ce;
+      --navy:     #3b546b;
+      --orange:   #cf5828;
+      --steel:    #7a8c9b;
+      --teal:     #2E7D6B;
+      --amber:    #F0A500;
+      --ink:      #1a2635;
+      --ink-mid:  #3d4f60;
+      --rule:     #d4cdc3;
+      --white:    #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #9a9490;
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 28px 20px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .preview-label {
+      font-size: 12px; font-weight: 600; color: #222;
+      margin-bottom: 14px; text-align: center;
+    }
+    .preview-label span { color: #555; font-weight: 400; }
+
+    /* ── CANVAS 540px wide ── */
+    .ig {
+      width: 540px;
+      background: var(--white);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.30);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 4px;
+    }
+
+    /* ════ HEADER ════ */
+    .ig-header {
+      background: var(--navy);
+      padding: 5px 20px 4px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .ig-kicker {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2px;
+    }
+    .ig-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; letter-spacing: 0.03em; color: var(--white); line-height: 1.0; margin-bottom: 0;
+    }
+    .ig-title em { font-style: normal; color: var(--amber); }
+    .ig-subtitle { display: none; }
+
+    /* ════ PROBLEM SECTION — orange bar + stat strip ════ */
+    .problem-section { overflow: hidden; border: 1px solid var(--rule); }
+    .problem-headline {
+      background: var(--orange);
+      padding: 5px 20px;
+      text-align: center;
+    }
+    .problem-headline-icon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .problem-headline-icon i { width: 20px; height: 20px; color: var(--white); flex-shrink: 0; }
+    .problem-headline-icon svg { stroke: var(--white) !important; width: 20px; height: 20px; }
+    .problem-headline-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+    }
+    .problem-headline-title em { font-style: normal; color: rgba(255,255,255,0.65); }
+
+    /* Stat strip — styled like image 24 */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--white);
+    }
+    .stat-cell {
+      padding: 4px 8px 3px;
+      text-align: center;
+      border-right: 1.5px solid var(--rule);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; letter-spacing: 0.01em;
+      color: var(--navy); line-height: 1.0; display: block;
+    }
+    .stat-unit {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 2px;
+    }
+    .stat-desc {
+      font-size: 6.5px; color: var(--ink-mid); line-height: 1.4;
+      text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
+    }
+
+    /* ════ THREE COLUMNS ════ */
+    .three-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--cream);
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .col { display: flex; flex-direction: column; border-right: 1.5px solid var(--rule); background: var(--cream); }
+    .col:last-child { border-right: none; }
+    .col-header {
+      padding: 3px 8px;
+      font-size: 7.5px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white); text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+    }
+    .col-header i { width: 9px; height: 9px; flex-shrink: 0; }
+    .col-header-orange { background: var(--orange); }
+    .col-header-amber  { background: var(--amber); color: var(--ink) !important; }
+    .col-header-navy   { background: var(--navy); }
+    .col-header-steel  { background: var(--steel); }
+    .col-body { padding: 4px 7px 5px; flex: 1; }
+
+    /* ── WHY column: black hole + obstacles ── */
+    .blackhole-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3px;
+    }
+    .obstacle-list { display: flex; flex-direction: column; gap: 1px; }
+    .obstacle-item {
+      display: flex; align-items: flex-start; gap: 5px;
+      padding-bottom: 1px; border-bottom: 1px solid var(--rule);
+    }
+    .obstacle-item:last-child { border-bottom: none; }
+    .obstacle-icon {
+      width: 16px; height: 16px; flex-shrink: 0;
+      background: var(--navy); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .obstacle-icon svg { width: 9px; height: 9px; color: var(--white); }
+    .obstacle-text {}
+    .obstacle-title { font-size: 7px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .obstacle-sub   { font-size: 6px; color: var(--steel); line-height: 1.25; }
+
+    /* ── TWO PATHS column ── */
+    .path-block { margin-bottom: 3px; overflow: hidden; }
+    .path-block:last-child { margin-bottom: 0; }
+    .path-block-label {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 3px 7px; color: var(--white);
+    }
+    .path-block-label-grey { background: var(--steel); }
+    .path-block-label-teal { background: var(--teal); }
+    .path-milestones {
+      background: var(--white); border: 1px solid var(--rule); border-top: none;
+    }
+    .path-mile {
+      display: flex; align-items: baseline; gap: 5px;
+      padding: 1px 6px; border-bottom: 1px solid var(--cream-dk); font-size: 6.5px;
+    }
+    .path-mile:last-child { border-bottom: none; }
+    .path-day { font-weight: 800; color: var(--ink); white-space: nowrap; min-width: 36px; font-size: 6px; }
+    .path-act { color: var(--ink-mid); line-height: 1.25; }
+    .path-mile-grey .path-day { color: var(--steel); }
+    .path-mile-grey .path-act { color: var(--steel); }
+    .path-mile-highlight .path-day { color: var(--teal); }
+    .path-mile-highlight .path-act { color: var(--teal); font-weight: 700; }
+    .path-result-tag {
+      text-align: center; font-size: 6.5px; font-weight: 800;
+      padding: 2px 6px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .path-result-bad  { background: #f5ede8; color: var(--orange); }
+    .path-result-good { background: #e6f2ef; color: var(--teal); }
+
+    /* ── READINESS GAP column: 6 questions ── */
+    .gap-intro {
+      font-size: 6.5px; font-style: italic; color: var(--steel);
+      line-height: 1.35; margin-bottom: 2px; text-align: center;
+    }
+    .diag-q-item {
+      display: flex; align-items: flex-start; gap: 4px;
+      padding: 1px 0; border-bottom: 1px solid var(--rule);
+    }
+    .diag-q-item:last-child { border-bottom: none; }
+    .diag-q-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px; color: var(--navy); line-height: 1;
+      flex-shrink: 0; width: 11px;
+    }
+    .diag-q-text { font-size: 7px; color: var(--ink); line-height: 1.3; }
+    .diag-q-text strong { font-weight: 700; }
+    .diag-score-mini {
+      margin-top: 3px; border-top: 1px solid var(--rule); padding-top: 3px;
+    }
+    .score-mini-row {
+      display: flex; gap: 3px;
+    }
+    .score-mini-block {
+      flex: 1; border-radius: 2px; padding: 2px 2px; text-align: center;
+    }
+    .score-mini-red    { background: #f5ede8; border: 1px solid var(--orange); }
+    .score-mini-yellow { background: #fdf6e3; border: 1px solid var(--amber); }
+    .score-mini-green  { background: #e6f2ef; border: 1px solid var(--teal); }
+    .score-mini-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 12px; line-height: 1;
+    }
+    .score-mini-red    .score-mini-num { color: var(--orange); }
+    .score-mini-yellow .score-mini-num { color: var(--amber); }
+    .score-mini-green  .score-mini-num { color: var(--teal); }
+    .score-mini-lbl { font-size: 6px; font-weight: 700; color: var(--ink); line-height: 1.3; margin-top: 1px; }
+
+    /* ── 6 PILLARS column ── */
+    .pillar-intro {
+      font-size: 7px; color: var(--steel); line-height: 1.4;
+      margin-bottom: 7px; font-style: italic; text-align: center;
+    }
+    .pillar-item {
+      display: flex; align-items: flex-start; gap: 5px;
+      padding: 4px 0; border-bottom: 1px solid var(--rule);
+    }
+    .pillar-item:last-child { border-bottom: none; }
+    .pillar-check {
+      width: 12px; height: 12px; border: 1.5px solid var(--steel); border-radius: 2px;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .pillar-name { font-size: 7.5px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .pillar-sub  { font-size: 6.5px; color: var(--steel); line-height: 1.3; }
+
+    /* ════ SOLUTION SECTION — orange ════ */
+    .solution-section { overflow: hidden; border: 1px solid var(--rule); }
+    .solution-header {
+      background: var(--orange);
+      padding: 5px 20px 4px;
+      text-align: center;
+    }
+    .solution-header-icon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .solution-header-icon i { width: 20px; height: 20px; color: var(--white); flex-shrink: 0; }
+    .solution-header-icon svg { stroke: var(--white) !important; width: 20px; height: 20px; }
+    .solution-header-text { text-align: center; }
+    .solution-tag {
+      font-size: 8px; font-weight: 800; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+    }
+    .solution-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+    }
+    .solution-title em { font-style: normal; color: rgba(255,255,255,0.70); }
+
+    .two-models {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+    }
+    .model-block {
+      padding: 4px 9px 5px;
+      border-right: 1.5px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+    .model-block:last-child { border-right: none; }
+    .model-tag {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; margin-bottom: 2px;
+    }
+    .model-tag-blue   { color: var(--navy); }
+    .model-tag-teal   { color: var(--teal); }
+    .model-heading {
+      font-size: 10px; font-weight: 800; color: var(--ink);
+      line-height: 1.2; margin-bottom: 4px;
+    }
+    .model-for {
+      font-size: 6.5px; font-weight: 700; color: var(--steel);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1px;
+    }
+    .model-for-body { font-size: 7px; color: var(--ink-mid); line-height: 1.35; margin-bottom: 4px; }
+    .model-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .model-list li {
+      font-size: 7px; color: var(--ink); line-height: 1.25;
+      padding-left: 10px; position: relative;
+    }
+    .model-list li::before {
+      content: '→'; position: absolute; left: 0;
+      font-size: 7px; font-weight: 700;
+    }
+    .model-tag-blue ~ .model-list li::before { color: var(--navy); }
+    .model-tag-teal ~ .model-list li::before { color: var(--teal); }
+    .model-result {
+      margin-top: auto; padding-top: 3px; border-top: 1px solid var(--rule);
+      font-size: 7px; font-weight: 700; line-height: 1.3;
+    }
+    .model-result-blue { color: var(--navy); }
+    .model-result-teal { color: var(--teal); }
+
+    /* ════ FOOTER CTA ════ */
+    .footer-cta {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 5px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .profile-pic {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--amber); object-fit: cover; flex-shrink: 0;
+    }
+    .cta-oneline {
+      font-size: 8px; color: rgba(255,255,255,0.75); line-height: 1.4; white-space: nowrap;
+    }
+    .cta-oneline strong { color: var(--white); font-weight: 800; }
+    .cta-oneline span   { color: var(--amber); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="preview-label">
+  90-Day AI Tax — Infographic <span>· 1080×1350 (4:5) · LinkedIn · alvishouse.io</span>
+</div>
+
+<div class="ig">
+
+  <!-- ════ HEADER ════ -->
+  <div class="ig-header">
+    <div class="ig-kicker">Why Your Next AI Leader Hire Will Waste Their First Quarter</div>
+    <div class="ig-title">How To Eliminate The <em>90-Day AI Tax</em></div>
+    <div class="ig-subtitle">The hidden cost draining every AI leadership hire — and exactly how to stop it</div>
+  </div>
+
+  <!-- ════ PROBLEM: HEADLINE + STAT STRIP ════ -->
+  <div class="problem-section">
+    <div class="problem-headline">
+      <div class="problem-headline-icon">
+        <i data-lucide="trending-down"></i>
+        <div class="problem-headline-title">You Already Made the Right Hire.<br><em>Here's Why It Won't Matter.</em></div>
+      </div>
+    </div>
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <span class="stat-num">60–90</span>
+        <span class="stat-unit">Days</span>
+        <div class="stat-desc">Average time an AI hire spends on discovery before delivering any value</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">3–5</span>
+        <span class="stat-unit">Months</span>
+        <div class="stat-desc">Before executive alignment on AI priorities typically solidifies</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">40%</span>
+        <span class="stat-unit">Stall Rate</span>
+        <div class="stat-desc">Of AI initiatives stall due to misaligned expectations — not bad technology</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ THREE COLUMNS ════ -->
+  <div class="three-cols">
+
+    <!-- COL 1: WHY -->
+    <div class="col">
+      <div class="col-header col-header-amber"><i data-lucide="alert-triangle"></i>Why</div>
+      <div class="col-body">
+        <div class="blackhole-wrap">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <svg width="48" height="48" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outer glow ring -->
+              <circle cx="36" cy="36" r="34" fill="#1a2635" stroke="#F0A500" stroke-width="0.8" stroke-opacity="0.4"/>
+              <!-- Accretion rings -->
+              <circle cx="36" cy="36" r="27" fill="#23344a" stroke="#3b546b" stroke-width="0.8"/>
+              <circle cx="36" cy="36" r="20" fill="#2d3f52" stroke="#cf5828" stroke-width="0.8"/>
+              <circle cx="36" cy="36" r="13" fill="#1a2635" stroke="#cf5828" stroke-width="1" stroke-opacity="0.7"/>
+              <!-- Event horizon -->
+              <circle cx="36" cy="36" r="7" fill="#0d0d0d" stroke="#cf5828" stroke-width="1.5"/>
+              <!-- Spiral arms -->
+              <path d="M36 8 Q56 16 64 36" stroke="#F0A500" stroke-width="0.8" fill="none" stroke-dasharray="3,2" stroke-opacity="0.6"/>
+              <path d="M36 64 Q16 56 8 36" stroke="#F0A500" stroke-width="0.8" fill="none" stroke-dasharray="3,2" stroke-opacity="0.6"/>
+              <path d="M8 36 Q16 16 36 8" stroke="#7a8c9b" stroke-width="0.5" fill="none" stroke-dasharray="2,2" stroke-opacity="0.5"/>
+              <path d="M64 36 Q56 56 36 64" stroke="#7a8c9b" stroke-width="0.5" fill="none" stroke-dasharray="2,2" stroke-opacity="0.5"/>
+            </svg>
+            <div style="font-size:7px;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink);text-align:center;line-height:1.2;">
+              90-Day<br><span style="color:var(--orange);">Black Hole</span>
+            </div>
+          </div>
+        </div>
+        <div class="obstacle-list">
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="map"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Org navigation</div>
+              <div class="obstacle-sub">Mapping politics & structure from zero</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="database"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Data archaeology</div>
+              <div class="obstacle-sub">AI readiness ≠ data warehouse readiness</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="users"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Exec mediation</div>
+              <div class="obstacle-sub">Competing visions, no shared definition</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="shield"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Governance build</div>
+              <div class="obstacle-sub">Policy before product — every time</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="target"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Use case pageant</div>
+              <div class="obstacle-sub">Weeks ranking ideas no one validated</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="clock"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">KPI vacuum</div>
+              <div class="obstacle-sub">No metrics = no compass for Day 1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 2: READINESS GAP -->
+    <div class="col">
+      <div class="col-header col-header-navy"><i data-lucide="clipboard-list"></i>Readiness Gap</div>
+      <div class="col-body">
+        <div class="gap-intro">Answer honestly. Your new hire finds the truth either way.</div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">1</div>
+          <div class="diag-q-text"><strong>Do execs share</strong> one definition of AI success?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">2</div>
+          <div class="diag-q-text"><strong>Is your data</strong> assessed through an AI-readiness lens?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">3</div>
+          <div class="diag-q-text"><strong>Can you name</strong> your top 3 use cases ranked by feasibility?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">4</div>
+          <div class="diag-q-text"><strong>Is an AI governance</strong> framework in place or in progress?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">5</div>
+          <div class="diag-q-text"><strong>Have you identified</strong> AI champions in each department?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">6</div>
+          <div class="diag-q-text"><strong>Does your exec team</strong> agree on how AI success is measured?</div>
+        </div>
+        <div class="diag-score-mini">
+          <div class="score-mini-row">
+            <div class="score-mini-block score-mini-red">
+              <div class="score-mini-num">0–2</div>
+              <div class="score-mini-lbl">Tax guaranteed</div>
+            </div>
+            <div class="score-mini-block score-mini-yellow">
+              <div class="score-mini-num">3–4</div>
+              <div class="score-mini-lbl">Gaps on your dime</div>
+            </div>
+            <div class="score-mini-block score-mini-green">
+              <div class="score-mini-num">5–6</div>
+              <div class="score-mini-lbl">Day 1 ready</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL 3: TWO PATHS -->
+    <div class="col">
+      <div class="col-header col-header-steel"><i data-lucide="git-branch"></i>The 2 Paths</div>
+      <div class="col-body">
+        <div class="path-block">
+          <div class="path-block-label path-block-label-grey">❌ Unassisted</div>
+          <div class="path-milestones">
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Days 1–30</span>
+              <span class="path-act">Listening tours, political mapping</span>
+            </div>
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Days 31–60</span>
+              <span class="path-act">Data archaeology, stakeholder wars</span>
+            </div>
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Days 61–90</span>
+              <span class="path-act">First use case scoping begins</span>
+            </div>
+            <div class="path-mile path-mile-grey">
+              <span class="path-day">Day 90+</span>
+              <span class="path-act">First AI solution enters dev</span>
+            </div>
+          </div>
+          <div class="path-result-tag path-result-bad">3 months salary spent → zero shipped</div>
+        </div>
+        <div class="path-block">
+          <div class="path-block-label path-block-label-teal">✓ Accelerated</div>
+          <div class="path-milestones">
+            <div class="path-mile">
+              <span class="path-day">Pre-hire</span>
+              <span class="path-act">Exec alignment + data assessment done</span>
+            </div>
+            <div class="path-mile">
+              <span class="path-day">Days 1–15</span>
+              <span class="path-act">Relationships + strategy in hand</span>
+            </div>
+            <div class="path-mile">
+              <span class="path-day">Days 16–30</span>
+              <span class="path-act">First use case in development</span>
+            </div>
+            <div class="path-mile path-mile-highlight">
+              <span class="path-day">Day 45 ✓</span>
+              <span class="path-act">First AI solution in production</span>
+            </div>
+          </div>
+          <div class="path-result-tag path-result-good">50% faster → value on Day 45</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /three-cols -->
+
+  <!-- ════ SOLUTION SECTION ════ -->
+  <div class="solution-section">
+    <div class="solution-header">
+      <div class="solution-header-icon">
+        <i data-lucide="shield-check"></i>
+        <div class="solution-header-text">
+          <div class="solution-tag">Eliminating the Tax</div>
+          <div class="solution-title">Two Models. Same Outcome.<br><em>The Right One Depends on Where You Are Today.</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="two-models">
+
+      <div class="model-block">
+        <div class="model-tag model-tag-blue">Done For You</div>
+        <div class="model-heading">Prepare the Ground<br>Before They Arrive</div>
+        <div class="model-for">Best for</div>
+        <div class="model-for-body">Organizations in active search with 2–4 weeks before the hire starts.</div>
+        <ul class="model-list">
+          <li>Executive AI alignment workshop</li>
+          <li>AI readiness assessment — all 6 pillars</li>
+          <li>Use cases validated against real data</li>
+          <li>Prioritized roadmap ready on Day 1</li>
+        </ul>
+        <div class="model-result model-result-blue">⏱ 2–4 weeks &nbsp;→&nbsp; Production AI by Day 45</div>
+      </div>
+
+      <div class="model-block">
+        <div class="model-tag model-tag-teal">Done With You</div>
+        <div class="model-heading">Accelerate Alongside<br>Your New Hire</div>
+        <div class="model-for">Best for</div>
+        <div class="model-for-body">Organizations that have already hired and want to amplify impact from Day 1.</div>
+        <ul class="model-list">
+          <li>Embed as strategic accelerant</li>
+          <li>Structured frameworks — no scratch builds</li>
+          <li>Data, governance + rapid prototyping</li>
+          <li>Cross-functional alignment sounding board</li>
+        </ul>
+        <div class="model-result model-result-teal">⏱ 30–90 days embedded &nbsp;→&nbsp; 90-day results in 45</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════ FOOTER CTA ════ -->
+  <div class="footer-cta">
+    <img class="profile-pic" src="../../../../Screenshots/Alvis%20Profile%20pic.png" alt="Alvis House">
+    <div class="cta-oneline">
+      Enjoy this? Follow <strong>Alvis House</strong> for more &nbsp;·&nbsp;
+      📩 Join my newsletter for framework breakdowns &nbsp;·&nbsp; <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div><!-- /ig -->
+<script>lucide.createIcons();</script>
+</body>
+</html>

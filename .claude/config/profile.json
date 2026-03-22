@@ -1,0 +1,19 @@
+{
+  "user": {
+    "name": "Alvis",
+    "email": "alvishousepoompow@gmail.com"
+  },
+  "assistant": {
+    "name": "Jabez",
+    "color": "blue"
+  },
+  "paths": {
+    "pai_dir": "/home/alvis/.claude"
+  },
+  "voice": {
+    "port": 8888,
+    "enabled": false
+  },
+  "created": "2025-12-26T19:49:07.087Z",
+  "version": "1.0.0"
+}

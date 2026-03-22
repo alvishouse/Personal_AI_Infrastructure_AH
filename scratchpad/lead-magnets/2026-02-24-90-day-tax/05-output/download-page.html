@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hidden "90-Day Tax" — Free Executive Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0D1B2A;
+      --blue-dark: #1E40AF;
+      --blue:      #3B82F6;
+      --blue-light:#EFF6FF;
+      --amber:     #F59E0B;
+      --slate:     #64748B;
+      --slate-light:#94A3B8;
+      --gray-light:#F8FAFC;
+      --white:     #FFFFFF;
+      --rule:      #E2E8F0;
+      --orange:    #EA580C;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--gray-light);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ────────────────────────────────────────────────────────────── */
+    .nav {
+      background: var(--navy);
+      padding: 0 40px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .nav-brand span { color: var(--blue); }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-link:hover { color: var(--white); }
+
+    /* ── HERO ───────────────────────────────────────────────────────────── */
+    .hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 72px 40px 64px;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* Cover preview */
+    .cover-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .cover-img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(13,27,42,0.30), 0 4px 16px rgba(13,27,42,0.15);
+      display: block;
+    }
+    .cover-badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(234,88,12,0.4);
+    }
+
+    /* Right column */
+    .hero-content {}
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--blue);
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--slate);
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+
+    /* Bullet benefits */
+    .benefits {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.45;
+    }
+    .benefit-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Download CTA */
+    .download-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 16px rgba(59,130,246,0.35);
+      letter-spacing: -0.01em;
+      align-self: flex-start;
+    }
+    .btn-download:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(59,130,246,0.45);
+    }
+    .btn-download:active { transform: translateY(0); }
+    .btn-download svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .download-meta {
+      font-size: 12px;
+      color: var(--slate-light);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .download-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .download-meta svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── STATS STRIP ────────────────────────────────────────────────────── */
+    .stats-strip {
+      background: var(--navy);
+      padding: 0;
+    }
+    .stats-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-cell {
+      padding: 32px 40px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-number {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-number span { color: var(--blue); }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+
+    /* ── ABOUT SECTION ──────────────────────────────────────────────────── */
+    .about {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 72px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .about-text {}
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    .about-heading {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .about-body {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--slate);
+    }
+    .about-body p + p { margin-top: 14px; }
+    .about-body strong { color: var(--navy); font-weight: 600; }
+
+    /* What's inside */
+    .contents {}
+    .contents-heading {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .contents-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .contents-item {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .contents-item:last-child { border-bottom: none; }
+    .contents-num {
+      width: 24px;
+      height: 24px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .contents-item-body {}
+    .contents-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .contents-item-desc {
+      font-size: 12px;
+      color: var(--slate);
+      line-height: 1.45;
+    }
+
+    /* ── AUTHOR STRIP ───────────────────────────────────────────────────── */
+    .author-strip {
+      background: var(--white);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .author-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .author-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--rule);
+    }
+    .author-info {}
+    .author-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .author-title {
+      font-size: 13px;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .author-bio {
+      font-size: 13px;
+      color: var(--slate);
+      line-height: 1.55;
+      max-width: 580px;
+    }
+
+    /* ── BOTTOM CTA ─────────────────────────────────────────────────────── */
+    .bottom-cta {
+      background: var(--navy);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .bottom-cta-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .bottom-cta-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .bottom-cta-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .bottom-cta-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.60);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .btn-download-lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      box-shadow: 0 4px 24px rgba(59,130,246,0.4);
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-download-lg:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+    .btn-download-lg svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .bottom-cta-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────────────────── */
+    .footer {
+      background: #080F18;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-brand {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 48px 24px;
+      }
+      .cover-wrap { max-width: 280px; margin: 0 auto; }
+      .hero-title { font-size: 30px; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px; }
+      .about { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .btn-download { width: 100%; }
+      .author-inner { flex-direction: column; text-align: center; }
+      .footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="https://alvishouse.io" class="nav-brand">Alvis<span>House</span></a>
+    <a href="https://alvishouse.io" class="nav-link">alvishouse.io</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- Cover preview -->
+    <div class="cover-wrap">
+      <img
+        src="https://alvishouse.io/wp-content/uploads/2026/02/90-day-tax-cover.png"
+        alt="The Hidden 90-Day Tax Guide Cover"
+        class="cover-img"
+      >
+      <span class="cover-badge">Free Download</span>
+    </div>
+
+    <!-- Right column -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">Free Executive Guide · 5 Pages · PDF</p>
+      <h1 class="hero-title">The Hidden<br><em>"90-Day Tax"</em></h1>
+      <p class="hero-subtitle">Discover the pre-hire protocol that compresses 90 days of AI discovery into 18 — before your next AI leader walks in the door.</p>
+
+      <ul class="benefits">
+        <li>
+          <span class="benefit-check">✓</span>
+          Why your new AI hire's first quarter is already being wasted — and why no one notices
+        </li>
+        <li>
+          <span class="benefit-check">✓</span>
+          The 6-question readiness diagnostic every AI-hiring organization needs to take first
+        </li>
+        <li>
+          <span class="benefit-check">✓</span>
+          Two proven engagement models — and which one fits your organization's timeline
+        </li>
+        <li>
+          <span class="benefit-check">✓</span>
+          The real math: how a $300K hire quietly burns $250K before producing a line of production AI
+        </li>
+      </ul>
+
+      <div class="download-cta">
+        <a
+          href="https://alvishouse.io/wp-content/uploads/2026/02/90-day-tax-blueprint.pdf"
+          class="btn-download"
+          download="90-day-tax-guide.pdf"
+          target="_blank"
+        >
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Free Guide
+        </a>
+        <div class="download-meta">
+          <span>
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            PDF · 5 pages
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Instant access
+          </span>
+          <span>No sign-up required</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-cell">
+        <div class="stat-number">60<span>–</span>90</div>
+        <div class="stat-label">Days an AI hire spends on<br>discovery before delivering value</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">3<span>–</span>5</div>
+        <div class="stat-label">Months before executive alignment<br>on AI priorities typically solidifies</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">40<span>%</span></div>
+        <div class="stat-label">Stall rate of AI initiatives due to<br>misaligned expectations — not bad tech</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + CONTENTS -->
+  <section class="about">
+
+    <div class="about-text">
+      <p class="section-label">About This Guide</p>
+      <h2 class="about-heading">The invisible tax inside every AI leadership hire</h2>
+      <div class="about-body">
+        <p>Most organizations hire an AI leader and then hand them a blank canvas. No executive alignment. No validated use cases. No data readiness assessment. Just a title and a desk.</p>
+        <p>The result? Your most expensive hire spends their first 60–90 days doing what <strong>your organization should have done before they arrived</strong> — discovering the landscape, navigating politics, and building the foundation that should have been ready on Day 1.</p>
+        <p>That's the 90-Day Tax. It doesn't show up on a budget. It never gets questioned in a board meeting. But the true cost often <strong>exceeds $250,000 per hire</strong> — and it's entirely optional.</p>
+        <p>This guide shows you exactly what's happening, how to diagnose it in your own organization, and what to do about it.</p>
+      </div>
+    </div>
+
+    <div class="contents">
+      <p class="contents-heading">What's Inside</p>
+      <ul class="contents-list">
+        <li class="contents-item">
+          <span class="contents-num">1</span>
+          <div class="contents-item-body">
+            <div class="contents-item-title">The Problem No One Is Calculating</div>
+            <div class="contents-item-desc">Why the 90-Day Tax is invisible — and why that makes it expensive</div>
+          </div>
+        </li>
+        <li class="contents-item">
+          <span class="contents-num">2</span>
+          <div class="contents-item-body">
+            <div class="contents-item-title">Same Hire. Two Timelines.</div>
+            <div class="contents-item-desc">The one variable that determines whether your AI leader executes or excavates</div>
+          </div>
+        </li>
+        <li class="contents-item">
+          <span class="contents-num">3</span>
+          <div class="contents-item-body">
+            <div class="contents-item-title">6-Question Readiness Diagnostic</div>
+            <div class="contents-item-desc">Where does your organization actually stand? Find out before your hire does</div>
+          </div>
+        </li>
+        <li class="contents-item">
+          <span class="contents-num">4</span>
+          <div class="contents-item-body">
+            <div class="contents-item-title">Two Models. Same Outcome.</div>
+            <div class="contents-item-desc">Done For You vs. Done With You — and which fits your timeline</div>
+          </div>
+        </li>
+        <li class="contents-item">
+          <span class="contents-num">5</span>
+          <div class="contents-item-body">
+            <div class="contents-item-title">The Alvis House Engagement</div>
+            <div class="contents-item-desc">How to eliminate the tax before your next AI hire badges in</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AUTHOR STRIP -->
+  <div class="author-strip">
+    <div class="author-inner">
+      <img
+        src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png"
+        alt="Alvis"
+        class="author-photo"
+      >
+      <div class="author-info">
+        <div class="author-name">Alvis</div>
+        <div class="author-title">AI Strategy & Transformation · Alvis House</div>
+        <div class="author-bio">
+          I help organizations compress AI time-to-value — before the hire starts, or embedded alongside them in their first 90 days. This guide distills what I've seen across dozens of AI leadership engagements.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <section class="bottom-cta">
+    <div class="bottom-cta-inner">
+      <p class="bottom-cta-eyebrow">Free Executive Guide</p>
+      <h2 class="bottom-cta-title">Stop paying the 90-Day Tax on your next AI hire</h2>
+      <p class="bottom-cta-sub">Download the guide and find out exactly where your organization stands — and what to do before Day 1.</p>
+      <a
+        href="https://alvishouse.io/wp-content/uploads/2026/02/90-day-tax-blueprint.pdf"
+        class="btn-download-lg"
+        download="90-day-tax-guide.pdf"
+        target="_blank"
+      >
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Free Guide
+      </a>
+      <p class="bottom-cta-note">PDF · 5 pages · No sign-up required</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="footer-brand">Alvis House · AI Strategy & Transformation</span>
+    <div class="footer-links">
+      <a href="https://alvishouse.io">alvishouse.io</a>
+      <a href="https://linkedin.com/in/alvishouse">/in/alvishouse</a>
+      <a href="mailto:alvis.house@inspire11.com">alvis.house@inspire11.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>

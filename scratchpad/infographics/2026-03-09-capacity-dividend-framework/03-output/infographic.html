@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infographic — The Capacity Dividend Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* ══════════════════════════════════════════
+       INFOGRAPHIC DESIGN SYSTEM — ALVIS HOUSE
+       Canvas: 540px HTML → 1080px LinkedIn (2x)
+       ══════════════════════════════════════════ */
+
+    :root {
+      --cream:    #ece6d9;
+      --cream-dk: #ddd8ce;
+      --navy:     #3b546b;
+      --orange:   #cf5828;
+      --steel:    #7a8c9b;
+      --teal:     #2E7D6B;
+      --amber:    #F0A500;
+      --ink:      #1a2635;
+      --ink-mid:  #3d4f60;
+      --rule:     #d4cdc3;
+      --white:    #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--white);
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .preview-label { display: none; }
+
+    /* ══ CANVAS ══ */
+    .ig {
+      width: 540px;
+      min-height: 675px;
+      background: var(--white);
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 4px;
+    }
+
+    /* ══ HEADER ══ */
+    .ig-header {
+      background: var(--navy);
+      padding: 5px 20px 4px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .ig-kicker {
+      font-size: 7px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2px;
+    }
+    .ig-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; letter-spacing: 0.03em; color: var(--white); line-height: 1.0;
+    }
+    .ig-title em { font-style: normal; color: var(--amber); }
+
+    /* ══ PROBLEM SECTION ══ */
+    .problem-section { overflow: hidden; border: 1px solid var(--rule); }
+    .problem-headline {
+      background: var(--orange);
+      padding: 5px 20px;
+      text-align: center;
+    }
+    .problem-headline-icon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .problem-headline-icon svg { stroke: var(--white) !important; width: 20px; height: 20px; }
+    .problem-headline-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+    }
+    .problem-headline-title em { font-style: normal; color: rgba(255,255,255,0.65); }
+
+    /* ══ STAT STRIP ══ */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--white);
+    }
+    .stat-cell {
+      padding: 4px 8px 3px;
+      text-align: center;
+      border-right: 1.5px solid var(--rule);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px; letter-spacing: 0.01em;
+      color: var(--navy); line-height: 1.0; display: block;
+    }
+    .stat-unit {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 2px;
+    }
+    .stat-desc {
+      font-size: 6.5px; color: var(--ink-mid); line-height: 1.4;
+      text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500;
+    }
+
+    /* ══ THREE COLUMNS ══ */
+    .three-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background: var(--cream);
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .col { display: flex; flex-direction: column; border-right: 1.5px solid var(--rule); background: var(--cream); overflow: hidden; }
+    .col:last-child { border-right: none; }
+    .col-header {
+      padding: 3px 8px;
+      font-size: 7.5px; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white); text-align: center;
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+    }
+    .col-header svg { width: 9px; height: 9px; flex-shrink: 0; }
+    .col-header-orange { background: var(--orange); }
+    .col-header-amber  { background: var(--amber); color: var(--ink) !important; }
+    .col-header-navy   { background: var(--navy); }
+    .col-header-steel  { background: var(--steel); }
+    .col-header-teal   { background: var(--teal); }
+    .col-body { padding: 4px 7px 5px; flex: 1; }
+
+    /* ── Obstacle List ── */
+    .obstacle-list { display: flex; flex-direction: column; gap: 1px; }
+    .obstacle-item {
+      display: flex; align-items: flex-start; gap: 5px;
+      padding-bottom: 1px; border-bottom: 1px solid var(--rule);
+    }
+    .obstacle-item:last-child { border-bottom: none; }
+    .obstacle-icon {
+      width: 16px; height: 16px; flex-shrink: 0;
+      background: var(--navy); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .obstacle-icon svg { width: 9px; height: 9px; color: var(--white); stroke: var(--white); }
+    .obstacle-title { font-size: 7px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .obstacle-sub   { font-size: 6px; color: var(--steel); line-height: 1.25; }
+
+    /* ── Diagnostic Questions ── */
+    .gap-intro {
+      font-size: 6.5px; font-style: italic; color: var(--steel);
+      line-height: 1.35; margin-bottom: 2px; text-align: center;
+    }
+    .diag-q-item {
+      display: flex; align-items: flex-start; gap: 4px;
+      padding: 1px 0; border-bottom: 1px solid var(--rule);
+    }
+    .diag-q-item:last-child { border-bottom: none; }
+    .diag-q-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px; color: var(--navy); line-height: 1;
+      flex-shrink: 0; width: 11px;
+    }
+    .diag-q-text { font-size: 7px; color: var(--ink); line-height: 1.3; }
+    .diag-q-text strong { font-weight: 700; }
+    .diag-score-mini {
+      margin-top: 3px; border-top: 1px solid var(--rule); padding-top: 3px;
+    }
+    .score-mini-row { display: flex; gap: 3px; }
+    .score-mini-block {
+      flex: 1; border-radius: 2px; padding: 2px; text-align: center;
+    }
+    .score-mini-red    { background: #f5ede8; border: 1px solid var(--orange); }
+    .score-mini-yellow { background: #fdf6e3; border: 1px solid var(--amber); }
+    .score-mini-green  { background: #e6f2ef; border: 1px solid var(--teal); }
+    .score-mini-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 12px; line-height: 1;
+    }
+    .score-mini-red    .score-mini-num { color: var(--orange); }
+    .score-mini-yellow .score-mini-num { color: var(--amber); }
+    .score-mini-green  .score-mini-num { color: var(--teal); }
+    .score-mini-lbl { font-size: 6px; font-weight: 700; color: var(--ink); line-height: 1.3; margin-top: 1px; }
+
+    /* ── Two-Path Block ── */
+    .path-block { margin-bottom: 3px; overflow: hidden; }
+    .path-block:last-child { margin-bottom: 0; }
+    .path-block-label {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 3px 7px; color: var(--white);
+    }
+    .path-block-label-grey { background: var(--steel); }
+    .path-block-label-teal { background: var(--teal); }
+    .path-milestones {
+      background: var(--white); border: 1px solid var(--rule); border-top: none;
+    }
+    .path-mile {
+      display: flex; align-items: baseline; gap: 5px;
+      padding: 1px 6px; border-bottom: 1px solid var(--cream-dk); font-size: 6.5px;
+    }
+    .path-mile:last-child { border-bottom: none; }
+    .path-day { font-weight: 800; color: var(--ink); white-space: nowrap; min-width: 36px; font-size: 6px; }
+    .path-act { color: var(--ink-mid); line-height: 1.25; }
+    .path-mile-grey .path-day { color: var(--steel); }
+    .path-mile-grey .path-act { color: var(--steel); }
+    .path-mile-highlight .path-day { color: var(--teal); }
+    .path-mile-highlight .path-act { color: var(--teal); font-weight: 700; }
+    .path-result-tag {
+      text-align: center; font-size: 6.5px; font-weight: 800;
+      padding: 2px 6px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .path-result-bad  { background: #f5ede8; color: var(--orange); }
+    .path-result-good { background: #e6f2ef; color: var(--teal); }
+
+    /* ── Pillar List ── */
+    .pillar-intro {
+      font-size: 7px; color: var(--steel); line-height: 1.4;
+      margin-bottom: 4px; font-style: italic; text-align: center;
+    }
+    .pillar-item {
+      display: flex; align-items: flex-start; gap: 5px;
+      padding: 3px 0; border-bottom: 1px solid var(--rule);
+    }
+    .pillar-item:last-child { border-bottom: none; }
+    .pillar-check {
+      width: 12px; height: 12px; border: 1.5px solid var(--steel); border-radius: 2px;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .pillar-name { font-size: 7.5px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+    .pillar-sub  { font-size: 6.5px; color: var(--steel); line-height: 1.3; }
+
+    /* ══ SOLUTION SECTION ══ */
+    .solution-section { overflow: hidden; border: 1px solid var(--rule); }
+    .solution-header {
+      background: var(--orange);
+      padding: 5px 20px 4px;
+      text-align: center;
+    }
+    .solution-header-icon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .solution-header-icon svg { stroke: var(--white) !important; width: 20px; height: 20px; }
+    .solution-header-text { text-align: center; }
+    .solution-tag {
+      font-size: 8px; font-weight: 800; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+    }
+    .solution-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+    }
+    .solution-title em { font-style: normal; color: rgba(255,255,255,0.70); }
+
+    /* ── Two Models / Options ── */
+    .two-models {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+    }
+    .model-block {
+      padding: 4px 9px 5px;
+      border-right: 1.5px solid var(--rule);
+      display: flex; flex-direction: column;
+    }
+    .model-block:last-child { border-right: none; }
+    .model-tag {
+      font-size: 7px; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; margin-bottom: 2px;
+    }
+    .model-tag-blue   { color: var(--navy); }
+    .model-tag-teal   { color: var(--teal); }
+    .model-heading {
+      font-size: 10px; font-weight: 800; color: var(--ink);
+      line-height: 1.2; margin-bottom: 4px;
+    }
+    .model-for {
+      font-size: 6.5px; font-weight: 700; color: var(--steel);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1px;
+    }
+    .model-for-body { font-size: 7px; color: var(--ink-mid); line-height: 1.35; margin-bottom: 4px; }
+    .model-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .model-list li {
+      font-size: 7px; color: var(--ink); line-height: 1.25;
+      padding-left: 10px; position: relative;
+    }
+    .model-list li::before {
+      content: '→'; position: absolute; left: 0;
+      font-size: 7px; font-weight: 700;
+    }
+    .model-tag-blue ~ .model-list li::before { color: var(--navy); }
+    .model-tag-teal ~ .model-list li::before { color: var(--teal); }
+    .model-result {
+      margin-top: auto; padding-top: 3px; border-top: 1px solid var(--rule);
+      font-size: 7px; font-weight: 700; line-height: 1.3;
+    }
+    .model-result-blue { color: var(--navy); }
+    .model-result-teal { color: var(--teal); }
+
+    /* ══ FOOTER CTA ══ */
+    .footer-cta {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 5px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .profile-pic {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--amber); object-fit: cover; flex-shrink: 0;
+    }
+    .cta-oneline {
+      font-size: 8px; color: rgba(255,255,255,0.75); line-height: 1.4; white-space: nowrap;
+    }
+    .cta-oneline strong { color: var(--white); font-weight: 800; }
+    .cta-oneline span   { color: var(--amber); font-weight: 600; }
+
+    /* ══ UTILITY ══ */
+    .blackhole-wrap {
+      display: flex; justify-content: center; margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-label">
+  The Capacity Dividend Framework — Infographic <span>· 1080×1350 (4:5) · LinkedIn · alvishouse.io</span>
+</div>
+
+<div class="ig">
+
+  <!-- ══ HEADER ══ -->
+  <div class="ig-header">
+    <div class="ig-kicker">AI EFFICIENCY → COMPETITIVE ADVANTAGE</div>
+    <div class="ig-title">THE <em>CAPACITY DIVIDEND</em> FRAMEWORK</div>
+  </div>
+
+  <!-- ══ PROBLEM BAR + STAT STRIP ══ -->
+  <div class="problem-section">
+    <div class="problem-headline">
+      <div class="problem-headline-icon">
+        <i data-lucide="trending-up"></i>
+        <div class="problem-headline-title">Every AI efficiency win creates a Capacity Dividend.<br><em>Most companies consume it.</em></div>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat-cell">
+        <span class="stat-num">5.7H</span>
+        <span class="stat-unit">Freed Weekly</span>
+        <div class="stat-desc">Per employee per week (McKinsey)</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">83%</span>
+        <span class="stat-unit">Squandered</span>
+        <div class="stat-desc">Of AI users wasted freed time (HBR)</div>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num">3.6×</span>
+        <span class="stat-unit">TSR Gain</span>
+        <div class="stat-desc">For innovation-focused companies (BCG)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ THREE COLUMNS: Steps 1–3 ══ -->
+  <div class="three-cols">
+
+    <!-- ── STEP 1: AUDIT ── -->
+    <div class="col">
+      <div class="col-header col-header-amber">
+        <i data-lucide="clock"></i>STEP 1 — AUDIT
+      </div>
+      <div class="col-body">
+        <div class="obstacle-list">
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="clock"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Quantify freed hours</div>
+              <div class="obstacle-sub">Measure hours AI frees per person per week across your team</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="calculator"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Assign dollar value</div>
+              <div class="obstacle-sub">50 people = 14,820 hrs/yr freed. Present as investment capital</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="eye"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Make it visible</div>
+              <div class="obstacle-sub">Surface the number to leadership — not as cost savings</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="alert-circle"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Don't skip this</div>
+              <div class="obstacle-sub">Skip it and you won't notice when the dividend disappears</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STEP 2: DECIDE ── -->
+    <div class="col">
+      <div class="col-header col-header-navy">
+        <i data-lucide="arrow-up-right"></i>STEP 2 — DECIDE
+      </div>
+      <div class="col-body">
+        <div class="gap-intro">Before efficiency arrives — not after. This is the step nearly every company skips.</div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">1</div>
+          <div class="diag-q-text"><strong>What will we build</strong> with the freed capacity?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">2</div>
+          <div class="diag-q-text"><strong>Which customer problem</strong> does this solve?</div>
+        </div>
+        <div class="diag-q-item">
+          <div class="diag-q-num">3</div>
+          <div class="diag-q-text"><strong>Who owns</strong> the reinvestment thesis?</div>
+        </div>
+
+        <div class="diag-score-mini" style="margin-top: 4px;">
+          <div class="path-block" style="margin-bottom: 2px;">
+            <div class="path-block-label path-block-label-grey">❌ Absorb back</div>
+            <div class="path-milestones">
+              <div class="path-mile path-mile-grey">
+                <span class="path-day">Result</span>
+                <span class="path-act">Same work, same output</span>
+              </div>
+            </div>
+            <div class="path-result-tag path-result-bad">Competitive position unchanged</div>
+          </div>
+          <div class="path-block">
+            <div class="path-block-label path-block-label-teal">✓ Invest forward</div>
+            <div class="path-milestones">
+              <div class="path-mile path-mile-highlight">
+                <span class="path-day">Result</span>
+                <span class="path-act">New value created</span>
+              </div>
+            </div>
+            <div class="path-result-tag path-result-good">Booking Holdings: $170M built</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STEP 3: REINVEST ── -->
+    <div class="col">
+      <div class="col-header col-header-teal">
+        <i data-lucide="bar-chart-2"></i>STEP 3 — REINVEST
+      </div>
+      <div class="col-body">
+        <div class="obstacle-list">
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="users"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Customer-facing innovation</div>
+              <div class="obstacle-sub">Build new products & capabilities for clients</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="map"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Market expansion</div>
+              <div class="obstacle-sub">Enter adjacent markets with freed bandwidth</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="settings"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Process redesign</div>
+              <div class="obstacle-sub">Rebuild workflows for output value, not input reduction</div>
+            </div>
+          </div>
+          <div class="obstacle-item">
+            <div class="obstacle-icon"><i data-lucide="lightbulb"></i></div>
+            <div class="obstacle-text">
+              <div class="obstacle-title">Capability building</div>
+              <div class="obstacle-sub">JPMorgan: 360K hrs saved → IndexGPT. The moat was built with freed time.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /three-cols -->
+
+  <!-- ══ SOLUTION SECTION: Step 4 — MEASURE ══ -->
+  <div class="solution-section">
+    <div class="solution-header">
+      <div class="solution-header-icon">
+        <i data-lucide="check-circle"></i>
+        <div class="solution-header-text">
+          <div class="solution-tag">STEP 4 — THE NEW STANDARD</div>
+          <div class="solution-title">Stop Measuring What You Saved.<br><em>Start Measuring What You Built.</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="two-models">
+      <div class="model-block">
+        <div class="model-tag model-tag-blue">OLD DASHBOARD</div>
+        <div class="model-heading">What You<br>Saved</div>
+        <ul class="model-list">
+          <li>Hours saved</li>
+          <li>Costs reduced</li>
+          <li>Headcount avoided</li>
+        </ul>
+        <div class="model-result model-result-blue">"AI worked" — but competitive position unchanged</div>
+      </div>
+      <div class="model-block">
+        <div class="model-tag model-tag-teal">NEW DASHBOARD</div>
+        <div class="model-heading">What You<br>Built</div>
+        <ul class="model-list">
+          <li>Revenue from freed-capacity initiatives</li>
+          <li>Customer retention from new capabilities</li>
+          <li>Offerings launched with reinvested time</li>
+        </ul>
+        <div class="model-result model-result-teal">"AI-freed capacity generated $1.2M in new revenue"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER CTA ══ -->
+  <div class="footer-cta">
+    <img class="profile-pic" src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+    <div class="cta-oneline">
+      Enjoy this? Follow <strong>Alvis House</strong> for more &nbsp;·&nbsp; 📩 Weekly AI strategy newsletter &nbsp;·&nbsp; <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div><!-- /ig -->
+<script>lucide.createIcons();</script>
+</body>
+</html>

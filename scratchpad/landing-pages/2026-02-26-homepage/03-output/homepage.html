@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Acceleration Flywheel — Free AI Newsletter | Alvis House</title>
+  <meta name="description" content="High-signal AI intelligence for mid-market executives. The Acceleration Flywheel: Clarity → Certainty → Commitment → Outcomes. Free weekly newsletter.">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════
+       ALVIS HOUSE — HOMEPAGE
+       LandingPage Skill — Homepage Workflow
+       ══════════════════════════════════════════ */
+
+    :root {
+      --cream:      #ece6d9;
+      --cream-dk:   #ddd8ce;
+      --navy:       #3b546b;
+      --orange:     #cf5828;
+      --steel:      #7a8c9b;
+      --teal:       #2E7D6B;
+      --amber:      #F0A500;
+      --ink:        #1a2635;
+      --ink-mid:    #3d4f60;
+      --rule:       #d4cdc3;
+      --white:      #ffffff;
+      --hero-bg:    #1a2635;
+      --card-shadow: 0 4px 24px rgba(26,38,53,0.12);
+      --card-radius: 12px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+      display: block;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.15;
+    }
+    h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 900; }
+    h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; }
+    h3 { font-size: 21px; font-weight: 700; }
+    p  { font-size: 20px; line-height: 1.75; }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(207,88,40,0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(207,88,40,0.45);
+    }
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 30px;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.55);
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+    .btn-ghost:hover { border-color: var(--white); }
+
+    /* ── FORMS ── */
+    .optin-form { width: 100%; }
+    .form-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .form-input {
+      flex: 1;
+      min-width: 160px;
+      padding: 14px 18px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.45); }
+    .form-input:focus { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
+    .form-input-light {
+      background: var(--white);
+      border: 1.5px solid var(--rule);
+      color: var(--ink);
+    }
+    .form-input-light::placeholder { color: var(--steel); }
+    .form-input-light:focus { border-color: var(--navy); }
+    .form-fine-print {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 10px;
+    }
+    .form-message {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      margin-top: 8px;
+      min-height: 18px;
+    }
+
+    /* ══════════════════════════
+       STICKY BAR
+    ══════════════════════════ */
+    .sticky-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--navy);
+      z-index: 999;
+      padding: 10px 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .sticky-bar-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+    .sticky-bar-text strong { color: var(--white); }
+    .btn-sm {
+      padding: 8px 20px;
+      font-size: 12px;
+    }
+
+    /* ══════════════════════════
+       § 1 — HERO
+    ══════════════════════════ */
+    .hero {
+      background: var(--hero-bg);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(207,88,40,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-copy .eyebrow { color: var(--amber); }
+    .hero-copy h1 {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-copy h1 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+    .hero-copy .hero-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 21px;
+      margin-bottom: 32px;
+    }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-stack {
+      position: relative;
+      width: 340px;
+      height: 380px;
+    }
+    .stack-img {
+      position: absolute;
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+    .stack-back {
+      width: 260px;
+      transform: rotate(-4deg);
+      top: 60px; left: 0;
+      z-index: 1;
+      opacity: 0.75;
+    }
+    .stack-front {
+      width: 280px;
+      transform: rotate(3deg);
+      top: 20px; left: 50px;
+      z-index: 2;
+    }
+
+    /* ══════════════════════════
+       § 2 — PAIN POINT
+    ══════════════════════════ */
+    .pain-point {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+    .pain-card {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pain-card h2 { margin-bottom: 20px; color: var(--ink); }
+    .pain-card p  { color: var(--ink-mid); margin-bottom: 16px; }
+    .pain-bridge  {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 21px;
+      color: var(--navy);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* ══════════════════════════
+       § 3 — WHAT'S INSIDE
+    ══════════════════════════ */
+    .whats-inside {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .whats-inside-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .mockup-wrap { display: flex; justify-content: center; }
+    .mockup-img {
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      max-width: 420px;
+      width: 100%;
+    }
+    .inside-copy h2 { margin-bottom: 20px; }
+    .benefit-list {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 19px;
+      color: var(--ink-mid);
+    }
+    .check {
+      color: var(--teal);
+      font-weight: 900;
+      font-size: 19px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ══════════════════════════
+       § 4 — WHY THIS WORKS
+    ══════════════════════════ */
+    .why-works {
+      background: var(--navy);
+      padding: 80px 0;
+    }
+    .why-works .eyebrow { color: var(--amber); text-align: center; display: block; }
+    .why-works h2 { color: var(--white); text-align: center; margin-bottom: 48px; }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--card-radius);
+      padding: 28px 28px 24px;
+    }
+    .benefit-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .benefit-card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+    .benefit-card p {
+      color: var(--ink-mid);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════
+       § 5 — AUTHOR BIO (long form)
+    ══════════════════════════ */
+    .author-bio {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+    .author-bio-full {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .author-bio-full h2 { margin-bottom: 28px; color: var(--ink); }
+    .author-prose p { color: var(--ink-mid); margin-bottom: 16px; }
+    .author-prose .short-lines {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      color: var(--ink);
+      line-height: 2.2;
+      margin: 20px 0;
+    }
+    .author-photo-mid {
+      margin: 44px auto;
+      text-align: center;
+      max-width: 100%;
+    }
+    .author-photo-inline {
+      width: 100%;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      margin: 0 auto 20px;
+      display: block;
+      object-fit: cover;
+    }
+    .author-photo-quote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--navy);
+      font-weight: 600;
+      line-height: 1.65;
+      padding: 14px 16px;
+      border-left: 4px solid var(--orange);
+      text-align: left;
+      background: rgba(255,255,255,0.55);
+      border-radius: 0 6px 6px 0;
+    }
+    .concept-block { margin: 32px 0; }
+    .concept-block h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .concept-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+      margin: 16px 0 6px;
+    }
+    .concept-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 14px;
+    }
+    .concept-list li {
+      color: var(--ink-mid);
+      padding: 3px 0 3px 20px;
+      position: relative;
+      font-size: 19px;
+    }
+    .concept-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--steel);
+    }
+    .concept-emphasis {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--ink);
+      line-height: 2;
+      margin: 16px 0;
+    }
+
+    /* ══════════════════════════
+       § 7 — FINAL CTA
+    ══════════════════════════ */
+    .final-cta {
+      background: var(--hero-bg);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(circle, rgba(207,88,40,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta .eyebrow { color: var(--amber); display: block; margin-bottom: 16px; }
+    .final-cta h2 { color: var(--white); max-width: 700px; margin: 0 auto 16px; }
+    .final-cta .stakes {
+      color: rgba(255,255,255,0.65);
+      font-size: 21px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .final-cta-form {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .final-cta-form .form-row { justify-content: center; }
+    .final-cta-form .btn-primary { width: 100%; margin-top: 4px; }
+
+    /* ══════════════════════════
+       FOOTER
+    ══════════════════════════ */
+    .footer {
+      background: var(--navy);
+      padding: 32px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+    .footer-logo img { height: 36px; }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+    .footer-copy {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ══════════════════════════
+       RESPONSIVE
+    ══════════════════════════ */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .whats-inside-inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .hero-image { display: none; } /* hide image stack on mobile */
+
+      .benefit-grid { grid-template-columns: 1fr; }
+
+      .sticky-bar-text { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 60px 0 50px; }
+      .form-row { flex-direction: column; }
+      .form-input { min-width: unset; width: 100%; }
+      .pull-quote blockquote { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ STICKY BAR ══ -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="container sticky-bar-inner">
+      <span class="sticky-bar-text">Get the free newsletter — <strong>The Acceleration Flywheel</strong></span>
+      <a href="#optin-hero" class="btn-primary btn-sm">Get the Flywheel →</a>
+    </div>
+  </div>
+
+  <!-- ══ § 1 — HERO ══ -->
+  <section class="hero" id="optin-hero">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <span class="eyebrow">Free Weekly Newsletter · AI Strategy for Mid-Market Leaders</span>
+        <h1>The AI Decisions That Separate Leaders from Laggards — <em>Decoded Weekly.</em></h1>
+        <p class="hero-sub">The Acceleration Flywheel delivers high-signal AI intelligence to mid-market executives who can't afford to move on hype.</p>
+
+        <form class="optin-form" id="heroForm">
+          <div class="form-row">
+            <input type="text"  name="first_name" id="heroFirstName" placeholder="First name"  class="form-input" required>
+            <input type="email" name="email"       id="heroEmail"     placeholder="Work email"  class="form-input" required>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%">Get the Flywheel →</button>
+          <p class="form-fine-print">Free. No spam. Unsubscribe anytime.</p>
+          <p class="form-message" id="heroMsg"></p>
+        </form>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-stack">
+          <img
+            src="https://alvishouse.io/wp-content/uploads/2026/01/AI-Flywheel-Framework-1024x565.png"
+            alt="AI Acceleration Flywheel Framework"
+            class="stack-img stack-back"
+          >
+          <img
+            src="https://alvishouse.io/wp-content/uploads/2026/01/Newsletter-image-promotion1-1024x559.png"
+            alt="The Acceleration Flywheel Newsletter"
+            class="stack-img stack-front"
+          >
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ § 2 — PAIN POINT ══ -->
+  <section class="pain-point">
+    <div class="container">
+      <span class="eyebrow" style="text-align:center;display:block">Sound familiar?</span>
+      <div class="pain-card">
+        <h2>You're Drowning in AI News.<br>You Need AI Direction.</h2>
+        <p>Every week brings another wave of AI announcements. Every consultant has a framework. Every article says "it depends." But when it's time to make a real call — what to invest in, what to deprioritize, how to explain AI ROI to your board — you're still guessing.</p>
+        <p>That's not an information problem. It's a signal problem.</p>
+        <p class="pain-bridge">That's exactly why I built The Acceleration Flywheel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ § 3 — WHAT'S INSIDE ══ -->
+  <section class="whats-inside" id="whats-inside">
+    <div class="container whats-inside-inner">
+
+      <div class="mockup-wrap">
+        <img
+          src="./newsletter-mockup.png"
+          alt="The Acceleration Flywheel Newsletter Preview"
+          class="mockup-img"
+        >
+      </div>
+
+      <div class="inside-copy">
+        <span class="eyebrow">What you'll get every week</span>
+        <h2>High-Signal Intelligence. Zero Hype.</h2>
+        <ul class="benefit-list">
+          <li><span class="check">✓</span> <span>The <strong>TL;DR Summary</strong> — one big idea, distilled. We respect your schedule.</span></li>
+          <li><span class="check">✓</span> <span>The <strong>Quick Win</strong> — a specific, low-effort tactic you can act on this week</span></li>
+          <li><span class="check">✓</span> <span><strong>AI Trend Watch</strong> — we translate "AI hype" into the market implications that actually matter</span></li>
+          <li><span class="check">✓</span> <span>The <strong>Acceleration Flywheel Framework</strong> — Clarity → Certainty → Commitment → Outcomes</span></li>
+          <li><span class="check">✓</span> <span><strong>Real case studies</strong> — like the logistics company that cut costs 30% and improved delivery without a single new hire</span></li>
+        </ul>
+        <a href="#optin-hero" class="btn-primary">Get Instant Access →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ § 4 — WHY THIS WORKS ══ -->
+  <section class="why-works">
+    <div class="container">
+      <span class="eyebrow">The framework behind every issue</span>
+      <h2>Built on the Four Stages Every AI Win Requires</h2>
+      <div class="benefit-grid">
+
+        <div class="benefit-card">
+          <div class="benefit-num">01</div>
+          <h3>Clarity</h3>
+          <p>Goals, constraints, decisions, and next actions explicitly understood and aligned across your leadership team. No more guessing what AI should do for your business.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-num">02</div>
+          <h3>Certainty</h3>
+          <p>Measurable confidence in capability, maturity, resources, and stability. Know what you're genuinely ready for before you commit a dollar.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-num">03</div>
+          <h3>Commitment</h3>
+          <p>Resources and action fully allocated toward execution — based on clarity and certainty, not pressure or FOMO. The decision is made. Now it moves.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-num">04</div>
+          <h3>Outcomes</h3>
+          <p>Tangible organizational value: financial, operational, cultural, or strategic. This is the only thing that matters. Everything else is a means to get here.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ § 5 — AUTHOR BIO ══ -->
+  <section class="author-bio">
+    <div class="container">
+      <div class="author-bio-full">
+        <span class="eyebrow">About Alvis</span>
+        <h2>I've Spent Years Watching Transformation Fail — AI Just Made It Visible</h2>
+
+        <div class="author-prose">
+          <p>I've spent years inside organizations pursuing transformation — digital transformation, operational transformation, cultural transformation.</p>
+          <p>The pattern is consistent.</p>
+          <p class="short-lines">
+            Smart leaders.<br>
+            Real budgets.<br>
+            Ambitious roadmaps.<br>
+            And stalled progress.
+          </p>
+          <p>AI didn't create this problem.</p>
+          <p>It exposed it.</p>
+          <p>Because AI is not just another tool.<br>It is an intelligent layer.</p>
+          <p>And when you try to apply an intelligent layer on top of unstable foundations, everything cracks.</p>
+
+          <!-- Photo + Quote mid-section -->
+          <div class="author-photo-mid">
+            <img
+              src="https://alvishouse.io/wp-content/uploads/2026/01/Alvis-Standing-Photo-B-White-1024x789.png"
+              alt="Alvis House"
+              class="author-photo-inline"
+            >
+            <p class="author-photo-quote">"Winning with AI didn't start with better technology. It started with better clarity."</p>
+          </div>
+
+          <div class="concept-block">
+            <h3>The Core Insight</h3>
+            <p>In order to apply an intelligent layer, you need layers of intelligence underneath.</p>
+            <p>Most organizations try to climb to the top of the ladder before strengthening the layers below:</p>
+            <ul class="concept-list">
+              <li>Data without governance</li>
+              <li>Tools without process</li>
+              <li>Strategy without operational clarity</li>
+              <li>Agents without accountability</li>
+            </ul>
+            <p class="concept-emphasis">AI doesn't fail.<br>The layers underneath it do.</p>
+          </div>
+
+          <div class="concept-block">
+            <h3>Layers &amp; Ladders</h3>
+            <p>That's why my work is built around a simple philosophy:</p>
+
+            <p class="concept-sub">Layers</p>
+            <p>Every AI initiative sits on top of foundational layers:</p>
+            <ul class="concept-list">
+              <li>Infrastructure</li>
+              <li>Data</li>
+              <li>Process</li>
+              <li>Governance</li>
+              <li>People</li>
+              <li>Strategy</li>
+            </ul>
+            <p>If those layers lack intelligence, AI amplifies confusion instead of capability.</p>
+
+            <p class="concept-sub">Ladders</p>
+            <p>Transformation is not a leap — it's a climb.</p>
+            <p>Each rung represents maturity:</p>
+            <ul class="concept-list">
+              <li>Awareness</li>
+              <li>Tool adoption</li>
+              <li>Process integration</li>
+              <li>Operational intelligence</li>
+              <li>Agentic enablement</li>
+            </ul>
+            <p class="concept-emphasis">You don't skip rungs.<br>You strengthen layers and climb deliberately.</p>
+          </div>
+
+          <div class="concept-block">
+            <h3>What I Do</h3>
+            <p>I help organizations:</p>
+            <ul class="concept-list">
+              <li>Diagnose which layers are weak</li>
+              <li>Identify where they are on the ladder</li>
+              <li>Strengthen the foundations beneath AI</li>
+              <li>Deploy intelligent systems that actually ship</li>
+            </ul>
+            <p class="concept-emphasis">Not experiments.<br>Not pilots that fade.<br>Not decks about possibility.</p>
+            <p>Operational intelligence that compounds.</p>
+          </div>
+
+          <div class="concept-block">
+            <h3>What You'll Find Here</h3>
+            <p>This newsletter isn't about hype.</p>
+            <p>It's about the structural decisions that determine whether AI becomes:</p>
+            <ul class="concept-list">
+              <li>A short-term efficiency bump</li>
+              <li>Or a long-term intelligence advantage</li>
+            </ul>
+            <p>Each issue explores how to build stronger layers, climb higher rungs, and apply intelligence where it creates measurable economic impact.</p>
+            <p>Because AI transformation isn't about adding tools.</p>
+            <p>It's about building the organizational intelligence required to use them.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ § 6 — FINAL CTA ══ -->
+  <section class="final-cta" id="optin-final">
+    <div class="container">
+      <span class="eyebrow">What are you waiting for?</span>
+      <h2>Stop Translating AI News.<br>Start Making AI Decisions.</h2>
+      <p class="stakes">Every week you spend sorting signal from noise is a week your competitors are using to move forward.</p>
+      <div class="final-cta-form">
+        <form class="optin-form" id="finalForm">
+          <div class="form-row">
+            <input type="text"  name="first_name" id="finalFirstName" placeholder="First name"  class="form-input" required>
+            <input type="email" name="email"       id="finalEmail"     placeholder="Work email"  class="form-input" required>
+          </div>
+          <button type="submit" class="btn-primary">Yes, Send Me the Flywheel →</button>
+          <p class="form-fine-print">Free. No spam. Unsubscribe anytime.</p>
+          <p class="form-message" id="finalMsg"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="https://alvishouse.io/wp-content/uploads/2026/01/website-logo-with-name-white-100-x-400-300x75.png" alt="Alvis House">
+      </div>
+      <div class="footer-links">
+        <a href="https://alvishouse.io/privacy-policy-2/">Privacy Policy</a>
+        <a href="https://alvishouse.io/terms-of-use/">Terms of Use</a>
+      </div>
+      <div class="footer-copy">© 2026 Alvis House. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ══ JAVASCRIPT ══ -->
+  <script>
+    // ── Sticky bar ──
+    const hero    = document.querySelector('.hero');
+    const stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', () => {
+      stickyBar.classList.toggle('visible', window.scrollY > hero.offsetHeight * 0.7);
+    }, { passive: true });
+
+    // ── Smooth scroll for anchor links ──
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // ── Brevo subscribe (shared handler) ──
+    async function subscribeBrevo(firstName, email, btnEl, msgEl) {
+      btnEl.disabled = true;
+      const originalText = btnEl.textContent;
+      btnEl.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/wp-admin/admin-ajax.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            action:     'brevo_subscribe',
+            first_name: firstName,
+            email:      email,
+          })
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          msgEl.textContent  = "🎉 You're in! Check your inbox.";
+          msgEl.style.color  = '#2E7D6B';
+          btnEl.textContent  = 'Subscribed ✓';
+          return true;
+        } else {
+          msgEl.textContent  = data.data || 'Something went wrong. Try again.';
+          msgEl.style.color  = '#cf5828';
+          btnEl.textContent  = originalText;
+          btnEl.disabled     = false;
+          return false;
+        }
+      } catch (err) {
+        msgEl.textContent = 'Connection error. Please try again.';
+        msgEl.style.color = '#cf5828';
+        btnEl.textContent = originalText;
+        btnEl.disabled    = false;
+        return false;
+      }
+    }
+
+    // ── Wire up forms ──
+    [
+      { formId: 'heroForm',  firstNameId: 'heroFirstName',  emailId: 'heroEmail',  msgId: 'heroMsg'  },
+      { formId: 'finalForm', firstNameId: 'finalFirstName', emailId: 'finalEmail', msgId: 'finalMsg' },
+    ].forEach(({ formId, firstNameId, emailId, msgId }) => {
+      const form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const msg = document.getElementById(msgId);
+        subscribeBrevo(
+          document.getElementById(firstNameId).value,
+          document.getElementById(emailId).value,
+          btn, msg
+        );
+      });
+    });
+  </script>
+
+</body>
+</html>

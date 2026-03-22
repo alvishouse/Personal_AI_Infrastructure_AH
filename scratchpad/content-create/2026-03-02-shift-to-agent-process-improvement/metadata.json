@@ -1,0 +1,127 @@
+{
+  "workflow_id": "2026-03-02-shift-to-agent-process-improvement",
+  "topic": "Shift to Agent Process Improvement",
+  "track": "custom",
+  "status": "step-13b",
+  "created_at": "2026-03-02T00:00:00.000Z",
+  "updated_at": "2026-03-03T00:16:00.000Z",
+  "created": "2026-03-02",
+  "brief_file": "00-brief.md",
+  "checkpoints": {
+    "step-4": {
+      "selection": "Big Idea 1 — The Delegation Gap",
+      "timestamp": "2026-03-02T00:00:00.000Z"
+    },
+    "step-6": {
+      "headline": "The one architecture layer Lean never gave you — and why your AI agents keep failing without it",
+      "timestamp": "2026-03-02T00:00:00.000Z"
+    },
+    "step-8": {
+      "review_score": "9/10",
+      "verdict": "READY FOR PUBLICATION",
+      "final_file": "08-cornerstone-final.md",
+      "version": "2.0",
+      "timestamp": "2026-03-03T00:00:00.000Z"
+    },
+    "step-10": {
+      "completed": true,
+      "featured_accepted": true,
+      "featured_style": "DaVinci",
+      "inline_accepted": true,
+      "inline_style": "Excalidraw",
+      "images_created": 2,
+      "images_total": 2,
+      "timestamp": "2026-03-03T04:16:19.000Z"
+    },
+    "step-11": {
+      "completed": true,
+      "assembled_file": "11-cornerstone-assembled.md",
+      "html_preview": "11-html-preview.html",
+      "timestamp": "2026-03-03T04:16:19.000Z"
+    },
+    "step-13": {
+      "completed": true,
+      "approach": "linkedin-first-scout-validated",
+      "linkedin_pieces": 8,
+      "scout_analysis": "13-extracted-content/00-scout-analysis.yaml",
+      "posting_schedule": "13-extracted-content/posting-schedule.md",
+      "priority_posts": [
+        "01-authority-post.md",
+        "04-myth-buster-post.md"
+      ],
+      "twitter_extracted": false,
+      "visuals_extracted": false,
+      "campaign_start": "2026-03-09",
+      "timestamp": "2026-03-03T05:20:00.000Z"
+    },
+    "step-13b": {
+      "notion_image_ids": [
+        {
+          "file": "01-authority-post-resized.jpg",
+          "notion_id": "3180760e-b0cd-815d-ad53-d77885660e2e",
+          "notion_url": "https://www.notion.so/3180760eb0cd815dad53d77885660e2e"
+        },
+        {
+          "file": "02-framework-article-resized.jpg",
+          "notion_id": "3180760e-b0cd-8102-b20a-e6acf6ffd8d3",
+          "notion_url": "https://www.notion.so/3180760eb0cd8102b20ae6acf6ffd8d3"
+        },
+        {
+          "file": "03-story-post-resized.jpg",
+          "notion_id": "3180760e-b0cd-81b9-9df4-c382b25c28d2",
+          "notion_url": "https://www.notion.so/3180760eb0cd81b99df4c382b25c28d2"
+        },
+        {
+          "file": "04-myth-buster-post-resized.jpg",
+          "notion_id": "3180760e-b0cd-810c-b367-cb2043018b06",
+          "notion_url": "https://www.notion.so/3180760eb0cd810cb367cb2043018b06"
+        },
+        {
+          "file": "05-quick-win-1-resized.jpg",
+          "notion_id": "3180760e-b0cd-8175-8fac-c0c3fb6877f6",
+          "notion_url": "https://www.notion.so/3180760eb0cd81758facc0c3fb6877f6"
+        },
+        {
+          "file": "06-quick-win-2-resized.jpg",
+          "notion_id": "3180760e-b0cd-8116-a781-fcec8d076104",
+          "notion_url": "https://www.notion.so/3180760eb0cd8116a781fcec8d076104"
+        },
+        {
+          "file": "07-case-study-post-resized.jpg",
+          "notion_id": "3180760e-b0cd-81ce-9444-d7f067844ff7",
+          "notion_url": "https://www.notion.so/3180760eb0cd81ce9444d7f067844ff7"
+        },
+        {
+          "file": "08-contrarian-take-resized.jpg",
+          "notion_id": "3180760e-b0cd-81ac-9157-c8b2bbaeb3ac",
+          "notion_url": "https://www.notion.so/3180760eb0cd81ac9157c8b2bbaeb3ac"
+        }
+      ],
+      "completed": true,
+      "images_generated": 8,
+      "images_total": 8,
+      "validation_rounds": 2,
+      "all_passed": true,
+      "notion_push_completed": true,
+      "notion_push_timestamp": "2026-03-03T00:16:00.000Z",
+      "timestamp": "2026-03-03T00:16:00.000Z"
+    }
+  },
+  "notion": {
+    "workflow_id": "3180760e-b0cd-81c7-8de2-ecb77fdc72c1",
+    "content_id": "3180760e-b0cd-81d7-a504-cecb06d5e045",
+    "content_url": "https://www.notion.so/The-one-architecture-layer-Lean-never-gave-you-and-why-your-AI-agents-keep-failing-without-it-3180760eb0cd81d7a504cecb06d5e045",
+    "synced_at": "2026-03-03T02:52:16.098Z"
+  },
+  "wordpress": {
+    "post_id": 851,
+    "post_url": "https://alvishouse.io/?p=851",
+    "status": "draft",
+    "media_ids": {
+      "featured": 849,
+      "featured_url": "https://alvishouse.io/wp-content/uploads/2026/03/apa-process-layer-featured-scaled.jpg",
+      "inline_1": 850,
+      "inline_1_url": "https://alvishouse.io/wp-content/uploads/2026/03/apa-flow-bridge-diagram.jpg"
+    }
+  }
+}
