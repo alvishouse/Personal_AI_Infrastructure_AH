@@ -59,8 +59,8 @@
       display:flex; align-items:center; justify-content:center;
       margin-bottom:9px;
     }
-    .claim { font-size:22px; font-weight:600; color:#2b2b2b; line-height:1.45; margin-bottom:8px; }
-    .note { font-size:18px; color:#3b546b; letter-spacing:.05em; text-transform:uppercase; line-height:1.45; }
+    .claim { font-size:21px; font-weight:600; color:#2b2b2b; line-height:1.45; margin-bottom:8px; }
+    .note { font-size:16px; color:#3b546b; letter-spacing:.05em; line-height:1.45; }
     .stat { font-size:28px; font-weight:800; color:#3b546b; margin-bottom:4px; }
     .stat-myth { color:#cf5828; }
     .vs {
@@ -80,7 +80,7 @@
 <div class="paper">
   <div class="hdr">
     <h2>MYTH &nbsp; · &nbsp; vs. &nbsp; · &nbsp; REALITY</h2>
-    <p>The Governance Assumption &nbsp;—&nbsp; Mid-Market AI Playbook · Issue #12</p>
+    <p>The Driller's Fallacy &nbsp;—&nbsp; Mid-Market AI Playbook · Issue #5</p>
   </div>
   <div class="body">
 
@@ -93,20 +93,25 @@
         THE MYTH
       </div>
       <div class="ibox">
-        <!-- Brake pedal / slow symbol -->
+        <!-- Drilling rig = wrong layer fight -->
         <svg viewBox="0 0 68 68" width="64" height="64" fill="none" stroke="#cf5828" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Clock with X = slowing down -->
-          <circle cx="34" cy="32" r="18" stroke-dasharray="4 2.5"/>
-          <line x1="34" y1="20" x2="34" y2="32" stroke-width="2.2"/>
-          <line x1="34" y1="32" x2="43" y2="38" stroke-width="2.2"/>
-          <!-- X overlay = myth/wrong -->
-          <line x1="22" y1="20" x2="46" y2="44" stroke-width="2" stroke-dasharray="3 2"/>
-          <line x1="46" y1="20" x2="22" y2="44" stroke-width="2" stroke-dasharray="3 2"/>
-          <text x="34" y="59" text-anchor="middle" font-size="7" fill="#cf5828" font-family="Montserrat" font-weight="700" stroke="none" letter-spacing="0.5">SLOWS AI</text>
+          <!-- Robot/model icon with X -->
+          <rect x="18" y="22" width="32" height="28" rx="4"/>
+          <circle cx="28" cy="34" r="4"/>
+          <circle cx="40" cy="34" r="4"/>
+          <line x1="28" y1="22" x2="28" y2="16"/>
+          <line x1="40" y1="22" x2="40" y2="16"/>
+          <line x1="34" y1="50" x2="34" y2="56"/>
+          <!-- X overlay = myth -->
+          <line x1="14" y1="14" x2="54" y2="54" stroke-width="2.2" stroke-dasharray="3 2"/>
+          <line x1="54" y1="14" x2="14" y2="54" stroke-width="2.2" stroke-dasharray="3 2"/>
+          <text x="34" y="64" text-anchor="middle" font-size="7" fill="#cf5828" font-family="Montserrat" font-weight="700" stroke="none" letter-spacing="0.5">WRONG LAYER</text>
         </svg>
       </div>
-      <div class="claim">"Governance slows<br>AI adoption."</div>
-      <div class="note stat-myth" style="font-size:14px;margin-top:4px;">20% project survival<br>without oversight</div>
+      <div class="claim">"We need a better<br>AI model."</div>
+      <div class="note stat-myth" style="font-size:13px;margin-top:4px;">
+        95% of AI pilots fail<br>regardless of model quality
+      </div>
     </div>
 
     <!-- VS -->
@@ -121,18 +126,23 @@
         THE REALITY
       </div>
       <div class="ibox">
-        <!-- Shield + upward arrow = governance accelerates -->
+        <!-- Workflow/pipeline = right layer -->
         <svg viewBox="0 0 68 68" width="64" height="64" fill="none" stroke="#3b546b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Shield -->
-          <path d="M34 14 L52 20 L52 36 Q52 52 34 58 Q16 52 16 36 L16 20 Z" stroke-width="1.6"/>
-          <!-- Up arrow inside shield -->
-          <line x1="34" y1="44" x2="34" y2="28" stroke-width="2.4"/>
-          <polyline points="28 34 34 28 40 34" stroke-width="2.4"/>
-          <text x="34" y="11" text-anchor="middle" font-size="7" fill="#3b546b" font-family="Montserrat" font-weight="700" stroke="none" letter-spacing="0.5">SURVIVES 2×</text>
+          <!-- Stacked layers = refinery -->
+          <rect x="14" y="44" width="40" height="10" rx="2"/>
+          <rect x="14" y="30" width="40" height="10" rx="2" fill="rgba(59,84,107,.12)"/>
+          <rect x="14" y="16" width="40" height="10" rx="2"/>
+          <!-- Arrows up through layers -->
+          <line x1="34" y1="44" x2="34" y2="40"/>
+          <line x1="34" y1="30" x2="34" y2="26"/>
+          <polygon points="34 15 30 23 38 23" fill="#3b546b" stroke="none"/>
+          <text x="34" y="64" text-anchor="middle" font-size="7" fill="#3b546b" font-family="Montserrat" font-weight="700" stroke="none" letter-spacing="0.5">REFINERY LAYER</text>
         </svg>
       </div>
-      <div class="claim">"Governance keeps<br>AI projects alive."</div>
-      <div class="note" style="font-size:14px;margin-top:4px;color:#3b546b;font-weight:700;">45% project survival<br>with mature oversight</div>
+      <div class="claim">"We need a workflow<br>conversion layer."</div>
+      <div class="note" style="font-size:13px;margin-top:4px;color:#3b546b;font-weight:700;">
+        Only 21% have redesigned<br>any workflows for AI
+      </div>
     </div>
 
   </div>

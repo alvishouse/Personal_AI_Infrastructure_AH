@@ -552,30 +552,86 @@ Rules:
 - No trailing period
 - No sentence case — every word fully uppercase
 
-### Emoji Bullet System
+### Section Heading Format (with 📌 prefix)
 
-Use contextual emojis as bullets in list sections — never plain `-` dashes.
+Every numbered section heading gets a 📌 prefix — the red push pin signals a new section to the reader's eye and anchors the structure visually.
 
-| Emoji | Use When |
-|-------|----------|
-| 📌 | Default list item — steps, facts, tactics |
+**Format:** `📌 1 - THE SECTION NAME IN ALL CAPS`
+
+**Example:**
+```
+📌 1 - THE ORGANIZATIONAL CRACK SPREAD
+📌 2 - WHERE THE MONEY LIVES
+📌 3 - BUILD THE REFINERY
+```
+
+Rules:
+- 📌 always precedes the number — never placed mid-list
+- One space between 📌 and the number
+- ALL CAPS, no bold, no period — same rules as before
+
+### Sub-Bullet System
+
+Sub-bullets within a section use a **navy blue round bullet `•`** by default. Replace `•` with a contextual emoji when the content type matches — never force an emoji that does not fit.
+
+| Symbol | Use When |
+|--------|----------|
+| `•` | Default sub-bullet — steps, facts, neutral list items |
 | 💡 | Key insight or learning |
 | 🔻 | Problem, failure, blocker, risk, or cost |
 | ⏱️ | Time delay, sequence, "before X", waiting period |
+| ✅ | Win, correct approach, success, what works |
+| ❌ | Wrong approach, what not to do, failure pattern |
+| 🎯 | Goal, target, desired outcome |
+| ⚡ | Speed, urgency, quick action required |
 
 **Rules:**
-- Match the emoji to the content type — don't mix 💡 into a list of problems
+- `•` is the default — only replace when the emoji adds meaning, not decoration
 - Consistent within a section: if one item is 🔻, all items in that section should be 🔻 (unless content truly differs)
-- Never use emojis in paragraph sections — emojis belong only in bulleted list sections
-- Never use decorative emojis mid-sentence in running prose
+- Never use emojis in paragraph sections — sub-bullets belong only in bulleted list sections
+- Never use emojis mid-sentence in running prose
+- 📌 is reserved for section headings only — never use it as a sub-bullet
+
+### Hook Format
+
+Lines 1 and 2 of the hook sit on **consecutive lines** — no blank line between them. One blank line after Line 2 before the body begins.
+
+**Correct:**
+```
+AI is not a model decision.
+It is a refinery decision.
+
+Most organizations...
+```
+
+**Wrong:**
+```
+AI is not a model decision.
+
+It is a refinery decision.
+
+Most organizations...
+```
 
 ### Paragraph Discipline (Readability)
 
-- **Max 2-3 sentences per paragraph** — hard rule
+- **Max 2-3 sentences per paragraph** — hard rule. 4+ sentences in one block = always split.
 - Stats and standalone emphasis lines get their **own paragraph**, isolated
 - Never bundle three ideas into one paragraph when they can be three separate short ones
 - Each paragraph = one complete thought
 - After a stat or data point, always break before continuing
+
+### Em Dash Discipline
+
+Em dashes (—) are acceptable **only** as a short parenthetical:
+- ✅ `Layer 1 — the models` (brief clarification, replaceable with parentheses)
+- ✅ `February 2026 — one month` (date apposition)
+
+Em dashes are **not** acceptable between two independent clauses:
+- ❌ `The tools are running — nothing is converting.` → `The tools are running. Nothing is converting.`
+- ❌ `watched their power evaporate — because a refiner bought every facility` → `watched their power evaporate. A refiner bought every facility.`
+
+**Rule:** If the em dash can be replaced with a period and a new sentence, replace it. Do not use em dashes to chain ideas — write shorter sentences.
 
 **Example (wrong):**
 > Toyota deployed agentic AI for supply chain planning and they already had every workflow explicit and every decision point defined and the result was forecast accuracy improved 20% and planner productivity jumped 18%.

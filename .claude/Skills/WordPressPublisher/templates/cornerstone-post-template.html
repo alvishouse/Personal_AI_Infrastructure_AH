@@ -12,6 +12,13 @@
      Always use this as the wrapper for WordPress post content.
      Provides the full brand CSS + component library.
 
+     ⚠️  TWO FILES, DIFFERENT CONTENT:
+     - 11-html-preview.html → FULL FILE (keep DOCTYPE/html/head/body)
+     - 12-wp-content.html   → STRIP THE WRAPPER. Copy ONLY from
+       <style> down to </article>. Never include DOCTYPE, <html>,
+       <head>, <meta>, or <body> tags — WordPress adds those itself
+       and wraps any stray tags in <p> blocks, creating ugly gaps.
+
      ⚠️  REQUIRED ORDER (do not change):
      1. Article header block (eyebrow → h1 → deck)
      2. Featured image
@@ -19,8 +26,8 @@
      4. Body content
 
      ⚠️  CHARSET: meta charset="UTF-8" is in the <head> above.
-         Never remove it — without it em dashes and curly quotes
-         render as â€" garbage in browser preview.
+         Only needed for 11-html-preview.html browser preview.
+         WordPress handles encoding — do NOT include in 12-wp-content.html.
 
      COMPONENTS AVAILABLE:
      - .lead-section          → Dark navy opening hook box
@@ -62,7 +69,8 @@
 }
 * { box-sizing: border-box; }
 body { font-family: "Lora", Georgia, serif; line-height: 1.8; background: var(--bg); color: var(--text); }
-article { max-width: 100%; margin: 0 auto; background: var(--bg); padding: 20px 0; }
+article { max-width: 100%; margin: 0 auto; background: var(--bg); padding: 0; }
+article > *:first-child { margin-top: 0; }
 img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5em 0; display: block; }
 .inline-image { width: 100%; border-radius: 8px; margin: 2em 0; border: 1px solid var(--rule); }
 h1, h2, h3, h4 { font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; font-weight: 700; line-height: 1.3; color: var(--ink); }

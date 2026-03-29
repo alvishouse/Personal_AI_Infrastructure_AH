@@ -542,6 +542,7 @@ Begin extraction now.`;
         publish_date: new Date().toISOString().split('T')[0],
         status: 'In Progress',
         workflow_notion_id: workflowNotionId,
+        campaign: this.metadata.workflow_id,
       });
 
       contentNotionId = result.id;

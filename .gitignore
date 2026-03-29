@@ -98,6 +98,10 @@ Screenshots/
 # LinkedInMonitor SQLite data
 .claude/Skills/LinkedInMonitor/data/
 
+# Substack credentials and session (contain plaintext password + session cookies)
+.claude/Skills/WordPressPublisher/config/substack-config.json
+.claude/Skills/WordPressPublisher/config/substack-session.json
+
 # Claude plugins marketplace (external git repo — use submodule if needed)
 .claude/plugins/marketplaces/
 

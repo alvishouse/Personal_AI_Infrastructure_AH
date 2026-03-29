@@ -1,0 +1,279 @@
+{
+  "workflow_id": "2026-03-22-refinery-principle",
+  "topic": "The Refinery Principle",
+  "track": "T3 (Data Flow) + T1 (Systems) — Cross-track; Inner Album candidate",
+  "working_title": "The Refinery Principle: Why Your AI Tools Are Raw Crude and Your Workflows Are Leaving All the Value on the Table",
+  "status": "step-14-complete",
+  "created_at": "2026-03-22T00:00:00Z",
+  "updated_at": "2026-03-28T22:00:00.000Z",
+  "brief": "00-brief.md",
+  "idea_source": "IdeaEngine / Polymath Expand — Anthropic $6B/month seed",
+  "checkpoints": {
+    "step-1": {
+      "completed": true,
+      "selection": "The Refinery Principle (Brief 3 from Polymath analysis)",
+      "timestamp": "2026-03-22T00:00:00Z"
+    },
+    "step-2": {
+      "completed": false
+    },
+    "step-3": {
+      "completed": false
+    },
+    "step-4": {
+      "completed": false
+    },
+    "step-5": {
+      "completed": false
+    },
+    "step-6": {
+      "completed": false
+    },
+    "step-7": {
+      "completed": false
+    },
+    "step-8": {
+      "completed": false
+    },
+    "step-9": {
+      "completed": true,
+      "timestamp": "2026-03-23T02:13:14.520958Z"
+    },
+    "step-10": {
+      "completed": true,
+      "timestamp": "2026-03-23T02:13:14.521014Z",
+      "images": {
+        "featured": "featured-v4.png",
+        "inline_01": "inline-01-refinery-model.png",
+        "inline_02": "inline-02-construction.png"
+      }
+    },
+    "step-11": {
+      "completed": true,
+      "timestamp": "2026-03-23T02:13:14.521023Z"
+    },
+    "step-12": {
+      "completed": true,
+      "timestamp": "2026-03-23T02:13:14.521029Z",
+      "wp_post_id": 885,
+      "wp_media": {
+        "featured": 882,
+        "inline_01": 883,
+        "inline_02": 884
+      }
+    },
+    "step-13": {
+      "completed": true,
+      "timestamp": "2026-03-23T02:40:21.000Z",
+      "linkedin_pieces": 8,
+      "scout_analysis": "13-extracted-content/00-scout-analysis.yaml",
+      "posting_schedule": "13-extracted-content/posting-schedule.md",
+      "priority_posts": [
+        "01-authority-post.md",
+        "02-framework-article.md"
+      ],
+      "twitter_extracted": false,
+      "visuals_extracted": false
+    },
+    "step-13b": {
+      "completed": true,
+      "timestamp": "2026-03-23T06:36:00.000Z",
+      "image_types": {
+        "static_ai": [
+          "post-01-authority.png",
+          "post-02-framework.png",
+          "post-03-story.png",
+          "post-04-myth-buster.png",
+          "post-05-quick-win.png",
+          "post-06-case-study.png",
+          "post-07-contrarian.png",
+          "post-08-quick-win.png"
+        ],
+        "infographics": [
+          "post-02-infographic.png",
+          "post-05-infographic.png",
+          "post-07-infographic.png"
+        ],
+        "animations": [
+          "post-01-animated.png",
+          "post-04-animated.png",
+          "post-06-animated.png"
+        ],
+        "featured_frame": [
+          "post-03-featured-frame.png"
+        ]
+      },
+      "notion_image_ids": [
+        {
+          "file": "post-01-animated.png",
+          "notion_id": "32c0760e-b0cd-8186-a5a6-d398b00f1851",
+          "notion_url": "https://www.notion.so/32c0760eb0cd8186a5a6d398b00f1851"
+        },
+        {
+          "file": "post-01-authority.png",
+          "notion_id": "32c0760e-b0cd-816f-9840-eeb954717c4e",
+          "notion_url": "https://www.notion.so/32c0760eb0cd816f9840eeb954717c4e"
+        },
+        {
+          "file": "post-02-framework.png",
+          "notion_id": "32c0760e-b0cd-8191-b48b-f8c01f7dd06c",
+          "notion_url": "https://www.notion.so/32c0760eb0cd8191b48bf8c01f7dd06c"
+        },
+        {
+          "file": "post-02-infographic.png",
+          "notion_id": "32c0760e-b0cd-8131-8189-c6b964810f90",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81318189c6b964810f90"
+        },
+        {
+          "file": "post-03-featured-frame.png",
+          "notion_id": "32c0760e-b0cd-8138-952a-d56d368d24b7",
+          "notion_url": "https://www.notion.so/32c0760eb0cd8138952ad56d368d24b7"
+        },
+        {
+          "file": "post-03-story.png",
+          "notion_id": "32c0760e-b0cd-811c-ab33-c8e80c1ae91a",
+          "notion_url": "https://www.notion.so/32c0760eb0cd811cab33c8e80c1ae91a"
+        },
+        {
+          "file": "post-04-animated.png",
+          "notion_id": "32c0760e-b0cd-8107-bc8c-e2f419693ca7",
+          "notion_url": "https://www.notion.so/32c0760eb0cd8107bc8ce2f419693ca7"
+        },
+        {
+          "file": "post-04-myth-buster.png",
+          "notion_id": "32c0760e-b0cd-8103-aeea-ed66c34d9c0b",
+          "notion_url": "https://www.notion.so/32c0760eb0cd8103aeeaed66c34d9c0b"
+        },
+        {
+          "file": "post-05-infographic.png",
+          "notion_id": "32c0760e-b0cd-81b0-abf4-c486558dc540",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81b0abf4c486558dc540"
+        },
+        {
+          "file": "post-05-quick-win.png",
+          "notion_id": "32c0760e-b0cd-81d5-b7f2-cc4a7e019f14",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81d5b7f2cc4a7e019f14"
+        },
+        {
+          "file": "post-06-animated.png",
+          "notion_id": "32c0760e-b0cd-8174-8c27-e826a59dd5ab",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81748c27e826a59dd5ab"
+        },
+        {
+          "file": "post-06-case-study.png",
+          "notion_id": "32c0760e-b0cd-81ae-a908-cbe5a4dac601",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81aea908cbe5a4dac601"
+        },
+        {
+          "file": "post-07-contrarian.png",
+          "notion_id": "32c0760e-b0cd-81a8-ba78-eeb45603c56f",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81a8ba78eeb45603c56f"
+        },
+        {
+          "file": "post-07-infographic.png",
+          "notion_id": "32c0760e-b0cd-8127-ae0b-c4e32a1b697f",
+          "notion_url": "https://www.notion.so/32c0760eb0cd8127ae0bc4e32a1b697f"
+        },
+        {
+          "file": "post-08-quick-win.png",
+          "notion_id": "32c0760e-b0cd-810a-b592-fd3f09ada39a",
+          "notion_url": "https://www.notion.so/32c0760eb0cd810ab592fd3f09ada39a"
+        },
+        {
+          "file": "post-01-animated.gif",
+          "notion_id": "32c0760e-b0cd-81a6-beff-e0d6e6b64427",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81a6beffe0d6e6b64427",
+          "is_gif": true
+        },
+        {
+          "file": "post-04-animated.gif",
+          "notion_id": "32c0760e-b0cd-81e6-a40a-d8d887a2f923",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81e6a40ad8d887a2f923",
+          "is_gif": true
+        },
+        {
+          "file": "post-06-animated.gif",
+          "notion_id": "32c0760e-b0cd-8110-8f6d-fb00b4a7b539",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81108f6dfb00b4a7b539",
+          "is_gif": true
+        },
+        {
+          "file": "post-03-story-animated-linkedin.gif",
+          "notion_id": "32c0760e-b0cd-81af-a50c-cc1fc8f7c929",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81afa50ccc1fc8f7c929",
+          "is_gif": true
+        },
+        {
+          "file": "post-04-myth-buster-animated-linkedin.gif",
+          "notion_id": "32c0760e-b0cd-81e2-b6e7-d78f65a47d3f",
+          "notion_url": "https://www.notion.so/32c0760eb0cd81e2b6e7d78f65a47d3f",
+          "is_gif": true
+        }
+      ],
+      "notion_push_completed": true,
+      "notion_push_timestamp": "2026-03-23T04:02:00.189Z",
+      "gif_push_timestamp": "2026-03-23T04:42:39.061Z"
+    },
+    "step-14": {
+      "completed": true,
+      "completion_date": "2026-03-28",
+      "issue_number": 5,
+      "issue_date": "2026-04-01",
+      "insight_atoms_extracted": 13,
+      "sections": {
+        "tldr": true,
+        "myth_buster": true,
+        "quick_win": true,
+        "metric": true,
+        "rotating_section": "case_study",
+        "tool_spotlight": false,
+        "forward_cta": true
+      },
+      "validation_score": 0.95,
+      "forward_test_score": 5,
+      "word_count": 1847,
+      "linkedin_references": 3,
+      "subject_lines": [
+        "Your AI outputs aren't failing. They're unrefined.",
+        "The refinery is missing.",
+        "You have the crude. Where's the refinery?",
+        "Stop drilling. Build the refinery.",
+        "80% of your AI outputs go nowhere."
+      ],
+      "selected_subject": "Your AI outputs aren't failing. They're unrefined.",
+      "preheader": "Why 80% of what your tools produce never reaches a decision",
+      "notion_page_id": "3310760e-b0cd-81f2-aa33-e2cab03ad435",
+      "notion_url": "https://www.notion.so/3310760eb0cd81f2aa33e2cab03ad435",
+      "outputs": {
+        "markdown": "14-newsletter/newsletter-final.md",
+        "html": "14-newsletter/newsletter-final.html",
+        "meta": "14-newsletter/issue-meta-final.yaml"
+      }
+    }
+  },
+  "wordpress": {
+    "post_id": 885,
+    "post_url": "https://alvishouse.io/?p=885",
+    "status": "draft"
+  },
+  "notion": {
+    "workflow_id": "32c0760e-b0cd-81b7-a617-e1d6131d42ae",
+    "content_id": "32c0760e-b0cd-8107-a1c9-d8e8a7fbed13",
+    "content_url": "https://www.notion.so/The-Refinery-Principle-32c0760eb0cd8107a1c9d8e8a7fbed13",
+    "synced_at": "2026-03-23T01:13:28.752Z"
+  },
+  "substack": {
+    "draft_id": 192455867,
+    "draft_url": "https://alvishouse.substack.com/publish/post/192455867",
+    "post_url": "https://alvishouse.substack.com/p/rockefeller-never-drilled-a-single",
+    "status": "published",
+    "synced_at": "2026-03-28T20:57:19.311Z"
+  },
+  "newsletter_post_id": 904,
+  "newsletter_post_url": "https://alvishouse.io/?post_type=newsletter&p=904",
+  "newsletter_published_at": "2026-03-29T02:07:17.496Z",
+  "step-14": {
+    "newsletter_post_id": 904,
+    "newsletter_post_url": "https://alvishouse.io/?post_type=newsletter&p=904"
+  }
+}

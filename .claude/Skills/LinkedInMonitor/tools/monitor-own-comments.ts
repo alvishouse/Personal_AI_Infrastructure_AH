@@ -3,18 +3,18 @@
  *
  * For each own post URL in config:
  *   1. Skip if post is older than own_post_expiry_days
- *   2. Fetch comments via Proxycurl
+ *   2. Fetch comments via LinkdAPI
  *   3. Skip if already seen (SQLite deduplication)
  *   4. Create Notion Engagement Queue entry
  *   5. Send Telegram alert
  *   6. Mark seen in SQLite
  *
  * Flags:
- *   --dry-run    Fetch from Proxycurl but don't write to DB, Notion, or Telegram
+ *   --dry-run    Fetch from LinkdAPI but don't write to DB, Notion, or Telegram
  */
 
 import { join } from "path";
-import { fetchPostComments } from "./proxycurl.ts";
+import { fetchPostComments } from "./linkdapi.ts";
 import { isCommentSeen, markCommentSeen } from "./database.ts";
 import { sendCommentAlert } from "./telegram.ts";
 import { createEngagementEntry } from "./notion-queue.ts";
@@ -105,8 +105,9 @@ async function processOwnPost(
     console.log(`[monitor] NEW comment by ${commenterName}: ${commentId}`);
 
     // Create Notion entry
+    let notionPageId: string | null = null;
     if (cfg.notion_engagement_db_id) {
-      await createEngagementEntry(env.notion, cfg.notion_engagement_db_id, {
+      notionPageId = await createEngagementEntry(env.notion, cfg.notion_engagement_db_id, {
         entryName: `${commenterName} commented on "${title}"`,
         type: "Own Post Comment",
         account: commenterName,
@@ -125,7 +126,7 @@ async function processOwnPost(
       commentText,
       commentDate,
       postUrl: url,
-    });
+    }, notionPageId ?? undefined);
 
     // Mark seen AFTER successful notifications
     markCommentSeen(DB_PATH, commentId, url, commenterName);
@@ -155,7 +156,7 @@ async function main() {
   }
 
   const env = {
-    proxycurl: getEnv("PROXYCURL_API_KEY"),
+    proxycurl: getEnv("LINKDAPI_API_KEY"),
     telegram: getEnv("TELEGRAM_BOT_TOKEN"),
     chatId: getEnv("TELEGRAM_CHAT_ID"),
     notion: getEnv("NOTION_API_KEY"),

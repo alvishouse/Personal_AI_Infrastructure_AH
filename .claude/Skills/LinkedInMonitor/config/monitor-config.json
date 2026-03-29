@@ -1,11 +1,23 @@
 {
-  "watched_profiles": [],
-  "own_posts": [],
-  "notion_engagement_db_id": "",
+  "watched_profiles": [
+    {
+      "name": "Alvis House",
+      "linkedin_url": "https://www.linkedin.com/in/alvishouse/"
+    }
+  ],
+  "own_posts": [
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7443284852130566145",
+      "title": "80% of AI projects fail",
+      "published_at": "2026-03-27"
+    }
+  ],
+  "notion_engagement_db_id": "3320760e-b0cd-81be-b2c5-f5feff5f0943",
   "settings": {
     "posts_per_profile": 5,
     "inactive_skip_days": 30,
     "own_post_expiry_days": 10,
-    "generate_replies": false
+    "generate_replies": false,
+    "reply_model": "claude-haiku-4-5-20251001"
   }
 }

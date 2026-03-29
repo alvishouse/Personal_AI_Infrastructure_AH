@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Crack Spread Gap — Animated</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: white; padding: 0; margin: 0; }
+
+  .ig {
+    width: 540px;
+    height: 675px;
+    overflow: hidden;
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    padding: 24px 24px 18px 24px;
+    position: relative;
+  }
+
+  /* Subtle grid bg */
+  .ig::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* HEADER */
+  .header {
+    flex-shrink: 0;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e07b39;
+    margin-bottom: 5px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .header h1 em { font-style: normal; color: #e07b39; }
+  .header .sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  /* CHART AREA */
+  .chart-area {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  /* Y-axis labels */
+  .y-labels {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 30px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 6px;
+  }
+  .y-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: #555;
+  }
+
+  /* Chart canvas */
+  .chart-canvas {
+    margin-left: 55px;
+    flex: 1;
+    position: relative;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    overflow: visible;
+  }
+
+  /* Grid lines */
+  .grid-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* X-axis labels */
+  .x-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 55px;
+    margin-top: 5px;
+  }
+  .x-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: #555;
+    text-align: center;
+    flex: 1;
+  }
+
+  /* SVG chart */
+  .chart-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* Crude line */
+  .crude-line {
+    stroke: #6b7db3;
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: drawCrude 2s ease-out 0.3s forwards;
+  }
+
+  /* Refined line */
+  .refined-line {
+    stroke: #e07b39;
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawRefined 2.5s ease-out 0.5s forwards;
+  }
+
+  /* Gap fill area */
+  .gap-fill {
+    fill: rgba(224,123,57,0.08);
+    opacity: 0;
+    animation: fadeGap 0.8s ease-out 2.8s forwards;
+  }
+
+  /* Gap label */
+  .gap-label {
+    opacity: 0;
+    animation: fadeGap 0.8s ease-out 3s forwards;
+  }
+
+  /* End dots */
+  .dot-crude {
+    fill: #6b7db3;
+    opacity: 0;
+    animation: popDot 0.3s ease-out 2.3s forwards;
+  }
+  .dot-refined {
+    fill: #e07b39;
+    opacity: 0;
+    animation: popDot 0.3s ease-out 2.8s forwards;
+  }
+
+  /* Legend */
+  .legend {
+    flex-shrink: 0;
+    display: flex;
+    gap: 16px;
+    margin-left: 55px;
+    margin-top: 8px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeGap 0.6s ease-out 3.2s forwards;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-text {
+    font-size: 9px;
+    font-weight: 700;
+    color: #aaa;
+  }
+
+  /* BOTTOM MESSAGE */
+  .bottom-msg {
+    flex-shrink: 0;
+    margin-top: 14px;
+    background: rgba(224,123,57,0.12);
+    border: 1px solid rgba(224,123,57,0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: slideUp 0.6s ease-out 3.5s forwards;
+  }
+  .bottom-msg .msg-main {
+    font-size: 12px;
+    font-weight: 900;
+    color: #e07b39;
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .bottom-msg .msg-sub {
+    font-size: 9px;
+    font-weight: 600;
+    color: #888;
+  }
+
+  /* Annotations */
+  .annotation {
+    opacity: 0;
+    animation: fadeGap 0.5s ease-out var(--delay, 3s) forwards;
+  }
+
+  /* KEYFRAMES */
+  @keyframes drawCrude {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes drawRefined {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes fadeGap {
+    to { opacity: 1; }
+  }
+  @keyframes popDot {
+    0% { opacity: 0; transform: scale(0); }
+    60% { opacity: 1; transform: scale(1.4); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">The Refinery Principle</div>
+    <h1>Your organization has a<br><em>crack spread</em></h1>
+    <div class="sub">The gap between raw AI output and refined business decisions</div>
+  </div>
+
+  <!-- CHART AREA -->
+  <div class="chart-area">
+    <!-- Y labels -->
+    <div class="y-labels">
+      <div class="y-label">High</div>
+      <div class="y-label"></div>
+      <div class="y-label"></div>
+      <div class="y-label">Low</div>
+    </div>
+
+    <!-- Chart canvas with SVG -->
+    <div class="chart-canvas">
+      <!-- Grid lines -->
+      <div class="grid-line" style="top: 25%"></div>
+      <div class="grid-line" style="top: 50%"></div>
+      <div class="grid-line" style="top: 75%"></div>
+
+      <svg class="chart-svg" viewBox="0 0 400 260" preserveAspectRatio="none">
+        <!-- Gap fill area (between crude and refined) -->
+        <path class="gap-fill" d="
+          M 0,230
+          L 80,225 L 160,215 L 240,205 L 320,195 L 400,180
+          L 400,80
+          L 320,130 L 240,165 L 160,185 L 80,210 L 0,220
+          Z
+        "/>
+
+        <!-- Crude line (mostly flat, slight decline) -->
+        <polyline class="crude-line"
+          points="0,220 80,217 160,214 240,210 320,205 400,200"
+        />
+
+        <!-- Refined value line (rising curve) -->
+        <polyline class="refined-line"
+          points="0,220 80,200 160,170 240,130 320,100 400,65"
+        />
+
+        <!-- End dots -->
+        <circle class="dot-crude" cx="400" cy="200" r="5"/>
+        <circle class="dot-refined" cx="400" cy="65" r="5"/>
+
+        <!-- Crude label -->
+        <g class="annotation" style="--delay: 2.5s">
+          <rect x="310" y="190" width="85" height="20" rx="4" fill="#1a1a2e" stroke="#444" stroke-width="1"/>
+          <text x="352" y="204" text-anchor="middle" font-family="Nunito" font-size="9" font-weight="700" fill="#6b7db3">Raw AI Output</text>
+        </g>
+
+        <!-- Refined label -->
+        <g class="annotation" style="--delay: 3s">
+          <rect x="310" y="45" width="85" height="20" rx="4" fill="#1a1a2e" stroke="#e07b39" stroke-width="1"/>
+          <text x="352" y="59" text-anchor="middle" font-family="Nunito" font-size="9" font-weight="700" fill="#e07b39">Refined Decisions</text>
+        </g>
+
+        <!-- GAP arrow + label -->
+        <g class="gap-label">
+          <line x1="395" y1="68" x2="395" y2="197" stroke="#e07b39" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="380" y="140" text-anchor="middle" font-family="Nunito" font-size="10" font-weight="900" fill="rgba(224,123,57,0.7)" transform="rotate(-90, 380, 140)">CRACK SPREAD</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- X labels -->
+    <div class="x-labels">
+      <div class="x-label">AI<br>Deployed</div>
+      <div class="x-label">3 mo</div>
+      <div class="x-label">6 mo</div>
+      <div class="x-label">9 mo</div>
+      <div class="x-label">12 mo</div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#6b7db3"></div>
+        <div class="legend-text">Raw AI output value</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#e07b39"></div>
+        <div class="legend-text">Refined decision value (with refinery)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM MESSAGE -->
+  <div class="bottom-msg">
+    <div class="msg-main">Same models. Different refinery. Different margin.</div>
+    <div class="msg-sub">The gap is your opportunity — it lives inside your existing AI investments</div>
+  </div>
+
+</div>
+</body>
+</html>

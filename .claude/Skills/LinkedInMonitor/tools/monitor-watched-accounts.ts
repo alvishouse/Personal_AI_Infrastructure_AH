@@ -2,21 +2,21 @@
  * monitor-watched-accounts.ts — Feature 1: Watch LinkedIn profiles for new posts.
  *
  * For each watched profile:
- *   1. Fetch last N posts via Proxycurl
+ *   1. Fetch last N posts via LinkdAPI
  *   2. Skip if already seen (SQLite deduplication)
  *   3. Create Notion Engagement Queue entry
  *   4. Send Telegram alert
  *   5. Mark seen in SQLite
  *
  * Flags:
- *   --dry-run    Fetch from Proxycurl but don't write to DB, Notion, or Telegram
+ *   --dry-run    Fetch from LinkdAPI but don't write to DB, Notion, or Telegram
  */
 
 import { join } from "path";
 import {
   fetchRecentPosts,
   formatPostDate,
-} from "./proxycurl.ts";
+} from "./linkdapi.ts";
 import {
   isPostSeen,
   markPostSeen,
@@ -112,8 +112,9 @@ async function processProfile(
     console.log(`[monitor] NEW post: ${postUrl}`);
 
     // Create Notion entry
+    let notionPageId: string | null = null;
     if (cfg.notion_engagement_db_id) {
-      await createEngagementEntry(env.notion, cfg.notion_engagement_db_id, {
+      notionPageId = await createEngagementEntry(env.notion, cfg.notion_engagement_db_id, {
         entryName: `${name} posted`,
         type: "Watched Post",
         account: name,
@@ -133,7 +134,7 @@ async function processProfile(
       numComments,
       postText,
       postUrl,
-    });
+    }, notionPageId ?? undefined);
 
     // Mark seen AFTER successful notifications
     markPostSeen(DB_PATH, postUrl, name);
@@ -165,7 +166,7 @@ async function main() {
   }
 
   const env = {
-    proxycurl: getEnv("PROXYCURL_API_KEY"),
+    proxycurl: getEnv("LINKDAPI_API_KEY"),
     telegram: getEnv("TELEGRAM_BOT_TOKEN"),
     chatId: getEnv("TELEGRAM_CHAT_ID"),
     notion: getEnv("NOTION_API_KEY"),

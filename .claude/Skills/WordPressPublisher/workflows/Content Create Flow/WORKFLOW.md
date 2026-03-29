@@ -405,10 +405,11 @@ PAI_DIR=/home/alvis/PAI bun run workflow-orchestrator.ts \
 This automatically:
 1. Creates workflow entry in Notion Content database
 2. Creates content page with all properties (Content Type: Cornerstone Blog, Platform: Essay)
-3. Sets 📝 blog icon on the page
-4. Syncs `06-cornerstone-draft.md` (editor-revised) body to Notion page
-5. Saves Notion IDs to metadata.json
-6. Advances status to Step 9
+3. Sets Campaign = `workflow_id` (e.g. `2026-03-22-refinery-principle`) — used as Notion filter key
+4. Sets 📝 blog icon on the page
+5. Syncs `06-cornerstone-draft.md` (editor-revised) body to Notion page
+6. Saves Notion IDs to metadata.json
+7. Advances status to Step 9
 
 **Automatic Transition:** Notion sync → Pause for Step 9
 
@@ -694,11 +695,13 @@ This template contains the full `<style>` block with all components:
 - `blockquote` — parchment left-border quote block
 - `hr` — light rule divider between major sections
 
-**Width:** The template uses `article { max-width: 100%; padding: 20px 0; }` — this lets the WordPress theme control column width. Never set a fixed pixel width on `article` or content will appear narrow inside the theme wrapper.
+**Width:** The template uses `article { max-width: 100%; padding: 0; }` — this lets the WordPress theme control column width. Never set a fixed pixel width on `article` or content will appear narrow inside the theme wrapper. The `article > *:first-child { margin-top: 0; }` rule prevents the first heading from adding extra space below the featured image.
 
 **Fill in the template with the article content. Replace every `[PLACEHOLDER]` with actual content. Use rich components throughout — every section should have at least one stat, callout, pull-quote, or framework box. Plain paragraphs only are not enough.**
 
-Save the completed HTML to `12-wp-content.html` in the workflow scratchpad. Upload via:
+**⚠️ STRIP THE HTML WRAPPER before saving.** `12-wp-content.html` must contain ONLY `<style>...</style>` + `<article>...</article>`. Never include `<!DOCTYPE html>`, `<html>`, `<head>`, `<meta>`, or `<body>` tags — WordPress wraps any stray document-level tags in `<p>` blocks, creating large gaps above the content.
+
+Save the stripped content to `12-wp-content.html` in the workflow scratchpad. Upload via:
 
 ```bash
 AUTH=$(echo -n "username:app_password" | base64 -w0)
@@ -1222,6 +1225,90 @@ Resume Content Creation Workflow: [workflow-id]
 ```
 Content Workflow Status: [workflow-id]
 ```
+
+---
+
+## Content Hub Page — Design Patterns & Known Solutions
+
+This section documents hard-won solutions for the `/insightcontent` WordPress page (ID 891) that displays all cornerstone blog posts as a card grid. Apply these patterns when updating the hub page or building similar card layouts.
+
+### WordPress Gotchas
+
+**wpautop filter** — WordPress auto-inserts `</p><p>` at blank lines and `<br>` at single newlines inside page content. Avoid by:
+- Writing all CSS rules on a single line (no blank lines between rules)
+- Never mixing `<img>` and `<div>` inside the same `<a>` tag — wpautop injects `<br>` after the `<a>` and orphan `</p>` before `</a>`
+
+**wptexturize** — encodes `&&` as `&#038;&#038;` inside `<script>` tags, breaking JS conditionals. Solution: use fully static HTML instead of JavaScript where possible.
+
+**`update_page` MCP tool** — `id` parameter must be a JSON integer (e.g. `891`), not a quoted string (`"891"`).
+
+### Image Display — Editorial Illustrations
+
+Editorial illustrations are typically wide-format (wider than card aspect ratio). Using `object-fit:cover` crops the sides off. Use `object-fit:contain` instead:
+
+```css
+.ch-card__img a { display:block; overflow:hidden; background:var(--paper); }
+.ch-card__img img { width:100%; height:220px; object-fit:contain; display:block; }
+```
+
+The `background:var(--paper)` on the wrapper fills letterbox gaps with the brand warm paper tone, blending naturally with the card background.
+
+### Hello Biz Theme — Dark Background Override
+
+The Hello Biz theme applies a dark slate background to page content areas. Override with:
+
+```css
+.entry-content, .site-main, .hentry { background: #fff !important; }
+```
+
+### Card Shadows / Depth
+
+Raised card effect with hover lift:
+
+```css
+.ch-card {
+  box-shadow: 0 2px 4px rgba(0,0,0,.05), 0 8px 28px rgba(0,0,0,.08);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.ch-card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,.09), 0 20px 48px rgba(0,0,0,.13);
+  transform: translateY(-3px);
+}
+```
+
+### Full-Card Click — Stretched Link (no block-in-anchor)
+
+To make the entire card clickable without wrapping block elements in `<a>` (which breaks wpautop):
+
+```css
+.ch-card { position: relative; }
+.ch-card__title a::after { content: ""; position: absolute; inset: 0; }
+```
+
+The `::after` pseudo-element on the title link expands to cover the full card.
+
+### Flexbox Date Alignment Across Cards
+
+To keep dates pinned to the bottom of every card (aligned horizontally across a row regardless of excerpt length):
+
+```css
+.ch-card { display: flex; flex-direction: column; }
+.ch-card__body { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+.ch-card__excerpt { flex: 1; }
+.ch-card__date { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(59,84,107,.1); }
+```
+
+### Current Hub Page Posts (ID 891)
+
+| Post | WP ID | Featured Image URL | Status |
+|------|-------|--------------------|--------|
+| The Refinery Principle | 885 | `/wp-content/uploads/2026/03/refinery-principle-featured-scaled.jpg` | draft |
+| Layers & Ladders | 874 | `/wp-content/uploads/2026/03/layers-ladders-featured-scaled.jpg` | draft |
+| Efficiency Gateway Drug | 860 | `/wp-content/uploads/2026/03/lemonade-stand-featured-1-scaled.jpg` | draft |
+| Dumb Pipe Phenomenon | 765 | `/wp-content/uploads/2026/02/featured-scaled.jpg` | draft |
+| Playing It Safe Illusion | 604 | `/wp-content/uploads/2026/02/01-featured.png` | draft |
+
+Hub page (ID 891) remains in **draft** status until cornerstone posts are published.
 
 ---
 

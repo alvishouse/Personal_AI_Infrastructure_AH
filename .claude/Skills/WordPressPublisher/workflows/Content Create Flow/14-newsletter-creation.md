@@ -196,6 +196,19 @@ INPUT FILES:
 
 DRAFTING REQUIREMENTS:
 
+H1 TITLE FORMAT (CRITICAL — publisher depends on this exact format):
+The newsletter H1 MUST use this exact pattern:
+  # [Campaign Topic] — Issue #[N] · [Month D, YYYY]
+Examples:
+  # The Refinery Principle — Issue #5 · March 31, 2026
+  # Layers & Ladders — Issue #4 · March 18, 2026
+Rules:
+- Em-dash (—) separates topic from issue/date
+- Issue number and date separated by · (middle dot)
+- Date is the SEND date (next Tuesday from today), NOT today's date
+- NEVER use "April 1" — check the calendar for the actual next Tuesday
+- NO subtitle or tagline after the date
+
 SECTION SELECTION:
 1. TL;DR (50-75 words): Select atom with shareability = 5
 2. Myth vs Reality (200-250 words): Select atom with novelty ≥ 4
@@ -284,7 +297,7 @@ issue_number: "[Number]"
 issue_date: "2026-02-10"
 ---
 
-# [Newsletter Title]
+# [Campaign Topic] — Issue #[N] · [Month D, YYYY]
 
 ---
 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rockefeller Never Drilled a Single Well</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: white; padding: 0; margin: 0; }
+
+  .ig {
+    width: 540px;
+    overflow: hidden;
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  /* IMAGE — full width, no crop, natural height (~302px for 2752×1536 source) */
+  .image-wrap {
+    flex-shrink: 0;
+    width: 540px;
+    background: #ECE8DE; /* match the parchment bg of featured-v4 */
+  }
+  .image-wrap img {
+    display: block;
+    width: 100%;
+    height: auto; /* natural aspect ratio — no cropping */
+  }
+
+  /* ORANGE SEPARATOR */
+  .separator {
+    flex-shrink: 0;
+    height: 3px;
+    background: #e07b39;
+  }
+
+  /* DARK BOTTOM SECTION — just enough for CTA */
+  .bottom {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px 18px 12px 18px;
+  }
+
+  /* CTA footer */
+  .cta-row {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .profile-pic {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1.5px solid #e07b39;
+  }
+  .cta-text {
+    font-size: 8px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+  }
+  .cta-text strong { color: #fff; font-weight: 800; }
+  .cta-text span { color: #e07b39; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- FULL IMAGE — no crop, full width -->
+  <div class="image-wrap">
+    <img src="file:///home/alvis/PAI/scratchpad/content-create/2026-03-22-refinery-principle/10-images/featured-v4.png" alt="Refinery Principle">
+  </div>
+
+  <!-- ORANGE DIVIDER -->
+  <div class="separator"></div>
+
+  <!-- DARK CONTENT SECTION -->
+  <div class="bottom">
+
+    <div class="cta-row">
+      <img class="profile-pic" src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+      <div class="cta-text">Enjoy this? Follow <strong>Alvis House</strong> for weekly AI strategy &nbsp;·&nbsp; 📩 Newsletter at <span>alvishouse.io</span></div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

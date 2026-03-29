@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The 4-Layer Refinery Model</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: white; padding: 0; margin: 0; }
+
+  .ig {
+    width: 540px;
+    height: 675px;
+    overflow: hidden;
+    background: #FAFAF7;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    padding: 18px 18px 14px 18px;
+  }
+
+  /* HEADER */
+  .header {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1a1a2e;
+    padding-bottom: 8px;
+  }
+  .header .eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e07b39;
+    margin-bottom: 3px;
+  }
+  .header h1 {
+    font-size: 19px;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+  }
+  .header h1 em { font-style: normal; color: #e07b39; }
+  .header .sub {
+    font-size: 9px;
+    font-weight: 600;
+    color: #888;
+    margin-top: 3px;
+  }
+
+  /* LAYERS */
+  .layers {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 0;
+  }
+
+  .layer {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    min-height: 0;
+  }
+
+  /* Left pipe indicator */
+  .pipe-col {
+    width: 28px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .pipe-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+    color: white;
+    flex-shrink: 0;
+    z-index: 2;
+    position: relative;
+  }
+  .pipe-line {
+    width: 2px;
+    flex: 1;
+    margin: 2px 0;
+  }
+
+  /* Layer card */
+  .layer-card {
+    flex: 1;
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    min-height: 0;
+  }
+
+  .layer-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .layer-title {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+  }
+  .layer-badge {
+    font-size: 8px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .layer-desc {
+    font-size: 9px;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.4;
+  }
+  .layer-stat {
+    font-size: 9px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  /* LAYER 0 - Raw Data (cool blue-grey) */
+  .l0 .pipe-badge { background: #6b7db3; }
+  .l0 .pipe-line { background: linear-gradient(#6b7db3, #4a90d9); }
+  .l0 .layer-card { background: #EEF1FA; border: 1.5px solid #c5ceea; }
+  .l0 .layer-title { color: #3a4a8a; }
+  .l0 .layer-badge { background: #d4daf5; color: #3a4a8a; }
+  .l0 .layer-stat { color: #3a4a8a; }
+
+  /* LAYER 1 - Intelligence (amber) */
+  .l1 .pipe-badge { background: #4a90d9; }
+  .l1 .pipe-line { background: linear-gradient(#4a90d9, #e07b39); }
+  .l1 .layer-card { background: #FEF3E8; border: 1.5px solid #f5c99a; }
+  .l1 .layer-title { color: #b84a0a; }
+  .l1 .layer-badge { background: #fdddb8; color: #b84a0a; }
+  .l1 .layer-stat { color: #b84a0a; }
+
+  /* LAYER 2 - The Refinery (highlighted — the gap) */
+  .l2 .pipe-badge { background: #e07b39; }
+  .l2 .pipe-line { background: linear-gradient(#e07b39, #2a7a4a); }
+  .l2 .layer-card {
+    background: #1a1a2e;
+    border: 2px solid #e07b39;
+    box-shadow: 0 0 0 3px rgba(224,123,57,0.12);
+  }
+  .l2 .layer-title { color: #fff; }
+  .l2 .layer-badge { background: #e07b39; color: #fff; }
+  .l2 .layer-desc { color: #bbb; }
+  .l2 .layer-stat { color: #e07b39; }
+
+  /* LAYER 3 - Outcomes (green) */
+  .l3 .pipe-badge { background: #2a7a4a; }
+  .l3 .pipe-line { display: none; }
+  .l3 .layer-card { background: #EAF5EE; border: 1.5px solid #a4d4b4; }
+  .l3 .layer-title { color: #1a5a34; }
+  .l3 .layer-badge { background: #b8e8c8; color: #1a5a34; }
+  .l3 .layer-stat { color: #1a5a34; }
+
+  /* DIAGNOSTIC CALLOUT */
+  .diagnostic {
+    flex-shrink: 0;
+    background: rgba(26,26,46,0.05);
+    border: 1px solid #1a1a2e;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .diag-icon { font-size: 14px; flex-shrink: 0; }
+  .diag-text {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.35;
+  }
+  .diag-text em { font-style: normal; color: #e07b39; font-weight: 900; }
+
+  /* FOOTER */
+  .footer {
+    flex-shrink: 0;
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1.5px solid #e0e0e0;
+  }
+  .footer-text {
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #999;
+    line-height: 1.4;
+  }
+  .footer-text strong { color: #1a1a2e; font-weight: 800; }
+  .footer-text span { color: #e07b39; font-weight: 700; }
+
+  /* Gap callout inside L2 */
+  .gap-callout {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+  }
+  .gap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e07b39;
+    flex-shrink: 0;
+  }
+  .gap-text {
+    font-size: 8px;
+    font-weight: 800;
+    color: #e07b39;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">The Refinery Principle</div>
+    <h1>The <em>4-Layer</em> Refinery Model</h1>
+    <div class="sub">Find the layer where your conversion chain breaks</div>
+  </div>
+
+  <!-- LAYERS -->
+  <div class="layers">
+
+    <!-- LAYER 0 -->
+    <div class="layer l0">
+      <div class="pipe-col">
+        <div class="pipe-badge">0</div>
+        <div class="pipe-line"></div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-title-row">
+          <div class="layer-title">Raw Data — The Crude</div>
+          <div class="layer-badge">Input</div>
+        </div>
+        <div class="layer-desc">Customer records, transactions, signals. More crude than most know what to do with.</div>
+        <div class="layer-stat">⚠ 68% cite data quality as top AI blocker — but the refinery doesn't need perfect crude</div>
+      </div>
+    </div>
+
+    <!-- LAYER 1 -->
+    <div class="layer l1">
+      <div class="pipe-col">
+        <div class="pipe-badge">1</div>
+        <div class="pipe-line"></div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-title-row">
+          <div class="layer-title">Intelligence — The Pipeline</div>
+          <div class="layer-badge">Table Stakes</div>
+        </div>
+        <div class="layer-desc">Claude. GPT-4o. Gemini. Copilot. The pipeline only moves crude. It does not refine it.</div>
+        <div class="layer-stat">↗ $12.5B in foundation model API spend (2025) — and commoditizing fast</div>
+      </div>
+    </div>
+
+    <!-- LAYER 2 — THE GAP -->
+    <div class="layer l2">
+      <div class="pipe-col">
+        <div class="pipe-badge">2</div>
+        <div class="pipe-line"></div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-title-row">
+          <div class="layer-title">The Refinery — Where the Money Lives</div>
+          <div class="layer-badge">⚡ THE GAP</div>
+        </div>
+        <div class="gap-callout">
+          <div class="gap-dot"></div>
+          <div class="gap-text">80% of organizations don't have this layer</div>
+        </div>
+        <div class="layer-desc">Workflow redesign. Routing protocols. Decision governance. Only 21% have built any.</div>
+        <div class="layer-stat">→ AI high performers redesign workflows 3× more than others (55% vs 18%)</div>
+      </div>
+    </div>
+
+    <!-- LAYER 3 -->
+    <div class="layer l3">
+      <div class="pipe-col">
+        <div class="pipe-badge">3</div>
+      </div>
+      <div class="layer-card">
+        <div class="layer-title-row">
+          <div class="layer-title">Outcomes — The Refined Product</div>
+          <div class="layer-badge">Revenue</div>
+        </div>
+        <div class="layer-desc">Business decisions. P&L impact. Faster time-to-market. No shortcut from Layer 1 to here.</div>
+        <div class="layer-stat">✓ Only reachable through a functioning Layer 2 refinery</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DIAGNOSTIC CALLOUT -->
+  <div class="diagnostic">
+    <div class="diag-icon">🔍</div>
+    <div class="diag-text">
+      <em>Diagnostic:</em> Who in your org owns Layer 2 design? If no one can name that person, your refinery doesn't exist yet.
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer">
+    <img src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+    <div class="footer-text">
+      Enjoy this? Follow <strong>Alvis House</strong> for weekly AI strategy &nbsp;·&nbsp; 📩 Newsletter at <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -292,7 +292,7 @@ Every section must follow:
 - How: 3-5 tactical pieces using one of: tips, stats, steps, lessons, benefits, mistakes, examples
 - Why: One closing sentence — the insight, benefit, or motivating reason that makes the section memorable
 
-RULE 5: ALTERNATING FORMAT + EMOJI BULLETS (CRITICAL)
+RULE 5: ALTERNATING FORMAT + ICONOGRAPHY (CRITICAL)
 Sections MUST alternate between bulleted lists and paragraph style throughout the post:
 - Section 1 → bulleted list (3-5 bullets)
 - Section 2 → paragraph style (3-5 sentences)
@@ -301,13 +301,24 @@ Sections MUST alternate between bulleted lists and paragraph style throughout th
 - (continue alternating)
 Conclusion: always short paragraph, never bulleted
 
-EMOJI BULLET SYSTEM — apply in ALL bulleted list sections:
-- Default list item: 📌 (replaces "- " as the standard bullet)
+SECTION HEADING ICONOGRAPHY — apply to EVERY numbered section heading:
+- Format: 📌 1 - THE SECTION NAME IN ALL CAPS
+- 📌 (red push pin) always prefixes the section number — signals a new section visually
+- One space between 📌 and the number
+- Example: 📌 1 - THE CRACK SPREAD, 📌 2 - WHERE THE MONEY LIVES
+
+SUB-BULLET SYSTEM — apply in ALL bulleted list sections:
+- Default sub-bullet: • (navy blue round bullet — replaces plain "-" dashes)
 - Key insight or learning: 💡
 - Problem / failure / blocker / risk: 🔻
 - Time delay / sequence / "then" / "before": ⏱️
-- Never use plain "-" dashes as bullets when a contextual emoji fits
-- Never use emojis decoratively — only when the emoji TYPE matches the content type (a list of problems all get 🔻; a list of steps all get 📌)
+- Win / correct approach / what works: ✅
+- Wrong approach / what not to do: ❌
+- Goal / target / desired outcome: 🎯
+- Speed / urgency / quick action: ⚡
+- Never use 📌 as a sub-bullet — it is reserved for section headings only
+- Never use plain "-" dashes as bullets
+- Never use emojis decoratively — only when the emoji TYPE matches the content type
 
 RULE 6: PER-SECTION CHARACTER TARGETS
 - Hook (Lines 1-2): ~200 characters total visible zone
@@ -494,7 +505,8 @@ After Phase 2:
 - [ ] All headers use ALL CAPS format (`1 - THE SECTION NAME`) — no bold, no sentence case, no trailing period
 - [ ] Each header delivers standalone value (80% test passes)
 - [ ] Sections alternate bullet/paragraph format (odd = bullets, even = paragraphs)
-- [ ] Bulleted sections use emoji bullets (📌 default, 💡 insights, 🔻 problems, ⏱️ time delays) — no plain "-" dashes
+- [ ] Section headings use 📌 prefix format (`📌 1 - THE SECTION NAME`)
+- [ ] Bulleted sub-items use • default (💡 insights, 🔻 problems, ⏱️ time delays, ✅ wins, ❌ don'ts, 🎯 goals, ⚡ urgency) — no plain "-" dashes
 - [ ] Each section follows What → How → Why structure
 - [ ] Conclusion is short paragraph (not bulleted)
 - [ ] Total post ≤ 2,800 characters

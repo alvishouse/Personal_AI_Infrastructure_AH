@@ -26,91 +26,86 @@
   <rect width="762" height="352" fill="url(#ruled)"/>
 
   <!-- Header -->
-  <text x="381" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="27" font-weight="800" letter-spacing="3" fill="#3b546b">LAYERS &amp; LADDERS</text>
-  <text x="381" y="53" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" letter-spacing="0.8" fill="#3b546b">THE PENTHOUSE PROBLEM  —  MID-MARKET AI PLAYBOOK</text>
+  <text x="381" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="27" font-weight="800" letter-spacing="3" fill="#3b546b">THE REFINERY PRINCIPLE</text>
+  <text x="381" y="53" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" letter-spacing="0.8" fill="#3b546b">WHERE AI VALUE IS CAPTURED — OR PERMANENTLY LOST</text>
   <line x1="40" y1="66" x2="722" y2="66" stroke="rgba(59,84,107,.28)" stroke-width="1" stroke-dasharray="4 3"/>
 
-  <!-- ===== LEFT: WEAK FLOORS (collapsing building) ===== -->
-  <!-- Ground line -->
-  <line x1="60" y1="295" x2="320" y2="295" stroke="rgba(59,84,107,.5)" stroke-width="1.8"/>
+  <!-- === LEFT SIDE: The Missing Refinery === -->
 
-  <!-- Floor 1 (bottom - cracked) -->
-  <rect x="90" y="265" width="160" height="28" fill="rgba(207,88,40,.06)" stroke="#cf5828" stroke-width="1.4" stroke-dasharray="5 3" rx="2"/>
-  <text x="170" y="283" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" fill="#cf5828" letter-spacing="0.5">PROCESS  ·  UNSTABLE</text>
+  <!-- Crude barrel (top input) -->
+  <rect x="60" y="82" width="120" height="38" fill="rgba(59,84,107,.08)" stroke="#3b546b" stroke-width="1.6" rx="4"/>
+  <text x="120" y="97" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3b546b" letter-spacing="0.5">AI MODEL OUTPUT</text>
+  <text x="120" y="112" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="rgba(59,84,107,.7)" letter-spacing="0.4">Claude · GPT · Copilot</text>
 
-  <!-- Floor 2 (cracked) -->
-  <rect x="95" y="235" width="150" height="26" fill="rgba(207,88,40,.06)" stroke="#cf5828" stroke-width="1.4" stroke-dasharray="5 3" rx="2"/>
-  <text x="170" y="252" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" fill="#cf5828" letter-spacing="0.5">DATA  ·  WEAK</text>
+  <!-- Arrow down from crude -->
+  <line x1="120" y1="120" x2="120" y2="145" stroke="rgba(59,84,107,.5)" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <polygon points="120 152 115 142 125 142" fill="rgba(59,84,107,.5)"/>
 
-  <!-- Floor 3 (cracked) -->
-  <rect x="100" y="207" width="140" height="24" fill="rgba(207,88,40,.06)" stroke="#cf5828" stroke-width="1.4" stroke-dasharray="5 3" rx="2"/>
-  <text x="170" y="223" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" fill="#cf5828" letter-spacing="0.5">GOVERNANCE  ·  MISSING</text>
+  <!-- Missing layer (dashed red box) -->
+  <rect x="58" y="155" width="124" height="52" fill="rgba(207,88,40,.05)" stroke="#cf5828" stroke-width="1.5" stroke-dasharray="5 3" rx="4"/>
+  <text x="120" y="175" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#cf5828" letter-spacing="0.5">WORKFLOW</text>
+  <text x="120" y="191" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#cf5828" letter-spacing="0.5">LAYER</text>
+  <text x="120" y="203" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="10" fill="#cf5828" letter-spacing="0.3">MISSING</text>
 
-  <!-- Crack marks on floors -->
-  <path d="M148 265 L152 255 L145 248" fill="none" stroke="#cf5828" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M192 235 L196 225 L189 219" fill="none" stroke="#cf5828" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- X over missing layer -->
+  <line x1="70" y1="162" x2="170" y2="200" stroke="rgba(207,88,40,.4)" stroke-width="1.5"/>
+  <line x1="170" y1="162" x2="70" y2="200" stroke="rgba(207,88,40,.4)" stroke-width="1.5"/>
 
-  <!-- AI tool box on top (falling/tilted) -->
-  <g transform="translate(170,175) rotate(-8)">
-    <rect x="-32" y="-24" width="64" height="38" fill="rgba(59,84,107,.08)" stroke="#3b546b" stroke-width="1.8" rx="4"/>
-    <text x="0" y="-6" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="15" font-weight="800" fill="#3b546b">AI</text>
-    <text x="0" y="9" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="#3b546b" letter-spacing="0.5">TOOL</text>
-    <!-- Lightning bolt (failing) -->
-    <path d="M24 -10 L18 0 L24 0 L18 10" fill="none" stroke="#cf5828" stroke-width="1.5" stroke-linecap="round"/>
-  </g>
+  <!-- Arrow down (dashed/broken) -->
+  <line x1="120" y1="207" x2="120" y2="232" stroke="rgba(207,88,40,.4)" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <polygon points="120 239 115 229 125 229" fill="rgba(207,88,40,.4)"/>
 
-  <!-- Fall arrow -->
-  <path d="M196 204 Q202 212 198 220" fill="none" stroke="#cf5828" stroke-width="1.4" stroke-dasharray="3 2" stroke-linecap="round"/>
-  <polygon points="198 220 193 215 204 214" fill="#cf5828"/>
+  <!-- Nothing / browser tab box -->
+  <rect x="60" y="242" width="120" height="36" fill="rgba(207,88,40,.05)" stroke="rgba(207,88,40,.4)" stroke-width="1.2" stroke-dasharray="5 3" rx="4"/>
+  <text x="120" y="257" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="#cf5828" font-weight="700" letter-spacing="0.3">BROWSER TAB</text>
+  <text x="120" y="271" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="10" fill="#cf5828" letter-spacing="0.3">Sits unread</text>
 
-  <!-- Label below -->
-  <text x="170" y="314" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" letter-spacing="1.5" fill="#cf5828">WEAK FLOORS</text>
-  <text x="170" y="330" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="17" fill="#2b2b2b">AI fails before it starts</text>
+  <!-- Label -->
+  <text x="120" y="300" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#cf5828">80% OF ORGS</text>
+  <text x="120" y="316" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" fill="#2b2b2b">No conversion layer</text>
+  <text x="120" y="331" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="rgba(59,84,107,.6)">95% pilot failure rate</text>
 
-  <!-- Divider -->
-  <line x1="330" y1="82" x2="330" y2="308" stroke="rgba(59,84,107,.15)" stroke-width="1" stroke-dasharray="3 2"/>
+  <!-- Center divider -->
+  <line x1="330" y1="76" x2="330" y2="340" stroke="rgba(59,84,107,.12)" stroke-width="1" stroke-dasharray="3 2"/>
 
-  <!-- ===== CENTER BADGE ===== -->
-  <text x="381" y="190" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="33" font-weight="800" fill="#3b546b">→</text>
-  <text x="381" y="218" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" fill="#cf5828" letter-spacing="1">BUILD THE</text>
-  <text x="381" y="236" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" fill="#cf5828" letter-spacing="1">FLOORS FIRST</text>
+  <!-- Center arrow badge -->
+  <text x="381" y="196" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="30" font-weight="800" fill="#3b546b">→</text>
+  <text x="381" y="218" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#cf5828" letter-spacing="1">BUILD THE</text>
+  <text x="381" y="234" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#cf5828" letter-spacing="1">REFINERY</text>
 
-  <!-- ===== RIGHT: STRONG FLOORS (stable building) ===== -->
-  <!-- Ground line -->
-  <line x1="440" y1="295" x2="700" y2="295" stroke="rgba(59,84,107,.5)" stroke-width="1.8"/>
+  <!-- === RIGHT SIDE: With the Refinery === -->
 
-  <!-- Floor 1 (solid) -->
-  <rect x="460" y="265" width="180" height="28" fill="rgba(59,84,107,.08)" stroke="#3b546b" stroke-width="1.6" rx="2"/>
-  <text x="550" y="283" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3b546b" letter-spacing="0.5">PROCESS  ·  DOCUMENTED</text>
+  <!-- AI output box -->
+  <rect x="582" y="82" width="120" height="38" fill="rgba(59,84,107,.08)" stroke="#3b546b" stroke-width="1.6" rx="4"/>
+  <text x="642" y="97" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3b546b" letter-spacing="0.5">AI MODEL OUTPUT</text>
+  <text x="642" y="112" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="rgba(59,84,107,.7)" letter-spacing="0.4">Claude · GPT · Copilot</text>
 
-  <!-- Floor 2 (solid) -->
-  <rect x="464" y="235" width="172" height="26" fill="rgba(59,84,107,.08)" stroke="#3b546b" stroke-width="1.6" rx="2"/>
-  <text x="550" y="252" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3b546b" letter-spacing="0.5">DATA  ·  GOVERNED</text>
+  <!-- Arrow down -->
+  <line x1="642" y1="120" x2="642" y2="145" stroke="#3b546b" stroke-width="1.8"/>
+  <polygon points="642 152 637 142 647 142" fill="#3b546b"/>
 
-  <!-- Floor 3 (solid) -->
-  <rect x="468" y="207" width="164" height="24" fill="rgba(59,84,107,.08)" stroke="#3b546b" stroke-width="1.6" rx="2"/>
-  <text x="550" y="223" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#3b546b" letter-spacing="0.5">GOVERNANCE  ·  DEFINED</text>
+  <!-- Refinery layer (solid ink) -->
+  <rect x="580" y="155" width="124" height="52" fill="rgba(59,84,107,.1)" stroke="#3b546b" stroke-width="1.8" rx="4"/>
+  <text x="642" y="175" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#3b546b" letter-spacing="0.5">WORKFLOW</text>
+  <text x="642" y="191" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#3b546b" letter-spacing="0.5">REFINERY</text>
+  <!-- check -->
+  <path d="M718 171 L723 176 L732 164" fill="none" stroke="#3b546b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- AI tool box on top (stable) -->
-  <rect x="518" y="175" width="64" height="28" fill="rgba(59,84,107,.12)" stroke="#3b546b" stroke-width="1.8" rx="4"/>
-  <text x="550" y="188" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="14" font-weight="800" fill="#3b546b">AI TOOL</text>
-  <text x="550" y="199" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="#3b546b">STABLE</text>
+  <!-- Arrow down (solid) -->
+  <line x1="642" y1="207" x2="642" y2="232" stroke="#3b546b" stroke-width="1.8"/>
+  <polygon points="642 239 637 229 647 229" fill="#3b546b"/>
 
-  <!-- Check marks on floors -->
-  <path d="M662 278 L666 282 L674 272" fill="none" stroke="#3b546b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M662 248 L666 252 L674 242" fill="none" stroke="#3b546b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Business decision box -->
+  <rect x="582" y="242" width="120" height="36" fill="rgba(59,84,107,.1)" stroke="#3b546b" stroke-width="1.8" rx="4"/>
+  <text x="642" y="257" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#3b546b" letter-spacing="0.3">BUSINESS DECISION</text>
+  <text x="642" y="271" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="10" fill="#3b546b" letter-spacing="0.3">Tracked · Measured</text>
 
-  <!-- Performance arrow -->
-  <line x1="600" y1="170" x2="600" y2="145" stroke="#3b546b" stroke-width="2" stroke-linecap="round"/>
-  <polygon points="600 135 595 148 605 148" fill="#3b546b"/>
-  <text x="618" y="158" font-family="Montserrat,sans-serif" font-size="17" font-weight="700" fill="#3b546b">10K</text>
-  <text x="618" y="172" font-family="Montserrat,sans-serif" font-size="13" fill="#3b546b">hrs/yr</text>
-
-  <!-- Label below -->
-  <text x="550" y="314" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="19" font-weight="700" letter-spacing="1.5" fill="#3b546b">STRONG FLOORS</text>
-  <text x="550" y="330" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="17" fill="#2b2b2b">AI scales on solid ground</text>
+  <!-- Label -->
+  <text x="642" y="300" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="16" font-weight="700" letter-spacing="1" fill="#3b546b">TOP 10%</text>
+  <text x="642" y="316" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" fill="#2b2b2b">Industrializers</text>
+  <text x="642" y="331" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="11" fill="rgba(59,84,107,.6)">Consistent AI returns</text>
 
   <!-- Issue caption -->
-  <text x="381" y="348" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="14" letter-spacing="0.8" fill="rgba(59,84,107,.6)">Mid-Market AI Playbook  ·  Issue #12  ·  March 2026</text>
+  <text x="381" y="348" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="14" letter-spacing="0.8" fill="rgba(59,84,107,.6)">Mid-Market AI Playbook  ·  Issue #5  ·  April 2026</text>
 </svg>
 </body></html>

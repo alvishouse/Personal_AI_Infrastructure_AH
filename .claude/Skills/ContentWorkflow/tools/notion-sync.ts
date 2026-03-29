@@ -66,6 +66,7 @@ export interface ContentMetadata {
   publish_date?: string;
   status: "Idea" | "In Progress" | "Scheduled" | "Published";
   workflow_notion_id: string;
+  campaign?: string;
   image_notion_ids?: string[];
   featured_image_notion_id?: string;
 }
@@ -388,6 +389,9 @@ export class ContentWorkflowNotionSync {
               "Publish Date": {
                 date: { start: metadata.publish_date }
               }
+            }),
+            ...(metadata.campaign && {
+              "Campaign": { select: { name: metadata.campaign } }
             }),
             ...(metadata.image_notion_ids && {
               "Images": {

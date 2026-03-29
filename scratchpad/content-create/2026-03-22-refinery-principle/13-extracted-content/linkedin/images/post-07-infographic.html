@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Wrong Race vs The Right Race</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: white; padding: 0; margin: 0; }
+
+  .ig {
+    width: 540px;
+    height: 675px;
+    overflow: hidden;
+    background: #FAFAF7;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    padding: 18px 18px 14px 18px;
+  }
+
+  /* HEADER */
+  .header {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e07b39;
+    margin-bottom: 4px;
+  }
+  .header h1 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.15;
+  }
+  .header h1 em { font-style: normal; color: #e07b39; }
+
+  /* TWO COLUMNS */
+  .two-col {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 0;
+  }
+
+  /* Column header */
+  .col-header {
+    border-radius: 8px 8px 0 0;
+    padding: 7px 10px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .col-header .col-label {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .col-header .col-title {
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+
+  /* Wrong race */
+  .wrong .col-header { background: #1a1a2e; }
+  .wrong .col-header .col-label { color: #888; }
+  .wrong .col-header .col-title { color: #fff; }
+
+  /* Right race */
+  .right .col-header { background: #e07b39; }
+  .right .col-header .col-label { color: rgba(255,255,255,0.75); }
+  .right .col-header .col-title { color: #fff; }
+
+  /* Divider */
+  .divider {
+    width: 2px;
+    background: linear-gradient(#ddd, #e07b39, #ddd);
+    flex-shrink: 0;
+    border-radius: 1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .vs-badge {
+    background: white;
+    border: 2px solid #e07b39;
+    color: #e07b39;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 3px 4px;
+    border-radius: 4px;
+    writing-mode: vertical-rl;
+    letter-spacing: 2px;
+  }
+
+  /* Item cards */
+  .item {
+    border-radius: 6px;
+    padding: 7px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .item-icon { font-size: 13px; line-height: 1; margin-bottom: 2px; }
+  .item-title { font-size: 9.5px; font-weight: 800; line-height: 1.2; }
+  .item-desc { font-size: 8px; font-weight: 600; line-height: 1.35; }
+
+  .wrong .item { background: #F1F1F8; border: 1px solid #d5d5e8; }
+  .wrong .item-title { color: #333; }
+  .wrong .item-desc { color: #666; }
+
+  .right .item { background: #FEF3E8; border: 1px solid #f5c99a; }
+  .right .item-title { color: #b84a0a; }
+  .right .item-desc { color: #92400e; }
+
+  /* Stats strip */
+  .stats-strip {
+    flex-shrink: 0;
+    background: #1a1a2e;
+    border-radius: 8px;
+    padding: 7px 10px;
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .stat-item {
+    flex: 1;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 15px;
+    font-weight: 900;
+    color: #e07b39;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 7.5px;
+    font-weight: 700;
+    color: #bbb;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 30px;
+    background: #444;
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    flex-shrink: 0;
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1.5px solid #e0e0e0;
+  }
+  .footer-text {
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #999;
+    line-height: 1.4;
+  }
+  .footer-text strong { color: #1a1a2e; font-weight: 800; }
+  .footer-text span { color: #e07b39; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">Stop Comparing AI Models</div>
+    <h1>The <em>Wrong Race</em> vs The Right Race</h1>
+  </div>
+
+  <!-- TWO COLUMNS + DIVIDER -->
+  <div class="two-col">
+
+    <!-- WRONG -->
+    <div class="col wrong">
+      <div class="col-header">
+        <div class="col-label">Where most are focused</div>
+        <div class="col-title">The Model War</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">⚔️</div>
+        <div class="item-title">GPT-4o vs Claude vs Gemini</div>
+        <div class="item-desc">Benchmark comparisons. Procurement committees. Vendor capability matrices.</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">📊</div>
+        <div class="item-title">Measure adoption rate</div>
+        <div class="item-desc">% of licenses used. Active users. DAU on AI tools.</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">🔧</div>
+        <div class="item-title">Blame the tool</div>
+        <div class="item-desc">12% Copilot usage after 90 days → "the technology isn't ready."</div>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="divider">
+      <div class="vs-badge">VS</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col right">
+      <div class="col-header">
+        <div class="col-label">Where winners are focused</div>
+        <div class="col-title">The Refinery</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">🏗️</div>
+        <div class="item-title">Build conversion infrastructure</div>
+        <div class="item-desc">Workflows, routing, governance, decision protocols. The layer 80% skip.</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">📐</div>
+        <div class="item-title">Measure crack spread</div>
+        <div class="item-desc">% of AI outputs that reach a business decision. Track conversion, not adoption.</div>
+      </div>
+      <div class="item">
+        <div class="item-icon">🎯</div>
+        <div class="item-title">Name a workflow owner</div>
+        <div class="item-desc">Domain leaders own implementation. AI embedded into existing processes.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-num">76%</div>
+      <div class="stat-label">Higher impact from deployment-outcome match (BCG)</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">10%</div>
+      <div class="stat-label">Companies getting consistent AI returns (Industrializers)</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">3×</div>
+      <div class="stat-label">More workflow redesigns vs. average (55% vs 18%)</div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer">
+    <img src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+    <div class="footer-text">
+      Enjoy this? Follow <strong>Alvis House</strong> for weekly AI strategy &nbsp;·&nbsp; 📩 Newsletter at <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

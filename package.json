@@ -1,8 +1,12 @@
 {
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
+    "@google/genai": "^1.46.0",
     "canvas": "^3.2.1",
     "gifencoder": "^2.0.1",
-    "playwright": "^1.58.2"
+    "marked": "^17.0.5",
+    "openai": "^6.32.0",
+    "playwright": "^1.58.2",
+    "replicate": "^1.4.0"
   }
 }

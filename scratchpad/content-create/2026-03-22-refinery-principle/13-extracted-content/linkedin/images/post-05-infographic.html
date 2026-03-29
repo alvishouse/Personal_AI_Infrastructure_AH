@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Crack Spread Audit</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: white; padding: 0; margin: 0; }
+
+  .ig {
+    width: 540px;
+    height: 675px;
+    overflow: hidden;
+    background: #FAFAF7;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    padding: 18px 18px 14px 18px;
+  }
+
+  /* HEADER */
+  .header {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+  }
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e07b39;
+    margin-bottom: 3px;
+  }
+  .header h1 {
+    font-size: 20px;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.1;
+  }
+  .header h1 em { font-style: normal; color: #e07b39; }
+  .header .sub {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #666;
+    margin-top: 3px;
+  }
+
+  /* STEPS ROW */
+  .steps-row {
+    flex-shrink: 0;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .step-pill {
+    flex: 1;
+    background: #1a1a2e;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 6px;
+    text-align: center;
+  }
+  .step-pill .step-num {
+    font-size: 8px;
+    font-weight: 800;
+    color: #e07b39;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .step-pill .step-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 1px;
+    line-height: 1.2;
+  }
+
+  /* THREE QUESTIONS */
+  .questions-block {
+    flex-shrink: 0;
+    background: #f0f0ea;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+  .questions-label {
+    font-size: 8px;
+    font-weight: 800;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .question-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .question-row:last-child { margin-bottom: 0; }
+  .q-num {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1a1a2e;
+    color: white;
+    font-size: 8px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.5px;
+  }
+  .q-text {
+    font-size: 9px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.35;
+  }
+
+  /* SCORING TIERS */
+  .scoring-label {
+    font-size: 8px;
+    font-weight: 800;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+  }
+  .tiers {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 0;
+  }
+  .tier {
+    flex: 1;
+    border-radius: 8px;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 0;
+  }
+  .tier-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .tier-content { flex: 1; }
+  .tier-title {
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+  .tier-desc {
+    font-size: 8.5px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .tier-pct {
+    font-size: 9px;
+    font-weight: 800;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  /* Tier colors */
+  .tier-crude { background: #FEE2E2; border: 1.5px solid #fca5a5; }
+  .tier-crude .tier-title { color: #991b1b; }
+  .tier-crude .tier-desc { color: #7f1d1d; }
+  .tier-crude .tier-pct { color: #991b1b; }
+
+  .tier-partial { background: #FEF3E8; border: 1.5px solid #f5c99a; }
+  .tier-partial .tier-title { color: #b84a0a; }
+  .tier-partial .tier-desc { color: #92400e; }
+  .tier-partial .tier-pct { color: #b84a0a; }
+
+  .tier-refined { background: #EAF5EE; border: 1.5px solid #a4d4b4; }
+  .tier-refined .tier-title { color: #1a5a34; }
+  .tier-refined .tier-desc { color: #166534; }
+  .tier-refined .tier-pct { color: #1a5a34; }
+
+  /* INSIGHT CALLOUT */
+  .insight {
+    flex-shrink: 0;
+    background: rgba(26,26,46,0.05);
+    border: 1px solid #1a1a2e;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .insight-icon { font-size: 14px; flex-shrink: 0; }
+  .insight-text {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.35;
+  }
+  .insight-text em { font-style: normal; color: #e07b39; font-weight: 900; }
+
+  /* FOOTER */
+  .footer {
+    flex-shrink: 0;
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1.5px solid #e0e0e0;
+  }
+  .footer-text {
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #999;
+    line-height: 1.4;
+  }
+  .footer-text strong { color: #1a1a2e; font-weight: 800; }
+  .footer-text span { color: #e07b39; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">2-Hour Exercise</div>
+    <h1>The <em>Crack Spread</em> Audit</h1>
+    <div class="sub">Score every AI output. Your crack spread will be visible.</div>
+  </div>
+
+  <!-- STEPS -->
+  <div class="steps-row">
+    <div class="step-pill">
+      <div class="step-num">Step 1 — 30 min</div>
+      <div class="step-label">Pull your AI output inventory</div>
+    </div>
+    <div class="step-pill">
+      <div class="step-num">Step 2</div>
+      <div class="step-label">Run the 3-question audit on each</div>
+    </div>
+    <div class="step-pill">
+      <div class="step-num">Step 3</div>
+      <div class="step-label">Score + read your number</div>
+    </div>
+  </div>
+
+  <!-- THREE QUESTIONS -->
+  <div class="questions-block">
+    <div class="questions-label">The 3 Audit Questions (ask for each AI output)</div>
+    <div class="question-row">
+      <div class="q-num">1</div>
+      <div class="q-text">Does this output reach a decision-maker in a useful form?</div>
+    </div>
+    <div class="question-row">
+      <div class="q-num">2</div>
+      <div class="q-text">Does it actually change a decision?</div>
+    </div>
+    <div class="question-row">
+      <div class="q-num">3</div>
+      <div class="q-text">Does anyone track the outcome?</div>
+    </div>
+  </div>
+
+  <!-- SCORING TIERS -->
+  <div class="scoring-label">Score Each Output</div>
+  <div class="tiers">
+    <div class="tier tier-crude">
+      <div class="tier-icon">⛽</div>
+      <div class="tier-content">
+        <div class="tier-title">Crude</div>
+        <div class="tier-desc">Output sits in dashboard or inbox. No one acts consistently. No tracking.</div>
+      </div>
+      <div class="tier-pct">Most orgs:<br>80%+</div>
+    </div>
+    <div class="tier tier-partial">
+      <div class="tier-icon">⚗️</div>
+      <div class="tier-content">
+        <div class="tier-title">Partially Refined</div>
+        <div class="tier-desc">Output reaches a human, but no decision protocol. Used sometimes. Not others.</div>
+      </div>
+      <div class="tier-pct">No<br>governance</div>
+    </div>
+    <div class="tier tier-refined">
+      <div class="tier-icon">✓</div>
+      <div class="tier-content">
+        <div class="tier-title">Refined</div>
+        <div class="tier-desc">Feeds a documented decision process. Decision is made. Outcome is measured. Loop closed.</div>
+      </div>
+      <div class="tier-pct">The<br>target</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT CALLOUT -->
+  <div class="insight">
+    <div class="insight-icon">📊</div>
+    <div class="insight-text">
+      <em>Your crack spread number:</em> % of AI outputs scoring "Crude" = direct measure of how much value your organization is losing at the conversion layer.
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer">
+    <img src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+    <div class="footer-text">
+      Enjoy this? Follow <strong>Alvis House</strong> for weekly AI strategy &nbsp;·&nbsp; 📩 Newsletter at <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

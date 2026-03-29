@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Driller's Fallacy Loop — Animated</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: white; padding: 0; margin: 0; }
+
+  .ig {
+    width: 540px;
+    height: 675px;
+    overflow: hidden;
+    background: #FAFAF7;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    padding: 18px 18px 14px 18px;
+  }
+
+  /* HEADER */
+  .header {
+    flex-shrink: 0;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #e07b39;
+    margin-bottom: 4px;
+  }
+  .header h1 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.15;
+  }
+  .header h1 em { font-style: normal; color: #e07b39; }
+  .header .sub {
+    font-size: 9px;
+    font-weight: 600;
+    color: #777;
+    margin-top: 3px;
+  }
+
+  /* LOOP ARENA */
+  .loop-arena {
+    flex: 1;
+    position: relative;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* The circular track */
+  .loop-track {
+    position: relative;
+    width: 340px;
+    height: 340px;
+  }
+
+  /* Center label */
+  .center-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: white;
+    border: 2.5px solid #1a1a2e;
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    z-index: 10;
+  }
+  .center-icon { font-size: 22px; line-height: 1; }
+  .center-pct {
+    font-size: 15px;
+    font-weight: 900;
+    color: #991b1b;
+    line-height: 1;
+  }
+  .center-label {
+    font-size: 7px;
+    font-weight: 800;
+    color: #991b1b;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 4px;
+  }
+
+  /* Station nodes */
+  .station {
+    position: absolute;
+    width: 108px;
+    border-radius: 8px;
+    padding: 7px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 5;
+    transition: transform 0.2s;
+  }
+  .station-num {
+    font-size: 7px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+  }
+  .station-title {
+    font-size: 9.5px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  .station-desc {
+    font-size: 7.5px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 1px;
+  }
+
+  /* Station positions — top, right, bottom, left */
+  .s-top    { top: -8px;   left: 50%; transform: translateX(-50%); }
+  .s-right  { right: -12px; top: 50%; transform: translateY(-50%); }
+  .s-bottom { bottom: -8px; left: 50%; transform: translateX(-50%); }
+  .s-left   { left: -12px;  top: 50%; transform: translateY(-50%); }
+
+  /* Active pulse animation on station */
+  @keyframes pulseStation {
+    0%   { box-shadow: 0 0 0 0 rgba(224,123,57,0.5); }
+    50%  { box-shadow: 0 0 0 6px rgba(224,123,57,0.2); }
+    100% { box-shadow: 0 0 0 0 rgba(224,123,57,0); }
+  }
+
+  /* Station 1 - Buy Better Tool (top) - blue */
+  .s1 { background: #EEF1FA; border: 2px solid #6b7db3; }
+  .s1 .station-num { color: #3a4a8a; }
+  .s1 .station-title { color: #1a1a2e; }
+  .s1 .station-desc { color: #555; }
+  .s1.active { animation: pulseStation 0.6s ease; border-color: #e07b39; background: #FEF3E8; }
+
+  /* Station 2 - Bolt Onto Old Process (right) - grey */
+  .s2 { background: #F5F5F0; border: 2px solid #aaa; }
+  .s2 .station-num { color: #777; }
+  .s2 .station-title { color: #1a1a2e; }
+  .s2 .station-desc { color: #666; }
+  .s2.active { animation: pulseStation 0.6s ease; border-color: #e07b39; background: #FEF3E8; }
+
+  /* Station 3 - Wait For Results (bottom) - red-light */
+  .s3 { background: #FEF0F0; border: 2px solid #fca5a5; }
+  .s3 .station-num { color: #991b1b; }
+  .s3 .station-title { color: #991b1b; }
+  .s3 .station-desc { color: #7f1d1d; }
+  .s3.active { animation: pulseStation 0.6s ease; border-color: #e07b39; background: #FEF3E8; }
+
+  /* Station 4 - Blame The Tool (left) - dark */
+  .s4 { background: #1a1a2e; border: 2px solid #444; }
+  .s4 .station-num { color: #e07b39; }
+  .s4 .station-title { color: #fff; }
+  .s4 .station-desc { color: #bbb; }
+  .s4.active { animation: pulseStation 0.6s ease; border-color: #e07b39; }
+
+  /* SVG circular track */
+  .svg-track {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  /* Traveling dot */
+  .dot-wrap {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  /* Animated dot traveling the loop */
+  @keyframes travelLoop {
+    0%   { offset-distance: 0%;   }
+    100% { offset-distance: 100%; }
+  }
+  .traveler {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e07b39;
+    border: 2px solid white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    position: absolute;
+    offset-path: path("M 170,48 C 250,48 292,90 292,170 C 292,250 250,292 170,292 C 90,292 48,250 48,170 C 48,90 90,48 170,48 Z");
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: travelLoop 4s linear infinite;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Exhaustion indicator — shows increasing tiredness */
+  .exhaustion-bar {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .ex-label {
+    font-size: 7.5px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .ex-dots { display: flex; gap: 3px; }
+  .ex-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .ex-dot:nth-child(1) { background: #fca5a5; animation: fillDot 4s ease-in-out infinite; }
+  .ex-dot:nth-child(2) { background: #f87171; animation: fillDot 4s ease-in-out 1s infinite; }
+  .ex-dot:nth-child(3) { background: #ef4444; animation: fillDot 4s ease-in-out 2s infinite; }
+  .ex-dot:nth-child(4) { background: #dc2626; animation: fillDot 4s ease-in-out 3s infinite; }
+  @keyframes fillDot {
+    0%   { opacity: 0.3; transform: scale(0.8); }
+    25%  { opacity: 1;   transform: scale(1.2); }
+    100% { opacity: 0.3; transform: scale(0.8); }
+  }
+
+  /* BOTTOM INSIGHT */
+  .insight-strip {
+    flex-shrink: 0;
+    background: #1a1a2e;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .insight-icon { font-size: 20px; flex-shrink: 0; }
+  .insight-text { flex: 1; }
+  .insight-main {
+    font-size: 9.5px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+  .insight-main em { font-style: normal; color: #e07b39; }
+  .insight-sub {
+    font-size: 8px;
+    font-weight: 600;
+    color: #888;
+    line-height: 1.3;
+  }
+
+  /* FOOTER CTA */
+  .footer {
+    flex-shrink: 0;
+    margin-top: 8px;
+    padding-top: 7px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .profile-pic {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1.5px solid #e0e0e0;
+  }
+  .footer-text {
+    font-size: 7.5px;
+    font-weight: 600;
+    color: #999;
+    line-height: 1.4;
+  }
+  .footer-text strong { color: #1a1a2e; font-weight: 800; }
+  .footer-text span { color: #e07b39; font-weight: 700; }
+
+  /* Loop active state cycling */
+  @keyframes activeS1 {
+    0%, 20%, 100% { border-color: #6b7db3; background: #EEF1FA; }
+    2%, 18%  { border-color: #e07b39; background: #FEF3E8; box-shadow: 0 0 0 4px rgba(224,123,57,0.2); }
+  }
+  @keyframes activeS2 {
+    25%, 45%, 100% { border-color: #aaa; background: #F5F5F0; }
+    27%, 43% { border-color: #e07b39; background: #FEF3E8; box-shadow: 0 0 0 4px rgba(224,123,57,0.2); }
+  }
+  @keyframes activeS3 {
+    50%, 70%, 100% { border-color: #fca5a5; background: #FEF0F0; }
+    52%, 68% { border-color: #e07b39; background: #FEF3E8; box-shadow: 0 0 0 4px rgba(224,123,57,0.2); }
+  }
+  @keyframes activeS4 {
+    75%, 95%, 100% { border-color: #444; background: #1a1a2e; }
+    77%, 93% { border-color: #e07b39; background: #2a2a4e; box-shadow: 0 0 0 4px rgba(224,123,57,0.2); }
+  }
+
+  .s1 { animation: activeS1 4s linear infinite; }
+  .s2 { animation: activeS2 4s linear infinite; }
+  .s3 { animation: activeS3 4s linear infinite; }
+  .s4 { animation: activeS4 4s linear infinite; }
+</style>
+</head>
+<body>
+<div class="ig">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">The Driller's Fallacy</div>
+    <h1>The <em>Loop</em> That Kills<br>AI Momentum</h1>
+    <div class="sub">95% of AI pilots never deliver measurable P&L impact. Here's why.</div>
+  </div>
+
+  <!-- LOOP ARENA -->
+  <div class="loop-arena">
+    <div class="loop-track">
+
+      <!-- SVG track ring -->
+      <svg class="svg-track" viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer dashed loop ring -->
+        <circle cx="170" cy="170" r="122" fill="none" stroke="#ddd" stroke-width="2" stroke-dasharray="8 5"/>
+        <!-- Arrows on the loop -->
+        <path d="M 250,95 L 260,88 L 263,100" fill="#ccc"/>
+        <path d="M 245,250 L 255,258 L 243,261" fill="#ccc"/>
+        <path d="M 90,250 L 80,243 L 78,256" fill="#ccc"/>
+        <path d="M 95,90 L 85,82 L 97,78" fill="#ccc"/>
+        <!-- Orange accent arcs between stations -->
+        <path d="M 170,48 C 220,48 268,88 286,140" fill="none" stroke="#e07b39" stroke-width="2.5" stroke-dasharray="none" opacity="0.4"/>
+        <path d="M 286,200 C 270,252 225,292 170,292" fill="none" stroke="#e07b39" stroke-width="2.5" opacity="0.3"/>
+      </svg>
+
+      <!-- Traveling dot -->
+      <div class="dot-wrap">
+        <div class="traveler"></div>
+      </div>
+
+      <!-- CENTER -->
+      <div class="center-badge">
+        <div class="center-icon">🔁</div>
+        <div class="center-pct">NO EXIT</div>
+        <div class="center-label">Same loop<br>every time</div>
+      </div>
+
+      <!-- STATION 1 — BUY BETTER TOOL (top) -->
+      <div class="station s1 s-top">
+        <div class="station-num">Step 1</div>
+        <div class="station-title">🛒 Buy Better Tool</div>
+        <div class="station-desc">"New AI will fix it." Budget approved. Licenses distributed.</div>
+      </div>
+
+      <!-- STATION 2 — BOLT ON (right) -->
+      <div class="station s2 s-right">
+        <div class="station-num">Step 2</div>
+        <div class="station-title">⚙️ Bolt Onto Old Process</div>
+        <div class="station-desc">No workflow redesign. Same flows, new tool layered on top.</div>
+      </div>
+
+      <!-- STATION 3 — WAIT (bottom) -->
+      <div class="station s3 s-bottom">
+        <div class="station-num">Step 3</div>
+        <div class="station-title">⏳ Wait for Results</div>
+        <div class="station-desc">Numbers stay flat. Dashboard fills. Nothing converts.</div>
+      </div>
+
+      <!-- STATION 4 — BLAME (left) -->
+      <div class="station s4 s-left">
+        <div class="station-num">Step 4</div>
+        <div class="station-title">👇 Blame the Tool</div>
+        <div class="station-desc">"The AI isn't ready." Back to Step 1.</div>
+      </div>
+
+      <!-- Exhaustion indicator -->
+      <div class="exhaustion-bar">
+        <span class="ex-label">Momentum loss</span>
+        <div class="ex-dots">
+          <div class="ex-dot"></div>
+          <div class="ex-dot"></div>
+          <div class="ex-dot"></div>
+          <div class="ex-dot"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INSIGHT STRIP -->
+  <div class="insight-strip">
+    <div class="insight-icon">⚡</div>
+    <div class="insight-text">
+      <div class="insight-main">The model was <em>never</em> the bottleneck.</div>
+      <div class="insight-sub">80% of orgs skip Layer 2 entirely — the workflow conversion layer. The loop breaks the moment you build it.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer">
+    <img class="profile-pic" src="https://alvishouse.io/wp-content/uploads/2026/02/alvis-profile.png" alt="Alvis House">
+    <div class="footer-text">
+      Enjoy this? Follow <strong>Alvis House</strong> for weekly AI strategy &nbsp;·&nbsp; 📩 Newsletter at <span>alvishouse.io</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
