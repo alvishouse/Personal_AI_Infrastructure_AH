@@ -13,7 +13,7 @@
 const BASE_URL = "https://linkdapi.com";
 
 // Kept compatible with Proxycurl interface for zero changes in monitor scripts
-export interface ProxycurlPost {
+export interface LinkdApiPost {
   post_url: string;
   text: string;
   posted_on: { day?: number; month?: number; year?: number } | null;
@@ -23,7 +23,7 @@ export interface ProxycurlPost {
   video?: string | null;
 }
 
-export interface ProxycurlComment {
+export interface LinkdApiComment {
   comment_id: string;
   commenter_name: string;
   commenter_url?: string;
@@ -33,7 +33,7 @@ export interface ProxycurlComment {
 }
 
 export function formatPostDate(
-  postedOn: ProxycurlPost["posted_on"]
+  postedOn: LinkdApiPost["posted_on"]
 ): string {
   if (!postedOn) return "Unknown date";
   const { day, month, year } = postedOn;
@@ -61,7 +61,7 @@ function extractPostUrn(postUrl: string): string {
   throw new Error(`Cannot extract activity URN from post URL: ${postUrl}`);
 }
 
-function epochToPostedOn(epochMs: number | string | undefined): ProxycurlPost["posted_on"] {
+function epochToPostedOn(epochMs: number | string | undefined): LinkdApiPost["posted_on"] {
   if (epochMs === undefined || epochMs === null) return null;
   const d = new Date(typeof epochMs === "string" ? parseInt(epochMs) : epochMs);
   if (isNaN(d.getTime())) return null;
@@ -89,8 +89,8 @@ export async function fetchRecentPosts(
   apiKey: string,
   linkedinProfileUrl: string,
   count = 5
-): Promise<ProxycurlPost[]> {
-  const posts: ProxycurlPost[] = [];
+): Promise<LinkdApiPost[]> {
+  const posts: LinkdApiPost[] = [];
 
   try {
     const username = extractUsername(linkedinProfileUrl);
@@ -141,8 +141,8 @@ export async function fetchRecentPosts(
 export async function fetchPostComments(
   apiKey: string,
   postUrl: string
-): Promise<ProxycurlComment[]> {
-  const comments: ProxycurlComment[] = [];
+): Promise<LinkdApiComment[]> {
+  const comments: LinkdApiComment[] = [];
 
   try {
     const postUrn = extractPostUrn(postUrl);

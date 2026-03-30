@@ -2,7 +2,189 @@
   "watched_profiles": [
     {
       "name": "Alvis House",
-      "linkedin_url": "https://www.linkedin.com/in/alvishouse/"
+      "linkedin_url": "https://www.linkedin.com/in/alvishouse/",
+      "bucket": "large_creator",
+      "notes": "Own profile — reference entry"
+    },
+    {
+      "name": "Ethan Mollick",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Wharton AI professor, 500k+ followers, audience = business leaders learning AI practically"
+    },
+    {
+      "name": "Allie Miller",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Former AWS AI, investor, posts about AI in business — audience = your exact ICP"
+    },
+    {
+      "name": "Cassie Kozyrkov",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Former Google Chief Decision Scientist — AI strategy, enterprise audience"
+    },
+    {
+      "name": "Bernard Marr",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Future of work/AI author, massive exec audience, very high post frequency"
+    },
+    {
+      "name": "Paul Roetzer",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Marketing AI Institute — audience = leaders adopting AI tools"
+    },
+    {
+      "name": "Thomas H. Davenport",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Analytics/AI in business (Babson/MIT) — posts reach CIOs and consultants"
+    },
+    {
+      "name": "Gary Vaynerchuk",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Massive reach + posts about business/content strategy — high visibility plays"
+    },
+    {
+      "name": "Adam Grant",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Organizational psychology, huge exec following, AI + work angle"
+    },
+    {
+      "name": "Liz Fosslien",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Emotions at work, huge following, AI + human angle"
+    },
+    {
+      "name": "Charlene Li",
+      "linkedin_url": "",
+      "bucket": "large_creator",
+      "notes": "Enterprise digital disruption, C-suite audience, AI leadership"
+    },
+    {
+      "name": "Alicia Lyttle",
+      "linkedin_url": "https://www.linkedin.com/in/alicialyttle/",
+      "bucket": "peer",
+      "notes": "AI strategy/consulting — direct peer"
+    },
+    {
+      "name": "Rachel Woods",
+      "linkedin_url": "https://www.linkedin.com/in/woodsrach/",
+      "bucket": "peer",
+      "notes": "AI for business/work — direct peer"
+    },
+    {
+      "name": "Amanda Natividad",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "Content + AI (SparkToro VP), strong B2B following"
+    },
+    {
+      "name": "Katelyn Bourgoin",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "Customer psychology for B2B, marketing-to-consultants audience"
+    },
+    {
+      "name": "Steph Smith",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "Writing + AI + solopreneurship, strong creator overlap"
+    },
+    {
+      "name": "Dave Kellogg",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "Enterprise SaaS exec/consultant, CXO-level audience"
+    },
+    {
+      "name": "Mike Weiss",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "AI tools for consultants and operators, direct niche peer"
+    },
+    {
+      "name": "Chris Do",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "Creative business/brand strategy — heavy LinkedIn creator, adjacent audience"
+    },
+    {
+      "name": "Wes Kao",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "Cohort-based learning, thought leadership for consultants"
+    },
+    {
+      "name": "Louis Grenier",
+      "linkedin_url": "",
+      "bucket": "peer",
+      "notes": "B2B marketing differentiation — audience = consultants + founders"
+    },
+    {
+      "name": "Isaac Sacolick",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "CIO + digital transformation author, active LinkedIn — direct ICP"
+    },
+    {
+      "name": "Vala Afshar",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "Salesforce Chief Digital Evangelist, AI adoption content"
+    },
+    {
+      "name": "R Ray Wang",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "Constellation Research analyst, enterprise AI strategy — CIO/CDO audience"
+    },
+    {
+      "name": "Greg Verdino",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "Digital transformation consultant, posts about AI readiness"
+    },
+    {
+      "name": "Cathy Hackl",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "Tech futurist, enterprise AI consulting — speaks their language"
+    },
+    {
+      "name": "Mike Quindazzi",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "PwC digital/AI transformation leader, large consulting audience"
+    },
+    {
+      "name": "David Mattin",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "Strategy Director, innovation/future trends content"
+    },
+    {
+      "name": "Jeanne Ross",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "MIT Sloan, enterprise digital transformation researcher"
+    },
+    {
+      "name": "Tomas Chamorro-Premuzic",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "AI + leadership psychology, CXO audience"
+    },
+    {
+      "name": "Tendayi Viki",
+      "linkedin_url": "",
+      "bucket": "icp",
+      "notes": "Innovation strategy consultant, posts reach heads of innovation/strategy"
     }
   ],
   "own_posts": [

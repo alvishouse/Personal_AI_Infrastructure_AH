@@ -1,6 +1,6 @@
 ---
 name: LinkedInMonitor
-description: LinkedIn engagement monitor for watched accounts and own post comments. USE WHEN user wants to check LinkedIn for new posts from watched profiles OR new comments on own posts OR generate reply options for a Notion engagement queue entry OR set up LinkedIn monitoring. Monitors via Proxycurl, alerts via Telegram, queues in Notion.
+description: LinkedIn engagement monitor for watched accounts and own post comments. USE WHEN user wants to check LinkedIn for new posts from watched profiles OR new comments on own posts OR generate reply options for a Notion engagement queue entry OR set up LinkedIn monitoring. Monitors via LinkdAPI, alerts via Telegram, queues in Notion.
 ---
 
 # LinkedInMonitor Skill

@@ -47,6 +47,10 @@ Format #4: Old vs New — Compares "old way" vs "new way" (or Bad vs Good, Platf
 
 Format #5: Mistakes — Takes the topic and elaborates on where people typically go wrong. Validates the original post, then bulleted list of specific mistakes with causes and/or fixes.
 
+Format #6: Storytelling — A brief personal anecdote directly tied to the post's topic. Opens with a specific real moment (time + context: "Three years ago..." / "Last quarter we..."). Connects the experience to the post's insight without summarizing it. First-person, conversational. 3–5 sentences. If you have a relevant image or visual that would support it, suggest it at the end in brackets: [Attach: describe what image would work].
+
+Format #7: Entertaining — A witty, personality-driven comment that shows you understand the industry's inside jokes or absurdities. Must be genuinely clever — not generic humor or a dad joke. Punchy. 2–4 sentences max. No exclamation points. Can be self-deprecating if it lands authentically.
+
 IMPORTANT RULES:
 - Write in first-person, conversational tone — sounds like a real person typing in a LinkedIn comment box
 - Use contractions (I've, don't, isn't, here's, etc.)
@@ -72,6 +76,12 @@ Format 4 — Old vs New:
 [reply text]
 
 Format 5 — Mistakes:
+[reply text]
+
+Format 6 — Storytelling:
+[reply text]
+
+Format 7 — Entertaining:
 [reply text]`;
 
 function getEnv(key: string): string {
@@ -204,7 +214,7 @@ async function handleReplyCallback(
   console.log(`[listener] Using model: ${model}`);
   const response = await client.messages.create({
     model,
-    max_tokens: 2000,
+    max_tokens: 2800,
     messages: [
       {
         role: "user",

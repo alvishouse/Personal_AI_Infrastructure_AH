@@ -45,6 +45,16 @@ async function createDatabase(
         },
       },
       Account: { rich_text: {} },
+      Bucket: {
+        select: {
+          options: [
+            { name: "Large Creator", color: "purple" },
+            { name: "Peer", color: "blue" },
+            { name: "ICP", color: "orange" },
+            { name: "Friend", color: "green" },
+          ],
+        },
+      },
       "LinkedIn URL": { url: {} },
       Status: {
         status: {

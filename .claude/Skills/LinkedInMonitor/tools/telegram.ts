@@ -72,11 +72,19 @@ export async function editMessage(
   }
 }
 
+const BUCKET_LABEL: Record<string, string> = {
+  large_creator: "🚀 Large Creator",
+  peer: "👥 Peer",
+  icp: "🎯 ICP",
+  friend: "👋 Friend",
+};
+
 export async function sendWatchedPostAlert(
   botToken: string,
   chatId: string,
   opts: {
     authorName: string;
+    bucket?: string;
     postDate: string;
     numLikes: number;
     numComments: number;
@@ -86,14 +94,16 @@ export async function sendWatchedPostAlert(
   notionPageId?: string
 ): Promise<boolean> {
   const excerpt = opts.postText.slice(0, 200) + (opts.postText.length > 200 ? "..." : "");
+  const bucketLine = opts.bucket ? `${BUCKET_LABEL[opts.bucket] ?? opts.bucket}` : null;
   const msg = [
     `🔔 *New post from ${escapeMd(opts.authorName)}*`,
+    bucketLine ? escapeMd(bucketLine) : null,
     `📅 ${escapeMd(opts.postDate)} · 👍 ${opts.numLikes} · 💬 ${opts.numComments}`,
     ``,
     escapeMd(excerpt),
     ``,
     `🔗 [View Post](${opts.postUrl})`,
-  ].join("\n");
+  ].filter(Boolean).join("\n");
 
   const extraBody: Record<string, unknown> = {};
   if (notionPageId) {

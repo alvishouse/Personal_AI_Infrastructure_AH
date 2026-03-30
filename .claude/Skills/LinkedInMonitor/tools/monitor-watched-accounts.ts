@@ -31,9 +31,20 @@ const SKILL_DIR = join(import.meta.dir, "..");
 const CONFIG_PATH = join(SKILL_DIR, "config", "monitor-config.json");
 const DB_PATH = join(SKILL_DIR, "data", "seen.db");
 
+type Bucket = "large_creator" | "peer" | "icp" | "friend";
+
+const BUCKET_LABEL: Record<string, string> = {
+  large_creator: "🚀 Large Creator",
+  peer: "👥 Peer",
+  icp: "🎯 ICP",
+  friend: "👋 Friend",
+};
+
 interface WatchedProfile {
   name: string;
   linkedin_url: string;
+  bucket: Bucket;
+  notes?: string;
 }
 
 interface MonitorConfig {
@@ -63,8 +74,15 @@ async function processProfile(
   env: { proxycurl: string; telegram: string; chatId: string; notion: string },
   dryRun: boolean
 ): Promise<void> {
-  const { name, linkedin_url: url } = profile;
-  console.log(`\n[monitor] Checking posts for ${name} (${url})`);
+  const { name, linkedin_url: url, bucket } = profile;
+
+  if (!url) {
+    console.log(`\n[monitor] Skipping ${name} — linkedin_url not set yet`);
+    return;
+  }
+
+  const bucketLabel = BUCKET_LABEL[bucket] ?? bucket;
+  console.log(`\n[monitor] Checking posts for ${name} [${bucketLabel}] (${url})`);
 
   // Skip-inactive optimization
   const skipDays = cfg.settings.inactive_skip_days;
@@ -118,6 +136,7 @@ async function processProfile(
         entryName: `${name} posted`,
         type: "Watched Post",
         account: name,
+        bucket,
         linkedinUrl: postUrl,
         excerpt,
         detectedAt: new Date().toISOString(),
@@ -129,6 +148,7 @@ async function processProfile(
     // Send Telegram alert
     await sendWatchedPostAlert(env.telegram, env.chatId, {
       authorName: name,
+      bucket,
       postDate,
       numLikes,
       numComments,

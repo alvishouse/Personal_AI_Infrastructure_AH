@@ -14,11 +14,20 @@ function notionHeaders(apiKey: string) {
 }
 
 export type EntryType = "Watched Post" | "Own Post Comment";
+export type Bucket = "large_creator" | "peer" | "icp" | "friend";
+
+const BUCKET_DISPLAY: Record<Bucket, string> = {
+  large_creator: "Large Creator",
+  peer: "Peer",
+  icp: "ICP",
+  friend: "Friend",
+};
 
 export interface QueueEntryInput {
   entryName: string;
   type: EntryType;
   account: string;
+  bucket?: Bucket;
   linkedinUrl: string;
   excerpt: string;
   detectedAt: string; // ISO string
@@ -50,6 +59,11 @@ export async function createEngagementEntry(
       "Detected At": {
         date: { start: entry.detectedAt },
       },
+      ...(entry.bucket && {
+        Bucket: {
+          select: { name: BUCKET_DISPLAY[entry.bucket] },
+        },
+      }),
       Status: {
         status: { name: "To Engage" },
       },
