@@ -3,146 +3,210 @@ name: LinkedInMonitor
 description: Usage guide for the LinkedIn engagement monitoring system. USE WHEN user needs to set up monitoring, add watched profiles, add own post URLs, run monitors, or generate replies.
 ---
 
-# LinkedIn Monitor — Usage Guide
+# LinkedIn Engagement Strategy — Process Guide
 
-Monitors LinkedIn for engagement opportunities and queues them for action in Notion.
+This system implements the **30/30/30/10 engagement strategy**: systematically monitor target creators, get notified when they post, generate high-quality comments, and build authority through consistent engagement.
 
 ---
 
-## First-Time Setup
+## How It Works (End-to-End)
 
-### 1. Get your API keys
+```
+Cron (8 AM daily)
+  → monitor-watched-accounts.ts
+      → LinkdAPI fetches new posts from 30 watched profiles
+      → Deduplicates against SQLite (seen.db)
+      → Creates Notion Engagement Queue entry (with Bucket label)
+      → Sends Telegram alert (with bucket label + "✍️ Generate Replies" button)
 
-Add these to `/home/alvis/PAI/.env`:
+  → monitor-own-comments.ts
+      → LinkdAPI fetches new comments on your own posts
+      → Deduplicates against SQLite
+      → Creates Notion Engagement Queue entry
+      → Sends Telegram alert
+
+Telegram Button Press ("✍️ Generate Replies")
+  → telegram-listener.ts (always-on background process)
+      → Fetches post excerpt from Notion
+      → Calls Claude (Haiku) with 7-format comment prompt
+      → Sends 7 reply options as plain text in Telegram
+      → Writes reply options back to Notion entry
+```
+
+---
+
+## The 30/30/30/10 Buckets
+
+| Bucket | % | Goal | Notion Label |
+|--------|---|------|-------------|
+| **Large Creator** | 30% | Piggyback on massive audience — comment early for visibility | 🚀 Large Creator |
+| **Peer** | 30% | Build community authority among relevant creators | 👥 Peer |
+| **ICP** | 30% | Understand client pain language, get on their radar | 🎯 ICP |
+| **Friend** | 10% | Support real-life network | 👋 Friend |
+
+All 30 profiles (10 per bucket) are pre-configured in `config/monitor-config.json`.
+
+---
+
+## Daily Workflow
+
+### 1. Monitor runs at 8 AM automatically
+New posts from watched profiles appear in your Telegram and Notion Engagement Queue.
+
+### 2. Triage in Telegram
+Each alert shows:
+- Creator name + bucket label
+- Post date, likes, comments
+- First 200 chars of post
+- Link to full post
+- "✍️ Generate Replies" button
+
+**Priority order:** Large Creator posts first (timing matters most — comment early).
+
+### 3. Generate reply options
+Press **✍️ Generate Replies** in Telegram (requires `telegram-listener.ts` running).
+
+You get 7 formats:
+1. **Counterpoint** — respectful opposing view (= Contrarian Take)
+2. **Listicle Examples** — added insights as a list
+3. **Unique Stat** — verifiable stat or study
+4. **Old vs New** — before/after comparison
+5. **Mistakes** — where people go wrong on this topic
+6. **Storytelling** — personal anecdote tied to the post
+7. **Entertaining** — witty, personality-driven comment
+
+### 4. Pick and post
+Copy the best option from Telegram or Notion. Post it on LinkedIn manually.
+Update the Notion entry Status: **To Engage → Engaged**.
+
+---
+
+## Setup (First Time Only)
+
+### 1. Environment variables
+Add to `/home/alvis/PAI/.env`:
 
 ```env
-PROXYCURL_API_KEY=your_key_here
+LINKDAPI_API_KEY=your_key_here
 TELEGRAM_BOT_TOKEN=your_token_here
 TELEGRAM_CHAT_ID=your_chat_id_here
-# NOTION_API_KEY is already in mcpServers.json — also add here for bun scripts:
 NOTION_API_KEY=your_notion_key_here
 ANTHROPIC_API_KEY=your_key_here
 ```
 
 **Where to get each:**
-- **Proxycurl:** nubela.co → API Keys
-- **Telegram Bot:** Talk to @BotFather on Telegram → `/newbot`
-- **Telegram Chat ID:** Send a message to your bot, then visit `https://api.telegram.org/bot<TOKEN>/getUpdates`
+- **LinkdAPI:** linkdapi.com → Dashboard → API Keys (100 free credits on signup)
+- **Telegram Bot:** Talk to @BotFather → `/newbot`
+- **Telegram Chat ID:** Send a message to your bot → visit `https://api.telegram.org/bot<TOKEN>/getUpdates`
 - **Notion:** Settings → Connections → Develop integrations → New integration
 
-### 2. Create the Notion Engagement Queue DB
-
+### 2. Migrate the existing Notion DB (adds Bucket property)
 ```bash
-cd /home/alvis/PAI
-bun run .claude/Skills/LinkedInMonitor/tools/setup-notion-db.ts <your-notion-page-id>
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/migrate-notion-db.ts
 ```
 
-This creates the DB and saves its ID to `config/monitor-config.json` automatically.
-
-**Important:** Make sure your Notion integration has access to the parent page (Connections → Add connection in the page settings).
-
-### 3. Install dependencies
-
+### 3. Start the Telegram listener
 ```bash
-cd /home/alvis/PAI
-bun add @anthropic-ai/sdk
+.claude/Skills/LinkedInMonitor/tools/start-listener.sh
 ```
 
-(`bun:sqlite` is built into Bun — no separate install needed.)
-
-### 4. Add watched profiles to config
-
-Edit `.claude/Skills/LinkedInMonitor/config/monitor-config.json`:
-
-```json
-{
-  "watched_profiles": [
-    {
-      "name": "Alex Hormozi",
-      "linkedin_url": "https://www.linkedin.com/in/alexanderhormozi"
-    }
-  ],
-  "own_posts": [],
-  "notion_engagement_db_id": "YOUR_DB_ID_HERE",
-  "settings": {
-    "posts_per_profile": 5,
-    "inactive_skip_days": 30,
-    "own_post_expiry_days": 10,
-    "generate_replies": false
-  }
-}
-```
-
-### 5. Set up cron jobs
-
+This keeps the "✍️ Generate Replies" button working. Runs in background. Check status:
 ```bash
-# Create cron jobs via PAI's CronCreate
+cat .claude/Skills/LinkedInMonitor/logs/listener.pid
 ```
 
-Or manually run `CronCreate` with:
-- **Watched accounts:** `cd /home/alvis/PAI && bun run .claude/Skills/LinkedInMonitor/tools/monitor-watched-accounts.ts`
-- **Own post comments:** `cd /home/alvis/PAI && bun run .claude/Skills/LinkedInMonitor/tools/monitor-own-comments.ts`
-- **Schedule:** `0 8 * * *` (daily at 8 AM)
+Stop it:
+```bash
+.claude/Skills/LinkedInMonitor/tools/stop-listener.sh
+```
+
+### 4. Set up cron jobs (daily at 8 AM)
+Use PAI's `CronCreate` with:
+```
+cd /home/alvis/PAI && bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/monitor-watched-accounts.ts
+cd /home/alvis/PAI && bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/monitor-own-comments.ts
+```
+Schedule: `0 8 * * *`
 
 ---
 
 ## Running Manually
 
 ```bash
-# Feature 1: Check watched profiles for new posts
-cd /home/alvis/PAI && bun run .claude/Skills/LinkedInMonitor/tools/monitor-watched-accounts.ts
+# Watched accounts (Feature 1)
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/monitor-watched-accounts.ts
 
-# Feature 1 (dry run — no writes):
-cd /home/alvis/PAI && bun run .claude/Skills/LinkedInMonitor/tools/monitor-watched-accounts.ts --dry-run
+# Dry run (no writes)
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/monitor-watched-accounts.ts --dry-run
 
-# Feature 2: Check own posts for new comments
-cd /home/alvis/PAI && bun run .claude/Skills/LinkedInMonitor/tools/monitor-own-comments.ts
+# Own post comments (Feature 2)
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/monitor-own-comments.ts
 
-# Feature 2 (dry run):
-cd /home/alvis/PAI && bun run .claude/Skills/LinkedInMonitor/tools/monitor-own-comments.ts --dry-run
+# Generate replies for a Notion entry (CLI alternative to Telegram button)
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/reply-generator.ts <notion-page-id>
 ```
 
 ---
 
 ## After Publishing a LinkedIn Post
 
-LinkedIn's API is read-only — there's no way to auto-detect your own post URLs. Add them manually:
+LinkedIn's API is read-only — add your own post URLs manually after publishing.
 
 1. Publish your post on LinkedIn
-2. Copy the post URL (click the three dots → "Copy link to post")
-3. Add it to `config/monitor-config.json → own_posts[]`:
+2. Click the three dots → **Copy link to post**
+3. Add to `config/monitor-config.json → own_posts[]`:
 
 ```json
 "own_posts": [
   {
-    "url": "https://www.linkedin.com/posts/alvishouse_...",
-    "title": "The Dumb Pipe Phenomenon",
-    "published_at": "2026-03-15"
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:...",
+    "title": "Short description of the post",
+    "published_at": "2026-03-29"
   }
 ]
 ```
 
-Posts older than `own_post_expiry_days` (default: 10) are automatically skipped. Old entries stay in config for history but don't incur Proxycurl costs.
+Posts auto-expire after `own_post_expiry_days` (default: 10). Old entries stay in config for history but aren't polled.
 
 ---
 
-## Generating Reply Options (Feature 3)
+## Adding New Profiles
 
-When you see an interesting entry in your Notion Engagement Queue:
-
-1. Open the entry and copy the Notion page ID from the URL
-2. Run:
+Edit `config/monitor-config.json → watched_profiles[]`. Skip empty `linkedin_url` entries — the monitor will log them and move on. To look up URLs for new profiles:
 
 ```bash
-cd /home/alvis/PAI
-bun run .claude/Skills/LinkedInMonitor/tools/reply-generator.ts <notion-page-id>
+# Edit CANDIDATE_USERNAMES in the script first, then:
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/lookup-profile-urls.ts
+bun --env-file .claude/.env .claude/Skills/LinkedInMonitor/tools/lookup-profile-urls.ts --write
 ```
 
-This reads the `Excerpt` field, generates 5 reply options (using the 5 comment formats: Counterpoint, Listicle Examples, Unique Stat, Old vs New, Mistakes), and writes them back to the `Reply Options` field in Notion.
+Profile schema:
+```json
+{
+  "name": "Person Name",
+  "linkedin_url": "https://www.linkedin.com/in/username/",
+  "bucket": "large_creator",
+  "notes": "Why this person — audience overlap, relevance"
+}
+```
 
-Copy the best option from Notion and paste it manually into LinkedIn.
+Valid bucket values: `large_creator`, `peer`, `icp`, `friend`
 
-**Cost:** ~$0.003–0.008 per call. Run it only when you actually want to engage.
+---
+
+## Notion Engagement Queue
+
+The queue has these views (create them manually in Notion after migration):
+
+| View | Filter |
+|------|--------|
+| **Today's Queue** | Status = To Engage, sorted by Detected At |
+| **Own Post Comments** | Type = Own Post Comment |
+| **Large Creator** | Bucket = Large Creator |
+| **ICP Watch** | Bucket = ICP |
+| **Kanban** | Grouped by Status |
+
+**Status flow:** To Engage → (Engaged or Skipped)
 
 ---
 
@@ -150,44 +214,55 @@ Copy the best option from Notion and paste it manually into LinkedIn.
 
 | Field | Default | Description |
 |-------|---------|-------------|
-| `watched_profiles` | `[]` | Profiles to monitor for new posts |
-| `own_posts` | `[]` | Your published LinkedIn post URLs |
-| `notion_engagement_db_id` | `""` | Set automatically by setup-notion-db.ts |
-| `settings.posts_per_profile` | `5` | How many recent posts to fetch per profile |
-| `settings.inactive_skip_days` | `30` | Skip profiles with no post in N days (saves Proxycurl credits) |
+| `watched_profiles[].bucket` | required | `large_creator`, `peer`, `icp`, or `friend` |
+| `settings.posts_per_profile` | `5` | Recent posts to fetch per profile per run |
+| `settings.inactive_skip_days` | `30` | Skip profiles with no post in N days |
 | `settings.own_post_expiry_days` | `10` | Stop monitoring own posts after N days |
-| `settings.generate_replies` | `false` | Legacy flag — replies are always on-demand now |
+| `settings.reply_model` | `claude-haiku-4-5-20251001` | Model used by Telegram listener for reply generation |
 
 ---
 
 ## Cost Reference
 
-**Proxycurl (PAYG ~$0.01/credit):**
+**LinkdAPI:** ~2 calls per profile per run (URN lookup + posts fetch)
 
-| Setup | Credits/run | Cost/day | Cost/month |
-|-------|-------------|----------|------------|
-| 2 profiles + 2 own posts | ~10 | $0.10 | $3.00 |
-| 5 profiles + 3 own posts | ~21 | $0.21 | $6.30 |
-| 10 profiles + 5 own posts | ~40 | $0.40 | $12.00 |
+| Setup | Calls/day | Est. monthly |
+|-------|-----------|-------------|
+| 30 profiles + 5 own posts | ~65 | Check your LinkdAPI plan |
 
-**Claude API (on-demand replies only):** ~$0.005/call. Essentially free unless you're generating dozens of replies daily.
+**Claude API (Haiku — reply generation only):** ~$0.005 per "Generate Replies" press.
+
+| Usage | $/month |
+|-------|---------|
+| Light (3–5 per day) | ~$0.50–$0.75 |
+| Active (10–15 per day) | ~$1.50–$2.25 |
+| Heavy (all 30 profiles) | ~$3.75–$4.50 |
 
 ---
 
 ## Verification Checklist
 
+- [ ] `migrate-notion-db.ts` runs without error
+- [ ] `start-listener.sh` starts and PID file exists
 - [ ] `monitor-watched-accounts.ts --dry-run` returns posts without writing
-- [ ] Live run populates `data/seen.db` (seen_posts table)
-- [ ] Second run produces no duplicate Telegram alerts
-- [ ] Notion Engagement Queue entries appear after run
-- [ ] `monitor-own-comments.ts` with a real post URL detects comments
-- [ ] `reply-generator.ts <page-id>` writes 5 labeled options to Notion
+- [ ] Live run: Telegram alerts arrive with bucket label
+- [ ] Live run: Notion Engagement Queue entries appear with Bucket property
+- [ ] Second run: no duplicate alerts (SQLite deduplication working)
+- [ ] Pressing "✍️ Generate Replies" in Telegram returns 7 formatted options
 - [ ] Cron jobs fire at 8 AM daily
 
 ---
 
-## Data Location
+## File Reference
 
-- **SQLite DB:** `.claude/Skills/LinkedInMonitor/data/seen.db` (gitignored)
-- **Config:** `.claude/Skills/LinkedInMonitor/config/monitor-config.json`
-- **Logs:** Printed to stdout — visible in cron output and PAI session history
+| File | Purpose |
+|------|---------|
+| `config/monitor-config.json` | All watched profiles, own posts, settings |
+| `tools/monitor-watched-accounts.ts` | Feature 1: poll watched profiles |
+| `tools/monitor-own-comments.ts` | Feature 2: poll own post comments |
+| `tools/telegram-listener.ts` | Always-on bot for reply generation button |
+| `tools/reply-generator.ts` | CLI: generate replies for a Notion entry |
+| `tools/lookup-profile-urls.ts` | Utility: resolve LinkedIn URLs via LinkdAPI |
+| `tools/migrate-notion-db.ts` | One-time: add Bucket property to existing DB |
+| `tools/setup-notion-db.ts` | One-time: create fresh Notion DB |
+| `data/seen.db` | SQLite deduplication store (gitignored) |
