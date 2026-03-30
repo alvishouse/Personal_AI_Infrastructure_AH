@@ -8,61 +8,61 @@
     },
     {
       "name": "Ethan Mollick",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/emollick/",
       "bucket": "large_creator",
       "notes": "Wharton AI professor, 500k+ followers, audience = business leaders learning AI practically"
     },
     {
       "name": "Allie Miller",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/alliekmiller/",
       "bucket": "large_creator",
       "notes": "Former AWS AI, investor, posts about AI in business — audience = your exact ICP"
     },
     {
       "name": "Cassie Kozyrkov",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/kozyrkov/",
       "bucket": "large_creator",
       "notes": "Former Google Chief Decision Scientist — AI strategy, enterprise audience"
     },
     {
       "name": "Bernard Marr",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/bernardmarr/",
       "bucket": "large_creator",
       "notes": "Future of work/AI author, massive exec audience, very high post frequency"
     },
     {
       "name": "Paul Roetzer",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/paulroetzer/",
       "bucket": "large_creator",
       "notes": "Marketing AI Institute — audience = leaders adopting AI tools"
     },
     {
       "name": "Thomas H. Davenport",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/davenporttom/",
       "bucket": "large_creator",
       "notes": "Analytics/AI in business (Babson/MIT) — posts reach CIOs and consultants"
     },
     {
       "name": "Gary Vaynerchuk",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/garyvaynerchuk/",
       "bucket": "large_creator",
       "notes": "Massive reach + posts about business/content strategy — high visibility plays"
     },
     {
       "name": "Adam Grant",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/adammgrant/",
       "bucket": "large_creator",
       "notes": "Organizational psychology, huge exec following, AI + work angle"
     },
     {
       "name": "Liz Fosslien",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/liz-fosslien/",
       "bucket": "large_creator",
       "notes": "Emotions at work, huge following, AI + human angle"
     },
     {
       "name": "Charlene Li",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/charleneli/",
       "bucket": "large_creator",
       "notes": "Enterprise digital disruption, C-suite audience, AI leadership"
     },
@@ -80,7 +80,7 @@
     },
     {
       "name": "Amanda Natividad",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/amandanat/",
       "bucket": "peer",
       "notes": "Content + AI (SparkToro VP), strong B2B following"
     },
@@ -92,31 +92,31 @@
     },
     {
       "name": "Steph Smith",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/stephsmith/",
       "bucket": "peer",
       "notes": "Writing + AI + solopreneurship, strong creator overlap"
     },
     {
       "name": "Dave Kellogg",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/davekellogg/",
       "bucket": "peer",
       "notes": "Enterprise SaaS exec/consultant, CXO-level audience"
     },
     {
       "name": "Mike Weiss",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/mikeweiss/",
       "bucket": "peer",
       "notes": "AI tools for consultants and operators, direct niche peer"
     },
     {
       "name": "Chris Do",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/thechrisdo/",
       "bucket": "peer",
       "notes": "Creative business/brand strategy — heavy LinkedIn creator, adjacent audience"
     },
     {
       "name": "Wes Kao",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/weskao/",
       "bucket": "peer",
       "notes": "Cohort-based learning, thought leadership for consultants"
     },
@@ -128,37 +128,37 @@
     },
     {
       "name": "Isaac Sacolick",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/isaacsacolick/",
       "bucket": "icp",
       "notes": "CIO + digital transformation author, active LinkedIn — direct ICP"
     },
     {
       "name": "Vala Afshar",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/valaafshar/",
       "bucket": "icp",
       "notes": "Salesforce Chief Digital Evangelist, AI adoption content"
     },
     {
       "name": "R Ray Wang",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/rwang0/",
       "bucket": "icp",
       "notes": "Constellation Research analyst, enterprise AI strategy — CIO/CDO audience"
     },
     {
       "name": "Greg Verdino",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/gregverdino/",
       "bucket": "icp",
       "notes": "Digital transformation consultant, posts about AI readiness"
     },
     {
       "name": "Cathy Hackl",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/cathyhackl/",
       "bucket": "icp",
       "notes": "Tech futurist, enterprise AI consulting — speaks their language"
     },
     {
       "name": "Mike Quindazzi",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/mikequindazzi/",
       "bucket": "icp",
       "notes": "PwC digital/AI transformation leader, large consulting audience"
     },
@@ -170,7 +170,7 @@
     },
     {
       "name": "Jeanne Ross",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/jeanneross/",
       "bucket": "icp",
       "notes": "MIT Sloan, enterprise digital transformation researcher"
     },
@@ -182,7 +182,7 @@
     },
     {
       "name": "Tendayi Viki",
-      "linkedin_url": "",
+      "linkedin_url": "https://www.linkedin.com/in/tendayiviki/",
       "bucket": "icp",
       "notes": "Innovation strategy consultant, posts reach heads of innovation/strategy"
     }
