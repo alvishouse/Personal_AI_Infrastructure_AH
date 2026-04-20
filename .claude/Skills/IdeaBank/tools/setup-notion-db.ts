@@ -90,6 +90,9 @@ async function createDatabase(apiKey: string, parentPageId: string): Promise<str
         },
       },
 
+      // The ICP translation — what Alvis House would actually write about
+      "ICP Angle": { rich_text: {} },
+
       // Claude's scoring rationale
       "Scoring Notes": { rich_text: {} },
 

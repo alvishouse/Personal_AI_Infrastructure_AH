@@ -394,6 +394,10 @@ async function handleIdeaCommand(
     `Extraction Potential: ${scores.extractionPotential}/5`,
   ].join("\n");
 
+  const icpAngleLine = scores.icpAngle
+    ? `\nICP Angle: ${scores.icpAngle}`
+    : "";
+
   const conceptsPreview = transcriptSummary
     ? `\n\nKey concepts from video:\n${transcriptSummary.slice(0, 400)}${transcriptSummary.length > 400 ? "..." : ""}`
     : "";
@@ -402,6 +406,7 @@ async function handleIdeaCommand(
 
   const reply = [
     `✅ Idea captured: "${scores.name}"`,
+    icpAngleLine,
     ``,
     tierLine,
     ``,

@@ -1,5 +1,5 @@
 {
-  "notion_ideas_db_id": "",
+  "notion_ideas_db_id": "3480760e-b0cd-8103-bab4-d354cc00ebe8",
   "settings": {
     "vet_model": "claude-sonnet-4-6",
     "concept_model": "claude-haiku-4-5-20251001"

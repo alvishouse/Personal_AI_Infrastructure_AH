@@ -14,7 +14,8 @@ export interface IdeaInput {
 }
 
 export interface IdeaScores {
-  name: string;                // Short idea title (AI-generated, max 8 words)
+  name: string;                // Title for the translated ICP angle (max 8 words)
+  icpAngle: string;            // What Alvis House would actually write about
   audienceRelevance: number;   // 1–5
   businessAlignment: number;   // 1–5
   timeliness: number;          // 1–5
@@ -26,7 +27,7 @@ export interface IdeaScores {
   trackAlignment: string;      // Which Evergreen Track this connects to
 }
 
-const SCORING_PROMPT = `You are scoring a content idea for Alvis House, an AI readiness and adoption consultant.
+const SCORING_PROMPT = `You are an ICP translation engine and content scoring system for Alvis House, an AI readiness and adoption consultant.
 
 ICP: Mid-Market Squeezed — Directors/VPs of Operations and C-Level executives (50-500 employees) responsible for AI adoption outcomes. They feel behind, misled by hype, embarrassed by pilot failures. They are squeezed between board pressure to move fast and front-line resistance to change.
 
@@ -39,15 +40,26 @@ Evergreen Tracks:
 - T6: Design Thinking | T7: BYOAI | T8: 6 Pillars of Readiness
 - T9: Efficiency→Innovation | T10: Judgment over Automation
 
-Score this idea on 5 dimensions (1-5 each):
+CRITICAL RULE — TRANSLATE BEFORE SCORING:
+The raw input is a seed, not a brief. Never score the literal topic. Always ask: "What is the organizational implication of this for a Mid-Market leader trying to drive AI adoption?"
 
-1. Audience Relevance (1-5): How directly does this address Mid-Market squeezed leaders' daily pain? Does it speak to their embarrassment, their board pressure, their implementation struggles?
+Examples of correct translation:
+- "3 AI skills worth $500K" → "The talent gap killing your AI roadmap: roles orgs must build or hire to make adoption stick"
+- "Microsoft Copilot vs Claude" → "Why 60% of Copilot deployments disappoint — and what the real problem is"
+- "AI startup economics changed" → "The AI vendor you standardized on may not survive its own growth — how to vet for durability"
+- "Speed of AI development" → "Your implementation timeline is wrong because you're benchmarking against last year's AI"
 
-2. Business Alignment (1-5): How well does this support the AI Readiness & Adoption positioning? Does it naturally lead to or reinforce the offer?
+The translated angle is what you score and name. Capture it in "icpAngle" in your response.
 
-3. Timeliness (1-5): Is this relevant NOW? Will it still resonate in 3 months? Is there a news hook, trend, or seasonal angle?
+Score the TRANSLATED angle on 5 dimensions (1-5 each):
 
-4. Differentiation (1-5): Is this a fresh take or generic? Does it have a cross-domain analogy or counterintuitive angle? Could only Alvis House write this convincingly?
+1. Audience Relevance (1-5): Does the translated angle speak directly to board pressure, pilot embarrassment, implementation struggles, or front-line resistance?
+
+2. Business Alignment (1-5): Does it naturally lead to or reinforce the AI Readiness & Adoption Program offer?
+
+3. Timeliness (1-5): Is this relevant NOW? Will it still resonate in 3 months?
+
+4. Differentiation (1-5): Is this a fresh take? Could only Alvis House write this convincingly?
 
 5. Extraction Potential (1-5): Can this become 3+ LinkedIn posts + a newsletter + a cornerstone? Or is it one-and-done? High score = rich seam to mine over multiple pieces.
 
@@ -60,13 +72,14 @@ Scoring guide:
 
 Respond ONLY with valid JSON in this exact format (no markdown, no explanation outside the JSON):
 {
-  "name": "Short idea title — max 8 words",
+  "name": "Short title for the TRANSLATED angle — max 8 words",
+  "icpAngle": "1-2 sentence description of the translated angle — what Alvis House would actually write about, not the raw topic",
   "audienceRelevance": 4,
   "businessAlignment": 3,
   "timeliness": 5,
   "differentiation": 4,
   "extractionPotential": 3,
-  "scoringNotes": "2-3 sentence rationale explaining why these scores. Be specific — reference what works and what doesn't.",
+  "scoringNotes": "2-3 sentence rationale. Reference the translation — explain why the ICP angle scores the way it does.",
   "trackAlignment": "T3: Data Flow — brief reason. Or 'New Territory' if none apply."
 }`;
 
@@ -117,6 +130,7 @@ export async function vetIdea(
 
   const parsed = JSON.parse(jsonMatch[0]) as {
     name: string;
+    icpAngle: string;
     audienceRelevance: number;
     businessAlignment: number;
     timeliness: number;

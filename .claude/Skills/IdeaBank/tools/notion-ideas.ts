@@ -27,6 +27,7 @@ export interface IdeaBankEntry {
   transcriptSummary?: string;
   addendum?: string;
   scores: {
+    icpAngle?: string;
     audienceRelevance: number;
     businessAlignment: number;
     timeliness: number;
@@ -61,6 +62,9 @@ export async function createIdeaEntry(
     "Extraction Potential": { number: entry.scores.extractionPotential },
     Tier: {
       select: { name: entry.scores.tier },
+    },
+    "ICP Angle": {
+      rich_text: [{ text: { content: (entry.scores.icpAngle ?? "").slice(0, 2000) } }],
     },
     "Scoring Notes": {
       rich_text: [{ text: { content: entry.scores.scoringNotes.slice(0, 2000) } }],
