@@ -49,7 +49,8 @@ interface ImagePlaceholder { type: string; alt: string }
 const args = process.argv.slice(2);
 const workflowId = args.find(a => a.startsWith('--workflow-id='))?.split('=')[1];
 const dryRun = args.includes('--dry-run');
-if (!workflowId) { console.error('Usage: bun run publish-to-substack.ts --workflow-id=<id>'); process.exit(1); }
+const updatePostId = args.find(a => a.startsWith('--update-post-id='))?.split('=')[1];
+if (!workflowId) { console.error('Usage: bun run publish-to-substack.ts --workflow-id=<id> [--update-post-id=<id>]'); process.exit(1); }
 
 // ─── Tiptap Helpers ──────────────────────────────────────────────────────────
 
@@ -90,8 +91,34 @@ function listItem(text: string): TNode {
 }
 
 function image(src: string, alt: string): TNode {
-  // Substack treats image as an inline node — must be wrapped in a paragraph
-  return { type: 'paragraph', content: [{ type: 'image', attrs: { src, alt } }] };
+  // Substack uses captionedImage (wrapper) > image2 (inner) for rendered images.
+  // When the editor opens, external src URLs get auto-converted to Substack CDN.
+  // We insert external WP URLs here; the Playwright "Update now" step converts them.
+  return {
+    type: 'captionedImage',
+    content: [{
+      type: 'image2',
+      attrs: {
+        src,
+        srcNoWatermark: null,
+        alt: alt || null,
+        title: null,
+        fullscreen: false,
+        imageSize: 'normal',
+        height: null,
+        width: null,
+        resizeWidth: null,
+        bytes: null,
+        href: null,
+        belowTheFold: false,
+        topImage: false,
+        internalRedirect: null,
+        isProcessing: false,
+        align: null,
+        offset: false,
+      },
+    }],
+  };
 }
 
 // ─── Markdown → Tiptap ───────────────────────────────────────────────────────
@@ -287,7 +314,7 @@ async function buildImageUrlList(
   wpSite: WordPressSite,
   placeholders: ImagePlaceholder[]
 ): Promise<(string | null)[]> {
-  const wpMedia = metadata.checkpoints?.['step-12']?.wp_media || {};
+  const wpMedia = metadata.checkpoints?.['step-12']?.wp_media || metadata.wordpress?.media_ids || {};
   const typeToKey: Record<string, string[]> = {
     featured: ['featured'],
     diagram: ['inline_01', 'inline_02', 'inline_03'],
@@ -308,6 +335,30 @@ async function buildImageUrlList(
 }
 
 // ─── Playwright Session ───────────────────────────────────────────────────────
+
+async function publishUpdate(ctx: BrowserContext, draftUrl: string): Promise<void> {
+  const page = await ctx.newPage();
+  page.on('dialog', async d => { await d.accept(); });
+  await page.goto(draftUrl, { waitUntil: 'networkidle', timeout: 30000 });
+  await page.waitForTimeout(4000); // allow editor to auto-convert external images to CDN
+
+  const updateBtn = page.getByRole('button', { name: /^update$/i }).first();
+  if (await updateBtn.count() === 0) throw new Error('Update button not found in editor');
+  await updateBtn.click();
+  await page.waitForTimeout(2000);
+
+  const updateNowBtn = page.getByRole('button', { name: /update now/i });
+  if (await updateNowBtn.count() === 0) throw new Error('"Update now" button not found in publish dialog');
+  await updateNowBtn.click();
+  await page.waitForTimeout(4000);
+
+  const finalUrl = page.url();
+  await page.close();
+  if (!finalUrl.includes('/share-center') && !finalUrl.includes('/detail/')) {
+    throw new Error(`Update may have failed — final URL: ${finalUrl}`);
+  }
+  console.log('✓ Editor updated and published');
+}
 
 async function getAuthContext(config: SubstackConfig): Promise<BrowserContext> {
   const browser = await chromium.launch({ headless: true });
@@ -350,6 +401,31 @@ async function getCookieFromContext(ctx: BrowserContext): Promise<string> {
   const sid = cookies.find(c => c.name === 'substack.sid');
   if (!sid) throw new Error('substack.sid cookie not found after login');
   return `substack.sid=${sid.value}`;
+}
+
+async function updateSubstackPost(
+  config: SubstackConfig,
+  cookie: string,
+  postId: number,
+  title: string,
+  subtitle: string,
+  tiptapJson: string
+): Promise<void> {
+  const pubDomain = config.publication_url.replace(/^https?:\/\//, '');
+  const res = await fetch(`https://${pubDomain}/api/v1/drafts/${postId}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', Cookie: cookie },
+    body: JSON.stringify({
+      draft_title: title,
+      draft_subtitle: subtitle,
+      draft_body: tiptapJson,
+    }),
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Post update failed: ${res.status} ${body.slice(0, 300)}`);
+  }
+  console.log(`✓ Post ${postId} updated`);
 }
 
 async function createSubstackDraft(
@@ -466,6 +542,34 @@ async function main() {
   // Auth via Playwright (stored session or fresh login)
   const ctx = await getAuthContext(config);
   const cookie = await getCookieFromContext(ctx);
+
+  if (updatePostId) {
+    // Update existing published post:
+    // 1. Patch the draft body via API (inserts captionedImage nodes with external WP URLs)
+    // 2. Open editor via Playwright — editor auto-converts external URLs to Substack CDN
+    // 3. Click "Update now" to publish the CDN-hosted images to the live post
+    const postId = parseInt(updatePostId, 10);
+    console.log(`\nPatching draft body for post ${postId}...`);
+    await updateSubstackPost(config, cookie, postId, title, subtitle, tiptapJson);
+
+    console.log('\nOpening editor to trigger CDN conversion + Update now...');
+    const draftUrl = `${config.publication_url}/publish/post/${postId}`;
+    await publishUpdate(ctx, draftUrl);
+
+    metadata.substack = {
+      draft_id: postId,
+      draft_url: draftUrl,
+      post_url: `${config.publication_url}/p/${postId}`,
+      status: 'published',
+      synced_at: new Date().toISOString(),
+    };
+    metadata.updated_at = new Date().toISOString();
+    writeFileSync(metaPath, JSON.stringify(metadata, null, 2));
+    console.log(`\n✓ Post updated on Substack with CDN images!`);
+    console.log(`  ${config.publication_url}/p/${postId}`);
+    await ctx.browser()?.close();
+    return;
+  }
 
   // Create draft via API
   console.log('\nCreating Substack draft...');

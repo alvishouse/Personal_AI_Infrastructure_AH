@@ -67,6 +67,7 @@ The three content agents are defined in:
 |------|------|------|-------|--------|
 | 7 | Long Form Post | Auto | **content-writer** (green) | `06-cornerstone-draft.md` |
 | 8 | Sub-agent Review | Auto | **content-editor** (orange) | `07-editor-review.md` |
+| 8b | Push Draft to Notion | Auto | Notion MCP / orchestrator | Notion page + `metadata.json` updated |
 | 9 | Manual Review + Image Reqs | **PAUSE** | Human | `08-cornerstone-final.md`, `09-image-manifest.md` |
 
 ### Phase 4: Images & Preview
@@ -80,7 +81,7 @@ The three content agents are defined in:
 
 | Step | Name | Type | Agent | Output |
 |------|------|------|-------|--------|
-| 12 | Image Upload + WordPress Post | Auto | WP REST API + WP Publisher | Published draft with images |
+| 12 | Image Upload + WordPress Post + Substack | Auto | WP REST API + WP Publisher + Substack Publisher | WordPress draft with images + Substack post live |
 | 13 | Content Extraction + Platform Images | **PAUSE** | **content-researcher** (cyan) + Human | `13-extracted-content/` |
 | 13b | LinkedIn Image Generation | **PAUSE** | Art Skill | `13-extracted-content/linkedin/images/` |
 
@@ -345,11 +346,11 @@ Voice: Alvis House - declarative, optimistic yet challenging, 5th-grade reading 
 
 ---
 
-### Step 8: Sub-agent Review + Notion Sync [AUTO]
+### Step 8: Sub-agent Review [AUTO]
 
-**Purpose:** Editor reviews against checklist, voice, and ICP. On completion, automatically pushes content to Notion for human review.
+**Purpose:** Editor reviews draft against checklist, voice, and ICP. Outputs report + revised draft only. Notion push is a separate explicit step (8b).
 
-**Agent:** Sonnet (Editor) → then Notion sync (automatic)
+**Agent:** Sonnet (Editor)
 
 **Review Checklist:**
 ```
@@ -393,35 +394,53 @@ Voice: Alvis House - declarative, optimistic yet challenging, 5th-grade reading 
 - `07-editor-review.md` — Editorial report ONLY (assessment, checklist, voice audit, top fixes). No draft content.
 - `06-cornerstone-draft.md` — **Overwrite with the fully revised draft.** The editor applies all fixes directly to this file. This is the single source of truth for the article body.
 
-**Why this matters:** The Notion sync reads `06-cornerstone-draft.md`. If the revised draft is embedded inside `07-editor-review.md` instead, Notion receives the unedited original. Always overwrite `06-cornerstone-draft.md` with the editor-revised version before the sync runs.
+**Why this matters:** The editor outputs a report only (`07-editor-review.md`) and applies blocking fixes directly to `06-cornerstone-draft.md`. Notion push happens in Step 8b after the human has applied any manual fixes from the review.
 
-**Automatic Notion Sync (runs immediately after editor saves revised draft to `06-cornerstone-draft.md`):**
+**Automatic Transition:** Pause for Step 8b
+
+---
+
+### Step 8b: Push Draft to Notion [AUTO]
+
+**Purpose:** Push the reviewed, fixed draft to Notion as the cornerstone content page. Creates the workflow entry and content page, saves Notion IDs to metadata.json.
+
+**Trigger:** Run after all blocking issues from the editor review are resolved and `06-cornerstone-draft.md` is final.
+
+**How to trigger:**
 ```bash
-PAI_DIR=/home/alvis/PAI bun run workflow-orchestrator.ts \
+PAI_DIR=/home/alvis/PAI bun run .claude/Skills/WordPressPublisher/tools/workflow-orchestrator.ts \
   --workflow-id=[workflow-id] \
   --push-to-notion
 ```
 
-This automatically:
-1. Creates workflow entry in Notion Content database
-2. Creates content page with all properties (Content Type: Cornerstone Blog, Platform: Essay)
-3. Sets Campaign = `workflow_id` (e.g. `2026-03-22-refinery-principle`) — used as Notion filter key
-4. Sets 📝 blog icon on the page
-5. Syncs `06-cornerstone-draft.md` (editor-revised) body to Notion page
-6. Saves Notion IDs to metadata.json
-7. Advances status to Step 9
+**If orchestrator unavailable**, push manually using the Notion MCP tools:
+1. Create a new page in the Notion Content database (use parent page from a prior workflow for reference)
+2. Set properties: Content Type = Cornerstone Blog, Platform = Essay, Campaign = `workflow_id`, Status = Draft
+3. Set icon to 📝
+4. Push the body of `06-cornerstone-draft.md` as the page content
+5. Save the returned page ID and URL to `metadata.json` under `notion.content_id` and `notion.content_url`
 
-**Automatic Transition:** Notion sync → Pause for Step 9
+**Output:** Updates `metadata.json`:
+```json
+"notion": {
+  "workflow_id": "[notion-workflow-page-id]",
+  "content_id": "[notion-content-page-id]",
+  "content_url": "[notion-page-url]",
+  "synced_at": "[ISO timestamp]"
+}
+```
+
+**Automatic Transition:** Step 8b complete → Pause for Step 9
 
 ---
 
 ### Step 9: Manual Review + Image Requirements [PAUSE]
 
-**Purpose:** Human reviews content and creates image manifest.
+**Purpose:** Human reviews content in Notion and creates image manifest.
 
 **⛔ GATE — Run this check before anything else:**
 ```bash
-# Verify Notion sync ran after Step 8. If notion.content_id is missing, sync was skipped.
+# Verify Step 8b ran. If notion.content_id is missing, push to Notion first.
 cat scratchpad/content-create/[workflow-id]/metadata.json | grep -A4 '"notion"'
 ```
 If `notion.content_id` is absent, run the sync now before proceeding:
@@ -701,6 +720,10 @@ This template contains the full `<style>` block with all components:
 
 **⚠️ STRIP THE HTML WRAPPER before saving.** `12-wp-content.html` must contain ONLY `<style>...</style>` + `<article>...</article>`. Never include `<!DOCTYPE html>`, `<html>`, `<head>`, `<meta>`, or `<body>` tags — WordPress wraps any stray document-level tags in `<p>` blocks, creating large gaps above the content.
 
+**⚠️ NO CSS CUSTOM PROPERTIES in the `<style>` block.** WordPress's text filters convert `--` (double hyphen) to an en dash `–`, which breaks every `var(--x)` reference and causes unstyled output. Always inline literal color values directly. Never use `:root { --var: value }` or `var(--var)` in WordPress post content.
+
+**⚠️ NO EM DASHES in any content.** Em dashes (—) are a dead AI content giveaway. Replace with commas, colons, or restructure the sentence. Run a final check before upload: `grep '—\|&#8212;' 12-wp-content.html` should return nothing.
+
 Save the stripped content to `12-wp-content.html` in the workflow scratchpad. Upload via:
 
 ```bash
@@ -773,6 +796,66 @@ curl -s -H "Authorization: Basic ${AUTH}" \
     "inline_03": 773,
     "inline_04": 774
   }
+}
+```
+
+**Step 12e: Publish to Substack [AUTO]**
+
+Run immediately after Step 12d. Uses the same cornerstone markdown (`08-cornerstone-final.md`) and WordPress media IDs from `metadata.json`.
+
+```bash
+PAI_DIR=/home/alvis/PAI bun run .claude/Skills/WordPressPublisher/tools/publish-to-substack.ts \
+  --workflow-id=[WORKFLOW-ID]
+```
+
+**⚠️ HOW SUBSTACK IMAGES WORK — do not skip this section.**
+
+Substack images require a two-phase process. The tool handles both automatically, but understanding why prevents future debugging:
+
+**Phase 1 — API draft creation:** The tool converts `<!-- IMAGE -->` placeholders in the cornerstone to `captionedImage` nodes containing `image2` nodes, using the WordPress-hosted URLs from `metadata.json → wordpress.media_ids`. These external URLs are inserted into the Tiptap draft body via the Substack drafts API.
+
+**Phase 2 — Editor CDN conversion:** When the Playwright browser opens the draft editor, Substack's editor automatically fetches each external URL and re-uploads it to Substack's CDN (`substack-post-media.s3.amazonaws.com`). The `src` values in the body update to Substack CDN URLs. Only CDN-hosted images render in the published post.
+
+**Phase 3 — Publish update:** The tool clicks "Update now" to push the CDN-converted draft to the live post.
+
+**What breaks if you skip Playwright:** If you only do an API PUT without opening the editor, external URLs remain in the body and images are invisible in the published post. The editor step is mandatory.
+
+**Correct Tiptap image node structure (for reference):**
+```json
+{
+  "type": "captionedImage",
+  "content": [{
+    "type": "image2",
+    "attrs": {
+      "src": "https://substack-post-media.s3.amazonaws.com/...",
+      "srcNoWatermark": null,
+      "imageSize": "normal",
+      "isProcessing": false,
+      "belowTheFold": false,
+      "topImage": false
+    }
+  }]
+}
+```
+
+**If images are missing from a published post:**
+```bash
+# Re-run with --update-post-id to patch + open editor + click Update now
+PAI_DIR=/home/alvis/PAI bun run .claude/Skills/WordPressPublisher/tools/publish-to-substack.ts \
+  --workflow-id=[WORKFLOW-ID] \
+  --update-post-id=[SUBSTACK-DRAFT-ID]
+```
+
+The draft ID is in `metadata.json → substack.draft_id`.
+
+**Output:** Update `metadata.json`:
+```json
+"substack": {
+  "draft_id": 194013290,
+  "draft_url": "https://alvishouse.substack.com/publish/post/194013290",
+  "post_url": "https://alvishouse.substack.com/p/stop-blaming-the-model-the-surgical",
+  "status": "published",
+  "synced_at": "2026-04-12T22:49:14.590Z"
 }
 ```
 

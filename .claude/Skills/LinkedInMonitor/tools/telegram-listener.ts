@@ -13,9 +13,14 @@ import Anthropic from "@anthropic-ai/sdk";
 import { join } from "path";
 import { getPageById, updateReplyOptions } from "./notion-queue.ts";
 import { editMessage } from "./telegram.ts";
+import { fetchTranscript } from "../../IdeaBank/tools/fetch-youtube-transcript.ts";
+import { vetIdea, extractYouTubeConcepts } from "../../IdeaBank/tools/vet-idea.ts";
+import { createIdeaEntry } from "../../IdeaBank/tools/notion-ideas.ts";
+import type { IdeaSource } from "../../IdeaBank/tools/notion-ideas.ts";
 
 const SKILL_DIR = join(import.meta.dir, "..");
 const CONFIG_PATH = join(SKILL_DIR, "config", "monitor-config.json");
+const IDEABANK_CONFIG_PATH = join(SKILL_DIR, "..", "IdeaBank", "config", "ideabank-config.json");
 
 async function loadReplyModel(): Promise<string> {
   try {
@@ -240,14 +245,204 @@ async function handleReplyCallback(
   console.log(`[listener] Done generating replies for "${entryName}"`);
 }
 
+interface IdeaBankConfig {
+  notion_ideas_db_id: string;
+  settings: {
+    vet_model: string;
+    concept_model: string;
+  };
+}
+
+async function loadIdeaBankConfig(): Promise<IdeaBankConfig | null> {
+  try {
+    const raw = Bun.file(IDEABANK_CONFIG_PATH);
+    return JSON.parse(new TextDecoder().decode(await raw.bytes()));
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Parse a #idea or #vet Telegram message into its components.
+ *
+ * Formats supported:
+ *   #idea <plain text idea>
+ *   #idea https://youtube.com/watch?v=xyz
+ *   #idea https://youtube.com/watch?v=xyz Some user callouts about what stood out
+ *   #vet <same as #idea>
+ */
+function parseIdeaMessage(text: string): {
+  rawIdea: string;
+  youtubeUrl: string | null;
+  addendum: string | null;
+} {
+  // Strip the trigger tag (#idea or #vet)
+  const body = text.replace(/^#(?:idea|vet)\s*/i, "").trim();
+
+  // Detect YouTube URL anywhere in the message
+  const urlPattern = /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?[^\s]*v=[^\s]+|youtu\.be\/[^\s]+|youtube\.com\/shorts\/[^\s]+)/;
+  const urlMatch = body.match(urlPattern);
+
+  if (urlMatch) {
+    const youtubeUrl = urlMatch[0];
+    // Everything before the URL = preamble (rarely present)
+    // Everything after the URL = user's addendum callouts
+    const afterUrl = body.slice(urlMatch.index! + youtubeUrl.length).trim();
+    return {
+      rawIdea: body,
+      youtubeUrl,
+      addendum: afterUrl || null,
+    };
+  }
+
+  return {
+    rawIdea: body,
+    youtubeUrl: null,
+    addendum: null,
+  };
+}
+
+async function handleIdeaCommand(
+  botToken: string,
+  chatId: string,
+  text: string,
+  notionApiKey: string,
+  anthropicApiKey: string,
+  ideaBankCfg: IdeaBankConfig
+): Promise<void> {
+  const { rawIdea, youtubeUrl, addendum } = parseIdeaMessage(text);
+
+  if (!rawIdea) {
+    await sendPlainMessage(botToken, chatId, "Usage: #idea <your idea text>\nOr: #idea https://youtube.com/watch?v=...");
+    return;
+  }
+
+  // Acknowledge immediately
+  await sendPlainMessage(botToken, chatId, `⏳ Processing idea${youtubeUrl ? " + YouTube transcript" : ""}...`);
+
+  let transcriptSummary: string | undefined;
+  let source: IdeaSource = "Manual";
+
+  if (youtubeUrl) {
+    source = "YouTube";
+    try {
+      console.log(`[ideabank] Fetching transcript for ${youtubeUrl}`);
+      const result = await fetchTranscript(youtubeUrl);
+      console.log(`[ideabank] Transcript fetched — ${result.wordCount} words`);
+
+      console.log(`[ideabank] Extracting key concepts via ${ideaBankCfg.settings.concept_model}...`);
+      transcriptSummary = await extractYouTubeConcepts(
+        anthropicApiKey,
+        result.fullText,
+        ideaBankCfg.settings.concept_model
+      );
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      console.error("[ideabank] Transcript fetch failed:", err);
+      await sendPlainMessage(
+        botToken,
+        chatId,
+        `⚠️ Could not fetch YouTube transcript: ${errMsg}\nScoring the idea from your text only.`
+      );
+    }
+  }
+
+  // Score the idea
+  console.log(`[ideabank] Scoring idea via ${ideaBankCfg.settings.vet_model}...`);
+  let scores;
+  try {
+    scores = await vetIdea(
+      anthropicApiKey,
+      {
+        rawText: rawIdea,
+        transcriptSummary,
+        addendum: addendum ?? undefined,
+      },
+      ideaBankCfg.settings.vet_model
+    );
+  } catch (err) {
+    const errMsg = err instanceof Error ? err.message : String(err);
+    console.error("[ideabank] Scoring failed:", err);
+    await sendPlainMessage(botToken, chatId, `❌ Scoring failed: ${errMsg}`);
+    return;
+  }
+
+  // Add to Notion
+  let notionPageId: string | null = null;
+  if (ideaBankCfg.notion_ideas_db_id) {
+    console.log(`[ideabank] Creating Notion entry...`);
+    notionPageId = await createIdeaEntry(notionApiKey, ideaBankCfg.notion_ideas_db_id, {
+      name: scores.name,
+      rawInput: rawIdea,
+      source,
+      youtubeUrl: youtubeUrl ?? undefined,
+      transcriptSummary,
+      addendum: addendum ?? undefined,
+      scores,
+    });
+  } else {
+    console.warn("[ideabank] notion_ideas_db_id not set — run setup-notion-db.ts first");
+  }
+
+  // Build confirmation message
+  const tierLine = `${scores.tier} — ${scores.totalScore}/25`;
+  const scoreLines = [
+    `Audience Relevance: ${scores.audienceRelevance}/5`,
+    `Business Alignment: ${scores.businessAlignment}/5`,
+    `Timeliness: ${scores.timeliness}/5`,
+    `Differentiation: ${scores.differentiation}/5`,
+    `Extraction Potential: ${scores.extractionPotential}/5`,
+  ].join("\n");
+
+  const conceptsPreview = transcriptSummary
+    ? `\n\nKey concepts from video:\n${transcriptSummary.slice(0, 400)}${transcriptSummary.length > 400 ? "..." : ""}`
+    : "";
+
+  const notionLine = notionPageId ? `\n\nSaved to Notion ✓` : "\n\n⚠️ Notion DB not configured (run setup-notion-db.ts)";
+
+  const reply = [
+    `✅ Idea captured: "${scores.name}"`,
+    ``,
+    tierLine,
+    ``,
+    scoreLines,
+    ``,
+    `Track: ${scores.trackAlignment}`,
+    ``,
+    `Notes: ${scores.scoringNotes}`,
+    conceptsPreview,
+    notionLine,
+  ].join("\n");
+
+  await sendPlainMessage(botToken, chatId, reply);
+  console.log(`[ideabank] Done — "${scores.name}" scored ${scores.totalScore}/25 (${scores.tier})`);
+}
+
 async function processUpdate(
   update: Record<string, unknown>,
   botToken: string,
   chatId: string,
   notionApiKey: string,
   anthropicApiKey: string,
-  model: string
+  model: string,
+  ideaBankCfg: IdeaBankConfig | null
 ): Promise<void> {
+  // Handle text messages (#idea, #vet)
+  const incomingMessage = update.message as Record<string, unknown> | undefined;
+  if (incomingMessage) {
+    const msgText = incomingMessage.text as string | undefined;
+    const msgChatId = String((incomingMessage.chat as Record<string, unknown>)?.id ?? chatId);
+
+    if (msgText && /^#(?:idea|vet)\s/i.test(msgText)) {
+      if (!ideaBankCfg) {
+        await sendPlainMessage(botToken, msgChatId, "⚠️ IdeaBank not configured. Run setup-notion-db.ts first.");
+        return;
+      }
+      await handleIdeaCommand(botToken, msgChatId, msgText, notionApiKey, anthropicApiKey, ideaBankCfg);
+    }
+    return;
+  }
+
   const callbackQuery = update.callback_query as Record<string, unknown> | undefined;
   if (!callbackQuery) return;
 
@@ -300,10 +495,17 @@ async function main() {
   const notionApiKey = getEnv("NOTION_API_KEY");
   const anthropicApiKey = getEnv("ANTHROPIC_API_KEY");
   const model = await loadReplyModel();
+  const ideaBankCfg = await loadIdeaBankConfig();
 
   console.log("═".repeat(60));
   console.log("Telegram bot listener starting...");
   console.log(`Reply model: ${model}`);
+  if (ideaBankCfg?.notion_ideas_db_id) {
+    console.log(`IdeaBank: active (DB: ${ideaBankCfg.notion_ideas_db_id.slice(0, 8)}...)`);
+    console.log(`  Commands: #idea <text> | #idea <youtube-url> [callouts] | #vet <text>`);
+  } else {
+    console.log(`IdeaBank: not configured (run setup-notion-db.ts to enable #idea/#vet)`);
+  }
   console.log("Waiting for inline button callbacks (reply:<notionPageId>)");
   console.log("Press Ctrl+C to stop");
   console.log("═".repeat(60));
@@ -327,7 +529,7 @@ async function main() {
         offset = updateId + 1;
 
         try {
-          await processUpdate(update, botToken, chatId, notionApiKey, anthropicApiKey, model);
+          await processUpdate(update, botToken, chatId, notionApiKey, anthropicApiKey, model, ideaBankCfg);
         } catch (err) {
           // Catch per-update errors so one bad update doesn't crash the loop
           console.error(`[listener] Error processing update ${updateId}:`, err);

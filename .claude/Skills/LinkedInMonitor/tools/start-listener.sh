@@ -12,7 +12,7 @@ fi
 
 mkdir -p "$SKILL_DIR/logs"
 cd "$PAI_DIR"
-nohup bun --env-file "$PAI_DIR/.claude/.env" "$SKILL_DIR/tools/telegram-listener.ts" >> "$LOG" 2>&1 &
+nohup /home/alvis/.bun/bin/bun --env-file "$PAI_DIR/.claude/.env" "$SKILL_DIR/tools/telegram-listener.ts" >> "$LOG" 2>&1 &
 echo $! > "$PID_FILE"
 echo "Telegram listener started (PID $!)"
 echo "Logs: $LOG"

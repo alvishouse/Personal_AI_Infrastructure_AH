@@ -152,6 +152,7 @@ interface ConvertOptions {
   metricInfographicUrl?: string;   // Metric That Matters infographic (inside Metric card)
   issueNumber?:          number | null;
   issueDate?:            string;
+  webTitle?:             string;   // Overrides the H1 inside the newsletter body (outcome-focused headline for web readers)
 }
 
 /**
@@ -222,20 +223,33 @@ function convertNewsletterToHTML(markdown: string, opts: ConvertOptions = {}): s
     // --- H1: Newsletter title — large centered heading in white intro section ---
     const h1Match = line.match(/^# (.+)$/);
     if (h1Match) {
-      const fullTitle = h1Match[1];
-      // Split at em-dash to separate newsletter name from issue/date info
-      const dashIdx = fullTitle.indexOf('\u2014'); // em-dash
-      if (dashIdx > 0) {
-        const mainTitle = fullTitle.slice(0, dashIdx).trim();
-        const issuePart = fullTitle.slice(dashIdx + 1).trim().replace(/\|/g, '\u00b7'); // | → ·
+      // If a webTitle override is provided, use it as the H1 and auto-generate the issue/date subtitle.
+      // Otherwise fall back to parsing the markdown title for em-dash split.
+      if (opts.webTitle) {
+        const issuePart = [
+          opts.issueNumber ? `Issue #${opts.issueNumber}` : '',
+          opts.issueDate ? new Date(opts.issueDate + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '',
+        ].filter(Boolean).join(' \u00b7 ');
         outputParts.push(
-          `<h1 style="font-family:${B.font};font-size:32px;font-weight:700;color:${B.ink};text-align:center;margin:0 0 6px;line-height:1.2;letter-spacing:-.01em;">${inlineFormat(mainTitle)}</h1>` +
-          `<p style="font-family:${B.font};font-size:.75em;font-weight:700;color:#000000;text-align:center;text-transform:uppercase;letter-spacing:.1em;margin:0 0 22px;">${inlineFormat(issuePart)}</p>`
+          `<h1 style="font-family:${B.font};font-size:32px;font-weight:700;color:${B.ink};text-align:center;margin:0 0 6px;line-height:1.2;letter-spacing:-.01em;">${inlineFormat(opts.webTitle)}</h1>` +
+          (issuePart ? `<p style="font-family:${B.font};font-size:.75em;font-weight:700;color:#000000;text-align:center;text-transform:uppercase;letter-spacing:.1em;margin:0 0 22px;">${issuePart}</p>` : '')
         );
       } else {
-        outputParts.push(
-          `<h1 style="font-family:${B.font};font-size:32px;font-weight:700;color:${B.ink};text-align:center;margin:0 0 22px;line-height:1.2;">${inlineFormat(fullTitle)}</h1>`
-        );
+        const fullTitle = h1Match[1];
+        // Split at em-dash to separate newsletter name from issue/date info
+        const dashIdx = fullTitle.indexOf('\u2014'); // em-dash
+        if (dashIdx > 0) {
+          const mainTitle = fullTitle.slice(0, dashIdx).trim();
+          const issuePart = fullTitle.slice(dashIdx + 1).trim().replace(/\|/g, '\u00b7'); // | → ·
+          outputParts.push(
+            `<h1 style="font-family:${B.font};font-size:32px;font-weight:700;color:${B.ink};text-align:center;margin:0 0 6px;line-height:1.2;letter-spacing:-.01em;">${inlineFormat(mainTitle)}</h1>` +
+            `<p style="font-family:${B.font};font-size:.75em;font-weight:700;color:#000000;text-align:center;text-transform:uppercase;letter-spacing:.1em;margin:0 0 22px;">${inlineFormat(issuePart)}</p>`
+          );
+        } else {
+          outputParts.push(
+            `<h1 style="font-family:${B.font};font-size:32px;font-weight:700;color:${B.ink};text-align:center;margin:0 0 22px;line-height:1.2;">${inlineFormat(fullTitle)}</h1>`
+          );
+        }
       }
       i++;
       continue;
@@ -716,9 +730,13 @@ async function main() {
     console.error('Options:');
     console.error('  --workflow-id=<id>             Required. Workflow directory slug.');
     console.error('  --formula-image=<url>          Optional. "Formula for Acceleration" image in header.');
-    console.error('  --hero-image=<url>             Optional. Issue-specific alchemy hero (white section).');
+    console.error('  --hero-image=<url>             Optional. Campaign LinkedIn image (napkin/excalidraw/opening-wound).');
     console.error('  --myth-infographic=<url>       Optional. Myth vs Reality infographic URL.');
     console.error('  --metric-infographic=<url>     Optional. Metric That Matters infographic URL.');
+    console.error('  --web-title=<headline>         Optional. Outcome-focused headline for web/search readers.');
+    console.error('                                   Issue # + date are prepended automatically.');
+    console.error('                                   Replaces H1 in body and WP post title.');
+    console.error('                                   Default: falls back to email subject line.');
     console.error('  --preview                      Write HTML preview to scratchpad, skip WP post.');
     console.error('  --force                        Re-publish even if already published.');
     console.error('');
@@ -738,10 +756,12 @@ async function main() {
   const heroImageArg           = args.find(a => a.startsWith('--hero-image='));
   const mythInfographicArg     = args.find(a => a.startsWith('--myth-infographic='));
   const metricInfographicArg   = args.find(a => a.startsWith('--metric-infographic='));
+  const webTitleArg            = args.find(a => a.startsWith('--web-title='));
   const formulaImageUrl        = formulaImageArg        ? formulaImageArg.split('=').slice(1).join('=')        : undefined;
   const heroImageUrl           = heroImageArg           ? heroImageArg.split('=').slice(1).join('=')           : undefined;
   const mythInfographicUrl     = mythInfographicArg     ? mythInfographicArg.split('=').slice(1).join('=')     : undefined;
   const metricInfographicUrl   = metricInfographicArg   ? metricInfographicArg.split('=').slice(1).join('=')   : undefined;
+  const webTitleOverride       = webTitleArg            ? webTitleArg.split('=').slice(1).join('=')            : undefined;
 
   if (previewMode)            console.log('Mode:               PREVIEW (no WP post)');
   if (formulaImageUrl)        console.log(`Formula image:      ${formulaImageUrl}`);
@@ -827,8 +847,17 @@ async function main() {
   const issueNumber = issueNumStr ? parseInt(issueNumStr, 10) : null;
 
   // --- Build newsletter title ---
+  // --web-title overrides the default pattern. Pass the compelling outcome-focused headline
+  // (e.g. "What Caused the Six-Hour Amazon Outage That Wiped Out 6.3 Million Orders").
+  // The issue label and date are always prepended automatically.
   const issueLabel = issueNumber ? `Issue #${issueNumber}` : 'Latest Issue';
-  const postTitle = `The Mid-Market AI Playbook — ${issueLabel}: ${subjectLine}`;
+  const issueDateStr = yamlField(issueMetaRaw, 'issue_date') || '';
+  const issueDateFormatted = issueDateStr
+    ? new Date(issueDateStr + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    : '';
+  const issuePrefix = issueDateFormatted ? `${issueLabel} — ${issueDateFormatted}` : issueLabel;
+  const webHeadline = webTitleOverride || subjectLine;
+  const postTitle = `${issuePrefix}: ${webHeadline}`;
 
   // --- Convert markdown to HTML ---
   console.log('\nConverting newsletter markdown to HTML...');
@@ -838,7 +867,8 @@ async function main() {
     mythInfographicUrl,
     metricInfographicUrl,
     issueNumber,
-    issueDate: yamlField(issueMetaRaw, 'issue_date') || '',
+    issueDate: issueDateStr,
+    webTitle: webTitleOverride,
   });
   const excerpt = buildExcerpt(newsletterMd);
 

@@ -193,7 +193,8 @@
     "command": "bash ${PAI_DIR}/statusline-command.sh"
   },
   "enabledPlugins": {
-    "browser-automation@browser-tools": true
+    "browser-automation@browser-tools": true,
+    "telegram@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
   "_envDocs": {

@@ -6,6 +6,7 @@
     "gifencoder": "^2.0.1",
     "marked": "^17.0.5",
     "openai": "^6.32.0",
+    "pdfjs-dist": "3",
     "playwright": "^1.58.2",
     "replicate": "^1.4.0"
   }

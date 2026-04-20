@@ -166,18 +166,33 @@ Each newsletter requires **4 images**. Create them before running the publisher.
 
 ### Image 2: Newsletter Hero (new each issue)
 
-- **What:** Issue-specific alchemy-style illustration representing the newsletter topic
-- **Style:** Cream/paper background (`#f6efd8`), thin SVG sketch strokes, hand-drawn aesthetic
-- **Dimensions:** 800×380px viewport, 762×352px paper frame
+**Always pick from existing campaign LinkedIn images first.** Every campaign generates napkin, excalidraw, and opening-wound variants for each of the 8 posts — use these before creating anything new.
+
+**Selection criteria — pick the image where:**
+1. The visual directly reinforces the `--web-title` pain or outcome (not the framework solution)
+2. A new reader who has never seen your content understands the stakes immediately
+3. The image reads clearly at 680px wide without zooming
+
+**Where to look:**
+```
+scratchpad/content-create/[campaign]/13-extracted-content/linkedin/images/
+  post-01-napkin.png       ← napkin sketch variants (cream paper, blue pen)
+  post-01-excalidraw.png   ← excalidraw variants (clean line art)
+  post-01-[type].png       ← opening wound / framework / case study originals
+```
+
+**Selection shortcut:** The post whose topic matches the `--web-title` angle is usually the right image. If the title is about the pain (outage, failure, cost), pick from case-study or story posts. If the title is about the framework, pick the framework post variant.
+
+**Upload the chosen image to WP media, then pass the URL to `--hero-image`.**
+
+---
+
+*Only create a new alchemy-style HTML infographic if no existing campaign image fits the web title angle.*
+
+- **Dimensions (if creating new):** 800×380px viewport, 762×352px paper frame
 - **File:** `scratchpad/infographics/newsletter-hero.html` → screenshot to `newsletter-hero.png`
 - **Where:** Bottom of white intro section, full width, before TL;DR
 - **CLI param:** `--hero-image=<wp-url>`
-
-**Design notes:**
-- Show the core concept of the newsletter topic as a before/after or transformation illustration
-- Use the alchemy sketch style: double-border paper frame, ruled-paper line overlay, thin SVG paths
-- Keep text minimum 11px, opacity minimum 0.7 for any text
-- Header at top with topic title (16px bold) + subtitle (11px, opacity 0.72)
 
 ### Image 3: Myth vs Reality Infographic (new each issue)
 
@@ -308,10 +323,24 @@ bun run /home/alvis/PAI/.claude/Skills/WordPressPublisher/tools/publish-newslett
   --formula-image=https://alvishouse.io/wp-content/uploads/2026/03/formula-acceleration.jpg \
   --hero-image=[wp-url-for-hero] \
   --myth-infographic=[wp-url-for-myth] \
-  --metric-infographic=[wp-url-for-metric]
+  --metric-infographic=[wp-url-for-metric] \
+  --web-title="[outcome-focused headline for web readers]"
 ```
 
 The formula image URL is reused every issue (already uploaded). Only the three issue-specific images need new uploads each time.
+
+### `--web-title` vs Email Subject
+
+These serve different audiences and must be written differently:
+
+| | Email Subject | `--web-title` |
+|--|--|--|
+| **Reader** | Subscriber who already trusts you | New visitor from search, LinkedIn share, or referral |
+| **Goal** | Curiosity gap / open rate | Immediate clarity on what they'll learn |
+| **Tone** | Intriguing, slightly mysterious | Specific outcome, named stakes |
+| **Example** | "Amazon lost 6.3M orders. The instructions were there." | "What Caused the Six-Hour Amazon Outage That Wiped Out 6.3 Million Orders" |
+
+If `--web-title` is omitted, the email subject line is used as the WP post title — acceptable but not optimal for new readers.
 
 **Expected output:**
 ```
@@ -334,6 +363,24 @@ NEWSLETTER DRAFT CREATED SUCCESSFULLY
 ---
 
 ## Step-by-Step Process
+
+### Step 0: Decide Web Title and Hero Image
+
+Before creating infographics, decide two things that anchor the entire post:
+
+**Web title (`--web-title`):**
+- Write a specific, outcome-focused headline a new reader can understand without context
+- Name the company, number, or consequence where possible ("6.3 million orders", "six-hour outage")
+- Format: declarative statement or "What/Why/How" question — not a curiosity gap
+- The script prepends "Issue #N — Month DD, YYYY:" automatically
+
+**Hero image:**
+- Browse `13-extracted-content/linkedin/images/` for napkin and excalidraw variants
+- Pick the image whose visual directly matches the web title's pain or outcome
+- Upload chosen image to WP media, save the URL for `--hero-image`
+- Only create a new SVG infographic if nothing in the campaign library fits
+
+---
 
 ### Step 1: Create Infographics
 

@@ -55,12 +55,14 @@ Based on what the post is doing, choose the image type that best serves it:
 **Visual:** A diagram that makes the mechanism visceral — gears, flows, formulas, loops.
 **Best for:** Framework posts, Myth-Buster posts.
 **Example:** Intelligence streaming into one person → multiple hands extending → multiplication formula vs. crossed-out addition formula.
+> ⚠️ **INFOGRAPHIC MODE:** If selecting Type B, skip Stages 3–4 and go to **Stage 3-INFOGRAPHIC** below.
 
 ### Type C — Comparison/Flow Diagram
 **Use when:** The post shows two paths, two states, before/after, or a redirect.
 **Visual:** Side-by-side panels showing the contrast. Old way vs. new way. Blocked path vs. rerouted path.
 **Best for:** Quick Win posts, Contrarian posts.
 **Example:** Money flowing to hire (blocked) vs. money routing to intelligence layer (flowing).
+> ⚠️ **INFOGRAPHIC MODE:** If selecting Type C, skip Stages 3–4 and go to **Stage 3-INFOGRAPHIC** below.
 
 ### Type D — Loop/Cycle Trap
 **Use when:** The post describes an endless repetitive pattern, a trap, or a cycle with no exit.
@@ -71,6 +73,171 @@ Based on what the post is doing, choose the image type that best serves it:
 **Use when:** The post contains a short, powerful statement that is complete as an image on its own. The words ARE the image.
 **Visual:** Full-frame typographic composition — the words fill the space.
 **Best for:** Contrarian one-liners, authority declarations, paradigm-shift statements.
+
+---
+
+## Stage 3-INFOGRAPHIC: Infographic Mode (Types B and C only)
+
+> **Activated when:** Image Type is B (Conceptual Mechanism) or C (Comparison/Flow Diagram).
+> **Skip Stages 3 and 4.** Use this section instead, then go directly to Stage 5-INFOGRAPHIC.
+
+Infographic-style images require structured layout prompting — not the PAI style specs. Free-form prompts for diagrams produce inconsistent layouts and text hallucination. This mode replaces style selection with layout archetype selection.
+
+---
+
+### Step 1: Select a Layout Archetype
+
+Choose the ONE archetype that best fits the post's structure:
+
+| Archetype | ID | Use When |
+|---|---|---|
+| Column Comparison | `column_comparison` | Post compares 2–4 tools, roles, approaches, or states side by side |
+| Process Journey | `process_journey` | Post shows sequential stages, onboarding flow, or step-by-step |
+| Concentric Layers | `concentric_layers` | Post describes hierarchy, maturity model, or nested governance levels |
+| Venn Diagram | `venn_diagram` | Post shows how 2–4 concepts overlap or depend on each other |
+| Numbered Grid | `numbered_grid` | Post contains 4–12 discrete items, tips, or principles |
+| Hub & Spoke | `hub_and_spoke` | Post has a central concept with radiating features or capabilities |
+
+**Auto-selection rules:**
+- Type B (Mechanism) → ask: does the mechanism have layers? → `concentric_layers`. Does it flow step-by-step? → `process_journey`. Is it a central idea with radiating parts? → `hub_and_spoke`.
+- Type C (Comparison) → ask: is it two or three named options? → `column_comparison`. Is it overlapping shared traits? → `venn_diagram`. Is it numbered principles? → `numbered_grid`.
+
+---
+
+### Step 2: Extract the Exact Content
+
+Before writing the prompt, extract from the post:
+- **Title text** — the post's core thesis, 5–10 words max. Identify which 1–2 words to highlight in a color banner.
+- **Section labels** — the named columns, layers, stages, or nodes (whichever the archetype uses)
+- **Body content per section** — exact bullets, taglines, or descriptions. Write out EVERY word. Do not say "add relevant content."
+- **Stats or callouts** — any numbers or quotes worth surfacing as margin annotations
+- **Footer CTA** — "Follow [AUTHOR] for [topic] insights" or equivalent
+
+**The Semantic Constraint (CRITICAL):** Only build structure you have actual content for. Do not add sub-sections, micro-charts, or nested grids unless the post provides text to fill them. Forcing empty density causes the model to hallucinate filler text.
+
+---
+
+### Step 3: Choose a Color Palette
+
+Pick ONE palette and name it in the prompt with exact colors:
+
+| Palette | Colors | Best For |
+|---|---|---|
+| **Corporate Pastel** | Pastel green, blue, pink, yellow on white/cream bg | Venn, Numbered Grid |
+| **Dark Gradient** | Dark navy (#1A2A4A) → medium blue (#2E5FA3) → light blue (#7EB8D4) → white | Concentric Layers |
+| **Warm Editorial** | Cream bg (#FDFBF7), terracotta (#C0513A), sage (#8FAF7E), navy (#1A2A3A) | Complex process, Hub & Spoke |
+| **Bold Pop** | White bg, bright green (#4CAF50), coral (#FF6B6B), yellow (#FFD54F), teal (#26C6DA) | Column Comparison |
+| **Sketch Neutral** | Cream/parchment bg (#F5F2E8), black text, muted color accents | Column Comparison, Numbered Grid |
+
+---
+
+### Step 4: Apply Typography Hierarchy
+
+Include these constraints verbatim in every infographic prompt:
+
+```
+Title: bold uppercase sans-serif, max 2:1 size ratio against section headings, occupying no more than 10–15% of total vertical canvas.
+Section headings: bold uppercase, slightly smaller than title.
+Body text: regular weight, 12–16pt equivalent, high contrast against background.
+Footer CTA: small centered text at bottom.
+All text must be perfectly legible, correctly spelled, and properly aligned.
+```
+
+---
+
+### Step 5: Write the Infographic Prompt
+
+Use the skeleton for the selected archetype. Replace every `[PLACEHOLDER]` with the actual extracted content from Step 2.
+
+**column_comparison skeleton:**
+```
+Create a professional LinkedIn infographic in a [N]-column comparison layout on a [BACKGROUND] background. Title: '[TITLE WORDS]' followed by '[HIGHLIGHT WORDS]' in a [COLOR] highlighted banner, in large bold uppercase sans-serif at the top. The body shows [N] vertical columns side by side. Column 1: [COLOR] underlined header '[LABEL 1]'. [ILLUSTRATION DESCRIPTION]. Bullets: '[BULLET 1]', '[BULLET 2]', '[BULLET 3]'. Sub-heading '[SUBHEAD]:' with items '[ITEM A]', '[ITEM B]'. [Repeat for each column.] Footer: '[CTA TEXT]'. [PALETTE NAME] color palette. Title bold uppercase, max 2:1 ratio against section headings, max 10–15% of canvas. All text perfectly legible, correctly spelled. LinkedIn 4:5 portrait format.
+```
+
+**process_journey skeleton:**
+```
+Create a professional LinkedIn infographic as a vertical process journey on a [BACKGROUND] background. Title: '[TITLE]' with '[HIGHLIGHT]' in a [COLOR] banner, bold uppercase at top. The main visual shows [N] numbered stages connected by downward arrows. Stage 1: number badge '[1]', title '[STAGE NAME]', [ICON DESCRIPTION], detail: '[DESCRIPTION OR BULLETS]'. [Repeat for each stage.] [COLOR CODE EACH STAGE DISTINCTLY.] Footer: '[CTA TEXT]'. Title max 10–15% canvas height. All text perfectly legible, correctly spelled. LinkedIn 4:5 portrait format.
+```
+
+**concentric_layers skeleton:**
+```
+Create a professional LinkedIn infographic with a concentric layers layout on a [BACKGROUND] background. Title: '[TITLE]' with '[HIGHLIGHT]' in a [COLOR] banner, bold uppercase at top. The main visual shows [N] concentric [SHAPE: rounded rectangles / circles] from outermost (largest, darkest) to innermost (smallest, lightest). Outermost layer: [COLOR] labeled '[LAYER NAME]'. Tagline: '[TAGLINE]'. Detail items: '[ITEM 1]', '[ITEM 2]', '[ITEM 3]'. [Repeat for each layer inward.] [Optional: left/right margin stat callouts with exact quoted text.] Footer: '[CTA TEXT]'. Dark-to-light [COLOR] gradient palette. Title max 10–15% canvas height. All text perfectly legible, correctly spelled. LinkedIn 4:5 portrait format.
+```
+
+**venn_diagram skeleton:**
+```
+Create a professional LinkedIn infographic with a Venn diagram layout on a [BACKGROUND] background. Title: '[TITLE]' with '[HIGHLIGHT]' in a [COLOR] banner, bold uppercase at top. The diagram shows [N] overlapping circles arranged in [ARRANGEMENT: diamond / triangular / horizontal]. [Circle 1]: [PASTEL COLOR] with numbered badge '[1]', heading '[LABEL]', bullets: '[BULLET 1]', '[BULLET 2]', '[BULLET 3]'. [Repeat for each circle.] Center intersection reads '[CENTER TEXT]' in bold uppercase. [Optional: overlap zone bridging text between adjacent circles.] Footer: '[CTA TEXT]'. Clean corporate flat vector style. Title max 10–15% canvas height. All text perfectly legible, correctly spelled. LinkedIn 4:5 portrait format.
+```
+
+**numbered_grid skeleton:**
+```
+Create a professional LinkedIn infographic as a 2-column numbered grid on a [BACKGROUND] background. Title: '[TITLE]' with '[HIGHLIGHT]' in a [COLOR] banner, bold uppercase at top. The body shows a [ROWS]×2 grid of [N] numbered cards. Card 1: number badge '1', bold heading '[HEADING]', [ICON DESCRIPTION], body: '[1–3 LINE DESCRIPTION]'. [Repeat for all cards.] [OPTIONAL: notebook styling with spiral binding detail.] Footer: '[CTA TEXT]'. [PALETTE]. Title max 10–15% canvas height. All text perfectly legible, correctly spelled. LinkedIn 4:5 portrait format.
+```
+
+**hub_and_spoke skeleton:**
+```
+Create a professional LinkedIn infographic as a hub-and-spoke layout on a [BACKGROUND] background. Title: '[TITLE]' with '[HIGHLIGHT]' in a [COLOR] banner, bold uppercase at top. Center: [ICON OR CONCEPT LABEL DESCRIPTION]. Surrounding [N] cards arranged in [GRID OR CIRCULAR PATTERN]. Card 1: [COLOR] category label '[CATEGORY]', bold heading '[ITEM NAME]', description '[1–2 SENTENCES]'. [Repeat for each card.] Footer: '[CTA TEXT]'. [PALETTE]. Title max 10–15% canvas height. All text perfectly legible, correctly spelled. LinkedIn 4:5 portrait format.
+```
+
+---
+
+### Step 6: Append the Mandatory Negative Prompt
+
+Every infographic prompt MUST include this negative prompt block:
+
+```
+blurry text, misspelled words, illegible fonts, photorealistic elements, stock photography, 3D rendering, heavy drop shadows, overlapping text, cut-off text at edges, decorative ornate borders, cartoon characters, anime style, watercolor bleeding, inconsistent font families, tiny unreadable text, warped text perspective, text on curved surfaces, gradient text fills, neon glow effects, lens flare, bokeh, depth of field blur, hand-drawn sketch aesthetic
+```
+
+---
+
+### Step 7: Generate
+
+```bash
+# Standard infographic generation
+bun ~/.claude/Skills/Art/tools/generate-ulart-image.ts \
+  --model nano-banana-pro \
+  --size 2K \
+  --aspect-ratio 4:5 \
+  --output "[OUTPUT_PATH]" \
+  "[FULL INFOGRAPHIC PROMPT]"
+
+# With reference image (use a strong prior output from the same campaign to lock in visual style)
+bun ~/.claude/Skills/Art/tools/generate-ulart-image.ts \
+  --model nano-banana-pro \
+  --size 2K \
+  --aspect-ratio 4:5 \
+  --reference-image "[PATH_TO_PRIOR_STRONG_OUTPUT]" \
+  --output "[OUTPUT_PATH]" \
+  "[FULL INFOGRAPHIC PROMPT]"
+```
+
+**Use `--reference-image` when:** You have already generated one strong infographic in this campaign and want to lock in the visual style (palette, typography aesthetic, density) across subsequent images.
+
+---
+
+### Infographic Output Format
+
+```
+LAYOUT ARCHETYPE: [column_comparison / process_journey / concentric_layers / venn_diagram / numbered_grid / hub_and_spoke]
+Why this archetype: [1 sentence]
+
+COLOR PALETTE: [palette name + key hex codes]
+
+CONTENT EXTRACTED:
+Title: [exact title text, highlight words identified]
+Sections: [list of section labels]
+Body content: [exact text per section]
+
+INFOGRAPHIC PROMPT:
+[Full prompt using the selected archetype skeleton, all placeholders replaced, typography constraints included]
+
+NEGATIVE PROMPT:
+[Full mandatory negative prompt stack]
+
+GENERATION COMMAND:
+[Full bun command with all flags]
+```
 
 ---
 
@@ -157,8 +324,21 @@ All-caps architect font for labels
 
 **Type A — Human Wound:**
 ```
-[STYLE SPEC OPENING LINE], [SUBJECT: specific role], [PHYSICAL ACTION experiencing the wound], [FACIAL EXPRESSION / BODY LANGUAGE: specific], [CONTEXT DETAIL making wound tangible], [STYLE TECHNICAL DETAILS], no text
+[STYLE SPEC OPENING LINE], [SUBJECT: specific role], [PHYSICAL ACTION experiencing the wound], [FACIAL EXPRESSION / BODY LANGUAGE: specific — see Human Face Guard below], [CONTEXT DETAIL making wound tangible], [STYLE TECHNICAL DETAILS], no text
 ```
+
+> ⚠️ **HUMAN FACE GUARD (mandatory for all Type A prompts)**
+>
+> AI models default to dark, sunken, hollow-eyed, or zombie-like faces when rendering stress or exhaustion. This destroys relatability and stops the reader from seeing themselves in the image.
+>
+> **Always include ALL of the following in every Type A human subject prompt:**
+> - Warm, natural skin tones (specify: warm skin tones, natural complexion, human coloring)
+> - Specific relatable emotion — choose from: puzzled, bewildered, frustrated, overwhelmed, stressed, exhausted-but-human — NOT: haunted, hollow, dark, sinister, gaunt, pallid
+> - Grounded facial detail: furrowed brow, wide eyes of confusion, mouth slightly open in disbelief, visible tension in jaw — specific features, not general "distressed"
+> - Explicitly exclude the zombie look: add "NOT dark or scary, NOT sunken eyes, NOT pallid or zombie-like, warm and human" to the prompt
+>
+> **Required phrase pattern:**
+> `[EMOTION] expression with warm skin tones, furrowed brow, [SPECIFIC FEATURE], fully human and relatable, NOT dark or sinister, NOT zombie-like, NOT pallid`
 
 **Type B — Conceptual Mechanism:**
 ```
@@ -184,26 +364,40 @@ All-caps architect font for labels
 
 ## Quality Gates — Check Before Outputting
 
+**All image types:**
 - [ ] Did I read the FULL post before selecting the quote?
 - [ ] Is the selected quote from the post's most powerful moment (not just the opening)?
 - [ ] Is the image type right for what the post is doing?
+- [ ] **[HUMAN FACE GUARD]** If the image includes a human subject: does the prompt specify warm skin tones, a named relatable emotion (puzzled / bewildered / stressed / frustrated / overwhelmed), at least one specific facial feature (furrowed brow, wide eyes, jaw tension), AND explicitly exclude zombie/sinister/pallid/dark looks with the phrase "NOT dark or scary, NOT zombie-like, warm and human"?
+
+**PAI style images (Types A, D, E):**
 - [ ] Does the style match the post's tone and audience?
 - [ ] Are the full PAI style specifications applied in the prompt?
 - [ ] Is the image SPECIFIC to this post (could not be swapped to another post)?
 - [ ] Does the image create a curiosity gap — requires reading the post to understand?
 - [ ] Is the style different from the previous 2-3 posts in this batch?
 
+**Infographic images (Types B, C — Stage 3-INFOGRAPHIC path):**
+- [ ] Is the layout archetype the best structural fit for the post's content?
+- [ ] Did I extract EVERY word of content before writing the prompt — no placeholders, no "add relevant content"?
+- [ ] Are ALL sections, labels, bullets, and callouts written out explicitly in the prompt?
+- [ ] Is the negative prompt stack included?
+- [ ] Is the typography hierarchy constraint included (2:1 ratio, max 10–15% canvas for title)?
+- [ ] Are exact color names or hex codes specified — not just "colorful" or "professional"?
+- [ ] If this is not the first infographic in the campaign, is `--reference-image` set to a prior strong output?
+
 ---
 
 ## Output Format
 
+**For PAI style images (Types A, D, E):**
 ```
 SOURCE QUOTE:
 "[Exact line(s) from post — may come from anywhere in the post, not just the opening]"
 Location: [paragraph number or section]
 Why this is the best moment: [1-2 sentences]
 
-IMAGE TYPE: [A / B / C / D / E — Human Wound / Conceptual Mechanism / Comparison Diagram / Loop Trap / Quote Card]
+IMAGE TYPE: [A / D / E — Human Wound / Loop Trap / Quote Card]
 Why this type: [1 sentence]
 
 PAI STYLE: [Da Vinci / Modern Alchemist / Napkin / Excalidraw]
@@ -223,6 +417,35 @@ ANTI-PATTERN CHECK:
 - No generic "manager at desk" when a better concept exists: [confirm]
 ```
 
+**For infographic images (Types B, C) — use Stage 3-INFOGRAPHIC output format instead:**
+```
+SOURCE QUOTE:
+"[Exact line(s) from post]"
+Why this moment drives an infographic: [1 sentence]
+
+IMAGE TYPE: [B / C — Conceptual Mechanism / Comparison Diagram]
+Why this type: [1 sentence]
+
+LAYOUT ARCHETYPE: [column_comparison / process_journey / concentric_layers / venn_diagram / numbered_grid / hub_and_spoke]
+Why this archetype: [1 sentence]
+
+COLOR PALETTE: [palette name + key hex codes]
+
+CONTENT EXTRACTED:
+Title: [exact title text, highlight words identified]
+Sections: [list of section labels]
+Body content: [exact text per section — every word written out]
+
+INFOGRAPHIC PROMPT:
+[Full prompt using selected archetype skeleton, all placeholders replaced, typography constraints included]
+
+NEGATIVE PROMPT:
+[Full mandatory negative prompt stack]
+
+GENERATION COMMAND:
+[Full bun command with all flags — include --reference-image if applicable]
+```
+
 ---
 
 ## Style Batch Tracker (for 8-post batches)
@@ -233,7 +456,9 @@ When running all 8 posts, track style usage to ensure variety:
 - Napkin: max 2-3 posts
 - Excalidraw: max 2-3 posts
 
-Adjust assignments to avoid 3+ consecutive posts in the same style.
+Infographic posts (Types B/C) do NOT consume a PAI style slot — track them separately as `INFOGRAPHIC [archetype]`.
+
+Adjust assignments to avoid 3+ consecutive posts in the same style. Infographics can appear anywhere in the sequence without breaking the style variety rule.
 
 ---
 
