@@ -24,6 +24,7 @@ export interface IdeaBankEntry {
   rawInput: string;
   source: IdeaSource;
   youtubeUrl?: string;
+  transcriptPath?: string;  // Local file path: IdeaBank/transcripts/{videoId}.txt
   transcriptSummary?: string;
   addendum?: string;
   scores: {
@@ -82,6 +83,12 @@ export async function createIdeaEntry(
 
   if (entry.youtubeUrl) {
     properties["YouTube URL"] = { url: entry.youtubeUrl };
+  }
+
+  if (entry.transcriptPath) {
+    properties["Transcript File"] = {
+      rich_text: [{ text: { content: entry.transcriptPath } }],
+    };
   }
 
   if (entry.transcriptSummary) {

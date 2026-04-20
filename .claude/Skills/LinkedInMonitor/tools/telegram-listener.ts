@@ -13,7 +13,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { join } from "path";
 import { getPageById, updateReplyOptions } from "./notion-queue.ts";
 import { editMessage } from "./telegram.ts";
-import { fetchTranscript } from "../../IdeaBank/tools/fetch-youtube-transcript.ts";
+import { fetchTranscript, extractVideoId } from "../../IdeaBank/tools/fetch-youtube-transcript.ts";
 import { vetIdea, extractYouTubeConcepts } from "../../IdeaBank/tools/vet-idea.ts";
 import { createIdeaEntry } from "../../IdeaBank/tools/notion-ideas.ts";
 import type { IdeaSource } from "../../IdeaBank/tools/notion-ideas.ts";
@@ -21,6 +21,7 @@ import type { IdeaSource } from "../../IdeaBank/tools/notion-ideas.ts";
 const SKILL_DIR = join(import.meta.dir, "..");
 const CONFIG_PATH = join(SKILL_DIR, "config", "monitor-config.json");
 const IDEABANK_CONFIG_PATH = join(SKILL_DIR, "..", "IdeaBank", "config", "ideabank-config.json");
+const IDEABANK_TRANSCRIPTS_DIR = join(SKILL_DIR, "..", "IdeaBank", "transcripts");
 
 async function loadReplyModel(): Promise<string> {
   try {
@@ -330,6 +331,11 @@ async function handleIdeaCommand(
       const result = await fetchTranscript(youtubeUrl);
       console.log(`[ideabank] Transcript fetched — ${result.wordCount} words`);
 
+      // Save full transcript to file
+      const transcriptPath = join(IDEABANK_TRANSCRIPTS_DIR, `${result.videoId}.txt`);
+      await Bun.write(transcriptPath, result.fullText);
+      console.log(`[ideabank] Transcript saved → ${transcriptPath}`);
+
       console.log(`[ideabank] Extracting key concepts via ${ideaBankCfg.settings.concept_model}...`);
       transcriptSummary = await extractYouTubeConcepts(
         anthropicApiKey,
@@ -371,11 +377,16 @@ async function handleIdeaCommand(
   let notionPageId: string | null = null;
   if (ideaBankCfg.notion_ideas_db_id) {
     console.log(`[ideabank] Creating Notion entry...`);
+    const transcriptPath = youtubeUrl
+      ? join(IDEABANK_TRANSCRIPTS_DIR, `${extractVideoId(youtubeUrl) ?? "unknown"}.txt`)
+      : undefined;
+
     notionPageId = await createIdeaEntry(notionApiKey, ideaBankCfg.notion_ideas_db_id, {
       name: scores.name,
       rawInput: rawIdea,
       source,
       youtubeUrl: youtubeUrl ?? undefined,
+      transcriptPath,
       transcriptSummary,
       addendum: addendum ?? undefined,
       scores,
